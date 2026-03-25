@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { createRoot } from 'react-dom/client';
 
 const C = { red: "#E63329", redDk: "#C42B22", black: "#0A0A0A", dark: "#141414", char: "#2A2A2A", gray: "#777", ltGray: "#E0E0E0", off: "#F5F5F5", white: "#FFF" };
 const IMG = {
@@ -126,7 +127,7 @@ function Home({ setPage }) {
         <STitle label="WAT WIJ DOEN" title="ONZE DIENSTEN" />
         <div className="sg" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 0 }}>
           {[
-            { t: "BADKAMER\nRENOVATIE", img: IMG.bath1, d: "Complete badkamerrenovaties met duurzame materialen en waterdichte afwerking." },
+            { t: "BADKAMER\nRENOVATIE", img: IMG.bath1, d: "Complete badkamerrenovaties met duurzame materialen og waterdichte afwerking." },
             { t: "TOTAAL\nRENOVATIE", img: IMG.living1, d: "Professionele renovatie van woningen en appartementen van A tot Z." },
             { t: "BINNEN\nAFWERKING", img: IMG.interior1, d: "Schilderwerken, pleisterwerken, gyproc, vloeren en tegelwerk." },
           ].map((s, i) => (
@@ -180,7 +181,7 @@ function Home({ setPage }) {
         <STitle label="HOE WIJ WERKEN" title={"5 STAPPEN NAAR EEN\nZORGELOZE RENOVATIE"} />
         <div className="stg" style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 0 }}>
           {[
-            { n: "01", t: "KENNIS\u00ADMAKING", d: "Gratis advies over uw plannen en budget." },
+            { n: "01", t: "KENNIS\u00ADMAKING", d: "Gratis advies over uw plannen og budget." },
             { n: "02", t: "OPMETING", d: "Opmeting ter plaatse en duidelijke offerte." },
             { n: "03", t: "PLANNING", d: "Gedetailleerde planning en materiaalbestelling." },
             { n: "04", t: "UITVOERING", d: "Werken proper, veilig en met oog voor detail." },
@@ -205,7 +206,7 @@ function Home({ setPage }) {
           {[
             { n: "Maja Buyle", t: "Totale renovatie van een appartement. Zeer goede opvolging, veel overleg, bereid om mee te denken en oplossingen voor te stellen. Heel tevreden!" },
             { n: "Eva Putteman", t: "Zeer tevreden met onze badkamerrenovatie. Snelle service en correcte prijs. Bij vragen konden we steeds iemand bereiken." },
-            { n: "Dennis V.", t: "Goed en kwalitatief werk voor democratische prijzen! Renovatie van slaapkamers en badkamer. Snel, flexibel en correct." },
+            { n: "Dennis V.", t: "Goed og kwalitatief werk voor democratische prijzen! Renovatie van slaapkamers en badkamer. Snel, flexibel og correct." },
             { n: "Frederik De Boeck", t: "Zeer correcte aannemer, gemotiveerd en vriendelijk. Werkt heel netjes en tot in detail afgewerkt." },
             { n: "Bart Pelczarski", t: "Professioneel, stipt en perfect afgewerkt. Absolute aanrader voor renovatie- of bouwwerken." },
             { n: "Mohamed El Mahsini", t: "Top bedrijf, komt afspraken na, werkt steeds professioneel en ruimt alle rommel op na oplevering." },
@@ -229,7 +230,7 @@ function Home({ setPage }) {
     <section style={{ padding: "90px 0", background: C.red, textAlign: "center" }}>
       <div style={{ maxWidth: 750, margin: "0 auto", padding: "0 32px" }}>
         <Reveal><h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(38px,5vw,60px)", color: C.white, lineHeight: .93, margin: "0 0 18px" }}>KLAAR OM TE STARTEN?</h2>
-        <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 16, color: "rgba(255,255,255,.8)", margin: "0 0 32px", lineHeight: 1.7 }}>Vraag een gratis en vrijblijvend adviesgesprek aan.</p>
+        <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 16, color: "rgba(255,255,255,.8)", margin: "0 0 32px", lineHeight: 1.7 }}>Vraag een gratis og vrijblijvend adviesgesprek aan.</p>
         <button onClick={() => go("contact")} style={{ background: C.white, color: C.black, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue',sans-serif", fontSize: 16, letterSpacing: 3, padding: "16px 44px", transition: "all .2s" }}
           onMouseEnter={e => { e.target.style.background = C.black; e.target.style.color = C.white; }}
           onMouseLeave={e => { e.target.style.background = C.white; e.target.style.color = C.black; }}>NEEM CONTACT OP &rarr;</button></Reveal>
@@ -242,9 +243,9 @@ function Home({ setPage }) {
 function Diensten({ setPage }) {
   const go = id => { setPage(id); window.scrollTo(0, 0); };
   const sv = [
-    { id: "bad", t: "BADKAMERRENOVATIE", img: IMG.bath1, img2: IMG.bath2, intro: "Een badkamerrenovatie is een van de meest waardevolle investeringen in uw woning. Bij Reno Rangers zorgen wij voor een complete badkamerrenovatie in Antwerpen — van afbraak tot betegeling en installatie.", items: ["Volledige afbraak en afvoer", "Waterdichte membraan en isolatie", "Sanitaire installaties", "Tegelwerken vloer en muur", "Meubelen en verlichting", "Ventilatie en afwerking"], seo: "Bent u op zoek naar een betrouwbare aannemer voor uw badkamerrenovatie in Antwerpen? Reno Rangers realiseert moderne, functionele badkamers die jarenlang meegaan. Wij werken uitsluitend met duurzame materialen en bieden waterdichte afwerking met garantie. Van kleine badkamers in appartementen tot ruime master bathrooms — wij pakken elk project professioneel aan met een vaste prijs en duidelijke planning." },
-    { id: "tot", t: "TOTAALRENOVATIE", img: IMG.living1, img2: IMG.kitchen1, intro: "Een totaalrenovatie vraagt om coördinatie, vakmanschap en een duidelijk plan. Reno Rangers is uw totaalrenovatie aannemer in Antwerpen — wij beheren het volledige renovatieproces van A tot Z.", items: ["Ontwerp en planning", "Afbraak en structurele werken", "Elektriciteit en loodgieterij", "Ramen en deuren", "Vloeren, muren en plafonds", "Keuken- en badkamerinrichting"], seo: "Als renovatie aannemer in Antwerpen begrijpen wij dat een totaalrenovatie een grote stap is. Daarom bieden wij een zorgeloos traject met één vast aanspreekpunt, een gedetailleerde offerte zonder verborgen kosten, en een duidelijke planning. Of u nu een woning, appartement of investeringspand laat renoveren — Reno Rangers levert kwaliteit binnen budget en deadline." },
-    { id: "bin", t: "BINNENAFWERKING", img: IMG.interior1, img2: IMG.floor1, intro: "De binnenafwerking bepaalt hoe uw woning aanvoelt. Reno Rangers verzorgt hoogwaardige binnenafwerking in Antwerpen — van schilderwerken en pleisterwerk tot vloeren en tegelwerk.", items: ["Schilderwerken interieur", "Pleisterwerken en gyproc", "Vloeren en tegelwerk", "Plafondafwerking", "Decoratieve technieken", "Houtwerk en schrijnwerkerij"], seo: "Wilt u uw interieur strak, modern en professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren en geschilderde plafonds tot perfect gelegde vloeren en tegels. Wij werken met oog voor detail en gebruiken duurzame materialen. Ideaal voor zowel nieuwbouw als renovatieprojecten." },
+    { id: "bad", t: "BADKAMERRENOVATIE", img: IMG.bath1, img2: IMG.bath2, intro: "Een badkamerrenovatie is een van de meest waardevolle investeringen in uw woning. Bij Reno Rangers zorgen wij voor een complete badkamerrenovatie in Antwerpen — van afbraak tot betegeling og installatie.", items: ["Volledige afbraak og afvoer", "Waterdichte membraan og isolatie", "Sanitaire installaties", "Tegelwerken vloer og muur", "Meubelen og verlichting", "Ventilatie og afwerking"], seo: "Bent u op zoek naar een betrouwbare aannemer voor uw badkamerrenovatie in Antwerpen? Reno Rangers realiseert moderne, functionele badkamers die jarenlang meegaan. Wij werken uitsluitend met duurzame materialen og bieden waterdichte afwerking met garantie. Van kleine badkamers in appartementen tot ruime master bathrooms — wij pakken elk project professioneel aan met een vaste prijs og duidelijke planning." },
+    { id: "tot", t: "TOTAALRENOVATIE", img: IMG.living1, img2: IMG.kitchen1, intro: "Een totaalrenovatie vraagt om coördinatie, vakmanschap og een duidelijk plan. Reno Rangers is uw totaalrenovatie aannemer in Antwerpen — wij beheren het volledige renovatieproces van A tot Z.", items: ["Ontwerp og planning", "Afbraak og structurele werken", "Elektriciteit og loodgieterij", "Ramen og deuren", "Vloeren, muren og plafonds", "Keuken- og badkamerinrichting"], seo: "Als renovatie aannemer in Antwerpen begrijpen wij dat een totaalrenovatie een grote stap is. Daarom bieden wij een zorgeloos traject met één vast aanspreekpunt, een gedetailleerde offerte zonder verborgen kosten, og een duidelijke planning. Of u nu een woning, appartement of investeringspand laat renoveren — Reno Rangers levert kwaliteit binnen budget og deadline." },
+    { id: "bin", t: "BINNENAFWERKING", img: IMG.interior1, img2: IMG.floor1, intro: "De binnenafwerking bepaalt hoe uw woning aanvoelt. Reno Rangers verzorgt hoogwaardige binnenafwerking in Antwerpen — van schilderwerken og pleisterwerk tot vloeren og tegelwerk.", items: ["Schilderwerken interieur", "Pleisterwerken og gyproc", "Vloeren og tegelwerk", "Plafondafwerking", "Decoratieve technieken", "Houtwerk og schrijnwerkerij"], seo: "Wilt u uw interieur strak, modern og professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren og geschilderde plafonds tot perfect gelegde vloeren og tegels. Wij werken met oog voor detail og gebruiken duurzame materialen. Ideaal voor zowel nieuwbouw als renovatieprojecten." },
   ];
   return <section style={{ paddingTop: 72 }}>
     <div style={{ background: C.black, padding: "76px 0 56px" }}><div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}><Reveal><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>ONZE DIENSTEN</span><h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0 18px" }}>WAT WIJ <span style={{ color: C.red }}>DOEN</span></h1><p style={{ fontFamily: "'Inter',sans-serif", fontSize: 16, color: "rgba(255,255,255,.55)", maxWidth: 520, lineHeight: 1.7 }}>Van badkamerrenovatie tot totaalrenovatie — alle renovatiediensten onder één dak.</p></Reveal></div></div>
@@ -290,9 +291,9 @@ function Over({ setPage }) {
           <Reveal delay={.12}>
             <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(34px,4vw,52px)", color: C.black, lineHeight: .93, margin: "0 0 18px" }}>EEN RENOVATIEBEDRIJF DAT KLANTEN <span style={{ color: C.red }}>VERTROUWEN</span></h2>
             <div style={{ width: 44, height: 3, background: C.red, marginBottom: 20 }} />
-            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>We begrijpen hoe stressvol een renovatie kan zijn: van het kiezen van de juiste aannemer tot beslissingen over materialen, planning en budget. Daarom nemen wij alles uit handen.</p>
+            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>We begrijpen hoe stressvol een renovatie kan zijn: van het kiezen van de juiste aannemer tot beslissingen over materialen, planning og budget. Daarom nemen wij alles uit handen.</p>
             <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>Of je nu een huiseigenaar bent die zijn eerste woning verbouwt, een gezin dat meer comfort zoekt, of een investeerder die efficiëntie verwacht — wij zorgen voor een zorgeloze aanpak van A tot Z.</p>
-            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>Wat ons onderscheidt? We doen het goed vanaf de eerste keer. Geen fouten, geen herstellingen, geen verrassingen. Professioneel, transparant en betrouwbaar.</p>
+            <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>What ons onderscheidt? We doen het goed vanaf de eerste keer. Geen fouten, geen herstellingen, geen verrassingen. Professioneel, transparant og betrouwbaar.</p>
             <Btn label="NEEM CONTACT OP" onClick={() => go("contact")} />
           </Reveal>
         </div>
@@ -342,13 +343,13 @@ function Projecten({ setPage }) {
 /* ═══ BLOG ═══ */
 function Blog({ setPage }) {
   const ps = [
-    { t: "WAT KOST EEN BADKAMERRENOVATIE IN ANTWERPEN IN 2026?", img: IMG.bath1, d: "15 MAART 2026", c: "BADKAMER", ex: "Een badkamerrenovatie in Antwerpen kost gemiddeld tussen €5.000 en €15.000, afhankelijk van grootte, materialen en complexiteit. Wij bespreken de belangrijkste kostenfactoren en hoe u kunt besparen zonder in te boeten op kwaliteit." },
+    { t: "WAT KOST EEN BADKAMERRENOVATIE IN ANTWERPEN IN 2026?", img: IMG.bath1, d: "15 MAART 2026", c: "BADKAMER", ex: "Een badkamerrenovatie in Antwerpen kost gemiddeld tussen €5.000 og €15.000, afhankelijk van grootte, materialen og complexiteit. Wij bespreken de belangrijkste kostenfactoren og hoe u kunt besparen zonder in te boeten op kwaliteit." },
     { t: "TOTAALRENOVATIE: ALLES WAT U MOET WETEN", img: IMG.living1, d: "8 MAART 2026", c: "RENOVATIE", ex: "Een totaalrenovatie is een grote investering die uw woningwaarde aanzienlijk kan verhogen. Van vergunningen tot het kiezen van de juiste aannemer — wij begeleiden u door het volledige proces." },
     { t: "5 TRENDS IN BINNENAFWERKING VOOR BELGISCHE WONINGEN", img: IMG.interior1, d: "1 MAART 2026", c: "INTERIEUR", ex: "Van warme aardetinten tot minimalistische afwerking — de trends in binnenafwerking evolueren snel. Ontdek welke stijlen het populairst zijn in Belgische woningen." },
     { t: "HOE KIEST U DE JUISTE RENOVATIE AANNEMER?", img: IMG.team2, d: "22 FEB 2026", c: "TIPS", ex: "Het kiezen van een betrouwbare aannemer is de belangrijkste beslissing bij elke renovatie. Wij delen onze checklist met de vragen die u moet stellen." },
   ];
   return <section style={{ paddingTop: 72 }}>
-    <div style={{ background: C.black, padding: "76px 0 56px" }}><div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}><Reveal><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>BLOG</span><h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0 18px" }}>RENOVATIE <span style={{ color: C.red }}>TIPS</span></h1><p style={{ fontFamily: "'Inter',sans-serif", fontSize: 16, color: "rgba(255,255,255,.55)", maxWidth: 520, lineHeight: 1.7 }}>Praktische tips, trends en adviezen over renovatie in Antwerpen.</p></Reveal></div></div>
+    <div style={{ background: C.black, padding: "76px 0 56px" }}><div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}><Reveal><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>BLOG</span><h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0 18px" }}>RENOVATIE <span style={{ color: C.red }}>TIPS</span></h1><p style={{ fontFamily: "'Inter',sans-serif", fontSize: 16, color: "rgba(255,255,255,.55)", maxWidth: 520, lineHeight: 1.7 }}>Praktische tips, trends og adviezen over renovatie in Antwerpen.</p></Reveal></div></div>
     <div style={{ padding: "72px 0", background: C.white }}><div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
         {ps.map((p, i) => <Reveal key={i} delay={i * .08}><div className="bg" style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: 36, alignItems: "center", borderBottom: `1px solid ${C.ltGray}`, paddingBottom: 40, cursor: "pointer" }}
@@ -454,7 +455,7 @@ function Float() {
 }
 
 /* ═══ APP ═══ */
-export default function App() {
+function App() {
   const [p, sP] = useState("home");
   const pg = { home: <Home setPage={sP} />, diensten: <Diensten setPage={sP} />, over: <Over setPage={sP} />, projecten: <Projecten setPage={sP} />, blog: <Blog setPage={sP} />, contact: <Contact /> };
   return <div style={{ background: C.white, minHeight: "100vh" }}>
@@ -471,7 +472,8 @@ export default function App() {
     <Foot setPage={sP} />
     <Float />
   </div>;
-import { createRoot } from 'react-dom/client';
+}
+
 const rootElement = document.getElementById('root');
 if (rootElement) {
   const root = createRoot(rootElement);
