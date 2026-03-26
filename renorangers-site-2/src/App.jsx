@@ -87,14 +87,13 @@ function Reveal({ children, delay, y, style: extraStyle }) {
 }
 
 /* ── LOGO ── */
-function Logo({ size }) {
-  var s = size || 1;
+function Logo() {
   return (
     <img 
       src="/logo.png" 
       alt="Reno Rangers" 
       style={{ 
-        height: 100 * s, // Це дозволить логотипу масштабуватися, якщо він десь у футері менший
+        height: "120px", // Спробуйте прямо так, з одиницями виміру
         display: "block",
         width: "auto"
       }} 
