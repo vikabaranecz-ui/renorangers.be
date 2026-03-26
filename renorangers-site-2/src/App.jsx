@@ -14,10 +14,10 @@ const C = {
 
 /* ── IMAGES ── */
 const IMG = {
-  bath1: "toilet.png",
-  bath2: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=800&q=80&auto=format&fit=crop",
-  kitchen1: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop",
-  living1: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80&auto=format&fit=crop",
+  bath1: "toilet.jpg",
+  bath2: "bathroom.jpg",
+  kitchen1: "kithen.jpg",
+  living1: "livinroom.jpg",
   interior1: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80&auto=format&fit=crop",
   floor1: "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80&auto=format&fit=crop",
   team2: "https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80&auto=format&fit=crop",
