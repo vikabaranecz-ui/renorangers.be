@@ -93,7 +93,7 @@ function Logo() {
       src="/logo.png" 
       alt="Reno Rangers" 
       style={{ 
-        height: "60px", 
+        height: 44, 
         width: "auto", 
         display: "block",
         objectFit: "contain"
