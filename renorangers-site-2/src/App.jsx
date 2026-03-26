@@ -93,10 +93,10 @@ function Logo() {
       src="/logo.png" 
       alt="Reno Rangers" 
       style={{ 
-        height: "55px", // Це ідеальна висота для вашого меню (nav має height: 70px)
+        height: "60px", 
+        width: "auto", 
         display: "block",
-        width: "auto",
-        margin: "0 !important" // Прибираємо всі зайві відступи
+        objectFit: "contain"
       }} 
     />
   );
