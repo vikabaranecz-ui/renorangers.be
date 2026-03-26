@@ -14,10 +14,10 @@ const C = {
 
 /* ── IMAGES ── */
 const IMG = {
-  bath1: "toilet.jpg",
-  bath2: "bathroom.jpg",
-  kitchen1: "kithen.jpg",
-  living1: "livinroom.jpg",
+  bath1: "/toilet.jpg",
+  bath2: "/bathroom.jpg",
+  kitchen1: "/kithen.jpg",
+  living1: "/livinroom.jpg",
   interior1: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80&auto=format&fit=crop",
   floor1: "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80&auto=format&fit=crop",
   team2: "https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80&auto=format&fit=crop",
@@ -442,9 +442,9 @@ function Home({ setPage }) {
           <STitle label="WAT WIJ DOEN" title="ONZE DIENSTEN" />
           <div className="sg" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
             {[
-              { t: "BADKAMER-\nRENOVATIE", img: IMG.bathroom.jpg, d: "Complete badkamerrenovaties met duurzame materialen en waterdichte afwerking." },
-              { t: "TOTAAL-\nRENOVATIE", img: IMG.kitchen.jpg, d: "Professionele renovatie van woningen en appartementen van A tot Z." },
-              { t: "BINNEN-\nAFWERKING", img: IMG.livingroom.jpg, d: "Schilderwerken, pleisterwerken, gyproc, vloeren en tegelwerk." },
+              { t: "BADKAMER-\nRENOVATIE", img: IMG.bathroom, d: "Complete badkamerrenovaties met duurzame materialen en waterdichte afwerking." },
+              { t: "TOTAAL-\nRENOVATIE", img: IMG.kitchen, d: "Professionele renovatie van woningen en appartementen van A tot Z." },
+              { t: "BINNEN-\nAFWERKING", img: IMG.livingroom, d: "Schilderwerken, pleisterwerken, gyproc, vloeren en tegelwerk." },
             ].map(function (service, i) {
               return (
                 <Reveal key={i} delay={i * 0.1}>
