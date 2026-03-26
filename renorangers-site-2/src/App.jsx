@@ -87,28 +87,18 @@ function Reveal({ children, delay, y, style: extraStyle }) {
 }
 
 /* ── LOGO ── */
-function Logo({ light, size }) {
+function Logo({ size }) {
   var s = size || 1;
-  var col = light ? C.white : C.black;
   return (
-    <div style={{ display: "inline-flex", flexDirection: "column", lineHeight: 1, gap: 0 }}>
-      <div style={{ width: 72 * s, height: 3.5 * s, background: col, marginBottom: 3 * s }} />
-      <span
-        style={{
-          fontFamily: "'Oswald', sans-serif",
-          fontSize: 22 * s,
-          fontWeight: 700,
-          color: col,
-          letterSpacing: 1.5 * s,
-          fontStyle: "italic",
-          whiteSpace: "nowrap",
-          display: "block",
-        }}
-      >
-        RENO RANGERS
-      </span>
-      <div style={{ width: 58 * s, height: 3.5 * s, background: C.red, alignSelf: "flex-end", marginTop: 3 * s }} />
-    </div>
+    <img 
+      src="/logo.png" 
+      alt="Reno Rangers" 
+      style={{ 
+        height: 45 * s, // Це дозволить логотипу масштабуватися, якщо він десь у футері менший
+        display: "block",
+        width: "auto"
+      }} 
+    />
   );
 }
 
