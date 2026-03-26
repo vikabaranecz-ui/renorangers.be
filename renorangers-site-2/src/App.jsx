@@ -418,7 +418,7 @@ function Home({ setPage }) {
             </div>
 
            <Reveal delay={0.15} y={0}>
-              <div className="hi" style={{ overflow: "hidden", borderRadius: 0, aspectRatio: "9/16", maxHeight: "75vh" }}>
+              <div className="hi" style={{ overflow: "hidden", height: "100%", minHeight: 500 }}>
                 <video
                   autoPlay
                   muted
