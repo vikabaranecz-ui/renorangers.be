@@ -415,49 +415,32 @@ function Home({ setPage }) {
                 </div>
               </Reveal>
             </div>
- <Reveal delay={0.15} y={0}>
-  {/* Ми прибираємо фіксовані 550px і додаємо закруглені кути для краси */}
-  <div className="hi" style={{ 
-  overflow: "hidden", 
-  borderRadius: "15px", 
-  width: "75%",          // Оберіть масштаб тут: 70% або 80% (як вам більше подобається)
-  margin: "0 auto",      // Це вирівняє відео по центру вашої правої колонки
-  position: 'relative',
-  boxShadow: "0 20px 40px rgba(0,0,0,0.2)" // Додамо легку тінь, щоб виглядало як преміум-дизайн
-}}>
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    style={{ 
-      width: "100%",      // Відео заповнить 100% від зменшеного контейнера (75%)
-      height: "auto",     // Висота підлаштується автоматично, щоб не було деформації
-      display: "block"
-    }}
-  >
-    <source src="/hero.mp4" type="video/mp4" />
-  </video>
-</div>
-  }}>
-    <video
-      autoPlay
-      muted
-      loop
-      playsInline
-      style={{ 
-        width: "100%", 
-        height: "100%", 
-        objectFit: "cover" // Відео заповнить простір, не деформуючись
-      }}
-    >
-      <source src="/hero.mp4" type="video/mp4" />
-    </video>
-  </div>
-</Reveal>
+<Reveal delay={0.15} y={0}>
+          <div className="hi" style={{ 
+            overflow: "hidden", 
+            borderRadius: "15px", 
+            width: "75%",          // Масштаб відео (можна міняти: 70%, 80% тощо)
+            margin: "0 auto",      // Центрування
+            position: 'relative',
+            boxShadow: "0 20px 40px rgba(0,0,0,0.2)" 
+          }}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ 
+                width: "100%", 
+                height: "auto", 
+                display: "block"
+              }}
+            >
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </div> {/* Це закриває внутрішній контейнер сітки */}
+    </section>
 
       <Marquee items={["TOTAALRENOVATIE", "BADKAMERRENOVATIE", "BINNENAFWERKING", "SCHILDERWERKEN", "VLOEREN", "TEGELWERK", "GYPROC", "PLEISTERWERK"]} />
 
