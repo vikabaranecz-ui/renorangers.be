@@ -93,10 +93,10 @@ function Logo() {
       src="/logo.png" 
       alt="Reno Rangers" 
       style={{ 
-        height: 44, 
-        width: "auto", 
+        height: "55px", // Це ідеальна висота для вашого меню (nav має height: 70px)
         display: "block",
-        objectFit: "contain"
+        width: "auto",
+        margin: "0 !important" // Прибираємо всі зайві відступи
       }} 
     />
   );
@@ -368,7 +368,8 @@ function Home({ setPage }) {
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.92), rgba(10,10,10,0.55))" }} />
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
-<div className="hg" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>            <div>
+          <div className="hg" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+            <div>
               <Reveal>
                 <div style={{ display: "inline-block", padding: "5px 14px", border: "1px solid " + C.red, fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, marginBottom: 24 }}>
                   RENOVATIEBEDRIJF ANTWERPEN
@@ -415,32 +416,30 @@ function Home({ setPage }) {
                 </div>
               </Reveal>
             </div>
-<Reveal delay={0.15} y={0}>
-          <div className="hi" style={{ 
-            overflow: "hidden", 
-            borderRadius: "15px", 
-            width: "75%",          // Масштаб відео (можна міняти: 70%, 80% тощо)
-            margin: "0 auto",      // Центрування
-            position: 'relative',
-            boxShadow: "0 20px 40px rgba(0,0,0,0.2)" 
-          }}>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ 
-                width: "100%", 
-                height: "auto", 
-                display: "block"
-              }}
-            >
-              <source src="/hero.mp4" type="video/mp4" />
-            </video>
+
+            <Reveal delay={0.15} y={0}>
+              <div className="hi" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                  <div style={{ overflow: "hidden", aspectRatio: "3/4", background: C.dark }}>
+                    <img src={IMG.bath1} alt="Badkamer renovatie" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </div>
+                  <div style={{ overflow: "hidden", aspectRatio: "4/3", background: C.dark }}>
+                    <img src={IMG.kitchen1} alt="Keuken renovatie" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </div>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 36 }}>
+                  <div style={{ overflow: "hidden", aspectRatio: "4/3", background: C.dark }}>
+                    <img src={IMG.living1} alt="Woonkamer renovatie" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </div>
+                  <div style={{ overflow: "hidden", aspectRatio: "3/4", background: C.dark }}>
+                    <img src={IMG.interior1} alt="Interieur afwerking" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
-      </div> {/* Це закриває внутрішній контейнер сітки */}
-    </section>
+        </div>
+      </section>
 
       <Marquee items={["TOTAALRENOVATIE", "BADKAMERRENOVATIE", "BINNENAFWERKING", "SCHILDERWERKEN", "VLOEREN", "TEGELWERK", "GYPROC", "PLEISTERWERK"]} />
 
