@@ -415,19 +415,30 @@ function Home({ setPage }) {
                 </div>
               </Reveal>
             </div>
-  <Reveal delay={0.15} y={0}>
-<div className="hi" style={{ overflow: "hidden", height: 550 }}>
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                >
-                  <source src="/hero.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </Reveal>
+ <Reveal delay={0.15} y={0}>
+  {/* Ми прибираємо фіксовані 550px і додаємо закруглені кути для краси */}
+  <div className="hi" style={{ 
+    overflow: "hidden", 
+    borderRadius: "12px", // Закруглюємо кути, щоб виглядало професійно
+    height: "100%",      // Відео буде займати всю висоту колонки
+    minHeight: "400px",  // Але не буде меншим за 400px
+    position: "relative" 
+  }}>
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      style={{ 
+        width: "100%", 
+        height: "100%", 
+        objectFit: "cover" // Відео заповнить простір, не деформуючись
+      }}
+    >
+      <source src="/hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+</Reveal>
           </div>
         </div>
       </section>
