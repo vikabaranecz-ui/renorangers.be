@@ -870,120 +870,121 @@ function Blog() {
    CONTACT PAGE
    ══════════════════════════════════ */
 function Contact() {
-  var _form = useState({ name: "", email: "", phone: "", service: "", msg: "" });
-  var form = _form[0];
-  var setForm = _form[1];
-  var _sent = useState(false);
-  var sent = _sent[0];
-  var setSent = _sent[1];
+  const [f, sF] = useState({ name: "", email: "", phone: "", service: "", msg: "" });
+  const [sent, sSent] = useState(false);
+  const [status, sStatus] = useState("idle");
 
-  var inputStyle = {
-    width: "100%",
-    padding: "13px 16px",
-    border: "1px solid " + C.ltGray,
-    fontFamily: "'Inter', sans-serif",
-    fontSize: 14,
-    color: C.black,
-    outline: "none",
-    background: C.white,
-    boxSizing: "border-box",
+  const handleSubmit = async e => {
+    e.preventDefault();
+    sStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/xgopeqeb", {
+        method: "POST",
+        body: new FormData(e.target),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        sSent(true);
+        sF({ name: "", email: "", phone: "", service: "", msg: "" });
+        sStatus("ok");
+      } else {
+        sStatus("error");
+      }
+    } catch (err) {
+      console.error("Form submit failed", err);
+      sStatus("error");
+    }
   };
+
+  const inp = { width: "100%", padding: "13px 16px", border: `1px solid ${C.ltGray}`, fontFamily: "'Inter',sans-serif", fontSize: 14, color: C.black, outline: "none", background: C.white, transition: "border-color .2s", boxSizing: "border-box" };
 
   return (
     <section style={{ paddingTop: 72 }}>
       <div style={{ background: C.black, padding: "76px 0 56px" }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
-          <Reveal>
-            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>CONTACT</span>
-            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(46px, 6vw, 84px)", color: C.white, lineHeight: 0.9, margin: "10px 0" }}>
-              NEEM <span style={{ color: C.red }}>CONTACT</span> OP
-            </h1>
-          </Reveal>
+          <Reveal><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>CONTACT</span><h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0" }}>NEEM <span style={{ color: C.red }}>CONTACT</span> OP</h1></Reveal>
         </div>
       </div>
+
       <div style={{ padding: "72px 0", background: C.white }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
           <div className="svg2" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 56 }}>
             <Reveal>
-              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, color: C.black, margin: "0 0 20px" }}>CONTACTGEGEVENS</h2>
+              <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 32, color: C.black, margin: "0 0 20px" }}>CONTACTGEGEVENS</h2>
               <div style={{ width: 44, height: 3, background: C.red, marginBottom: 28 }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 36 }}>
-                <a href="tel:+32465883919" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
-                  <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, color: C.red }}>T</span>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>TELEFOON</div>
-                    <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>+32 465 88 39 19</div>
-                  </div>
-                </a>
-                <a href="mailto:info@renorangers.be" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
-                  <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, color: C.red }}>E</span>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>E-MAIL</div>
-                    <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>info@renorangers.be</div>
-                  </div>
-                </a>
-                <a href="https://wa.me/32465883919" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
-                  <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, color: C.red }}>W</span>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>WHATSAPP</div>
-                    <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>Stuur een bericht</div>
-                  </div>
-                </a>
+                {[{ l: "TELEFOON", v: "+32 465 88 39 19", h: "tel:+32465883919" }, { l: "E-MAIL", v: "info@renorangers.be", h: "mailto:info@renorangers.be" }, { l: "WHATSAPP", v: "Stuur een bericht", h: "https://wa.me/32465883919" }].map(c => (
+                  <a key={c.l} href={c.h} target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
+                    <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 14, color: C.red }}>{c.l.charAt(0)}</span></div>
+                    <div><div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>{c.l}</div><div style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>{c.v}</div></div>
+                  </a>
+                ))}
               </div>
-              <div style={{ padding: 22, background: C.off, border: "1px solid " + C.ltGray }}>
-                <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, letterSpacing: 2, color: C.black, margin: "0 0 10px" }}>OPENINGSUREN</h3>
-                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.8 }}>
-                  {"Maandag \u2014 Vrijdag: 07:00 \u2014 17:30"}<br />
-                  {"Zaterdag: 08:30 \u2014 16:00"}<br />
+              <div style={{ padding: 22, background: C.off, border: `1px solid ${C.ltGray}` }}>
+                <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 16, letterSpacing: 2, color: C.black, margin: "0 0 10px" }}>OPENINGSUREN</h3>
+                <div style={{ fontFamily: "'Inter',sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.8 }}>
+                  Maandag — Vrijdag: 07:00 — 17:30<br />
+                  Zaterdag: 08:30 — 16:00<br />
                   Zondag: Gesloten
                 </div>
               </div>
             </Reveal>
 
-            <Reveal delay={0.12}>
-              <div style={{ padding: 36, background: C.off, border: "1px solid " + C.ltGray }}>
+            <Reveal delay={.12}>
+              <form onSubmit={handleSubmit} action="https://formspree.io/f/xgopeqeb" method="POST" style={{ padding: 36, background: C.off, border: `1px solid ${C.ltGray}` }}>
                 {sent ? (
                   <div style={{ textAlign: "center", padding: "44px 0" }}>
-                    <div style={{ width: 52, height: 52, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 18px" }}>
-                      <span style={{ color: C.white, fontSize: 26 }}>{"\u2713"}</span>
-                    </div>
-                    <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.black }}>BERICHT VERZONDEN</h3>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, marginTop: 6 }}>We nemen zo snel mogelijk contact met u op.</p>
+                    <div style={{ width: 52, height: 52, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 18px" }}><span style={{ color: C.white, fontSize: 26 }}>&#10003;</span></div>
+                    <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: C.black }}>BERICHT VERZONDEN</h3>
+                    <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 14, color: C.gray, marginTop: 6 }}>We nemen zo snel mogelijk contact met u op.</p>
                   </div>
                 ) : (
-                  <div>
-                    <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.black, margin: "0 0 4px" }}>GRATIS OFFERTE AANVRAGEN</h3>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, margin: "0 0 24px" }}>Vul het formulier in — we contacteren u binnen 24 uur.</p>
+                  <>
+                    <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: C.black, margin: "0 0 4px" }}>GRATIS OFFERTE AANVRAGEN</h3>
+                    <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 13, color: C.gray, margin: "0 0 24px" }}>Vul het formulier in — we contacteren u binnen 24 uur.</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                      <input style={inputStyle} placeholder="Uw naam *" value={form.name} onChange={function (e) { setForm(Object.assign({}, form, { name: e.target.value })); }} />
+                      <input name="name" style={inp} placeholder="Uw naam *" value={f.name} onChange={e => sF({ ...f, name: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} required />
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                        <input style={inputStyle} placeholder="E-mailadres *" type="email" value={form.email} onChange={function (e) { setForm(Object.assign({}, form, { email: e.target.value })); }} />
-                        <input style={inputStyle} placeholder="Telefoonnummer" type="tel" value={form.phone} onChange={function (e) { setForm(Object.assign({}, form, { phone: e.target.value })); }} />
+                        <input name="email" style={inp} placeholder="E-mailadres *" type="email" value={f.email} onChange={e => sF({ ...f, email: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} required />
+                        <input name="phone" style={inp} placeholder="Telefoonnummer" type="tel" value={f.phone} onChange={e => sF({ ...f, phone: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} />
                       </div>
-                      <select style={Object.assign({}, inputStyle, { color: form.service ? C.black : C.gray })} value={form.service} onChange={function (e) { setForm(Object.assign({}, form, { service: e.target.value })); }}>
+                      <select name="service" style={{ ...inp, color: f.service ? C.black : C.gray, appearance: "none" }} value={f.service} onChange={e => sF({ ...f, service: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray}>
                         <option value="">Selecteer dienst</option>
                         <option>Badkamerrenovatie</option>
                         <option>Totaalrenovatie</option>
                         <option>Binnenafwerking</option>
                         <option>Andere</option>
                       </select>
-                      <textarea style={Object.assign({}, inputStyle, { minHeight: 110, resize: "vertical" })} placeholder="Beschrijf uw renovatieproject..." value={form.msg} onChange={function (e) { setForm(Object.assign({}, form, { msg: e.target.value })); }} />
+                      <textarea name="message" style={{ ...inp, minHeight: 110, resize: "vertical" }} placeholder="Beschrijf uw renovatieproject..." value={f.msg} onChange={e => sF({ ...f, msg: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} />
                       <button
-                        onClick={function () { setSent(true); }}
-                        style={{ width: "100%", padding: 15, background: C.red, color: C.white, border: "none", fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, letterSpacing: 3, cursor: "pointer" }}
+                        type="submit"
+                        disabled={status === "sending"}
+                        style={{
+                          width: "100%",
+                          padding: 15,
+                          background: status === "sending" ? C.black : C.red,
+                          color: C.white,
+                          border: "none",
+                          fontFamily: "'Bebas Neue',sans-serif",
+                          fontSize: 16,
+                          letterSpacing: 3,
+                          cursor: status === "sending" ? "wait" : "pointer",
+                          transition: "all .2s",
+                        }}
+                        onMouseEnter={e => { if (status !== "sending") e.target.style.background = C.black; }}
+                        onMouseLeave={e => { if (status !== "sending") e.target.style.background = C.red; }}
                       >
-                        VERSTUUR AANVRAAG
+                        {status === "sending" ? "VERZENDEN..." : "VERSTUUR AANVRAAG"}
                       </button>
+                      {status === "error" && (
+                        <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 12, color: C.red, margin: "6px 0 0" }}>
+                          Verzenden mislukt. Probeer opnieuw of mail ons rechtstreeks op info@renorangers.be.
+                        </p>
+                      )}
                     </div>
-                  </div>
+                  </>
                 )}
-              </div>
+              </form>
             </Reveal>
           </div>
         </div>
@@ -991,6 +992,7 @@ function Contact() {
     </section>
   );
 }
+
 
 /* ══════════════════════════════════
    FOOTER
