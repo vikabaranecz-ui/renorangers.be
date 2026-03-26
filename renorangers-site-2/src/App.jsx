@@ -418,15 +418,14 @@ function Home({ setPage }) {
             </div>
 
             <Reveal delay={0.15} y={0}>
-              <div className="hi" style={{ 
-  overflow: "hidden", 
-  borderRadius: 8, 
-  aspectRatio: "1/1",    // Змінюємо на квадрат
-  maxHeight: "60vh",     // Трохи зменшив висоту для квадрата
-  width: "80%",          // Задаємо ширину (наприклад, 80% від колонки)
-  margin: "0 auto",      // ОЦЕ ПОСТАВИТЬ ВІДЕО ПО ЦЕНТРУ КОЛОНКИ
-  position: "relative"
-}}>
+              <div className="hi" style={{ overflow: "hidden", height: "100%", minHeight: 500 }}>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                >
                   <source src="/hero.mp4" type="video/mp4" />
                 </video>
               </div>
