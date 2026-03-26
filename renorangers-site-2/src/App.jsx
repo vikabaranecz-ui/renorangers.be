@@ -442,9 +442,9 @@ function Home({ setPage }) {
           <STitle label="WAT WIJ DOEN" title="ONZE DIENSTEN" />
           <div className="sg" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
             {[
-              { t: "BADKAMER-\nRENOVATIE", img: IMG.bath1, d: "Complete badkamerrenovaties met duurzame materialen en waterdichte afwerking." },
-              { t: "TOTAAL-\nRENOVATIE", img: IMG.living1, d: "Professionele renovatie van woningen en appartementen van A tot Z." },
-              { t: "BINNEN-\nAFWERKING", img: IMG.interior1, d: "Schilderwerken, pleisterwerken, gyproc, vloeren en tegelwerk." },
+              { t: "BADKAMER-\nRENOVATIE", img: IMG.bathroom.jpg, d: "Complete badkamerrenovaties met duurzame materialen en waterdichte afwerking." },
+              { t: "TOTAAL-\nRENOVATIE", img: IMG.kitchen.jpg, d: "Professionele renovatie van woningen en appartementen van A tot Z." },
+              { t: "BINNEN-\nAFWERKING", img: IMG.livingroom.jpg, d: "Schilderwerken, pleisterwerken, gyproc, vloeren en tegelwerk." },
             ].map(function (service, i) {
               return (
                 <Reveal key={i} delay={i * 0.1}>
