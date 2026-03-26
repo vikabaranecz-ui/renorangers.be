@@ -14,7 +14,7 @@ const C = {
 
 /* ── IMAGES ── */
 const IMG = {
-  bath1: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80&auto=format&fit=crop",
+  bath1: "toilet.png",
   bath2: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=800&q=80&auto=format&fit=crop",
   kitchen1: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop",
   living1: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80&auto=format&fit=crop",
