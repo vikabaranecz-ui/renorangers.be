@@ -418,11 +418,27 @@ function Home({ setPage }) {
  <Reveal delay={0.15} y={0}>
   {/* Ми прибираємо фіксовані 550px і додаємо закруглені кути для краси */}
   <div className="hi" style={{ 
-    overflow: "hidden", 
-    borderRadius: "12px", // Закруглюємо кути, щоб виглядало професійно
-    height: "100%",      // Відео буде займати всю висоту колонки
-    minHeight: "400px",  // Але не буде меншим за 400px
-    position: "relative" 
+  overflow: "hidden", 
+  borderRadius: "15px", 
+  width: "75%",          // Оберіть масштаб тут: 70% або 80% (як вам більше подобається)
+  margin: "0 auto",      // Це вирівняє відео по центру вашої правої колонки
+  position: 'relative',
+  boxShadow: "0 20px 40px rgba(0,0,0,0.2)" // Додамо легку тінь, щоб виглядало як преміум-дизайн
+}}>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    style={{ 
+      width: "100%",      // Відео заповнить 100% від зменшеного контейнера (75%)
+      height: "auto",     // Висота підлаштується автоматично, щоб не було деформації
+      display: "block"
+    }}
+  >
+    <source src="/hero.mp4" type="video/mp4" />
+  </video>
+</div>
   }}>
     <video
       autoPlay
