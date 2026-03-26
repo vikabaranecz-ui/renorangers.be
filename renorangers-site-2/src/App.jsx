@@ -16,13 +16,20 @@ const C = {
 const IMG = {
   bath1: "/toilet.jpg",
   bath2: "/bathroom.jpg",
-  kitchen1: "/kithen.jpg",
-  living1: "/livinroom.jpg",
-  interior1: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80&auto=format&fit=crop",
-  floor1: "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80&auto=format&fit=crop",
-  team2: "https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80&auto=format&fit=crop",
-  proj1: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
-  hero: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop",
+  kitchen1: "/kitchen.jpg",
+  living1: "/livingroom.jpg",
+  interior1: "/shower.jpg",
+  floor1: "/livingroom.jpg",
+  team2: "/kitchen.jpg",
+  proj1: "/livingroom.jpg",
+  hero: "/livingroom.jpg",
+  toiletantwerpen: "/toiletantwerpen.jpg",
+  toiletmerksem: "/toiletmerksem.jpg",
+  livingroom: "/livingroom.jpg",
+  kitchen: "/kitchen.jpg",
+  shower: "/shower.jpg",
+  bathroom: "/bathroom.jpg",
+  toilet: "/toilet.jpg",
 };
 
 /* ── GLOBAL STYLES ── */
