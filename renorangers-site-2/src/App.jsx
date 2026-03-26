@@ -94,7 +94,7 @@ function Logo({ size }) {
       src="/logo.png" 
       alt="Reno Rangers" 
       style={{ 
-        height: 80 * s, // Це дозволить логотипу масштабуватися, якщо він десь у футері менший
+        height: 100 * s, // Це дозволить логотипу масштабуватися, якщо він десь у футері менший
         display: "block",
         width: "auto"
       }} 
