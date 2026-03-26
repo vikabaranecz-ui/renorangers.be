@@ -417,24 +417,17 @@ function Home({ setPage }) {
               </Reveal>
             </div>
 
-            <Reveal delay={0.15} y={0}>
-              <div className="hi" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                  <div style={{ overflow: "hidden", aspectRatio: "3/4", background: C.dark }}>
-                    <img src={IMG.bath1} alt="Badkamer renovatie" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  </div>
-                  <div style={{ overflow: "hidden", aspectRatio: "4/3", background: C.dark }}>
-                    <img src={IMG.kitchen1} alt="Keuken renovatie" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  </div>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 36 }}>
-                  <div style={{ overflow: "hidden", aspectRatio: "4/3", background: C.dark }}>
-                    <img src={IMG.living1} alt="Woonkamer renovatie" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  </div>
-                  <div style={{ overflow: "hidden", aspectRatio: "3/4", background: C.dark }}>
-                    <img src={IMG.interior1} alt="Interieur afwerking" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  </div>
-                </div>
+           <Reveal delay={0.15} y={0}>
+              <div className="hi" style={{ overflow: "hidden", borderRadius: 0, aspectRatio: "9/16", maxHeight: "75vh" }}>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                >
+                  <source src="/hero.mp4" type="video/mp4" />
+                </video>
               </div>
             </Reveal>
           </div>
