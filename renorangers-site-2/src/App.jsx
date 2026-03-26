@@ -368,7 +368,7 @@ function Home({ setPage }) {
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.92), rgba(10,10,10,0.55))" }} />
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
-<div className="hg" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "stretch" }}>            <div>
+<div className="hg" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>            <div>
               <Reveal>
                 <div style={{ display: "inline-block", padding: "5px 14px", border: "1px solid " + C.red, fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, marginBottom: 24 }}>
                   RENOVATIEBEDRIJF ANTWERPEN
@@ -415,9 +415,8 @@ function Home({ setPage }) {
                 </div>
               </Reveal>
             </div>
-
-         <Reveal delay={0.15} y={0}>
-              <div className="hi" style={{ overflow: "hidden", alignSelf: "stretch" }}>
+  <Reveal delay={0.15} y={0}>
+<div className="hi" style={{ overflow: "hidden", height: 550 }}>
                 <video
                   autoPlay
                   muted
