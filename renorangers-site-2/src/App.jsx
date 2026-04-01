@@ -32,6 +32,8 @@ const IMG = {
   toilet: "/toilet.jpg",
 };
 
+const YT_VIDEO = "https://www.youtube.com/embed/cfiRq57YIW4";
+
 /* ── GLOBAL STYLES ── */
 const globalCSS = `
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,7 +43,7 @@ const globalCSS = `
   @keyframes mL { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes mR { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   @media (max-width: 900px) {
-    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg { grid-template-columns: 1fr !important; }
+    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg { grid-template-columns: 1fr !important; }
     .stg { grid-template-columns: 1fr 1fr !important; }
     .hi { display: none !important; }
     .dn { display: none !important; }
@@ -96,15 +98,15 @@ function Reveal({ children, delay, y, style: extraStyle }) {
 /* ── LOGO ── */
 function Logo() {
   return (
-    <img 
-      src="/logo.png" 
-      alt="Reno Rangers" 
-      style={{ 
-        height: "55px", // Це ідеальна висота для вашого меню (nav має height: 70px)
+    <img
+      src="/logo.png"
+      alt="Reno Rangers"
+      style={{
+        height: "55px",
         display: "block",
         width: "auto",
-        margin: "0 !important" // Прибираємо всі зайві відступи
-      }} 
+        margin: "0 !important",
+      }}
     />
   );
 }
@@ -215,6 +217,63 @@ function STitle({ label, title, light }) {
         <div style={{ width: 50, height: 3, background: C.red, marginTop: 18 }} />
       </div>
     </Reveal>
+  );
+}
+
+/* ── VIDEO EMBED ── */
+function VideoEmbed({ light, label, title, desc }) {
+  var textColor = light ? "rgba(255,255,255,0.72)" : C.gray;
+  var headingColor = light ? C.white : C.black;
+  var borderColor = light ? "rgba(255,255,255,0.15)" : C.ltGray;
+  var tileBg = light ? "rgba(255,255,255,0.05)" : C.off;
+  var tagColor = light ? "rgba(255,255,255,0.85)" : C.char;
+
+  return (
+    <div className="vg" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 32, alignItems: "center" }}>
+      <Reveal>
+        <div>
+          <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, display: "block", marginBottom: 10 }}>
+            {label || "VIDEO"}
+          </span>
+          <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(30px, 4vw, 46px)", color: headingColor, lineHeight: 0.95, margin: "0 0 14px" }}>
+            {title || "Bekijk onze renovatie in 90 seconden"}
+          </h3>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: textColor, margin: "0 0 18px", maxWidth: 520 }}>
+            {desc || "Krijg een snelle indruk van hoe we werken: planning, afwerking en oplevering door het Reno Rangers team."}
+          </p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {["Totaalrenovatie", "Badkamerrenovatie", "Binnenafwerking"].map(function (tag) {
+              return (
+                <span key={tag} style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: tagColor, padding: "8px 12px", border: "1px solid " + borderColor }}>
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      </Reveal>
+      <Reveal delay={0.12}>
+        <div
+          style={{
+            position: "relative",
+            aspectRatio: "16/9",
+            background: tileBg,
+            border: "1px solid " + borderColor,
+            overflow: "hidden",
+            boxShadow: "0 18px 38px rgba(0,0,0,0.28)",
+          }}
+        >
+          <iframe
+            src={YT_VIDEO}
+            title="Reno Rangers project video"
+            style={{ width: "100%", height: "100%", border: "none" }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      </Reveal>
+    </div>
   );
 }
 
@@ -395,7 +454,7 @@ function Home({ setPage }) {
 
               <Reveal delay={0.18}>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.55)", maxWidth: 460, margin: "0 0 36px" }}>
-                  {"E\u00E9n aanspreekpunt voor totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs. Duidelijke planning. Correcte oplevering."}
+                  {"E\u00e9n aanspreekpunt voor totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs. Duidelijke planning. Correcte oplevering."}
                 </p>
               </Reveal>
 
@@ -543,6 +602,18 @@ function Home({ setPage }) {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* VIDEO */}
+      <section style={{ padding: "110px 0", background: C.black }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <STitle label="IN DE PRAKTIJK" title="VIDEO: RENO RANGERS IN ACTIE" light />
+          <VideoEmbed
+            light
+            title="Bekijk een recente totaalrenovatie"
+            desc="Bekijk hoe we een appartement in Antwerpen aanpakken: van opmeting tot afgewerkte badkamer en keuken."
+          />
         </div>
       </section>
 
@@ -795,6 +866,15 @@ function Projecten() {
         </div>
       </div>
       <Marquee items={["VOOR & NA", "KWALITEITSWERK", "VAKMANSCHAP", "TEVREDEN KLANTEN"]} />
+      <div style={{ padding: "72px 0", background: C.off }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <VideoEmbed
+            label="PROJECT VIDEO"
+            title="RONDLEIDING: APPARTEMENT DEURNE"
+            desc="1,5 minuut inside tour van een totaalrenovatie met nieuwe badkamer, keuken en binnenafwerking."
+          />
+        </div>
+      </div>
       <div style={{ padding: "72px 0", background: C.white }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
           <div className="pg" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
@@ -1000,7 +1080,6 @@ function Contact() {
   );
 }
 
-
 /* ══════════════════════════════════
    FOOTER
    ══════════════════════════════════ */
@@ -1051,7 +1130,7 @@ function Foot({ setPage }) {
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.9 }}>
               <a href="tel:+32465883919" style={{ color: "inherit", textDecoration: "none", display: "block" }}>+32 465 88 39 19</a>
               <a href="mailto:info@renorangers.be" style={{ color: "inherit", textDecoration: "none", display: "block" }}>info@renorangers.be</a>
-              <span style={{ display: "block" }}>{"Antwerpen, Belgi\u00EB"}</span>
+              <span style={{ display: "block" }}>{"Antwerpen, Belgi\u00eb"}</span>
             </div>
           </div>
         </div>
