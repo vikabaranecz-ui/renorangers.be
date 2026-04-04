@@ -777,17 +777,19 @@ function Diensten({ setPage }) {
    PRIVACY POLICY PAGE
    ══════════════════════════════════ */
 function Privacy() {
-  var sections = [
-    { t: "1. Wie zijn wij", d: "Reno Rangers BV is een renovatiebedrijf gevestigd in Antwerpen. Voor vragen over deze privacyverklaring kan u mailen naar info@renorangers.be." },
-    { t: "2. Welke gegevens verzamelen we", d: "Contactgegevens (naam, e-mail, telefoon), projectinformatie uit het contactformulier, technische gegevens (IP-adres, browser, cookies/analytics)." },
-    { t: "3. Waarom verwerken we gegevens", d: "Om offertes te maken, vragen te beantwoorden, afspraken te plannen, onze diensten te verbeteren en wettelijke verplichtingen na te leven." },
-    { t: "4. Rechtsgrond", d: "Toestemming via het formulier, uitvoering van een (pre)contract, gerechtvaardigd belang voor bedrijfsvoering en beveiliging." },
-    { t: "5. Bewaartermijn", d: "Contact- en offertegegevens worden bewaard zolang nodig voor de samenwerking en wettelijk vereist. Analyticsgegevens worden geanonimiseerd waar mogelijk." },
-    { t: "6. Delen met derden", d: "We delen enkel met noodzakelijke verwerkers (hosting, e-mail, analytics). Geen verkoop van persoonsgegevens." },
-    { t: "7. Beveiliging", d: "We nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen." },
-    { t: "8. Uw rechten", d: "Recht op inzage, correctie, verwijdering, beperking, bezwaar en overdraagbaarheid. Stuur uw verzoek naar info@renorangers.be." },
-    { t: "9. Cookies & analytics", d: "We gebruiken mogelijk functionele cookies en geanonimiseerde analytics voor site-prestaties. U kan cookies beheren via uw browserinstellingen." },
-    { t: "10. Wijzigingen", d: "Deze privacyverklaring kan worden bijgewerkt. Laatste update: 4 april 2026." },
+  var paragraphs = [
+    "Dit privacybeleid beschrijft hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen wanneer je onze website bezoekt of een aankoop doet.",
+    "1. Wie zijn wij\\nReno Rangers BV\\nBE 0793.260.159\\nBergensesteenweg 24/8,1600Sint-Pieters-Leeuw\\ninfo@renorangers.be\\nWij zijn verantwoordelijk voor de verwerking van jouw persoonsgegevens.",
+    "2. Welke gegevens verzamelen wij\\n- Naam en voornaam\\n- Facturatie- en verzendadres\\n- E-mailadres\\n- Telefoonnummer\\n- Betaalgegevens (via beveiligde betalingsproviders)\\n- IP-adres en browsergegevens\\n- Gedrag op de website (via cookies en tracking tools)",
+    "3. Waarom verzamelen wij deze gegevens\\n- Het verwerken en leveren van bestellingen\\n- Klantenservice en communicatie\\n- Verbetering van onze website en diensten\\n- Marketing en advertenties (indien toegestaan)\\n- Wettelijke verplichtingen (boekhouding, belastingen)",
+    "4. Rechtsgrond voor verwerking\\n- Uitvoering van een overeenkomst\\n- Wettelijke verplichtingen\\n- Jouw toestemming\\n- Ons gerechtvaardigd belang (zoals marketing en optimalisatie)",
+    "5. Delen van gegevens met derden\\n- Betalingsproviders (bijv. Stripe, Mollie)\\n- Verzendpartners\\n- IT- en hostingdiensten (bijv. Shopify)\\n- Marketingtools (bijv. Meta, TikTok)\\nWij verkopen jouw gegevens nooit aan derden.",
+    "6. Bewaartermijn\\nWij bewaren jouw gegevens niet langer dan nodig is voor de doeleinden waarvoor ze zijn verzameld, tenzij een langere bewaartermijn wettelijk verplicht is.",
+    "7. Cookies en tracking\\nOnze website gebruikt cookies om:\\n- De website correct te laten functioneren\\n- Gebruik te analyseren\\n- Advertenties te personaliseren\\nJe kunt cookies beheren via je browserinstellingen.",
+    "8. Jouw rechten\\nJe hebt het recht op inzage, correctie, verwijdering, intrekking van toestemming en bezwaar tegen verwerking. Contacteer ons via e-mail om deze rechten uit te oefenen.",
+    "9. Beveiliging van gegevens\\nWij nemen passende technische en organisatorische maatregelen om jouw gegevens te beschermen tegen verlies, misbruik of ongeautoriseerde toegang.",
+    "10. Wijzigingen\\nWij behouden ons het recht voor om dit privacybeleid te wijzigen. De meest recente versie is altijd beschikbaar op onze website.",
+    "11. Contact\\nVoor vragen over dit privacybeleid kun je contact opnemen via: info@renorangers.be",
   ];
 
   return (
@@ -797,28 +799,22 @@ function Privacy() {
           <Reveal>
             <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>PRIVACY</span>
             <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(46px, 6vw, 84px)", color: C.white, lineHeight: 0.9, margin: "10px 0" }}>
-              PRIVACY POLICY
+              PRIVACYBELEID
             </h1>
           </Reveal>
         </div>
       </div>
       <div style={{ padding: "72px 0", background: C.white }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 32px", display: "flex", flexDirection: "column", gap: 26 }}>
-          {sections.map(function (s, i) {
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 32px", display: "flex", flexDirection: "column", gap: 20 }}>
+          {paragraphs.map(function (p, i) {
             return (
-              <Reveal key={s.t} delay={i * 0.05}>
-                <div style={{ border: "1px solid " + C.ltGray, padding: "20px 22px", background: C.off }}>
-                  <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, color: C.black, letterSpacing: 1, margin: "0 0 8px" }}>{s.t}</h3>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: C.char, margin: 0 }}>{s.d}</p>
+              <Reveal key={i} delay={i * 0.03}>
+                <div style={{ border: "1px solid " + C.ltGray, padding: "18px 20px", background: C.off, whiteSpace: "pre-line", fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: C.char }}>
+                  {p}
                 </div>
               </Reveal>
             );
           })}
-          <div style={{ marginTop: 12 }}>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.6, color: C.gray }}>
-              Vragen of verzoeken? Mail ons op <a href="mailto:info@renorangers.be" style={{ color: C.red, textDecoration: "none" }}>info@renorangers.be</a>.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -1188,52 +1184,12 @@ function Foot({ setPage }) {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 20, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.2)" }}>{"© 2026 Reno Rangers BV. Alle rechten voorbehouden."}</span>
-          <details style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.85)" }}>
-            <summary style={{ cursor: "pointer", listStyle: "none", color: "rgba(255,255,255,0.75)" }}>Privacybeleid</summary>
-            <div style={{ marginTop: 10, padding: 14, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.78)", maxWidth: 520, lineHeight: 1.5, fontSize: 12 }}>
-              <strong>Privacybeleid</strong><br /><br />
-              Dit privacybeleid beschrijft hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen wanneer je onze website bezoekt of een aankoop doet.<br /><br />
-              <strong>1. Wie zijn wij</strong><br />
-              Reno Rangers BV<br />
-              BE 0793.260.159<br />
-              Bergensesteenweg 24/8,1600Sint-Pieters-Leeuw<br />
-              info@renorangers.be<br />
-              Wij zijn verantwoordelijk voor de verwerking van jouw persoonsgegevens.<br /><br />
-              <strong>2. Welke gegevens verzamelen wij</strong><br />
-              - Naam en voornaam<br />
-              - Facturatie- en verzendadres<br />
-              - E-mailadres<br />
-              - Telefoonnummer<br />
-              - Betaalgegevens (via beveiligde betalingsproviders)<br />
-              - IP-adres en browsergegevens<br />
-              - Gedrag op de website (via cookies en tracking tools)<br /><br />
-              <strong>3. Waarom verzamelen wij deze gegevens</strong><br />
-              - Het verwerken en leveren van bestellingen<br />
-              - Klantenservice en communicatie<br />
-              - Verbetering van onze website en diensten<br />
-              - Marketing en advertenties (indien toegestaan)<br />
-              - Wettelijke verplichtingen (boekhouding, belastingen)<br /><br />
-              <strong>4. Rechtsgrond voor verwerking</strong><br />
-              - Uitvoering van een overeenkomst<br />
-              - Wettelijke verplichtingen<br />
-              - Jouw toestemming<br />
-              - Ons gerechtvaardigd belang (zoals marketing en optimalisatie)<br /><br />
-              <strong>5. Delen van gegevens met derden</strong><br />
-              We delen alleen wanneer nodig met betalingsproviders, verzendpartners, IT/hostingdiensten, marketingtools. Nooit verkoop van gegevens.<br /><br />
-              <strong>6. Bewaartermijn</strong><br />
-              We bewaren gegevens niet langer dan nodig is, tenzij een langere termijn wettelijk verplicht is.<br /><br />
-              <strong>7. Cookies en tracking</strong><br />
-              Gebruik voor functioneren, analyse en personalisatie. Cookies beheer je via browserinstellingen.<br /><br />
-              <strong>8. Jouw rechten</strong><br />
-              Inzage, correctie, verwijdering, intrekken toestemming, bezwaar. Mail ons om je rechten uit te oefenen.<br /><br />
-              <strong>9. Beveiliging van gegevens</strong><br />
-              We nemen passende technische en organisatorische maatregelen tegen verlies, misbruik of ongeautoriseerde toegang.<br /><br />
-              <strong>10. Wijzigingen</strong><br />
-              We kunnen dit privacybeleid aanpassen; de meest recente versie staat op onze website.<br /><br />
-              <strong>11. Contact</strong><br />
-              info@renorangers.be<br />
-            </div>
-          </details>
+          <button
+            onClick={function () { go("privacy"); }}
+            style={{ background: "none", border: "none", color: "rgba(255,255,255,0.8)", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 11, padding: 0 }}
+          >
+            Privacybeleid
+          </button>
         </div>
       </div>
     </footer>
@@ -1278,6 +1234,7 @@ export default function App() {
     over: <Over setPage={setPage} />,
     projecten: <Projecten setPage={setPage} />,
     blog: <Blog setPage={setPage} />,
+    privacy: <Privacy />,
     contact: <Contact />,
   };
 
