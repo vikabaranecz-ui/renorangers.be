@@ -777,19 +777,87 @@ function Diensten({ setPage }) {
    PRIVACY POLICY PAGE
    ══════════════════════════════════ */
 function Privacy() {
-  var paragraphs = [
-    "Dit privacybeleid beschrijft hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen wanneer je onze website bezoekt of een aankoop doet.",
-    "1. Wie zijn wij\\nReno Rangers BV\\nBE 0793.260.159\\nBergensesteenweg 24/8,1600Sint-Pieters-Leeuw\\ninfo@renorangers.be\\nWij zijn verantwoordelijk voor de verwerking van jouw persoonsgegevens.",
-    "2. Welke gegevens verzamelen wij\\n- Naam en voornaam\\n- Facturatie- en verzendadres\\n- E-mailadres\\n- Telefoonnummer\\n- Betaalgegevens (via beveiligde betalingsproviders)\\n- IP-adres en browsergegevens\\n- Gedrag op de website (via cookies en tracking tools)",
-    "3. Waarom verzamelen wij deze gegevens\\n- Het verwerken en leveren van bestellingen\\n- Klantenservice en communicatie\\n- Verbetering van onze website en diensten\\n- Marketing en advertenties (indien toegestaan)\\n- Wettelijke verplichtingen (boekhouding, belastingen)",
-    "4. Rechtsgrond voor verwerking\\n- Uitvoering van een overeenkomst\\n- Wettelijke verplichtingen\\n- Jouw toestemming\\n- Ons gerechtvaardigd belang (zoals marketing en optimalisatie)",
-    "5. Delen van gegevens met derden\\n- Betalingsproviders (bijv. Stripe, Mollie)\\n- Verzendpartners\\n- IT- en hostingdiensten (bijv. Shopify)\\n- Marketingtools (bijv. Meta, TikTok)\\nWij verkopen jouw gegevens nooit aan derden.",
-    "6. Bewaartermijn\\nWij bewaren jouw gegevens niet langer dan nodig is voor de doeleinden waarvoor ze zijn verzameld, tenzij een langere bewaartermijn wettelijk verplicht is.",
-    "7. Cookies en tracking\\nOnze website gebruikt cookies om:\\n- De website correct te laten functioneren\\n- Gebruik te analyseren\\n- Advertenties te personaliseren\\nJe kunt cookies beheren via je browserinstellingen.",
-    "8. Jouw rechten\\nJe hebt het recht op inzage, correctie, verwijdering, intrekking van toestemming en bezwaar tegen verwerking. Contacteer ons via e-mail om deze rechten uit te oefenen.",
-    "9. Beveiliging van gegevens\\nWij nemen passende technische en organisatorische maatregelen om jouw gegevens te beschermen tegen verlies, misbruik of ongeautoriseerde toegang.",
-    "10. Wijzigingen\\nWij behouden ons het recht voor om dit privacybeleid te wijzigen. De meest recente versie is altijd beschikbaar op onze website.",
-    "11. Contact\\nVoor vragen over dit privacybeleid kun je contact opnemen via: info@renorangers.be",
+  var blocks = [
+    {
+      t: "1. Bedrijfsgegevens",
+      items: [
+        "Reno Rangers BV",
+        "Bergensesteenweg 24/8, 1600 Sint-Pieters-Leeuw, België",
+        "BTW BE 0793.260.159",
+        "info@renorangers.be",
+      ],
+    },
+    {
+      t: "2. Welke gegevens wij verzamelen",
+      items: [
+        "Naam en voornaam",
+        "Telefoonnummer",
+        "E-mailadres",
+        "Adres voor werfbezoek/offerte",
+        "Korte projectbeschrijving en voorkeuren",
+        "Technische gegevens: IP-adres, browserinfo, cookies/analytics",
+      ],
+    },
+    {
+      t: "3. Waarom wij deze gegevens verzamelen",
+      items: [
+        "Offertes opstellen en afspraken inplannen",
+        "Contact over lopende of geplande werken",
+        "Onze dienstverlening en website verbeteren",
+        "Marketing/advertenties (bijv. Meta Ads, Google Ads) na toestemming",
+        "Wettelijke verplichtingen (boekhouding, facturatie)",
+      ],
+    },
+    {
+      t: "4. Rechtsgrond voor verwerking",
+      items: [
+        "Toestemming (formulier, inschrijving)",
+        "Uitvoering van (pre)contractuele afspraken",
+        "Wettelijke verplichting",
+        "Gerechtvaardigd belang (kwaliteit en beveiliging)",
+      ],
+    },
+    {
+      t: "5. Delen van gegevens met derden",
+      items: [
+        "IT- en hostingdiensten (website, e-mail)",
+        "Analyse- en advertentietools (bijv. Google Analytics, Meta Ads) voor statistiek en leadgeneratie",
+        "Boekhoud- en administratieve partners voor wettelijke verplichtingen",
+        "Geen verkoop van persoonsgegevens",
+      ],
+    },
+    {
+      t: "6. Bewaartermijn van gegevens",
+      items: [
+        "Offerte- en projectgegevens: zolang nodig voor de samenwerking en wettelijke termijnen",
+        "Marketinggegevens: tot je toestemming intrekt of wij opschonen",
+        "Technische/cookiegegevens: volgens termijnen van onze analytics/cookie-tools",
+      ],
+    },
+    {
+      t: "7. Rechten van de gebruiker",
+      items: [
+        "Inzage, correctie, verwijdering",
+        "Beperking of bezwaar tegen verwerking",
+        "Intrekken van toestemming",
+        "Overdraagbaarheid waar technisch haalbaar",
+        "Vraag dit via info@renorangers.be; we reageren binnen GDPR-termijnen",
+      ],
+    },
+    {
+      t: "8. Beveiliging van gegevens",
+      items: [
+        "HTTPS-verbindingen",
+        "Beperkte toegang voor medewerkers en verwerkers",
+        "Passende technische en organisatorische maatregelen tegen verlies, misbruik of ongeoorloofde toegang",
+      ],
+    },
+    {
+      t: "9. Contactinformatie",
+      items: [
+        "Vragen of verzoeken? Mail naar info@renorangers.be",
+      ],
+    },
   ];
 
   return (
@@ -805,12 +873,17 @@ function Privacy() {
         </div>
       </div>
       <div style={{ padding: "72px 0", background: C.white }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 32px", display: "flex", flexDirection: "column", gap: 20 }}>
-          {paragraphs.map(function (p, i) {
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 32px", display: "flex", flexDirection: "column", gap: 18 }}>
+          {blocks.map(function (b, i) {
             return (
               <Reveal key={i} delay={i * 0.03}>
-                <div style={{ border: "1px solid " + C.ltGray, padding: "18px 20px", background: C.off, whiteSpace: "pre-line", fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: C.char }}>
-                  {p}
+                <div style={{ border: "1px solid " + C.ltGray, padding: "18px 20px", background: C.off }}>
+                  <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, color: C.black, letterSpacing: 1, margin: "0 0 10px" }}>{b.t}</h3>
+                  <ul style={{ margin: 0, paddingLeft: 18, fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.65, color: C.char }}>
+                    {b.items.map(function (it) {
+                      return <li key={it} style={{ marginBottom: 6 }}>{it}</li>;
+                    })}
+                  </ul>
                 </div>
               </Reveal>
             );
