@@ -1301,6 +1301,23 @@ export default function App() {
   var page = _page[0];
   var setPage = _page[1];
 
+  // Sync URL with SPA pages (only special slug for privacybeleid)
+  useEffect(function () {
+    if (typeof window === "undefined") return;
+    var path = window.location.pathname.toLowerCase();
+    if (path.includes("privacybeleid")) {
+      setPage("privacy");
+    }
+  }, []);
+
+  useEffect(function () {
+    if (typeof window === "undefined") return;
+    var desired = page === "privacy" ? "/privacybeleid" : "/";
+    if (window.location.pathname !== desired) {
+      window.history.replaceState({}, "", desired);
+    }
+  }, [page]);
+
   var pages = {
     home: <Home setPage={setPage} />,
     diensten: <Diensten setPage={setPage} />,
