@@ -298,7 +298,6 @@ function Nav({ page, setPage }) {
     { id: "over", l: "OVER ONS" },
     { id: "projecten", l: "PROJECTEN" },
     { id: "blog", l: "BLOG" },
-    { id: "privacy", l: "PRIVACY" },
     { id: "contact", l: "CONTACT" },
   ];
 
@@ -1144,7 +1143,6 @@ function Foot({ setPage }) {
     { l: "Over ons", id: "over" },
     { l: "Projecten", id: "projecten" },
     { l: "Blog", id: "blog" },
-    { l: "Privacy", id: "privacy" },
     { l: "Contact", id: "contact" },
   ];
   var serviceLinks = ["Totaalrenovatie", "Badkamerrenovatie", "Binnenafwerking", "Schilderwerken", "Vloeren & tegels"];
@@ -1190,7 +1188,52 @@ function Foot({ setPage }) {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 20, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.2)" }}>{"© 2026 Reno Rangers BV. Alle rechten voorbehouden."}</span>
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.2)" }}>Privacybeleid</span>
+          <details style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.85)" }}>
+            <summary style={{ cursor: "pointer", listStyle: "none", color: "rgba(255,255,255,0.75)" }}>Privacybeleid</summary>
+            <div style={{ marginTop: 10, padding: 14, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.78)", maxWidth: 520, lineHeight: 1.5, fontSize: 12 }}>
+              <strong>Privacybeleid</strong><br /><br />
+              Dit privacybeleid beschrijft hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen wanneer je onze website bezoekt of een aankoop doet.<br /><br />
+              <strong>1. Wie zijn wij</strong><br />
+              Reno Rangers BV<br />
+              BE 0793.260.159<br />
+              Bergensesteenweg 24/8,1600Sint-Pieters-Leeuw<br />
+              info@renorangers.be<br />
+              Wij zijn verantwoordelijk voor de verwerking van jouw persoonsgegevens.<br /><br />
+              <strong>2. Welke gegevens verzamelen wij</strong><br />
+              - Naam en voornaam<br />
+              - Facturatie- en verzendadres<br />
+              - E-mailadres<br />
+              - Telefoonnummer<br />
+              - Betaalgegevens (via beveiligde betalingsproviders)<br />
+              - IP-adres en browsergegevens<br />
+              - Gedrag op de website (via cookies en tracking tools)<br /><br />
+              <strong>3. Waarom verzamelen wij deze gegevens</strong><br />
+              - Het verwerken en leveren van bestellingen<br />
+              - Klantenservice en communicatie<br />
+              - Verbetering van onze website en diensten<br />
+              - Marketing en advertenties (indien toegestaan)<br />
+              - Wettelijke verplichtingen (boekhouding, belastingen)<br /><br />
+              <strong>4. Rechtsgrond voor verwerking</strong><br />
+              - Uitvoering van een overeenkomst<br />
+              - Wettelijke verplichtingen<br />
+              - Jouw toestemming<br />
+              - Ons gerechtvaardigd belang (zoals marketing en optimalisatie)<br /><br />
+              <strong>5. Delen van gegevens met derden</strong><br />
+              We delen alleen wanneer nodig met betalingsproviders, verzendpartners, IT/hostingdiensten, marketingtools. Nooit verkoop van gegevens.<br /><br />
+              <strong>6. Bewaartermijn</strong><br />
+              We bewaren gegevens niet langer dan nodig is, tenzij een langere termijn wettelijk verplicht is.<br /><br />
+              <strong>7. Cookies en tracking</strong><br />
+              Gebruik voor functioneren, analyse en personalisatie. Cookies beheer je via browserinstellingen.<br /><br />
+              <strong>8. Jouw rechten</strong><br />
+              Inzage, correctie, verwijdering, intrekken toestemming, bezwaar. Mail ons om je rechten uit te oefenen.<br /><br />
+              <strong>9. Beveiliging van gegevens</strong><br />
+              We nemen passende technische en organisatorische maatregelen tegen verlies, misbruik of ongeautoriseerde toegang.<br /><br />
+              <strong>10. Wijzigingen</strong><br />
+              We kunnen dit privacybeleid aanpassen; de meest recente versie staat op onze website.<br /><br />
+              <strong>11. Contact</strong><br />
+              info@renorangers.be<br />
+            </div>
+          </details>
         </div>
       </div>
     </footer>
@@ -1235,7 +1278,6 @@ export default function App() {
     over: <Over setPage={setPage} />,
     projecten: <Projecten setPage={setPage} />,
     blog: <Blog setPage={setPage} />,
-    privacy: <Privacy />, 
     contact: <Contact />,
   };
 
