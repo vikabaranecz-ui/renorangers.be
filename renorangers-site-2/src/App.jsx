@@ -298,6 +298,7 @@ function Nav({ page, setPage }) {
     { id: "over", l: "OVER ONS" },
     { id: "projecten", l: "PROJECTEN" },
     { id: "blog", l: "BLOG" },
+    { id: "privacy", l: "PRIVACY" },
     { id: "contact", l: "CONTACT" },
   ];
 
@@ -774,6 +775,58 @@ function Diensten({ setPage }) {
 }
 
 /* ══════════════════════════════════
+   PRIVACY POLICY PAGE
+   ══════════════════════════════════ */
+function Privacy() {
+  var sections = [
+    { t: "1. Wie zijn wij", d: "Reno Rangers BV is een renovatiebedrijf gevestigd in Antwerpen. Voor vragen over deze privacyverklaring kan u mailen naar info@renorangers.be." },
+    { t: "2. Welke gegevens verzamelen we", d: "Contactgegevens (naam, e-mail, telefoon), projectinformatie uit het contactformulier, technische gegevens (IP-adres, browser, cookies/analytics)." },
+    { t: "3. Waarom verwerken we gegevens", d: "Om offertes te maken, vragen te beantwoorden, afspraken te plannen, onze diensten te verbeteren en wettelijke verplichtingen na te leven." },
+    { t: "4. Rechtsgrond", d: "Toestemming via het formulier, uitvoering van een (pre)contract, gerechtvaardigd belang voor bedrijfsvoering en beveiliging." },
+    { t: "5. Bewaartermijn", d: "Contact- en offertegegevens worden bewaard zolang nodig voor de samenwerking en wettelijk vereist. Analyticsgegevens worden geanonimiseerd waar mogelijk." },
+    { t: "6. Delen met derden", d: "We delen enkel met noodzakelijke verwerkers (hosting, e-mail, analytics). Geen verkoop van persoonsgegevens." },
+    { t: "7. Beveiliging", d: "We nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen." },
+    { t: "8. Uw rechten", d: "Recht op inzage, correctie, verwijdering, beperking, bezwaar en overdraagbaarheid. Stuur uw verzoek naar info@renorangers.be." },
+    { t: "9. Cookies & analytics", d: "We gebruiken mogelijk functionele cookies en geanonimiseerde analytics voor site-prestaties. U kan cookies beheren via uw browserinstellingen." },
+    { t: "10. Wijzigingen", d: "Deze privacyverklaring kan worden bijgewerkt. Laatste update: 4 april 2026." },
+  ];
+
+  return (
+    <section style={{ paddingTop: 72 }}>
+      <div style={{ background: C.black, padding: "76px 0 56px" }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>PRIVACY</span>
+            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(46px, 6vw, 84px)", color: C.white, lineHeight: 0.9, margin: "10px 0" }}>
+              PRIVACY POLICY
+            </h1>
+          </Reveal>
+        </div>
+      </div>
+      <div style={{ padding: "72px 0", background: C.white }}>
+        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 32px", display: "flex", flexDirection: "column", gap: 26 }}>
+          {sections.map(function (s, i) {
+            return (
+              <Reveal key={s.t} delay={i * 0.05}>
+                <div style={{ border: "1px solid " + C.ltGray, padding: "20px 22px", background: C.off }}>
+                  <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, color: C.black, letterSpacing: 1, margin: "0 0 8px" }}>{s.t}</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: C.char, margin: 0 }}>{s.d}</p>
+                </div>
+              </Reveal>
+            );
+          })}
+          <div style={{ marginTop: 12 }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.6, color: C.gray }}>
+              Vragen of verzoeken? Mail ons op <a href="mailto:info@renorangers.be" style={{ color: C.red, textDecoration: "none" }}>info@renorangers.be</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════
    OVER ONS PAGE
    ══════════════════════════════════ */
 function Over({ setPage }) {
@@ -1091,6 +1144,7 @@ function Foot({ setPage }) {
     { l: "Over ons", id: "over" },
     { l: "Projecten", id: "projecten" },
     { l: "Blog", id: "blog" },
+    { l: "Privacy", id: "privacy" },
     { l: "Contact", id: "contact" },
   ];
   var serviceLinks = ["Totaalrenovatie", "Badkamerrenovatie", "Binnenafwerking", "Schilderwerken", "Vloeren & tegels"];
@@ -1181,6 +1235,7 @@ export default function App() {
     over: <Over setPage={setPage} />,
     projecten: <Projecten setPage={setPage} />,
     blog: <Blog setPage={setPage} />,
+    privacy: <Privacy />, 
     contact: <Contact />,
   };
 
