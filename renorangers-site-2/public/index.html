@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Badkamerrenovatie Antwerpen | Reno Rangers — Vaste Prijs, Klaar in 3 Weken</title>
+<meta name="description" content="Badkamerrenovatie in Antwerpen aan vaste prijs. Geen verrassingen, geen vertragingen. Klaar in 2-3 weken. Vraag vandaag uw gratis offerte aan."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ── */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;font-family:'Inter',sans-serif;background:#F5F5F5;}
+::selection{background:#E6332930;color:#0A0A0A;}
+a{text-decoration:none;}
+img{display:block;max-width:100%;}
+
+/* ── BRAND TOKENS ── */
+:root{
+  --red:#E63329;
+  --black:#0A0A0A;
+  --dark:#141414;
+  --char:#2A2A2A;
+  --gray:#777777;
+  --ltGray:#E0E0E0;
+  --off:#F5F5F5;
+  --white:#FFFFFF;
+  --bebas:'Bebas Neue',sans-serif;
+  --inter:'Inter',sans-serif;
+  --max:1320px;
+}
+
+/* ── MARQUEE ── */
+@keyframes mL{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes mR{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+.marquee-track{overflow:hidden;background:var(--red);padding:13px 0;white-space:nowrap;}
+.marquee-inner{display:inline-flex;animation:mL 28s linear infinite;}
+.marquee-inner.rev{animation:mR 28s linear infinite;}
+.marquee-item{font-family:var(--bebas);font-size:15px;color:var(--white);letter-spacing:3px;padding:0 20px;}
+.marquee-sep{opacity:0.4;}
+
+/* ── REVEAL ANIMATION ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal[data-delay="1"]{transition-delay:0.08s;}
+.reveal[data-delay="2"]{transition-delay:0.15s;}
+.reveal[data-delay="3"]{transition-delay:0.22s;}
+.reveal[data-delay="4"]{transition-delay:0.3s;}
+.reveal[data-delay="5"]{transition-delay:0.38s;}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:rgba(10,10,10,0.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:all 0.3s;
+}
+.nav.scrolled{background:rgba(10,10,10,0.97);}
+.nav-inner{max-width:1320px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:70px;}
+.nav-logo img{height:46px;width:auto;display:block;}
+.nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#ffffff;letter-spacing:2px;}
+.nav-logo-text span{color:#E63329;}
+/* desktop links — hidden on mobile */
+.nav-links{display:flex;align-items:center;gap:6px;}
+.nav-link{background:none;border:none;cursor:pointer;padding:8px 13px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:rgba(255,255,255,0.6);transition:color 0.2s;text-decoration:none;display:inline-block;}
+.nav-link:hover{color:#ffffff;}
+.nav-cta-btn{background:#E63329;color:#ffffff;border:none;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;padding:10px 22px;margin-left:6px;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.nav-cta-btn:hover{background:#2A2A2A;}
+/* hamburger */
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:26px;height:2px;background:#ffffff;transition:all 0.3s;transform-origin:center;}
+.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* mobile dropdown */
+.nav-mobile{display:none;background:#0A0A0A;padding:14px 24px 20px;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,0.05);}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);transition:color 0.2s;}
+.nav-mobile a:last-child{border-bottom:none;color:#E63329;margin-top:8px;font-size:20px;}
+.nav-mobile a:hover{color:#ffffff;}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .nav-burger{display:flex;}
+}
+
+/* ── BUTTON COMPONENT ── */
+.btn{
+  background:var(--red);color:var(--white);
+  border:2px solid var(--red);
+  cursor:pointer;font-family:var(--bebas);font-size:15px;letter-spacing:3px;
+  padding:16px 36px;min-width:280px;text-align:center;
+  transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  text-decoration:none;
+}
+.btn:hover{background:var(--white);color:var(--black);border-color:var(--white);}
+.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);}
+.btn-outline:hover{color:var(--red);background:transparent;border-color:var(--red);}
+.btn-dark-outline{background:transparent;color:var(--black);border:2px solid var(--black);}
+.btn-dark-outline:hover{color:var(--red);border-color:var(--red);}
+.btn-white-fill{background:var(--white);color:var(--black);border:2px solid var(--white);}
+.btn-white-fill:hover{background:var(--off);color:var(--black);}
+
+/* ── SECTION LABEL / TITLE ── */
+.s-label{font-family:var(--bebas);font-size:13px;letter-spacing:4px;color:var(--red);display:block;margin-bottom:10px;}
+.s-title{font-family:var(--bebas);font-size:clamp(36px,4.5vw,68px);line-height:0.93;letter-spacing:1px;margin:0 0 0;white-space:pre-line;}
+.s-title.light{color:var(--white);}
+.s-title.dark{color:var(--black);}
+.s-bar{width:50px;height:3px;background:var(--red);margin-top:18px;}
+.s-head{margin-bottom:48px;}
+
+/* ── CONTAINER ── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;margin-top:70px;}
+.hero-bg-img{position:absolute;inset:0;}
+.hero-bg-img img{width:100%;height:100%;object-fit:cover;opacity:0.2;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.92),rgba(10,10,10,0.55));}
+.hero-content{position:relative;z-index:2;padding:140px 32px 80px;max-width:var(--max);margin:0 auto;width:100%;}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;}
+.hero-tag{display:inline-block;padding:5px 14px;border:1px solid var(--red);font-family:var(--bebas);font-size:12px;letter-spacing:4px;color:var(--red);margin-bottom:24px;}
+.hero-h1{font-family:var(--bebas);font-size:clamp(50px,7vw,96px);color:var(--white);line-height:0.9;letter-spacing:1px;margin:0 0 10px;}
+.hero-h1 .red{color:var(--red);}
+.hero-bar{width:70px;height:3px;background:var(--red);margin:18px 0 24px;}
+.hero-sub{font-family:var(--inter);font-size:16px;line-height:1.75;color:rgba(255,255,255,0.55);max-width:460px;margin:0 0 36px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:44px;margin-top:52px;}
+.hero-stat-n{font-family:var(--bebas);font-size:38px;color:var(--white);line-height:1;}
+.hero-stat-l{font-family:var(--inter);font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
+/* hero visual — styled bathroom panels */
+.hero-visual{overflow:hidden;}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.ba-panel{position:relative;aspect-ratio:3/4;overflow:hidden;}
+.ba-before{background:linear-gradient(160deg,#2a1a14,#3d2820);}
+.ba-after{background:linear-gradient(160deg,#0d1f35,#0a2d50);}
+.ba-svg{position:absolute;inset:0;width:100%;height:100%;}
+.ba-label-tag{position:absolute;bottom:0;left:0;right:0;padding:10px 16px;font-family:var(--bebas);font-size:18px;letter-spacing:3px;color:var(--white);background:rgba(230,51,41,0.9);text-align:center;}
+
+/* ── URGENCY BAR ── */
+.urgency{background:var(--red);padding:14px 32px;text-align:center;}
+.urgency p{font-family:var(--inter);font-size:14px;color:var(--white);font-weight:600;letter-spacing:0.3px;}
+.urgency a{color:var(--white);font-weight:700;text-decoration:underline;}
+
+/* ── SECTIONS ── */
+section{padding:110px 0;}
+section.bg-white{background:var(--white);}
+section.bg-off{background:var(--off);}
+section.bg-black{background:var(--black);}
+section.bg-red{background:var(--red);}
+
+/* ── PAIN CARDS (waarom-grid style) ── */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.pain-card{padding:32px 24px;border:1px solid rgba(255,255,255,0.07);height:100%;}
+.pain-num{font-family:var(--bebas);font-size:32px;color:var(--red);line-height:1;}
+.pain-title{font-family:var(--bebas);font-size:20px;color:var(--white);letter-spacing:2px;margin:14px 0 8px;}
+.pain-desc{font-family:var(--inter);font-size:13px;line-height:1.6;color:rgba(255,255,255,0.45);margin:0;}
+
+/* ── SOLUTION (step style) ── */
+.sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.sol-step{padding:28px 20px;border-left:1px solid var(--ltGray);height:100%;}
+.sol-step:first-child{border-left:none;}
+.sol-n{font-family:var(--bebas);font-size:50px;color:var(--red);line-height:1;display:block;}
+.sol-bar{width:26px;height:2px;background:var(--black);margin:14px 0;}
+.sol-title{font-family:var(--bebas);font-size:16px;letter-spacing:2px;color:var(--black);margin:0 0 8px;}
+.sol-desc{font-family:var(--inter);font-size:12px;line-height:1.6;color:var(--gray);margin:0;}
+
+/* ── CASE STUDY ── */
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.case-tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.case-tag{font-family:var(--bebas);font-size:11px;letter-spacing:3px;color:var(--red);}
+.case-tag-sep{font-family:var(--inter);font-size:11px;color:var(--gray);}
+.case-h{font-family:var(--bebas);font-size:clamp(30px,3.5vw,46px);color:var(--black);line-height:0.93;margin:6px 0 0;}
+.case-redbar{width:44px;height:3px;background:var(--red);margin:18px 0 20px;}
+.case-desc{font-family:var(--inter);font-size:15px;line-height:1.75;color:var(--gray);margin:0 0 24px;}
+.case-stats{display:flex;gap:36px;margin-bottom:28px;}
+.case-stat-n{font-family:var(--bebas);font-size:42px;color:var(--red);line-height:1;}
+.case-stat-l{font-family:var(--inter);font-size:11px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+.testimonial{padding:24px;border:1px solid var(--ltGray);background:var(--off);}
+.test-stars{display:flex;gap:2px;margin-bottom:10px;}
+.test-star{color:var(--red);font-size:14px;}
+.test-text{font-family:var(--inter);font-size:14px;line-height:1.7;color:var(--char);font-style:italic;margin:0 0 14px;}
+.test-author{display:flex;align-items:center;gap:10px;}
+.test-avatar{width:36px;height:36px;background:var(--black);display:flex;align-items:center;justify-content:center;font-family:var(--bebas);font-size:16px;color:var(--white);flex-shrink:0;}
+.test-name{font-family:var(--inter);font-size:13px;font-weight:700;color:var(--black);}
+.test-source{font-family:var(--inter);font-size:11px;color:var(--gray);letter-spacing:1px;}
+/* case image double-stack */
+.img-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.img-wrap{overflow:hidden;background:var(--dark);}
+.img-wrap:nth-child(2){margin-top:36px;}
+.img-wrap img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;}
+/* placeholder image */
+.img-placeholder{width:100%;background:var(--dark);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.img-placeholder-before{background:linear-gradient(160deg,#2e1f18,#3a2820);}
+.img-placeholder-after{background:linear-gradient(160deg,#0d2035,#0a2d50);}
+.img-placeholder-label{font-family:var(--bebas);font-size:13px;letter-spacing:3px;color:rgba(255,255,255,0.5);}
+
+/* ── PRICING ── */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ltGray);}
+.price-card{padding:36px 28px;border-right:1px solid var(--ltGray);position:relative;}
+.price-card:last-child{border-right:none;}
+.price-card.featured{background:var(--black);}
+.price-type{font-family:var(--inter);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;color:var(--gray);}
+.price-card.featured .price-type{color:rgba(255,255,255,0.4);}
+.price-range{font-family:var(--bebas);font-size:40px;line-height:1;margin-bottom:8px;color:var(--black);}
+.price-card.featured .price-range{color:var(--red);}
+.price-desc-txt{font-family:var(--inter);font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:20px;}
+.price-card.featured .price-desc-txt{color:rgba(255,255,255,0.45);}
+.price-list{list-style:none;}
+.price-list li{font-family:var(--inter);font-size:13px;padding:6px 0;border-bottom:1px solid var(--ltGray);display:flex;align-items:center;gap:8px;}
+.price-card.featured .price-list li{border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);}
+.price-check{width:7px;height:7px;background:var(--red);flex-shrink:0;}
+.price-badge{position:absolute;top:0;right:0;background:var(--red);color:var(--white);font-family:var(--bebas);font-size:10px;letter-spacing:2px;padding:6px 12px;}
+.price-note{margin-top:24px;font-family:var(--inter);font-size:13px;color:var(--gray);padding:16px 20px;border-left:3px solid var(--red);background:var(--white);}
+
+/* ── INCLUDED ── */
+.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.inc-card{padding:32px 24px;border:1px solid rgba(255,255,255,0.07);}
+.inc-num{font-family:var(--bebas);font-size:32px;color:var(--red);line-height:1;}
+.inc-title{font-family:var(--bebas);font-size:20px;color:var(--white);letter-spacing:2px;margin:14px 0 8px;}
+.inc-desc{font-family:var(--inter);font-size:13px;line-height:1.6;color:rgba(255,255,255,0.45);margin:0;}
+
+/* ── SERVICE ITEMS (bullet style) ── */
+.bullet-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;}
+.bullet-item{display:flex;align-items:center;gap:8px;padding:5px 0;}
+.bullet-dot{width:7px;height:7px;background:var(--red);flex-shrink:0;}
+.bullet-text{font-family:var(--inter);font-size:13px;color:var(--char);}
+
+/* ── REVIEWS ── */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.review-card{padding:28px 24px;border:1px solid var(--ltGray);height:100%;display:flex;flex-direction:column;}
+.review-stars{display:flex;gap:2px;margin-bottom:14px;}
+.review-text{font-family:var(--inter);font-size:14px;line-height:1.7;color:var(--char);font-style:italic;margin:0 0 18px;flex:1;}
+.review-author-row{display:flex;align-items:center;gap:10px;}
+.review-avatar{width:36px;height:36px;background:var(--black);display:flex;align-items:center;justify-content:center;font-family:var(--bebas);font-size:16px;color:var(--white);flex-shrink:0;}
+.review-name{font-family:var(--inter);font-size:13px;font-weight:700;color:var(--black);}
+.review-source{font-family:var(--inter);font-size:11px;color:var(--gray);letter-spacing:1px;}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{border:1px solid var(--ltGray);border-top:none;}
+.faq-item:first-child{border-top:1px solid var(--ltGray);}
+.faq-item.open{border-color:var(--red);}
+.faq-item.open + .faq-item{border-top:1px solid var(--ltGray);}
+.faq-btn{width:100%;background:none;border:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;font-family:var(--inter);font-size:16px;font-weight:700;color:var(--black);text-align:left;gap:16px;transition:background 0.2s;}
+.faq-btn:hover{background:var(--off);}
+.faq-icon{width:28px;height:28px;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:300;flex-shrink:0;transition:transform 0.2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;font-family:var(--inter);font-size:14px;color:var(--gray);line-height:1.7;padding:0 24px;}
+.faq-item.open .faq-answer{max-height:200px;padding:0 24px 22px;}
+
+/* ── CTA SECTION ── */
+.cta-title{font-family:var(--bebas);font-size:clamp(38px,5vw,60px);color:var(--white);line-height:0.93;margin:0 0 18px;}
+.cta-sub{font-family:var(--inter);font-size:16px;color:rgba(255,255,255,0.8);margin:0 0 32px;line-height:1.7;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ── PHOTO PROOF GALLERY ── */
+.ba-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.ba-set{overflow:hidden;cursor:pointer;}
+.ba-set-imgs{display:grid;grid-template-columns:1fr 1fr;gap:3px;position:relative;}
+.ba-img-wrap{overflow:hidden;aspect-ratio:4/5;background:var(--dark);position:relative;}
+.ba-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.ba-set:hover .ba-img-wrap img{transform:scale(1.04);}
+.ba-tag{position:absolute;top:8px;font-family:var(--bebas);font-size:10px;letter-spacing:2px;padding:4px 8px;z-index:2;}
+.ba-tag-before{left:8px;background:rgba(42,42,42,0.9);color:rgba(255,255,255,0.7);}
+.ba-tag-after{right:8px;background:#E63329;color:#ffffff;}
+.ba-set-meta{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#0A0A0A;border-top:2px solid #E63329;}
+.ba-set-loc{font-family:'Bebas Neue',sans-serif;font-size:16px;color:#ffffff;letter-spacing:1px;}
+.ba-set-days{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;text-transform:uppercase;}
+/* mosaic */
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 300px;gap:3px;}
+.mosaic-main{grid-row:1/-1;overflow:hidden;background:var(--dark);}
+.mosaic-main img,.mosaic-sm img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.mosaic-main:hover img,.mosaic-sm:hover img{transform:scale(1.03);}
+.mosaic-sm{overflow:hidden;background:var(--dark);}
+/* stat strip */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#0A0A0A;}
+.stat-item{padding:36px 24px;border-right:1px solid rgba(255,255,255,0.07);text-align:center;}
+.stat-item:last-child{border-right:none;}
+.stat-big{font-family:'Bebas Neue',sans-serif;font-size:52px;color:#E63329;line-height:1;}
+.stat-lbl{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:6px;}
+@media(max-width:900px){
+  .ba-gallery{grid-template-columns:1fr !important;}
+  .mosaic{grid-template-columns:1fr 1fr !important;grid-template-rows:auto !important;}
+  .mosaic-main{grid-row:auto;}
+  .stat-strip{grid-template-columns:1fr 1fr !important;}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);}
+}
+
+/* ── FOOTER ── */
+footer{background:#0A0A0A;border-top:3px solid #E63329;}
+.foot-inner{max-width:1320px;margin:0 auto;padding:56px 32px 28px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.foot-logo img{height:55px;width:auto;display:block;}
+.foot-tagline{font-family:'Inter',sans-serif;font-size:13px;line-height:1.7;color:rgba(255,255,255,0.55);margin-top:18px;max-width:260px;}
+.foot-col-title{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:#E63329;margin:0 0 16px;}
+.foot-link{display:block;font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.65);padding:4px 0;text-decoration:none;transition:color 0.2s;}
+.foot-link:hover{color:#ffffff;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.foot-copy{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);}
+
+/* ── FLOAT BUTTONS ── */
+.float-btns{position:fixed;bottom:22px;right:22px;z-index:9998;display:flex;flex-direction:column;gap:10px;transition:all 0.35s;}
+.float-btn{width:50px;height:50px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);}
+.float-wa{background:#25D366;box-shadow:0 4px 14px rgba(37,211,102,0.35);}
+.float-tel{background:var(--red);box-shadow:0 4px 14px rgba(230,51,41,0.35);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-grid,.case-grid,.price-grid,.inc-grid,.review-grid,.pain-grid,.bullet-list{grid-template-columns:1fr !important;}
+  .sol-grid{grid-template-columns:1fr 1fr !important;}
+  .sol-step{border-left:none !important;border-top:1px solid var(--ltGray);}
+  .sol-step:first-child{border-top:none;}
+  .foot-grid{grid-template-columns:1fr 1fr !important;}
+  .hero-visual{display:none;}
+  .price-card{border-right:none;border-bottom:1px solid var(--ltGray);}
+  .price-card:last-child{border-bottom:none;}
+  .wrap{padding:0 20px;}
+  section{padding:72px 0;}
+}
+@media(max-width:600px){
+  .hero-btns,.cta-btns{flex-direction:column;}
+  .hero-btns .btn,.cta-btns .btn{min-width:100%;justify-content:center;}
+  .inc-grid{grid-template-columns:1fr 1fr !important;}
+  .foot-grid{grid-template-columns:1fr !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ FLOATING BUTTONS ══ -->
+<div class="float-btns" id="floatBtns" style="opacity:0;transform:translateY(16px);pointer-events:none;">
+  <a class="float-btn float-wa" href="https://wa.me/32465883919" target="_blank" rel="noopener" title="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z"/></svg>
+  </a>
+  <a class="float-btn float-tel" href="tel:+32465883919" title="Bel ons">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="https://renorangers.be" class="nav-logo">
+      <img src="/logo.png" alt="Reno Rangers"
+           onerror="this.style.display='none';this.parentNode.innerHTML='<span class=&quot;nav-logo-text&quot;>RENO<span>RANGERS</span></span>'"/>
+    </a>
+    <!-- desktop links -->
+    <div class="nav-links">
+      <a href="https://renorangers.be" class="nav-link">HOME</a>
+      <a href="https://renorangers.be/diensten" class="nav-link">DIENSTEN</a>
+      <a href="https://renorangers.be/projecten" class="nav-link">PROJECTEN</a>
+      <a href="#offerte" class="nav-cta-btn">GRATIS OFFERTE</a>
+    </div>
+    <!-- hamburger -->
+    <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- mobile dropdown -->
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="https://renorangers.be">HOME</a>
+    <a href="https://renorangers.be/diensten">DIENSTEN</a>
+    <a href="https://renorangers.be/projecten">PROJECTEN</a>
+    <a href="https://renorangers.be/contact">CONTACT</a>
+    <a href="#offerte">GRATIS OFFERTE →</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-bg-img">
+    <img src="/bathroom.jpg" alt="Badkamerrenovatie Antwerpen" onerror="this.style.display='none'"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-grid">
+      <div>
+        <div class="reveal">
+          <span class="hero-tag">BADKAMERRENOVATIE &nbsp;&#183;&nbsp; ANTWERPEN</span>
+        </div>
+        <div class="reveal" data-delay="1">
+          <h1 class="hero-h1">UW BADKAMER,<br/>KLAAR IN <span class="red">3 WEKEN.</span><br/>VASTE PRIJS.</h1>
+        </div>
+        <div class="reveal" data-delay="2">
+          <div class="hero-bar"></div>
+          <p class="hero-sub">
+            &#201;&#233;n aanspreekpunt voor uw volledige badkamerrenovatie in Antwerpen. Geen gedoe met losse aannemers. Vaste prijs, duidelijke planning, correcte oplevering.
+          </p>
+        </div>
+        <div class="reveal" data-delay="3">
+          <div class="hero-btns">
+            <a class="btn" href="#offerte">GRATIS OFFERTE AANVRAGEN &#8594;</a>
+            <a class="btn btn-outline" href="https://wa.me/32465883919" target="_blank">WHATSAPP ONS &#8594;</a>
+          </div>
+        </div>
+        <div class="reveal" data-delay="4">
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-n">200+</div>
+              <div class="hero-stat-l">Projecten</div>
+            </div>
+            <div>
+              <div class="hero-stat-n">5.0</div>
+              <div class="hero-stat-l">Google Score</div>
+            </div>
+            <div>
+              <div class="hero-stat-n">100%</div>
+              <div class="hero-stat-l">Vaste Prijs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal" data-delay="2">
+        <div class="ba-grid">
+          <!-- BEFORE panel -->
+          <div class="ba-panel ba-before">
+            <svg class="ba-svg" viewBox="0 0 200 266" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="52" height="52" fill="none" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+              <rect x="65" y="8" width="52" height="52" fill="none" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+              <rect x="122" y="8" width="70" height="52" fill="none" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+              <rect x="8" y="65" width="52" height="52" fill="rgba(180,120,80,0.15)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+              <rect x="65" y="65" width="52" height="52" fill="rgba(180,120,80,0.15)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+              <rect x="122" y="65" width="70" height="52" fill="rgba(180,120,80,0.15)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+              <line x1="75" y1="8" x2="92" y2="60" stroke="#ff4444" stroke-width="2" opacity="0.6"/>
+              <line x1="92" y1="60" x2="108" y2="50" stroke="#ff4444" stroke-width="2" opacity="0.6"/>
+              <line x1="10" y1="78" x2="60" y2="110" stroke="#ff4444" stroke-width="1.5" opacity="0.5"/>
+              <circle cx="30" cy="35" r="4" fill="rgba(80,180,80,0.4)"/>
+              <circle cx="44" cy="48" r="3" fill="rgba(80,180,80,0.3)"/>
+              <rect x="15" y="155" width="170" height="95" rx="6" fill="rgba(140,100,70,0.12)" stroke="#b08060" stroke-width="1.5" opacity="0.6"/>
+              <ellipse cx="100" cy="182" rx="65" ry="22" fill="rgba(140,100,70,0.18)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+            <div class="ba-label-tag">VOOR</div>
+          </div>
+          <!-- AFTER panel -->
+          <div class="ba-panel ba-after">
+            <svg class="ba-svg" viewBox="0 0 200 266" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="38" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+              <rect x="50" y="8" width="38" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+              <rect x="92" y="8" width="38" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+              <rect x="134" y="8" width="58" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
+              <rect x="8" y="50" width="38" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="50" y="50" width="38" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="92" y="50" width="38" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="134" y="50" width="58" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="8" y="100" width="90" height="158" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+              <circle cx="80" cy="115" r="10" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+              <line x1="80" y1="125" x2="80" y2="190" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3,3"/>
+              <rect x="108" y="160" width="84" height="40" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+              <ellipse cx="150" cy="162" rx="42" ry="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+              <rect x="142" y="148" width="16" height="18" rx="3" fill="rgba(230,51,41,0.6)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+            </svg>
+            <div class="ba-label-tag">NA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-track">
+  <div class="marquee-inner">
+    <span class="marquee-item">BADKAMERRENOVATIE <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">VASTE PRIJS <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">ANTWERPEN <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">GEEN VERRASSINGEN <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">KLAAR IN 3 WEKEN <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">TEGELWERK <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">SANITAIR <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">LOODGIETERSWERK <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">ELEKTRICITEIT <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">BADKAMERRENOVATIE <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">VASTE PRIJS <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">ANTWERPEN <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">GEEN VERRASSINGEN <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">KLAAR IN 3 WEKEN <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">TEGELWERK <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">SANITAIR <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">LOODGIETERSWERK <span class="marquee-sep">/</span></span>
+    <span class="marquee-item">ELEKTRICITEIT <span class="marquee-sep">/</span></span>
+  </div>
+</div>
+
+<!-- ══ VOOR & NA GALERIJ — direct na hero ══ -->
+<section class="bg-black" style="padding:72px 0 0;">
+  <div class="wrap">
+    <div class="s-head reveal" style="margin-bottom:32px;">
+      <span class="s-label">BEWIJS IN BEELDEN</span>
+      <h2 class="s-title light">VOOR &amp; NA.&#10;ONZE RESULTATEN.</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="ba-gallery">
+      <div class="ba-set reveal" data-delay="1">
+        <div class="ba-set-imgs">
+          <div class="ba-img-wrap">
+            <span class="ba-tag ba-tag-before">VOOR</span>
+            <img src="/toilet.jpg" alt="Badkamer voor renovatie Borgerhout"
+                 onerror="this.parentNode.style.background='linear-gradient(160deg,#2e1f18,#3a2820)'"/>
+          </div>
+          <div class="ba-img-wrap">
+            <span class="ba-tag ba-tag-after">NA</span>
+            <img src="/bathroom.jpg" alt="Badkamer na renovatie Borgerhout"
+                 onerror="this.parentNode.style.background='linear-gradient(160deg,#0d2035,#0a2d50)'"/>
+          </div>
+        </div>
+        <div class="ba-set-meta">
+          <span class="ba-set-loc">BORGERHOUT</span>
+          <span class="ba-set-days">16 werkdagen &middot; vaste prijs</span>
+        </div>
+      </div>
+      <div class="ba-set reveal" data-delay="2">
+        <div class="ba-set-imgs">
+          <div class="ba-img-wrap">
+            <span class="ba-tag ba-tag-before">VOOR</span>
+            <img src="/toiletmerksem.jpg" alt="Badkamer voor renovatie Merksem"
+                 onerror="this.parentNode.style.background='linear-gradient(160deg,#2a1a14,#3d2820)'"/>
+          </div>
+          <div class="ba-img-wrap">
+            <span class="ba-tag ba-tag-after">NA</span>
+            <img src="/shower.jpg" alt="Badkamer na renovatie Merksem"
+                 onerror="this.parentNode.style.background='linear-gradient(160deg,#0d1f35,#0a2d50)'"/>
+          </div>
+        </div>
+        <div class="ba-set-meta">
+          <span class="ba-set-loc">MERKSEM</span>
+          <span class="ba-set-days">18 werkdagen &middot; vaste prijs</span>
+        </div>
+      </div>
+      <div class="ba-set reveal" data-delay="3">
+        <div class="ba-set-imgs">
+          <div class="ba-img-wrap">
+            <span class="ba-tag ba-tag-before">VOOR</span>
+            <img src="/toiletantwerpen.jpg" alt="Badkamer voor renovatie Antwerpen-Zuid"
+                 onerror="this.parentNode.style.background='linear-gradient(160deg,#251812,#382218)'"/>
+          </div>
+          <div class="ba-img-wrap">
+            <span class="ba-tag ba-tag-after">NA</span>
+            <img src="/bathroom.jpg" alt="Badkamer na renovatie Antwerpen-Zuid"
+                 onerror="this.parentNode.style.background='linear-gradient(160deg,#0a1e30,#082840)'"/>
+          </div>
+        </div>
+        <div class="ba-set-meta">
+          <span class="ba-set-loc">ANTWERPEN-ZUID</span>
+          <span class="ba-set-days">14 werkdagen &middot; vaste prijs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STAT STRIP ══ -->
+<div class="stat-strip reveal">
+  <div class="stat-item">
+    <div class="stat-big">200+</div>
+    <div class="stat-lbl">Voltooide projecten</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-big">5.0</div>
+    <div class="stat-lbl">Google score</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-big">3W</div>
+    <div class="stat-lbl">Gemiddelde doorlooptijd</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-big">0</div>
+    <div class="stat-lbl">Verborgen kosten</div>
+  </div>
+</div>
+
+<!-- ══ PIJNPUNTEN ══ -->
+<section class="bg-black">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">HERKENT U DIT?</span>
+      <h2 class="s-title light">BADKAMERRENOVATIE&#10;HOEFT GEEN NACHTMERRIE TE ZIJN</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal" data-delay="1">
+        <span class="pain-num">01</span>
+        <h3 class="pain-title">WERK SLEEPT AAN</h3>
+        <p class="pain-desc">Aannemer belooft 2 weken. 6 weken later is de vloer nog niet gelegd. Geen update, geen excuses.</p>
+      </div>
+      <div class="pain-card reveal" data-delay="2">
+        <span class="pain-num">02</span>
+        <h3 class="pain-title">PRIJS STIJGT MEE</h3>
+        <p class="pain-desc">Offerte van &euro;9.000. Eindrekening &euro;14.500. &#8220;Extra werken&#8221;, &#8220;onvoorziene kosten&#8221; &mdash; u betaalt altijd meer.</p>
+      </div>
+      <div class="pain-card reveal" data-delay="3">
+        <span class="pain-num">03</span>
+        <h3 class="pain-title">NIEMAND BEREIKBAAR</h3>
+        <p class="pain-desc">Loodgieter wacht op tegelzetter. Tegelzetter wacht op elektricien. U co&#246;rdineert alles zelf &mdash; onbetaald.</p>
+      </div>
+      <div class="pain-card reveal" data-delay="1">
+        <span class="pain-num">04</span>
+        <h3 class="pain-title">RESULTAAT VALT TEGEN</h3>
+        <p class="pain-desc">Scheve tegels. Kalksporen op het sanitair. Voegen die al na drie maanden loslaten. Niemand die terugkomt.</p>
+      </div>
+      <div class="pain-card reveal" data-delay="2">
+        <span class="pain-num">05</span>
+        <h3 class="pain-title">SLECHTE COMMUNICATIE</h3>
+        <p class="pain-desc">U krijgt geen updates. U weet niet wanneer er gewerkt wordt. U staat zelf thuis te wachten op iemand die niet opdaagt.</p>
+      </div>
+      <div class="pain-card reveal" data-delay="3">
+        <span class="pain-num">06</span>
+        <h3 class="pain-title">STRESS &amp; ROMMEL</h3>
+        <p class="pain-desc">Uw woning staat weken ondersteboven. Stof, puin en lawaaioverlast &mdash; zonder dat er schot in de zaak zit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OPLOSSING (4 stappen stijl) ══ -->
+<section class="bg-off">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">ONZE AANPAK</span>
+      <h2 class="s-title dark">4 STAPPEN NAAR EEN&#10;ZORGELOZE BADKAMER</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-step reveal" data-delay="1">
+        <span class="sol-n">01</span>
+        <div class="sol-bar"></div>
+        <h3 class="sol-title">VASTE PRIJS V&#211;&#211;R DE START</h3>
+        <p class="sol-desc">U tekent een offerte met vaste eindprijs. Geen clausules, geen meerwerken zonder uw goedkeuring.</p>
+      </div>
+      <div class="sol-step reveal" data-delay="2">
+        <span class="sol-n">02</span>
+        <div class="sol-bar"></div>
+        <h3 class="sol-title">&#201;&#201;N TEAM, ALLE VAKKEN</h3>
+        <p class="sol-desc">Onze eigen ploeg doet sloop, loodgieterswerk, tegelwerk, elektriciteit en afwerking &mdash; geen onderaannemers.</p>
+      </div>
+      <div class="sol-step reveal" data-delay="3">
+        <span class="sol-n">03</span>
+        <div class="sol-bar"></div>
+        <h3 class="sol-title">WEEKELIJKSE UPDATE</h3>
+        <p class="sol-desc">U weet elke week wat er gedaan is en wat er volgt. U hoeft nooit zelf achter ons aan te bellen.</p>
+      </div>
+      <div class="sol-step reveal" data-delay="4">
+        <span class="sol-n">04</span>
+        <div class="sol-bar"></div>
+        <h3 class="sol-title">OPLEVERING MET GARANTIE</h3>
+        <p class="sol-desc">We leveren op, lopen samen door het resultaat en geven garantie op alle uitgevoerde werken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASE STUDY ══ -->
+<section class="bg-white">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">GEREALISEERD PROJECT</span>
+      <h2 class="s-title dark">RESULTAAT IN DE PRAKTIJK</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="case-grid">
+      <div class="reveal">
+        <div class="case-tag-row">
+          <span class="case-tag">BORGERHOUT (ANTWERPEN)</span>
+          <span class="case-tag-sep">&middot;</span>
+          <span class="case-tag-sep" style="font-family:var(--inter);font-size:11px;color:var(--gray);">Appartement &middot; 2024</span>
+        </div>
+        <h3 class="case-h">VOLLEDIGE BADKAMER&#10;IN 16 WERKDAGEN</h3>
+        <div class="case-redbar"></div>
+        <p class="case-desc">
+          Gezin van vier in een rijwoning in Borgerhout. Oude badkamer uit 1998: lekkende douche, kapotte tegels en verouderde sanitair. Ze hadden al twee slechte ervaringen met andere aannemers. Via Google vonden ze Reno Rangers.
+        </p>
+        <div class="case-stats">
+          <div>
+            <div class="case-stat-n">16</div>
+            <div class="case-stat-l">Werkdagen</div>
+          </div>
+          <div>
+            <div class="case-stat-n">&euro;0</div>
+            <div class="case-stat-l">Meerkosten</div>
+          </div>
+          <div>
+            <div class="case-stat-n">5&#9733;</div>
+            <div class="case-stat-l">Google Review</div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="test-stars">
+            <span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span>
+          </div>
+          <p class="test-text">&#8220;Eindelijk een aannemer die doet wat hij belooft. Prijs was vast, planning werd gerespecteerd en het resultaat is perfect. We hadden dit 5 jaar eerder moeten doen.&#8221;</p>
+          <div class="test-author">
+            <div class="test-avatar">K</div>
+            <div>
+              <div class="test-name">Kathleen V.</div>
+              <div class="test-source">GOOGLE REVIEW &middot; BORGERHOUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" data-delay="2">
+        <div class="img-stack">
+          <div class="img-wrap img-placeholder img-placeholder-before">
+            <img src="/toilet.jpg" alt="Voor badkamerrenovatie" style="width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;" onerror="this.style.display='none'"/>
+            <span class="img-placeholder-label">VOOR</span>
+          </div>
+          <div class="img-wrap img-placeholder img-placeholder-after" style="margin-top:36px;">
+            <img src="/bathroom.jpg" alt="Na badkamerrenovatie" style="width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;" onerror="this.style.display='none'"/>
+            <span class="img-placeholder-label">NA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section class="bg-white" style="padding-top:0;">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">REVIEWS</span>
+      <h2 class="s-title dark">WAT KLANTEN ZEGGEN</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal" data-delay="1">
+        <div class="review-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
+        <p class="review-text">&#8220;Zeer tevreden met onze badkamerrenovatie. Snelle service en correcte prijs. Bij vragen konden we steeds iemand bereiken.&#8221;</p>
+        <div class="review-author-row">
+          <div class="review-avatar">E</div>
+          <div><div class="review-name">Eva Putteman</div><div class="review-source">GOOGLE REVIEW</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal" data-delay="2">
+        <div class="review-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
+        <p class="review-text">&#8220;Goed en kwalitatief werk voor democratische prijzen! Badkamer volledig vernieuwd. Snel, flexibel en correct.&#8221;</p>
+        <div class="review-author-row">
+          <div class="review-avatar">D</div>
+          <div><div class="review-name">Dennis V.</div><div class="review-source">GOOGLE REVIEW</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal" data-delay="3">
+        <div class="review-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
+        <p class="review-text">&#8220;Professioneel, stipt en perfect afgewerkt. Absolute aanrader voor iedereen die zijn badkamer wil vernieuwen.&#8221;</p>
+        <div class="review-author-row">
+          <div class="review-avatar">B</div>
+          <div><div class="review-name">Bart Pelczarski</div><div class="review-source">GOOGLE REVIEW</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="bg-off" id="offerte">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">PRIJSINDICATIE</span>
+      <h2 class="s-title dark">WAT KOST EEN&#10;BADKAMERRENOVATIE?</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="price-grid reveal">
+      <div class="price-card">
+        <div class="price-type">Kleine Badkamer</div>
+        <div class="price-range">&euro;6.000&ndash;&euro;9.000</div>
+        <div class="price-desc-txt">Tot 5 m&#178;. Douche, toilet, lavabo. Vervanging sanitair en tegelwerk.</div>
+        <ul class="price-list">
+          <li><span class="price-check"></span>Sloopwerken</li>
+          <li><span class="price-check"></span>Nieuw sanitair</li>
+          <li><span class="price-check"></span>Vloer- en wandtegels</li>
+          <li><span class="price-check"></span>Afwerking &amp; silicone</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">MEEST GEVRAAGD</div>
+        <div class="price-type">Standaard Badkamer</div>
+        <div class="price-range">&euro;9.000&ndash;&euro;14.000</div>
+        <div class="price-desc-txt">5&ndash;9 m&#178;. Inloopdouche of bad. Volledig tegelwerk, nieuwe leidingen.</div>
+        <ul class="price-list">
+          <li><span class="price-check"></span>Sloopwerken &amp; afvoer</li>
+          <li><span class="price-check"></span>Loodgieterswerk</li>
+          <li><span class="price-check"></span>Elektriciteit &amp; ventilatie</li>
+          <li><span class="price-check"></span>Volledig tegelwerk</li>
+          <li><span class="price-check"></span>Sanitair &amp; kranen</li>
+          <li><span class="price-check"></span>Afwerking &amp; oplevering</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-type">Luxe Badkamer</div>
+        <div class="price-range">&euro;14.000+</div>
+        <div class="price-desc-txt">10+ m&#178; of premiumafwerking. Vrijstaand bad, designer sanitair, vloerverwarming.</div>
+        <ul class="price-list">
+          <li><span class="price-check"></span>Maatwerk indeling</li>
+          <li><span class="price-check"></span>Premiumtegels &amp; sanitair</li>
+          <li><span class="price-check"></span>Vloerverwarming</li>
+          <li><span class="price-check"></span>Design kranen &amp; accessoires</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note reveal">Prijzen zijn richtprijzen inclusief arbeid en standaard materialen. De exacte prijs hangt af van uw badkamer, materiaalkoze en staat van de bestaande installaties. <strong>Vraag een gratis offerte aan &mdash; we komen ter plaatse opmeten.</strong></p>
+    <div class="reveal" style="text-align:center;margin-top:44px;">
+      <a class="btn" href="https://wa.me/32465883919" target="_blank">ONTVANG UW PERSOONLIJKE PRIJS &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INBEGREPEN ══ -->
+<section class="bg-black">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">WAT IS INBEGREPEN</span>
+      <h2 class="s-title light">ALLES. ECHT ALLES.</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="inc-grid">
+      <div class="inc-card reveal" data-delay="1">
+        <span class="inc-num">01</span>
+        <h3 class="inc-title">SLOOPWERKEN</h3>
+        <p class="inc-desc">Volledige afbraak van oude tegels, sanitair en leidingen. Inclusief afvoer van puin.</p>
+      </div>
+      <div class="inc-card reveal" data-delay="2">
+        <span class="inc-num">02</span>
+        <h3 class="inc-title">LOODGIETERSWERK</h3>
+        <p class="inc-desc">Nieuwe aan- en afvoerleidingen. Installatie douche, bad, lavabo en toilet.</p>
+      </div>
+      <div class="inc-card reveal" data-delay="3">
+        <span class="inc-num">03</span>
+        <h3 class="inc-title">ELEKTRICITEIT</h3>
+        <p class="inc-desc">Spotverlichting, stopcontacten, ventilatie en aansluiting boiler conform NEN.</p>
+      </div>
+      <div class="inc-card reveal" data-delay="1">
+        <span class="inc-num">04</span>
+        <h3 class="inc-title">TEGELWERK</h3>
+        <p class="inc-desc">Vloer- en wandtegels naar uw keuze. Waterdichte afwerking in natte zones.</p>
+      </div>
+      <div class="inc-card reveal" data-delay="2">
+        <span class="inc-num">05</span>
+        <h3 class="inc-title">SANITAIR</h3>
+        <p class="inc-desc">Plaatsing van douche, bad, lavabo, toilet en bijhorend beslag en kranen.</p>
+      </div>
+      <div class="inc-card reveal" data-delay="3">
+        <span class="inc-num">06</span>
+        <h3 class="inc-title">AFWERKING &amp; GARANTIE</h3>
+        <p class="inc-desc">Silicone, voegen, plafond, deuren en alle finishing touches. Garantie op uitvoering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BLOCK ══ -->
+<section class="bg-red" style="padding:90px 0;text-align:center;">
+  <div class="wrap">
+    <div class="reveal">
+      <h2 class="cta-title">KLAAR OM TE STARTEN?</h2>
+      <p class="cta-sub">Vraag een gratis en vrijblijvend adviesgesprek aan.<br/>Wij zijn binnen 24 uur bij u terug.</p>
+      <div class="cta-btns">
+        <a class="btn btn-white-fill" href="mailto:info@renorangers.be">OFFERTE VIA E-MAIL &#8594;</a>
+        <a class="btn btn-outline" href="https://wa.me/32465883919" target="_blank">WHATSAPP: +32 465 88 39 19 &#8594;</a>
+        <a class="btn btn-outline" href="tel:+32465883919">BEL DIRECT &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="bg-white">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-label">VEELGESTELDE VRAGEN</span>
+      <h2 class="s-title dark">UW VRAGEN,&#10;ONZE ANTWOORDEN.</h2>
+      <div class="s-bar"></div>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Hoe lang duurt een volledige badkamerrenovatie?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Gemiddeld 2 tot 3 weken voor een standaard badkamer van 5&ndash;9 m&#178;. Dit omvat sloopwerken, loodgieterswerk, tegelwerk en volledige afwerking. De exacte doorlooptijd bespreken we vooraf in de offerte &mdash; zodat u weet waar u aan toe bent.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Zijn er extra kosten bovenop de offerte?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Nee. Onze offerte is een vaste prijs. Enige uitzondering: als er bij het openbreken van muren of vloeren verborgen gebreken opduiken die redelijkerwijze niet voorzienbaar waren. In dat geval informeren we u onmiddellijk en doen we een aanvullende offerte &mdash; u beslist zelf of we doorgaan.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Kunnen we zelf onze tegels en sanitair kiezen?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Absoluut. U kiest zelf uw tegels, sanitair, kranen en afwerking &mdash; wij geven advies waar nodig. We werken samen met leveranciers in de regio en kunnen u ook begeleiden. Materialen zijn inbegrepen in de offerte op basis van de gekozen collectie.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Kunnen we tijdens de werken thuis blijven?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Ja, dat kan. De badkamer is tijdelijk buiten gebruik, maar u kunt in huis blijven. We werken netjes, beschermen aangrenzende ruimtes en ruimen dagelijks op. De meeste gezinnen verblijven gewoon thuis tijdens de werken.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="bg-black" style="padding:90px 0;text-align:center;">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="s-label" style="text-align:center;display:block;">NEEM CONTACT OP</span>
+      <h2 style="font-family:var(--bebas);font-size:clamp(42px,6vw,76px);color:var(--white);line-height:0.93;margin:0 0 18px;letter-spacing:1px;">
+        UW NIEUWE BADKAMER<br/>START MET <span style="color:var(--red);">&#201;&#201;N BERICHT.</span>
+      </h2>
+      <div style="width:50px;height:3px;background:var(--red);margin:0 auto 24px;"></div>
+      <p style="font-family:var(--inter);font-size:16px;color:rgba(255,255,255,0.55);margin:0 0 36px;line-height:1.7;">Geen verplichtingen. Gratis inspectie. Offerte binnen 24 uur.</p>
+      <div class="cta-btns">
+        <a class="btn" href="mailto:info@renorangers.be">STUUR UW AANVRAAG &#8594;</a>
+        <a class="btn btn-outline" href="https://wa.me/32465883919" target="_blank">WHATSAPP: +32 465 88 39 19 &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="/logo.png" alt="Reno Rangers" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=&quot;font-family:Bebas Neue,sans-serif;font-size:22px;color:#fff;letter-spacing:2px;&quot;>RENO<span style=&quot;color:#E63329;&quot;>RANGERS</span></span>'"/>
+        </div>
+        <p class="foot-tagline">Renovatiebedrijf in Antwerpen. Vaste prijs, geen verrassingen.</p>
+      </div>
+      <div>
+        <h4 class="foot-col-title">PAGINA'S</h4>
+        <a class="foot-link" href="https://renorangers.be">Home</a>
+        <a class="foot-link" href="https://renorangers.be/diensten">Diensten</a>
+        <a class="foot-link" href="https://renorangers.be/over">Over ons</a>
+        <a class="foot-link" href="https://renorangers.be/projecten">Projecten</a>
+        <a class="foot-link" href="https://renorangers.be/blog">Blog</a>
+        <a class="foot-link" href="https://renorangers.be/contact">Contact</a>
+      </div>
+      <div>
+        <h4 class="foot-col-title">DIENSTEN</h4>
+        <a class="foot-link" href="https://renorangers.be/diensten">Badkamerrenovatie</a>
+        <a class="foot-link" href="https://renorangers.be/diensten">Totaalrenovatie</a>
+        <a class="foot-link" href="https://renorangers.be/diensten">Binnenafwerking</a>
+        <a class="foot-link" href="https://renorangers.be/diensten">Schilderwerken</a>
+        <a class="foot-link" href="https://renorangers.be/diensten">Vloeren &amp; tegels</a>
+      </div>
+      <div>
+        <h4 class="foot-col-title">CONTACT</h4>
+        <a class="foot-link" href="tel:+32465883919">+32 465 88 39 19</a>
+        <a class="foot-link" href="mailto:info@renorangers.be">info@renorangers.be</a>
+        <span class="foot-link">Antwerpen, Belgi&#235;</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">&copy; 2026 Reno Rangers BV. Alle rechten voorbehouden.</span>
+      <a class="foot-link" href="https://renorangers.be/privacybeleid" style="font-size:11px;">Privacybeleid</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── NAV SCROLL ── */
+function toggleMenu(){
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+// close menu on link click
+document.querySelectorAll('.nav-mobile a').forEach(function(a){
+  a.addEventListener('click', function(){ 
+    document.getElementById('burger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+window.addEventListener('scroll', function(){
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  var fb = document.getElementById('floatBtns');
+  if(window.scrollY > 400){
+    fb.style.opacity='1'; fb.style.transform='none'; fb.style.pointerEvents='auto';
+  } else {
+    fb.style.opacity='0'; fb.style.transform='translateY(16px)'; fb.style.pointerEvents='none';
+  }
+});
+
+/* ── REVEAL ON SCROLL ── */
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!isOpen) item.classList.add('open');
+}
+
+/* ── MARQUEE duplicate for seamless loop ── */
+(function(){
+  var inner = document.querySelector('.marquee-inner');
+  if(inner){ inner.innerHTML += inner.innerHTML; }
+})();
+</script>
+</body>
+</html>
