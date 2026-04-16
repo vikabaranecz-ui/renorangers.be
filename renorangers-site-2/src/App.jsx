@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 /* ── BRAND COLORS ── */
 const C = {
@@ -33,7 +34,17 @@ const IMG = {
 };
 
 const YT_VIDEO = "https://www.youtube.com/embed/cfiRq57YIW4";
-const PHONE_HREF = "tel:+32465883919";
+const PHONE_NUMBER = "+32465883919";
+const PHONE_HREF = `tel:${PHONE_NUMBER}`;
+const PAGE_PATHS = Object.freeze({
+  home: "/",
+  diensten: "/diensten",
+  over: "/over-ons",
+  projecten: "/projecten",
+  blog: "/blog",
+  contact: "/contact",
+  privacy: "/privacybeleid",
+});
 
 /* ── GLOBAL STYLES ── */
 const globalCSS = `
@@ -54,6 +65,35 @@ const globalCSS = `
     .mb { display: none !important; }
   }
 `;
+
+function normalizePathname(pathname) {
+  if (typeof pathname !== "string" || !pathname) return "/";
+  if (pathname === "/") return "/";
+  return pathname.replace(/\/+$/, "").toLowerCase();
+}
+
+function getPathForPage(pageId) {
+  return PAGE_PATHS[pageId] || PAGE_PATHS.home;
+}
+
+function getPageIdFromPath(pathname) {
+  var normalizedPathname = normalizePathname(pathname);
+  var ids = Object.keys(PAGE_PATHS);
+  for (var i = 0; i < ids.length; i += 1) {
+    var pageId = ids[i];
+    if (PAGE_PATHS[pageId] === normalizedPathname) {
+      return pageId;
+    }
+  }
+  return normalizedPathname === "/" ? "home" : "";
+}
+
+function useGoToPage() {
+  var navigate = useNavigate();
+  return function (pageId) {
+    navigate(getPathForPage(pageId));
+  };
+}
 
 /* ── HOOKS ── */
 function useInView(threshold) {
@@ -96,18 +136,30 @@ function Reveal({ children, delay, y, style: extraStyle }) {
   );
 }
 
-function trackPhoneClick(phoneNumber) {
+function normalizePhoneNumber(phoneNumber) {
+  if (typeof phoneNumber !== "string") return "";
+  return phoneNumber.trim().replace(/^tel:/i, "").replace(/\s+/g, "");
+}
+
+function handlePhoneClick(event, phoneNumber) {
+  if (event && typeof event.preventDefault === "function") {
+    event.preventDefault();
+  }
+
+  var normalizedPhoneNumber = normalizePhoneNumber(phoneNumber);
+  if (!normalizedPhoneNumber) return;
+  var phoneHref = `tel:${normalizedPhoneNumber}`;
+
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: "phone_click",
-    phone_number: phoneNumber,
+    phone_number: normalizedPhoneNumber,
   });
-}
 
-function handlePhoneLinkClick(href) {
-  if (typeof href !== "string" || !href.toLowerCase().startsWith("tel:")) return;
-  trackPhoneClick(href.replace(/^tel:/i, ""));
+  window.setTimeout(function () {
+    window.location.href = phoneHref;
+  }, 120);
 }
 
 /* ── LOGO ── */
@@ -293,7 +345,10 @@ function VideoEmbed({ light, label, title, desc }) {
 }
 
 /* ── NAV ── */
-function Nav({ page, setPage }) {
+function Nav() {
+  var location = useLocation();
+  var goToPage = useGoToPage();
+  var page = getPageIdFromPath(location.pathname);
   var _useState2 = useState(false);
   var scrolled = _useState2[0];
   var setScrolled = _useState2[1];
@@ -317,9 +372,8 @@ function Nav({ page, setPage }) {
   ];
 
   var go = function (id) {
-    setPage(id);
+    goToPage(id);
     setMenuOpen(false);
-    window.scrollTo(0, 0);
   };
 
   return (
@@ -437,8 +491,8 @@ function Nav({ page, setPage }) {
 /* ══════════════════════════════════
    HOME PAGE
    ══════════════════════════════════ */
-function Home({ setPage }) {
-  var go = function (id) { setPage(id); window.scrollTo(0, 0); };
+function Home() {
+  var go = useGoToPage();
 
   return (
     <div>
@@ -699,8 +753,8 @@ function Home({ setPage }) {
 /* ══════════════════════════════════
    DIENSTEN PAGE
    ══════════════════════════════════ */
-function Diensten({ setPage }) {
-  var go = function (id) { setPage(id); window.scrollTo(0, 0); };
+function Diensten() {
+  var go = useGoToPage();
 
   var services = [
     {
@@ -912,8 +966,8 @@ function Privacy() {
 /* ══════════════════════════════════
    OVER ONS PAGE
    ══════════════════════════════════ */
-function Over({ setPage }) {
-  var go = function (id) { setPage(id); window.scrollTo(0, 0); };
+function Over() {
+  var go = useGoToPage();
   var areas = ["Antwerpen (alle districten)", "Mortsel", "Hove", "Edegem", "Borsbeek", "Boechout", "Kontich", "Lint", "Aartselaar", "Wommelgem", "Wijnegem", "Schoten", "Deurne", "Wilrijk", "Hoboken", "Kapellen", "Brasschaat", "Ekeren"];
 
   return (
@@ -1137,7 +1191,7 @@ function Contact() {
               <div style={{ width: 44, height: 3, background: C.red, marginBottom: 28 }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 36 }}>
                 {[{ l: "TELEFOON", v: "+32 465 88 39 19", h: PHONE_HREF }, { l: "E-MAIL", v: "info@renorangers.be", h: "mailto:info@renorangers.be" }, { l: "WHATSAPP", v: "Stuur een bericht", h: "https://wa.me/32465883919" }].map(c => (
-                  <a key={c.l} href={c.h} onClick={c.h.startsWith("tel:") ? function () { handlePhoneLinkClick(c.h); } : undefined} target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
+                  <a key={c.l} href={c.h} onClick={c.h.startsWith("tel:") ? function (e) { handlePhoneClick(e, c.h); } : undefined} target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
                     <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 14, color: C.red }}>{c.l.charAt(0)}</span></div>
                     <div><div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>{c.l}</div><div style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>{c.v}</div></div>
                   </a>
@@ -1219,8 +1273,8 @@ function Contact() {
 /* ══════════════════════════════════
    FOOTER
    ══════════════════════════════════ */
-function Foot({ setPage }) {
-  var go = function (id) { setPage(id); window.scrollTo(0, 0); };
+function Foot() {
+  var go = useGoToPage();
   var pageLinks = [
     { l: "Home", id: "home" },
     { l: "Diensten", id: "diensten" },
@@ -1264,7 +1318,7 @@ function Foot({ setPage }) {
           <div>
             <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, margin: "0 0 16px" }}>CONTACT</h4>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.9 }}>
-              <a href={PHONE_HREF} onClick={function () { handlePhoneLinkClick(PHONE_HREF); }} style={{ color: "inherit", textDecoration: "none", display: "block" }}>+32 465 88 39 19</a>
+              <a href={PHONE_HREF} onClick={function (e) { handlePhoneClick(e, PHONE_NUMBER); }} style={{ color: "inherit", textDecoration: "none", display: "block" }}>+32 465 88 39 19</a>
               <a href="mailto:info@renorangers.be" style={{ color: "inherit", textDecoration: "none", display: "block" }}>info@renorangers.be</a>
               <span style={{ display: "block" }}>{"Antwerpen, Belgi\u00eb"}</span>
             </div>
@@ -1301,10 +1355,67 @@ function FloatBtns() {
       <a href="https://wa.me/32465883919" target="_blank" rel="noopener noreferrer" style={{ width: 50, height: 50, background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(37,211,102,0.35)", textDecoration: "none" }}>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z" /></svg>
       </a>
-      <a href={PHONE_HREF} onClick={function () { handlePhoneLinkClick(PHONE_HREF); }} style={{ width: 50, height: 50, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(230,51,41,0.35)", textDecoration: "none" }}>
+      <a href={PHONE_HREF} onClick={function (e) { handlePhoneClick(e, PHONE_NUMBER); }} style={{ width: 50, height: 50, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(230,51,41,0.35)", textDecoration: "none" }}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
       </a>
     </div>
+  );
+}
+
+function RouteEffects() {
+  var location = useLocation();
+
+  useEffect(function () {
+    if (typeof window === "undefined") return;
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  useEffect(function () {
+    if (typeof document === "undefined" || typeof window === "undefined") return;
+
+    var canonicalPath = normalizePathname(location.pathname);
+    var canonicalHref = canonicalPath === "/" ? window.location.origin + "/" : window.location.origin + canonicalPath;
+    var canonicalEl = document.querySelector('link[rel="canonical"]');
+
+    if (!canonicalEl) {
+      canonicalEl = document.createElement("link");
+      canonicalEl.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalEl);
+    }
+
+    canonicalEl.setAttribute("href", canonicalHref);
+  }, [location.pathname]);
+
+  return null;
+}
+
+function NotFound() {
+  var navigate = useNavigate();
+
+  return (
+    <section style={{ paddingTop: 72, minHeight: "70vh", background: C.off }}>
+      <div style={{ background: C.black, padding: "76px 0 56px" }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>404</span>
+            <h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0" }}>
+              PAGINA <span style={{ color: C.red }}>NIET GEVONDEN</span>
+            </h1>
+          </Reveal>
+        </div>
+      </div>
+      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "48px 32px" }}>
+        <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 16, color: C.gray, margin: "0 0 22px", lineHeight: 1.7 }}>
+          De pagina die u zoekt bestaat niet of is verplaatst.
+        </p>
+        <button
+          onClick={function () { navigate(PAGE_PATHS.home); }}
+          style={{ background: C.red, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, letterSpacing: 3, padding: "16px 32px" }}
+        >
+          TERUG NAAR HOME
+        </button>
+      </div>
+    </section>
   );
 }
 
@@ -1312,43 +1423,23 @@ function FloatBtns() {
    APP ROOT
    ══════════════════════════════════ */
 export default function App() {
-  var _page = useState("home");
-  var page = _page[0];
-  var setPage = _page[1];
-
-  // Sync URL with SPA pages (only special slug for privacybeleid)
-  useEffect(function () {
-    if (typeof window === "undefined") return;
-    var path = window.location.pathname.toLowerCase();
-    if (path.includes("privacybeleid")) {
-      setPage("privacy");
-    }
-  }, []);
-
-  useEffect(function () {
-    if (typeof window === "undefined") return;
-    var desired = page === "privacy" ? "/privacybeleid" : "/";
-    if (window.location.pathname !== desired) {
-      window.history.replaceState({}, "", desired);
-    }
-  }, [page]);
-
-  var pages = {
-    home: <Home setPage={setPage} />,
-    diensten: <Diensten setPage={setPage} />,
-    over: <Over setPage={setPage} />,
-    projecten: <Projecten setPage={setPage} />,
-    blog: <Blog setPage={setPage} />,
-    privacy: <Privacy />,
-    contact: <Contact />,
-  };
-
   return (
     <div style={{ background: C.white, minHeight: "100vh" }}>
       <style>{globalCSS}</style>
-      <Nav page={page} setPage={setPage} />
-      {pages[page]}
-      <Foot setPage={setPage} />
+      <RouteEffects />
+      <Nav />
+      <Routes>
+        <Route path={PAGE_PATHS.home} element={<Home />} />
+        <Route path={PAGE_PATHS.over} element={<Over />} />
+        <Route path={PAGE_PATHS.diensten} element={<Diensten />} />
+        <Route path={PAGE_PATHS.contact} element={<Contact />} />
+        <Route path={PAGE_PATHS.projecten} element={<Projecten />} />
+        <Route path={PAGE_PATHS.blog} element={<Blog />} />
+        <Route path={PAGE_PATHS.privacy} element={<Privacy />} />
+        <Route path="/over" element={<Navigate to={PAGE_PATHS.over} replace />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Foot />
       <FloatBtns />
     </div>
   );
