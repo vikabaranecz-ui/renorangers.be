@@ -45,6 +45,50 @@ const PAGE_PATHS = Object.freeze({
   contact: "/contact",
   privacy: "/privacybeleid",
 });
+const ROUTE_SEO = Object.freeze({
+  [PAGE_PATHS.home]: {
+    title: "Reno Rangers — Renovatiebedrijf Antwerpen | Totaalrenovatie, Badkamerrenovatie & Binnenafwerking",
+    description: "Reno Rangers is uw renovatie aannemer in Antwerpen voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, één aanspreekpunt, correcte oplevering.",
+    ogTitle: "Reno Rangers — Renovatiebedrijf Antwerpen",
+    ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen.",
+  },
+  [PAGE_PATHS.over]: {
+    title: "Over Ons | Reno Rangers Renovatiebedrijf Antwerpen",
+    description: "Leer Reno Rangers kennen: ervaren renovatieaannemer in Antwerpen met focus op vakmanschap, duidelijke planning en vaste prijzen.",
+    ogTitle: "Over Ons — Reno Rangers",
+    ogDescription: "Wie zijn wij? Ontdek onze aanpak, expertise en werkgebied in Antwerpen.",
+  },
+  [PAGE_PATHS.diensten]: {
+    title: "Diensten | Reno Rangers Antwerpen",
+    description: "Bekijk onze renovatiediensten in Antwerpen: badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking door Reno Rangers.",
+    ogTitle: "Onze Diensten — Reno Rangers",
+    ogDescription: "Van badkamerrenovatie tot totaalrenovatie en binnenafwerking in Antwerpen.",
+  },
+  [PAGE_PATHS.contact]: {
+    title: "Contact | Reno Rangers Antwerpen",
+    description: "Neem contact op met Reno Rangers voor een gratis offerte of adviesgesprek over uw renovatieproject in Antwerpen.",
+    ogTitle: "Contact — Reno Rangers",
+    ogDescription: "Vraag een gratis offerte aan voor uw renovatieproject in Antwerpen.",
+  },
+  [PAGE_PATHS.projecten]: {
+    title: "Projecten | Reno Rangers Antwerpen",
+    description: "Bekijk recente renovatieprojecten van Reno Rangers in Antwerpen: keukens, badkamers en totaalrenovaties.",
+    ogTitle: "Projecten — Reno Rangers",
+    ogDescription: "Portfolio van uitgevoerde renovatieprojecten in Antwerpen.",
+  },
+  [PAGE_PATHS.blog]: {
+    title: "Blog | Reno Rangers Renovatietips",
+    description: "Lees renovatietips en inzichten van Reno Rangers over badkamerrenovatie, totaalrenovatie en binnenafwerking in België.",
+    ogTitle: "Blog — Reno Rangers",
+    ogDescription: "Praktische renovatietips voor uw woning in Antwerpen.",
+  },
+  [PAGE_PATHS.privacy]: {
+    title: "Privacybeleid | Reno Rangers",
+    description: "Lees het privacybeleid van Reno Rangers en ontdek hoe we persoonsgegevens verwerken en beschermen.",
+    ogTitle: "Privacybeleid — Reno Rangers",
+    ogDescription: "Informatie over privacy, gegevensverwerking en uw rechten.",
+  },
+});
 
 /* ── GLOBAL STYLES ── */
 const globalCSS = `
@@ -92,6 +136,16 @@ function useGoToPage() {
   var navigate = useNavigate();
   return function (pageId) {
     navigate(getPathForPage(pageId));
+  };
+}
+
+function getRouteSeo(pathname) {
+  var normalizedPathname = normalizePathname(pathname);
+  return ROUTE_SEO[normalizedPathname] || {
+    title: "404 | Reno Rangers",
+    description: "Pagina niet gevonden.",
+    ogTitle: "404 — Reno Rangers",
+    ogDescription: "De gevraagde pagina bestaat niet.",
   };
 }
 
@@ -1374,8 +1428,21 @@ function RouteEffects() {
     if (typeof document === "undefined" || typeof window === "undefined") return;
 
     var canonicalPath = normalizePathname(location.pathname);
+    var routeSeo = getRouteSeo(canonicalPath);
+    var isKnownRoute = Boolean(ROUTE_SEO[canonicalPath]);
     var canonicalHref = canonicalPath === "/" ? window.location.origin + "/" : window.location.origin + canonicalPath;
     var canonicalEl = document.querySelector('link[rel="canonical"]');
+    var ensureMeta = function (selector, attrName, attrValue) {
+      var metaEl = document.querySelector(selector);
+      if (!metaEl) {
+        metaEl = document.createElement("meta");
+        metaEl.setAttribute(attrName, attrValue);
+        document.head.appendChild(metaEl);
+      }
+      return metaEl;
+    };
+
+    document.title = routeSeo.title;
 
     if (!canonicalEl) {
       canonicalEl = document.createElement("link");
@@ -1384,6 +1451,14 @@ function RouteEffects() {
     }
 
     canonicalEl.setAttribute("href", canonicalHref);
+
+    ensureMeta('meta[name="description"]', "name", "description").setAttribute("content", routeSeo.description);
+    ensureMeta('meta[property="og:title"]', "property", "og:title").setAttribute("content", routeSeo.ogTitle || routeSeo.title);
+    ensureMeta('meta[property="og:description"]', "property", "og:description").setAttribute("content", routeSeo.ogDescription || routeSeo.description);
+    ensureMeta('meta[property="og:url"]', "property", "og:url").setAttribute("content", canonicalHref);
+    ensureMeta('meta[name="twitter:title"]', "name", "twitter:title").setAttribute("content", routeSeo.ogTitle || routeSeo.title);
+    ensureMeta('meta[name="twitter:description"]', "name", "twitter:description").setAttribute("content", routeSeo.ogDescription || routeSeo.description);
+    ensureMeta('meta[name="robots"]', "name", "robots").setAttribute("content", isKnownRoute ? "index, follow" : "noindex, follow");
   }, [location.pathname]);
 
   return null;
