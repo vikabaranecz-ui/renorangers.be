@@ -33,6 +33,7 @@ const IMG = {
 };
 
 const YT_VIDEO = "https://www.youtube.com/embed/cfiRq57YIW4";
+const PHONE_HREF = "tel:+32465883919";
 
 /* ── GLOBAL STYLES ── */
 const globalCSS = `
@@ -93,6 +94,20 @@ function Reveal({ children, delay, y, style: extraStyle }) {
       {children}
     </div>
   );
+}
+
+function trackPhoneClick(phoneNumber) {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "phone_click",
+    phone_number: phoneNumber,
+  });
+}
+
+function handlePhoneLinkClick(href) {
+  if (typeof href !== "string" || !href.toLowerCase().startsWith("tel:")) return;
+  trackPhoneClick(href.replace(/^tel:/i, ""));
 }
 
 /* ── LOGO ── */
@@ -1121,8 +1136,8 @@ function Contact() {
               <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 32, color: C.black, margin: "0 0 20px" }}>CONTACTGEGEVENS</h2>
               <div style={{ width: 44, height: 3, background: C.red, marginBottom: 28 }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 36 }}>
-                {[{ l: "TELEFOON", v: "+32 465 88 39 19", h: "tel:+32465883919" }, { l: "E-MAIL", v: "info@renorangers.be", h: "mailto:info@renorangers.be" }, { l: "WHATSAPP", v: "Stuur een bericht", h: "https://wa.me/32465883919" }].map(c => (
-                  <a key={c.l} href={c.h} target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
+                {[{ l: "TELEFOON", v: "+32 465 88 39 19", h: PHONE_HREF }, { l: "E-MAIL", v: "info@renorangers.be", h: "mailto:info@renorangers.be" }, { l: "WHATSAPP", v: "Stuur een bericht", h: "https://wa.me/32465883919" }].map(c => (
+                  <a key={c.l} href={c.h} onClick={c.h.startsWith("tel:") ? function () { handlePhoneLinkClick(c.h); } : undefined} target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
                     <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 14, color: C.red }}>{c.l.charAt(0)}</span></div>
                     <div><div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>{c.l}</div><div style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>{c.v}</div></div>
                   </a>
@@ -1143,7 +1158,7 @@ function Contact() {
                 {sent ? (
                   <div style={{ textAlign: "center", padding: "44px 0" }}>
                     <div style={{ width: 52, height: 52, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 18px" }}><span style={{ color: C.white, fontSize: 26 }}>&#10003;</span></div>
-                    <h3 className="form-success" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: C.black }}>BERICHT VERZONDEN</h3>
+                    <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: C.black }}>BERICHT VERZONDEN</h3>
                     <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 14, color: C.gray, marginTop: 6 }}>We nemen zo snel mogelijk contact met u op.</p>
                   </div>
                 ) : (
@@ -1249,7 +1264,7 @@ function Foot({ setPage }) {
           <div>
             <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, margin: "0 0 16px" }}>CONTACT</h4>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.9 }}>
-              <a href="tel:+32465883919" style={{ color: "inherit", textDecoration: "none", display: "block" }}>+32 465 88 39 19</a>
+              <a href={PHONE_HREF} onClick={function () { handlePhoneLinkClick(PHONE_HREF); }} style={{ color: "inherit", textDecoration: "none", display: "block" }}>+32 465 88 39 19</a>
               <a href="mailto:info@renorangers.be" style={{ color: "inherit", textDecoration: "none", display: "block" }}>info@renorangers.be</a>
               <span style={{ display: "block" }}>{"Antwerpen, Belgi\u00eb"}</span>
             </div>
@@ -1286,7 +1301,7 @@ function FloatBtns() {
       <a href="https://wa.me/32465883919" target="_blank" rel="noopener noreferrer" style={{ width: 50, height: 50, background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(37,211,102,0.35)", textDecoration: "none" }}>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z" /></svg>
       </a>
-      <a href="tel:+32465883919" style={{ width: 50, height: 50, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(230,51,41,0.35)", textDecoration: "none" }}>
+      <a href={PHONE_HREF} onClick={function () { handlePhoneLinkClick(PHONE_HREF); }} style={{ width: 50, height: 50, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(230,51,41,0.35)", textDecoration: "none" }}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
       </a>
     </div>
