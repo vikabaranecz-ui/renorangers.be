@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 /* ── BRAND COLORS ── */
 const C = {
@@ -118,18 +118,6 @@ function normalizePathname(pathname) {
 
 function getPathForPage(pageId) {
   return PAGE_PATHS[pageId] || PAGE_PATHS.home;
-}
-
-function getPageIdFromPath(pathname) {
-  var normalizedPathname = normalizePathname(pathname);
-  var ids = Object.keys(PAGE_PATHS);
-  for (var i = 0; i < ids.length; i += 1) {
-    var pageId = ids[i];
-    if (PAGE_PATHS[pageId] === normalizedPathname) {
-      return pageId;
-    }
-  }
-  return normalizedPathname === "/" ? "home" : "";
 }
 
 function useGoToPage() {
@@ -401,8 +389,6 @@ function VideoEmbed({ light, label, title, desc }) {
 /* ── NAV ── */
 function Nav() {
   var location = useLocation();
-  var goToPage = useGoToPage();
-  var page = getPageIdFromPath(location.pathname);
   var _useState2 = useState(false);
   var scrolled = _useState2[0];
   var setScrolled = _useState2[1];
@@ -417,18 +403,13 @@ function Nav() {
   }, []);
 
   var links = [
-    { id: "home", l: "HOME" },
-    { id: "diensten", l: "DIENSTEN" },
-    { id: "over", l: "OVER ONS" },
-    { id: "projecten", l: "PROJECTEN" },
-    { id: "blog", l: "BLOG" },
-    { id: "contact", l: "CONTACT" },
+    { to: PAGE_PATHS.home, l: "HOME" },
+    { to: PAGE_PATHS.diensten, l: "DIENSTEN" },
+    { to: PAGE_PATHS.over, l: "OVER ONS" },
+    { to: PAGE_PATHS.projecten, l: "PROJECTEN" },
+    { to: PAGE_PATHS.blog, l: "BLOG" },
+    { to: PAGE_PATHS.contact, l: "CONTACT" },
   ];
-
-  var go = function (id) {
-    goToPage(id);
-    setMenuOpen(false);
-  };
 
   return (
     <nav
@@ -455,16 +436,16 @@ function Nav() {
           height: 70,
         }}
       >
-        <div style={{ cursor: "pointer" }} onClick={function () { go("home"); }}>
+        <Link to={PAGE_PATHS.home} style={{ cursor: "pointer", display: "inline-block" }} onClick={function () { setMenuOpen(false); }}>
           <Logo light size={0.75} />
-        </div>
+        </Link>
 
         <div className="dn" style={{ display: "flex", alignItems: "center", gap: 6 }}>
           {links.map(function (link) {
             return (
-              <button
-                key={link.id}
-                onClick={function () { go(link.id); }}
+              <NavLink
+                key={link.to}
+                to={link.to}
                 style={{
                   background: "none",
                   border: "none",
@@ -473,16 +454,17 @@ function Nav() {
                   fontFamily: "'Bebas Neue', sans-serif",
                   fontSize: 14,
                   letterSpacing: 2,
-                  color: page === link.id ? C.red : "rgba(255,255,255,0.6)",
+                  color: normalizePathname(location.pathname) === normalizePathname(link.to) ? C.red : "rgba(255,255,255,0.6)",
                   transition: "color 0.2s",
+                  textDecoration: "none",
                 }}
               >
                 {link.l}
-              </button>
+              </NavLink>
             );
           })}
-          <button
-            onClick={function () { go("contact"); }}
+          <Link
+            to={PAGE_PATHS.contact}
             style={{
               background: C.red,
               color: C.white,
@@ -494,10 +476,12 @@ function Nav() {
               padding: "10px 22px",
               marginLeft: 6,
               transition: "all 0.2s",
+              textDecoration: "none",
+              display: "inline-block",
             }}
           >
             GRATIS OFFERTE
-          </button>
+          </Link>
         </div>
 
         <button
@@ -517,9 +501,10 @@ function Nav() {
         <div style={{ background: C.black, padding: "14px 32px 20px", display: "flex", flexDirection: "column", gap: 10, borderTop: "1px solid rgba(255,255,255,0.05)" }}>
           {links.map(function (link) {
             return (
-              <button
-                key={link.id}
-                onClick={function () { go(link.id); }}
+              <NavLink
+                key={link.to}
+                to={link.to}
+                onClick={function () { setMenuOpen(false); }}
                 style={{
                   background: "none",
                   border: "none",
@@ -528,12 +513,13 @@ function Nav() {
                   fontFamily: "'Bebas Neue', sans-serif",
                   fontSize: 20,
                   letterSpacing: 3,
-                  color: page === link.id ? C.red : C.white,
+                  color: normalizePathname(location.pathname) === normalizePathname(link.to) ? C.red : C.white,
                   padding: "5px 0",
+                  textDecoration: "none",
                 }}
               >
                 {link.l}
-              </button>
+              </NavLink>
             );
           })}
         </div>
@@ -1328,14 +1314,13 @@ function Contact() {
    FOOTER
    ══════════════════════════════════ */
 function Foot() {
-  var go = useGoToPage();
   var pageLinks = [
-    { l: "Home", id: "home" },
-    { l: "Diensten", id: "diensten" },
-    { l: "Over ons", id: "over" },
-    { l: "Projecten", id: "projecten" },
-    { l: "Blog", id: "blog" },
-    { l: "Contact", id: "contact" },
+    { l: "Home", to: PAGE_PATHS.home },
+    { l: "Diensten", to: PAGE_PATHS.diensten },
+    { l: "Over ons", to: PAGE_PATHS.over },
+    { l: "Projecten", to: PAGE_PATHS.projecten },
+    { l: "Blog", to: PAGE_PATHS.blog },
+    { l: "Contact", to: PAGE_PATHS.contact },
   ];
   var serviceLinks = ["Totaalrenovatie", "Badkamerrenovatie", "Binnenafwerking", "Schilderwerken", "Vloeren & tegels"];
 
@@ -1353,9 +1338,9 @@ function Foot() {
             <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, margin: "0 0 16px" }}>{"PAGINA'S"}</h4>
             {pageLinks.map(function (link) {
               return (
-                <button key={link.id} onClick={function () { go(link.id); }} style={{ display: "block", background: "none", border: "none", cursor: "pointer", padding: "4px 0", fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)" }}>
+                <Link key={link.to} to={link.to} style={{ display: "block", padding: "4px 0", fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", textDecoration: "none" }}>
                   {link.l}
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -1363,9 +1348,9 @@ function Foot() {
             <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, margin: "0 0 16px" }}>DIENSTEN</h4>
             {serviceLinks.map(function (link) {
               return (
-                <button key={link} onClick={function () { go("diensten"); }} style={{ display: "block", background: "none", border: "none", cursor: "pointer", padding: "4px 0", fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)" }}>
+                <Link key={link} to={PAGE_PATHS.diensten} style={{ display: "block", padding: "4px 0", fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", textDecoration: "none" }}>
                   {link}
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -1380,12 +1365,12 @@ function Foot() {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 20, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.2)" }}>{"© 2026 Reno Rangers BV. Alle rechten voorbehouden."}</span>
-          <button
-            onClick={function () { go("privacy"); }}
-            style={{ background: "none", border: "none", color: "rgba(255,255,255,0.8)", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 11, padding: 0 }}
+          <Link
+            to={PAGE_PATHS.privacy}
+            style={{ color: "rgba(255,255,255,0.8)", fontFamily: "'Inter', sans-serif", fontSize: 11, textDecoration: "none" }}
           >
             Privacybeleid
-          </button>
+          </Link>
         </div>
       </div>
     </footer>
