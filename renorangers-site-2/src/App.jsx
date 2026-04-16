@@ -36,6 +36,9 @@ const IMG = {
 const YT_VIDEO = "https://www.youtube.com/embed/cfiRq57YIW4";
 const PHONE_NUMBER = "+32465883919";
 const PHONE_HREF = `tel:${PHONE_NUMBER}`;
+const SITE_ORIGIN = "https://www.renorangers.be";
+const PRIMARY_HOST = "www.renorangers.be";
+const ALLOWED_HOSTS = Object.freeze([PRIMARY_HOST, "renorangers.be"]);
 const PAGE_PATHS = Object.freeze({
   home: "/",
   diensten: "/diensten",
@@ -1406,6 +1409,24 @@ function RouteEffects() {
 
   useEffect(function () {
     if (typeof window === "undefined") return;
+
+    var host = window.location.hostname.toLowerCase();
+    var isLocalhost = host === "localhost" || host === "127.0.0.1";
+    if (isLocalhost) return;
+
+    var isKnownPublicHost = ALLOWED_HOSTS.indexOf(host) !== -1;
+    if (!isKnownPublicHost) return;
+
+    var shouldForceHttps = window.location.protocol !== "https:";
+    var shouldForcePrimaryHost = host !== PRIMARY_HOST;
+    if (!shouldForceHttps && !shouldForcePrimaryHost) return;
+
+    var secureUrl = SITE_ORIGIN + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(secureUrl);
+  }, []);
+
+  useEffect(function () {
+    if (typeof window === "undefined") return;
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
@@ -1415,7 +1436,7 @@ function RouteEffects() {
     var canonicalPath = normalizePathname(location.pathname);
     var routeSeo = getRouteSeo(canonicalPath);
     var isKnownRoute = Boolean(ROUTE_SEO[canonicalPath]);
-    var canonicalHref = canonicalPath === "/" ? window.location.origin + "/" : window.location.origin + canonicalPath;
+    var canonicalHref = canonicalPath === "/" ? SITE_ORIGIN + "/" : SITE_ORIGIN + canonicalPath;
     var canonicalEl = document.querySelector('link[rel="canonical"]');
     var ensureMeta = function (selector, attrName, attrValue) {
       var metaEl = document.querySelector(selector);
