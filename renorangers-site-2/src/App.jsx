@@ -1143,7 +1143,7 @@ function Contact() {
                 {sent ? (
                   <div style={{ textAlign: "center", padding: "44px 0" }}>
                     <div style={{ width: 52, height: 52, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 18px" }}><span style={{ color: C.white, fontSize: 26 }}>&#10003;</span></div>
-                    <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: C.black }}>BERICHT VERZONDEN</h3>
+                    <h3 className="form-success" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: C.black }}>BERICHT VERZONDEN</h3>
                     <p style={{ fontFamily: "'Inter',sans-serif", fontSize: 14, color: C.gray, marginTop: 6 }}>We nemen zo snel mogelijk contact met u op.</p>
                   </div>
                 ) : (
