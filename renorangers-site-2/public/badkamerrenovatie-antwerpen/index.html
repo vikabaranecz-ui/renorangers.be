@@ -137,6 +137,7 @@ img{display:block;max-width:100%;}
 .ba-before{background:linear-gradient(160deg,#2a1a14,#3d2820);}
 .ba-after{background:linear-gradient(160deg,#0d1f35,#0a2d50);}
 .ba-svg{position:absolute;inset:0;width:100%;height:100%;}
+.ba-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .ba-label-tag{position:absolute;bottom:0;left:0;right:0;padding:10px 16px;font-family:var(--bebas);font-size:18px;letter-spacing:3px;color:var(--white);background:rgba(230,51,41,0.9);text-align:center;}
 
 /* ── URGENCY BAR ── */
@@ -417,41 +418,12 @@ footer{background:#0A0A0A;border-top:3px solid #E63329;}
         <div class="ba-grid">
           <!-- BEFORE panel -->
           <div class="ba-panel ba-before">
-            <svg class="ba-svg" viewBox="0 0 200 266" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="52" height="52" fill="none" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-              <rect x="65" y="8" width="52" height="52" fill="none" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-              <rect x="122" y="8" width="70" height="52" fill="none" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-              <rect x="8" y="65" width="52" height="52" fill="rgba(180,120,80,0.15)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-              <rect x="65" y="65" width="52" height="52" fill="rgba(180,120,80,0.15)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-              <rect x="122" y="65" width="70" height="52" fill="rgba(180,120,80,0.15)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-              <line x1="75" y1="8" x2="92" y2="60" stroke="#ff4444" stroke-width="2" opacity="0.6"/>
-              <line x1="92" y1="60" x2="108" y2="50" stroke="#ff4444" stroke-width="2" opacity="0.6"/>
-              <line x1="10" y1="78" x2="60" y2="110" stroke="#ff4444" stroke-width="1.5" opacity="0.5"/>
-              <circle cx="30" cy="35" r="4" fill="rgba(80,180,80,0.4)"/>
-              <circle cx="44" cy="48" r="3" fill="rgba(80,180,80,0.3)"/>
-              <rect x="15" y="155" width="170" height="95" rx="6" fill="rgba(140,100,70,0.12)" stroke="#b08060" stroke-width="1.5" opacity="0.6"/>
-              <ellipse cx="100" cy="182" rx="65" ry="22" fill="rgba(140,100,70,0.18)" stroke="#b08060" stroke-width="1.5" opacity="0.5"/>
-            </svg>
+            <img class="ba-photo" src="/badkammermerksemvoor.jpg" alt="Badkamer voor renovatie Merksem" onerror="this.style.display='none'"/>
             <div class="ba-label-tag">VOOR</div>
           </div>
           <!-- AFTER panel -->
           <div class="ba-panel ba-after">
-            <svg class="ba-svg" viewBox="0 0 200 266" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="38" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-              <rect x="50" y="8" width="38" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-              <rect x="92" y="8" width="38" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-              <rect x="134" y="8" width="58" height="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" stroke-width="1"/>
-              <rect x="8" y="50" width="38" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-              <rect x="50" y="50" width="38" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-              <rect x="92" y="50" width="38" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-              <rect x="134" y="50" width="58" height="38" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-              <rect x="8" y="100" width="90" height="158" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-              <circle cx="80" cy="115" r="10" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-              <line x1="80" y1="125" x2="80" y2="190" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3,3"/>
-              <rect x="108" y="160" width="84" height="40" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-              <ellipse cx="150" cy="162" rx="42" ry="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-              <rect x="142" y="148" width="16" height="18" rx="3" fill="rgba(230,51,41,0.6)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-            </svg>
+            <img class="ba-photo" src="/bathroom.jpg" alt="Badkamer na renovatie" onerror="this.style.display='none'"/>
             <div class="ba-label-tag">NA</div>
           </div>
         </div>
@@ -515,7 +487,7 @@ footer{background:#0A0A0A;border-top:3px solid #E63329;}
         <div class="ba-set-imgs">
           <div class="ba-img-wrap">
             <span class="ba-tag ba-tag-before">VOOR</span>
-            <img src="/toiletmerksemvoor.jpg" alt="Badkamer voor renovatie Merksem"
+            <img src="/toiletmerksem.jpg" alt="Badkamer voor renovatie Merksem"
                  onerror="this.parentNode.style.background='linear-gradient(160deg,#2a1a14,#3d2820)'"/>
           </div>
           <div class="ba-img-wrap">
