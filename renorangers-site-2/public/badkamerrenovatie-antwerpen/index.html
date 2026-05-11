@@ -3,929 +3,1180 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<!-- Google Tag Manager -->
+<title>Badkamerrenovatie Antwerpen | Één Bedrijf, Vaste Prijs | Reno Rangers</title>
+<meta name="description" content="Eén bedrijf voor uw volledige badkamerrenovatie in Antwerpen. Vaste prijs op papier. Geen meerwerken zonder akkoord. Van afbraak tot afwerking — wij regelen alles."/>
+<link rel="canonical" href="https://www.renorangers.be/badkamerrenovatie-antwerpen"/>
+
+<!-- META PIXEL — voor GTM -->
 <script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID_HERE');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+<!-- GTM -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-59QCRF39');
-</script>
-<!-- End Google Tag Manager -->
-<title>Badkamerrenovatie Antwerpen | Gratis plaatsbezoek + gedetailleerde offerte | Reno Rangers</title>
-<meta name="description" content="Badkamer renoveren in Antwerpen? Start met een gratis plaatsbezoek. Wij bekijken uw badkamer ter plaatse en bezorgen u een gedetailleerde offerte met duidelijke planning."/>
-<link rel="canonical" href="https://www.renorangers.be/badkamerrenovatie-antwerpen"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-/* ── RESET & BASE ── */
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{overflow-x:hidden;font-family:'Inter',sans-serif;background:#F5F5F5;}
-::selection{background:#E6332930;color:#0A0A0A;}
-a{text-decoration:none;}
-img{display:block;max-width:100%;}
+})(window,document,'script','dataLayer','GTM-59QCRF39');</script>
 
-/* ── BRAND TOKENS ── */
+<!-- FONTS & PRELOAD -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="image" href="badkamerantwerpenzwart.jpg" fetchpriority="high"/>
+<link rel="preload" as="style"
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"/>
+</noscript>
+
+<style>
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:'Inter',sans-serif;
+  font-size:16px;           /* min 16px — voorkomt iOS zoom */
+  line-height:1.6;
+  color:#0A0A0A;
+  background:#fff;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+
+/* ─────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────── */
 :root{
   --red:#E63329;
   --black:#0A0A0A;
-  --dark:#141414;
-  --char:#2A2A2A;
-  --gray:#777777;
-  --ltGray:#E0E0E0;
   --off:#F5F5F5;
-  --white:#FFFFFF;
-  --bebas:'Bebas Neue',sans-serif;
-  --inter:'Inter',sans-serif;
-  --max:1320px;
+  --border:#E0E0E0;
+  --muted:#666;
+  --max:1180px;
+  --pad:20px;    /* mobile padding */
 }
+@media(min-width:768px){:root{--pad:32px;}}
+@media(min-width:1200px){:root{--pad:40px;}}
 
-/* ── MARQUEE ── */
-@keyframes mL{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-@keyframes mR{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
-.marquee-track{overflow:hidden;background:var(--red);padding:13px 0;white-space:nowrap;}
-.marquee-inner{display:inline-flex;animation:mL 28s linear infinite;}
-.marquee-inner.rev{animation:mR 28s linear infinite;}
-.marquee-item{font-family:var(--bebas);font-size:15px;color:var(--white);letter-spacing:3px;padding:0 20px;}
-.marquee-sep{opacity:0.4;}
+/* ─────────────────────────────────────────
+   LAYOUT HELPERS
+───────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad);}
+.sec{padding:72px 0;}
+@media(min-width:768px){.sec{padding:96px 0;}}
 
-/* ── REVEAL ANIMATION ── */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
-.reveal.visible{opacity:1;transform:none;}
-.reveal[data-delay="1"]{transition-delay:0.08s;}
-.reveal[data-delay="2"]{transition-delay:0.15s;}
-.reveal[data-delay="3"]{transition-delay:0.22s;}
-.reveal[data-delay="4"]{transition-delay:0.3s;}
-.reveal[data-delay="5"]{transition-delay:0.38s;}
+/* ─────────────────────────────────────────
+   TYPOGRAPHY — TRUST-BY-SKIMMING
+   Koppen vertellen het complete verhaal
+───────────────────────────────────────── */
+.label{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:11px;letter-spacing:4px;
+  color:var(--red);display:block;margin-bottom:10px;
+}
+.h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(46px,9vw,88px);
+  line-height:.9;letter-spacing:.5px;color:#fff;
+}
+.h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(30px,5vw,54px);
+  line-height:.93;letter-spacing:.3px;
+  margin-bottom:16px;
+}
+.h2.light{color:#fff;}
+.h2.dark{color:var(--black);}
+/* accent rood in kop */
+.h2 em,.h1 em{color:var(--red);font-style:normal;}
+.h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px;letter-spacing:1.5px;
+  margin-bottom:10px;color:var(--black);
+}
+.h3.light{color:#fff;}
+.rule{width:44px;height:3px;background:var(--red);margin:18px 0 20px;}
+.lead{
+  font-size:17px;line-height:1.75;color:rgba(255,255,255,.62);
+  max-width:520px;
+}
+.lead strong{color:rgba(255,255,255,.95);font-weight:600;}
+.body-text{font-size:15px;line-height:1.75;color:var(--muted);}
+.body-text.light{color:rgba(255,255,255,.5);}
+.body-text strong{color:var(--black);font-weight:600;}
+.body-text.light strong{color:rgba(255,255,255,.9);}
 
-/* ── NAV ── */
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:9999;
-  background:rgba(10,10,10,0.88);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  transition:all 0.3s;
+  background:rgba(10,10,10,.97);
+  border-bottom:2px solid var(--red);
+  height:60px;display:flex;align-items:center;
 }
-.nav.scrolled{background:rgba(10,10,10,0.97);}
-.nav-inner{max-width:1320px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:70px;}
-.nav-logo img{height:46px;width:auto;display:block;}
-.nav-logo-text{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#ffffff;letter-spacing:2px;}
-.nav-logo-text span{color:#E63329;}
-/* desktop links — hidden on mobile */
-.nav-links{display:flex;align-items:center;gap:6px;}
-.nav-link{background:none;border:none;cursor:pointer;padding:8px 13px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:rgba(255,255,255,0.6);transition:color 0.2s;text-decoration:none;display:inline-block;}
-.nav-link:hover{color:#ffffff;}
-.nav-cta-btn{background:#E63329;color:#ffffff;border:none;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;padding:10px 22px;margin-left:6px;transition:all 0.2s;text-decoration:none;display:inline-block;}
-.nav-cta-btn:hover{background:#2A2A2A;}
-/* hamburger */
-.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;}
-.nav-burger span{display:block;width:26px;height:2px;background:#ffffff;transition:all 0.3s;transform-origin:center;}
-.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.nav-burger.open span:nth-child(2){opacity:0;}
-.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-/* mobile dropdown */
-.nav-mobile{display:none;background:#0A0A0A;padding:14px 24px 20px;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,0.05);}
-.nav-mobile.open{display:flex;}
-.nav-mobile a{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);transition:color 0.2s;}
-.nav-mobile a:last-child{border-bottom:none;color:#E63329;margin-top:8px;font-size:20px;}
-.nav-mobile a:hover{color:#ffffff;}
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .nav-burger{display:flex;}
+.nav-in{
+  max-width:var(--max);margin:0 auto;
+  padding:0 var(--pad);
+  display:flex;justify-content:space-between;align-items:center;
+  width:100%;
 }
-
-/* ── BUTTON COMPONENT ── */
-.btn{
-  background:var(--red);color:var(--white);
-  border:2px solid var(--red);
-  cursor:pointer;font-family:var(--bebas);font-size:15px;letter-spacing:3px;
-  padding:16px 36px;min-width:280px;text-align:center;
-  transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  text-decoration:none;
+.nav-logo img{height:38px;width:auto;}
+.nav-logo-txt{
+  font-family:'Bebas Neue',sans-serif;font-size:21px;
+  color:#fff;letter-spacing:2px;
 }
-.btn:hover{background:var(--white);color:var(--black);border-color:var(--white);}
-.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);}
-.btn-outline:hover{color:var(--red);background:transparent;border-color:var(--red);}
-.btn-dark-outline{background:transparent;color:var(--black);border:2px solid var(--black);}
-.btn-dark-outline:hover{color:var(--red);border-color:var(--red);}
-.btn-white-fill{background:var(--white);color:var(--black);border:2px solid var(--white);}
-.btn-white-fill:hover{background:var(--off);color:var(--black);}
+.nav-logo-txt span{color:var(--red);}
+.nav-actions{display:flex;gap:10px;align-items:center;}
+.nav-tel{
+  font-size:13px;font-weight:600;color:rgba(255,255,255,.55);
+  min-height:44px;display:flex;align-items:center;padding:0 8px;
+  transition:color .2s;
+}
+.nav-tel:hover{color:#fff;}
+.nav-cta{
+  font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;
+  background:var(--red);color:#fff;
+  padding:0 20px;min-height:44px;display:flex;align-items:center;
+  transition:background .2s;
+}
+.nav-cta:hover{background:#c42a21;}
+@media(max-width:480px){.nav-tel{display:none;}}
 
-/* ── SECTION LABEL / TITLE ── */
-.s-label{font-family:var(--bebas);font-size:13px;letter-spacing:4px;color:var(--red);display:block;margin-bottom:10px;}
-.s-title{font-family:var(--bebas);font-size:clamp(36px,4.5vw,68px);line-height:0.93;letter-spacing:1px;margin:0 0 0;white-space:pre-line;}
-.s-title.light{color:var(--white);}
-.s-title.dark{color:var(--black);}
-.s-bar{width:50px;height:3px;background:var(--red);margin-top:18px;}
-.s-head{margin-bottom:48px;}
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero{
+  min-height:100svh;           /* svh = safe viewport height op mobile */
+  background:var(--black);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;
+  padding-top:60px;
+}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  opacity:.35;filter:brightness(.65) saturate(1.1);
+}
+.hero-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    160deg,
+    rgba(10,10,10,.97) 0%,
+    rgba(10,10,10,.88) 45%,
+    rgba(10,10,10,.65) 100%
+  );
+}
+.hero-inner{
+  position:relative;z-index:2;
+  width:100%;max-width:var(--max);margin:0 auto;
+  padding:52px var(--pad) 48px;
+  /* mobile: stacked; desktop: 2 cols */
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+}
+@media(min-width:900px){
+  .hero-inner{
+    grid-template-columns:1fr 400px;
+    gap:52px;
+    align-items:center;
+    padding:80px var(--pad) 72px;
+  }
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-bottom:20px;
+}
+.hero-badge-line{width:22px;height:1px;background:var(--red);}
+.hero-h1-wrap{margin-bottom:22px;}
+.hero-bullets{
+  display:flex;flex-direction:column;gap:10px;
+  margin-bottom:28px;
+}
+.hb{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;color:rgba(255,255,255,.65);
+  line-height:1.5;
+}
+.hb-dot{
+  width:6px;height:6px;background:var(--red);
+  border-radius:50%;flex-shrink:0;margin-top:7px;
+}
+.hb strong{color:rgba(255,255,255,.95);font-weight:600;}
 
-/* ── CONTAINER ── */
-.wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
-
-/* ── HERO ── */
-.hero{min-height:100vh;background:var(--black);position:relative;overflow:hidden;display:flex;align-items:center;margin-top:70px;}
-.hero-bg-img{position:absolute;inset:0;}
-.hero-bg-img img{width:100%;height:100%;object-fit:cover;opacity:0.55;filter:brightness(0.62) contrast(1.05) saturate(1.05);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(108deg,rgba(10,10,10,0.88) 0%,rgba(10,10,10,0.72) 45%,rgba(10,10,10,0.46) 100%);}
-.hero-content{position:relative;z-index:2;padding:140px 32px 80px;max-width:var(--max);margin:0 auto;width:100%;}
-.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;}
-.hero-tag{display:inline-block;padding:5px 14px;border:1px solid var(--red);font-family:var(--bebas);font-size:12px;letter-spacing:4px;color:var(--red);margin-bottom:24px;}
-.hero-h1{font-family:var(--bebas);font-size:clamp(50px,7vw,96px);color:var(--white);line-height:0.9;letter-spacing:1px;margin:0 0 10px;}
-.hero-h1 .red{color:var(--red);}
-.hero-bar{width:70px;height:3px;background:var(--red);margin:18px 0 24px;}
-.hero-sub{font-family:var(--inter);font-size:16px;line-height:1.75;color:rgba(255,255,255,0.55);max-width:460px;margin:0 0 36px;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.hero-stats{display:flex;gap:44px;margin-top:52px;}
-.hero-stat-n{font-family:var(--bebas);font-size:38px;color:var(--white);line-height:1;}
-.hero-stat-l{font-family:var(--inter);font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
-/* hero visual — styled bathroom panels */
-.hero-visual{overflow:hidden;}
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
-.ba-panel{position:relative;aspect-ratio:3/4;overflow:hidden;}
-.ba-before{background:linear-gradient(160deg,#2a1a14,#3d2820);}
-.ba-after{background:linear-gradient(160deg,#0d1f35,#0a2d50);}
-.ba-svg{position:absolute;inset:0;width:100%;height:100%;}
-.ba-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.ba-label-tag{position:absolute;bottom:0;left:0;right:0;padding:10px 16px;font-family:var(--bebas);font-size:18px;letter-spacing:3px;color:var(--white);background:rgba(230,51,41,0.9);text-align:center;}
-
-/* ── URGENCY BAR ── */
-.urgency{background:var(--red);padding:14px 32px;text-align:center;}
-.urgency p{font-family:var(--inter);font-size:14px;color:var(--white);font-weight:600;letter-spacing:0.3px;}
-.urgency a{color:var(--white);font-weight:700;text-decoration:underline;}
-
-/* ── SECTIONS ── */
-section{padding:110px 0;}
-section.bg-white{background:var(--white);}
-section.bg-off{background:var(--off);}
-section.bg-black{background:var(--black);}
-section.bg-red{background:var(--red);}
-
-/* ── PAIN CARDS (waarom-grid style) ── */
-.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.pain-card{padding:32px 24px;border:1px solid rgba(255,255,255,0.07);height:100%;}
-.pain-num{font-family:var(--bebas);font-size:32px;color:var(--red);line-height:1;}
-.pain-title{font-family:var(--bebas);font-size:20px;color:var(--white);letter-spacing:2px;margin:14px 0 8px;}
-.pain-desc{font-family:var(--inter);font-size:13px;line-height:1.6;color:rgba(255,255,255,0.45);margin:0;}
-
-/* ── SOLUTION (step style) ── */
-.sol-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;}
-.sol-step{padding:28px 20px;border-left:1px solid var(--ltGray);height:100%;}
-.sol-step:first-child{border-left:none;}
-.sol-n{font-family:var(--bebas);font-size:50px;color:var(--red);line-height:1;display:block;}
-.sol-bar{width:26px;height:2px;background:var(--black);margin:14px 0;}
-.sol-title{font-family:var(--bebas);font-size:16px;letter-spacing:2px;color:var(--black);margin:0 0 8px;}
-.sol-desc{font-family:var(--inter);font-size:12px;line-height:1.6;color:var(--gray);margin:0;}
-
-/* ── CASE STUDY ── */
-.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.case-tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
-.case-tag{font-family:var(--bebas);font-size:11px;letter-spacing:3px;color:var(--red);}
-.case-tag-sep{font-family:var(--inter);font-size:11px;color:var(--gray);}
-.case-h{font-family:var(--bebas);font-size:clamp(30px,3.5vw,46px);color:var(--black);line-height:0.93;margin:6px 0 0;}
-.case-redbar{width:44px;height:3px;background:var(--red);margin:18px 0 20px;}
-.case-desc{font-family:var(--inter);font-size:15px;line-height:1.75;color:var(--gray);margin:0 0 24px;}
-.case-stats{display:flex;gap:36px;margin-bottom:28px;}
-.case-stat-n{font-family:var(--bebas);font-size:42px;color:var(--red);line-height:1;}
-.case-stat-l{font-family:var(--inter);font-size:11px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
-.testimonial{padding:24px;border:1px solid var(--ltGray);background:var(--off);}
-.test-stars{display:flex;gap:2px;margin-bottom:10px;}
-.test-star{color:var(--red);font-size:14px;}
-.test-text{font-family:var(--inter);font-size:14px;line-height:1.7;color:var(--char);font-style:italic;margin:0 0 14px;}
-.test-author{display:flex;align-items:center;gap:10px;}
-.test-avatar{width:36px;height:36px;background:var(--black);display:flex;align-items:center;justify-content:center;font-family:var(--bebas);font-size:16px;color:var(--white);flex-shrink:0;}
-.test-name{font-family:var(--inter);font-size:13px;font-weight:700;color:var(--black);}
-.test-source{font-family:var(--inter);font-size:11px;color:var(--gray);letter-spacing:1px;}
-/* case image double-stack */
-.img-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.img-wrap{overflow:hidden;background:var(--dark);}
-.img-wrap:nth-child(2){margin-top:36px;}
-.img-wrap img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;}
-/* placeholder image */
-.img-placeholder{width:100%;background:var(--dark);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
-.img-placeholder-before{background:linear-gradient(160deg,#2e1f18,#3a2820);}
-.img-placeholder-after{background:linear-gradient(160deg,#0d2035,#0a2d50);}
-.img-placeholder-label{font-family:var(--bebas);font-size:13px;letter-spacing:3px;color:rgba(255,255,255,0.5);}
-
-/* ── PRICING ── */
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ltGray);}
-.price-card{padding:36px 28px;border-right:1px solid var(--ltGray);position:relative;}
-.price-card:last-child{border-right:none;}
-.price-card.featured{background:var(--black);}
-.price-type{font-family:var(--inter);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;color:var(--gray);}
-.price-card.featured .price-type{color:rgba(255,255,255,0.4);}
-.price-range{font-family:var(--bebas);font-size:40px;line-height:1;margin-bottom:8px;color:var(--black);}
-.price-card.featured .price-range{color:var(--red);}
-.price-desc-txt{font-family:var(--inter);font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:20px;}
-.price-card.featured .price-desc-txt{color:rgba(255,255,255,0.45);}
-.price-list{list-style:none;}
-.price-list li{font-family:var(--inter);font-size:13px;padding:6px 0;border-bottom:1px solid var(--ltGray);display:flex;align-items:center;gap:8px;}
-.price-card.featured .price-list li{border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);}
-.price-check{width:7px;height:7px;background:var(--red);flex-shrink:0;}
-.price-badge{position:absolute;top:0;right:0;background:var(--red);color:var(--white);font-family:var(--bebas);font-size:10px;letter-spacing:2px;padding:6px 12px;}
-.price-note{margin-top:24px;font-family:var(--inter);font-size:13px;color:var(--gray);padding:16px 20px;border-left:3px solid var(--red);background:var(--white);}
-
-/* ── INCLUDED ── */
-.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.inc-card{padding:32px 24px;border:1px solid rgba(255,255,255,0.07);}
-.inc-num{font-family:var(--bebas);font-size:32px;color:var(--red);line-height:1;}
-.inc-title{font-family:var(--bebas);font-size:20px;color:var(--white);letter-spacing:2px;margin:14px 0 8px;}
-.inc-desc{font-family:var(--inter);font-size:13px;line-height:1.6;color:rgba(255,255,255,0.45);margin:0;}
-
-/* ── SERVICE ITEMS (bullet style) ── */
-.bullet-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;}
-.bullet-item{display:flex;align-items:center;gap:8px;padding:5px 0;}
-.bullet-dot{width:7px;height:7px;background:var(--red);flex-shrink:0;}
-.bullet-text{font-family:var(--inter);font-size:13px;color:var(--char);}
-
-/* ── REVIEWS ── */
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.review-card{padding:28px 24px;border:1px solid var(--ltGray);height:100%;display:flex;flex-direction:column;}
-.review-stars{display:flex;gap:2px;margin-bottom:14px;}
-.review-text{font-family:var(--inter);font-size:14px;line-height:1.7;color:var(--char);font-style:italic;margin:0 0 18px;flex:1;}
-.review-author-row{display:flex;align-items:center;gap:10px;}
-.review-avatar{width:36px;height:36px;background:var(--black);display:flex;align-items:center;justify-content:center;font-family:var(--bebas);font-size:16px;color:var(--white);flex-shrink:0;}
-.review-name{font-family:var(--inter);font-size:13px;font-weight:700;color:var(--black);}
-.review-source{font-family:var(--inter);font-size:11px;color:var(--gray);letter-spacing:1px;}
-
-/* ── FAQ ── */
-.faq-list{display:flex;flex-direction:column;gap:0;}
-.faq-item{border:1px solid var(--ltGray);border-top:none;}
-.faq-item:first-child{border-top:1px solid var(--ltGray);}
-.faq-item.open{border-color:var(--red);}
-.faq-item.open + .faq-item{border-top:1px solid var(--ltGray);}
-.faq-btn{width:100%;background:none;border:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;font-family:var(--inter);font-size:16px;font-weight:700;color:var(--black);text-align:left;gap:16px;transition:background 0.2s;}
-.faq-btn:hover{background:var(--off);}
-.faq-icon{width:28px;height:28px;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:300;flex-shrink:0;transition:transform 0.2s;}
-.faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;font-family:var(--inter);font-size:14px;color:var(--gray);line-height:1.7;padding:0 24px;}
-.faq-item.open .faq-answer{max-height:320px;padding:0 24px 22px;}
-
-/* ── CTA SECTION ── */
-.cta-title{font-family:var(--bebas);font-size:clamp(38px,5vw,60px);color:var(--white);line-height:0.93;margin:0 0 18px;}
-.cta-sub{font-family:var(--inter);font-size:16px;color:rgba(255,255,255,0.8);margin:0 0 32px;line-height:1.7;}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
-/* ── PHOTO PROOF GALLERY ── */
-.ba-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.ba-set{overflow:hidden;cursor:pointer;}
-.ba-set-imgs{display:grid;grid-template-columns:1fr 1fr;gap:3px;position:relative;}
-.ba-img-wrap{overflow:hidden;aspect-ratio:4/5;background:var(--dark);position:relative;}
-.ba-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
-.ba-set:hover .ba-img-wrap img{transform:scale(1.04);}
-.ba-tag{position:absolute;top:8px;font-family:var(--bebas);font-size:10px;letter-spacing:2px;padding:4px 8px;z-index:2;}
-.ba-tag-before{left:8px;background:rgba(42,42,42,0.9);color:rgba(255,255,255,0.7);}
-.ba-tag-after{right:8px;background:#E63329;color:#ffffff;}
-.ba-set-meta{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#0A0A0A;border-top:2px solid #E63329;}
-.ba-set-loc{font-family:'Bebas Neue',sans-serif;font-size:16px;color:#ffffff;letter-spacing:1px;}
-.ba-set-days{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:1px;text-transform:uppercase;}
-/* mosaic */
-.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 300px;gap:3px;}
-.mosaic-main{grid-row:1/-1;overflow:hidden;background:var(--dark);}
-.mosaic-main img,.mosaic-sm img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
-.mosaic-main:hover img,.mosaic-sm:hover img{transform:scale(1.03);}
-.mosaic-sm{overflow:hidden;background:var(--dark);}
-/* stat strip */
-.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#0A0A0A;}
-.stat-item{padding:36px 24px;border-right:1px solid rgba(255,255,255,0.07);text-align:center;}
-.stat-item:last-child{border-right:none;}
-.stat-big{font-family:'Bebas Neue',sans-serif;font-size:52px;color:#E63329;line-height:1;}
-.stat-lbl{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:6px;}
-@media(max-width:900px){
-  .ba-gallery{grid-template-columns:1fr !important;}
-  .mosaic{grid-template-columns:1fr 1fr !important;grid-template-rows:auto !important;}
-  .mosaic-main{grid-row:auto;}
-  .stat-strip{grid-template-columns:1fr 1fr !important;}
-  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);}
+/* ─────────────────────────────────────────
+   FORM CARD
+───────────────────────────────────────── */
+.fcard{background:#fff;padding:28px 24px 22px;}
+@media(min-width:768px){.fcard{padding:32px 28px 26px;}}
+.fc-tag{
+  font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;
+  color:var(--red);display:block;margin-bottom:8px;
+}
+.fc-title{
+  font-family:'Bebas Neue',sans-serif;font-size:26px;
+  line-height:1;color:var(--black);margin-bottom:6px;
+}
+.fc-sub{font-size:14px;color:#888;line-height:1.5;margin-bottom:20px;}
+.fc-sub strong{color:var(--black);}
+/* form fields */
+.f-stack{display:flex;flex-direction:column;gap:10px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fi{
+  width:100%;
+  font-size:16px;       /* 16px voorkomt iOS autozoom */
+  font-family:'Inter',sans-serif;
+  padding:14px 14px;
+  border:1.5px solid var(--border);
+  color:var(--black);
+  background:#fff;
+  outline:none;
+  -webkit-appearance:none;
+  appearance:none;
+  transition:border-color .2s;
+  min-height:52px;      /* touch target */
+}
+.fi::placeholder{color:#bbb;}
+.fi:focus{border-color:var(--red);}
+.f-submit{
+  width:100%;
+  font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;
+  background:var(--red);color:#fff;border:none;
+  padding:17px 20px;min-height:56px;      /* ruime touch target */
+  transition:background .2s;margin-top:2px;
+}
+.f-submit:hover{background:#c42a21;}
+.f-wa{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;min-height:50px;
+  background:var(--off);border:1.5px solid var(--border);
+  font-size:14px;font-weight:600;color:var(--black);
+  margin-top:10px;transition:all .2s;
+}
+.f-wa:hover{border-color:#25D366;color:#25D366;}
+.f-note{font-size:12px;color:#bbb;text-align:center;margin-top:10px;line-height:1.5;}
+.f-success{display:none;text-align:center;padding:32px 12px;}
+.f-success.show{display:block;}
+.fs-icon{
+  width:52px;height:52px;background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;font-size:24px;color:#fff;
 }
 
-/* ── FOOTER ── */
-footer{background:#0A0A0A;border-top:3px solid #E63329;}
-.foot-inner{max-width:1320px;margin:0 auto;padding:56px 32px 28px;}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
-.foot-logo img{height:55px;width:auto;display:block;}
-.foot-tagline{font-family:'Inter',sans-serif;font-size:13px;line-height:1.7;color:rgba(255,255,255,0.55);margin-top:18px;max-width:260px;}
-.foot-col-title{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:#E63329;margin:0 0 16px;}
-.foot-link{display:block;font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.65);padding:4px 0;text-decoration:none;transition:color 0.2s;}
-.foot-link:hover{color:#ffffff;}
-.foot-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.foot-copy{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);}
-
-/* ── FLOAT BUTTONS ── */
-.float-btns{position:fixed;bottom:22px;right:22px;z-index:9998;display:flex;flex-direction:column;gap:10px;transition:all 0.35s;}
-.float-btn{width:50px;height:50px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.3);}
-.float-wa{background:#25D366;box-shadow:0 4px 14px rgba(37,211,102,0.35);}
-.float-tel{background:var(--red);box-shadow:0 4px 14px rgba(230,51,41,0.35);}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero-grid,.case-grid,.price-grid,.inc-grid,.review-grid,.pain-grid,.bullet-list{grid-template-columns:1fr !important;}
-  .sol-grid{grid-template-columns:1fr 1fr !important;}
-  .sol-step{border-left:none !important;border-top:1px solid var(--ltGray);}
-  .sol-step:first-child{border-top:none;}
-  .foot-grid{grid-template-columns:1fr 1fr !important;}
-  .hero-visual{display:none;}
-  .price-card{border-right:none;border-bottom:1px solid var(--ltGray);}
-  .price-card:last-child{border-bottom:none;}
-  .wrap{padding:0 20px;}
-  section{padding:72px 0;}
+/* ─────────────────────────────────────────
+   STATS STRIP
+───────────────────────────────────────── */
+.stats{background:var(--red);}
+.stats-in{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(2,1fr);
 }
-@media(max-width:600px){
-  .hero-btns,.cta-btns{flex-direction:column;}
-  .hero-btns .btn,.cta-btns .btn{min-width:100%;justify-content:center;}
-  .inc-grid{grid-template-columns:1fr 1fr !important;}
-  .foot-grid{grid-template-columns:1fr !important;}
+@media(min-width:600px){.stats-in{grid-template-columns:repeat(4,1fr);}}
+.si{
+  padding:24px 16px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.2);
+  border-bottom:1px solid rgba(255,255,255,.2);
 }
+.si:nth-child(even){border-right:none;}
+@media(min-width:600px){
+  .si{border-bottom:none;}
+  .si:nth-child(even){border-right:1px solid rgba(255,255,255,.2);}
+  .si:last-child{border-right:none;}
+}
+.si-n{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#fff;line-height:1;}
+.si-l{font-size:11px;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
 
-.hero-trust-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0 0 30px;padding:0;max-width:560px;}
-.hero-trust-list li{font-family:var(--inter);font-size:14px;line-height:1.55;color:rgba(255,255,255,0.82);position:relative;padding-left:18px;}
-.hero-trust-list li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--red);}
-.hero-small{font-family:var(--inter);font-size:12px;line-height:1.6;color:rgba(255,255,255,0.62);margin-top:14px;}
-.hero-form-card{background:rgba(255,255,255,0.98);border:1px solid var(--ltGray);padding:28px 24px;}
-.hero-form-title{font-family:var(--bebas);font-size:28px;line-height:1;letter-spacing:1px;color:var(--black);margin:0 0 18px;}
-.hero-form{display:grid;grid-template-columns:1fr;gap:10px;}
-.hero-form input,.hero-form select,.hero-form textarea{width:100%;font-family:var(--inter);font-size:14px;padding:12px 13px;border:1px solid var(--ltGray);background:var(--white);color:var(--black);outline:none;}
-.hero-form input:focus,.hero-form select:focus,.hero-form textarea:focus{border-color:var(--red);}
-.hero-form textarea{resize:vertical;min-height:96px;}
-.hero-form-note{font-family:var(--inter);font-size:12px;line-height:1.65;color:var(--gray);margin-top:14px;}
-.trust-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
-.trust-pill{padding:14px 12px;border:1px solid var(--ltGray);font-family:var(--bebas);font-size:15px;letter-spacing:1px;color:var(--black);text-align:center;background:var(--white);}
-.section-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px;}
-.review-extra{margin-top:28px;text-align:center;}
-.case-detail-list{display:flex;flex-direction:column;gap:10px;margin:0 0 20px;padding:0;list-style:none;}
-.case-detail-list li{font-family:var(--inter);font-size:14px;color:var(--char);line-height:1.55;}
-@media(max-width:900px){
-  .trust-row{grid-template-columns:1fr 1fr !important;}
+/* ─────────────────────────────────────────
+   MARQUEE
+───────────────────────────────────────── */
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.mq{overflow:hidden;background:var(--black);padding:12px 0;white-space:nowrap;}
+.mq-t{display:inline-flex;animation:mq 30s linear infinite;}
+.mq-i{
+  font-family:'Bebas Neue',sans-serif;font-size:13px;
+  color:rgba(255,255,255,.3);letter-spacing:3px;padding:0 18px;
 }
-@media(max-width:600px){
-  .trust-row{grid-template-columns:1fr !important;}
-}
+.mq-i b{color:rgba(255,255,255,.75);}
 
+/* ─────────────────────────────────────────
+   SECTION: ÉÉN BEDRIJF
+───────────────────────────────────────── */
+.een-grid{
+  display:grid;grid-template-columns:1fr;gap:16px;
+  margin-top:8px;
+}
+@media(min-width:600px){.een-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.een-grid{grid-template-columns:repeat(4,1fr);}}
+.ee{
+  padding:28px 22px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.02);
+}
+.ee-n{
+  font-family:'Bebas Neue',sans-serif;font-size:42px;
+  color:var(--red);opacity:.4;line-height:1;margin-bottom:8px;
+}
+.ee-title{
+  font-family:'Bebas Neue',sans-serif;font-size:18px;
+  letter-spacing:1.5px;color:#fff;margin-bottom:10px;
+}
+.ee-text{font-size:14px;line-height:1.7;color:rgba(255,255,255,.45);}
+.ee-text strong{color:rgba(255,255,255,.85);}
+
+/* ─────────────────────────────────────────
+   SECTION: GARANTIE
+───────────────────────────────────────── */
+.gbox{
+  border:2px solid var(--red);padding:40px 28px;
+  background:var(--black);position:relative;overflow:hidden;
+}
+@media(min-width:768px){.gbox{padding:52px 48px;}}
+.gbox::after{
+  content:'';position:absolute;
+  top:-80px;right:-80px;
+  width:240px;height:240px;
+  border:50px solid rgba(230,51,41,.06);
+  border-radius:50%;pointer-events:none;
+}
+.g-grid{
+  display:grid;grid-template-columns:1fr;gap:16px;
+  margin:28px 0 36px;
+}
+@media(min-width:600px){.g-grid{grid-template-columns:1fr 1fr 1fr;}}
+.gi{padding:18px 16px;border:1px solid rgba(230,51,41,.2);background:rgba(230,51,41,.04);}
+.gi-lbl{
+  font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;
+  color:var(--red);display:block;margin-bottom:8px;
+}
+.gi-txt{font-size:14px;line-height:1.65;color:rgba(255,255,255,.5);}
+.gi-txt strong{color:rgba(255,255,255,.9);}
+
+/* ─────────────────────────────────────────
+   VOOR & NA
+───────────────────────────────────────── */
+.ba-grid{display:grid;grid-template-columns:1fr;gap:3px;}
+@media(min-width:600px){.ba-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.ba-grid{grid-template-columns:1fr 1fr 1fr;}}
+.ba-set{}
+.ba-imgs{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.ba-wrap{
+  aspect-ratio:4/5;overflow:hidden;
+  position:relative;background:#111;
+}
+.ba-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.ba-set:hover .ba-wrap img{transform:scale(1.04);}
+.ba-tag{
+  position:absolute;top:8px;z-index:2;
+  font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:2px;
+  padding:3px 8px;
+}
+.ba-v{left:8px;background:rgba(15,15,15,.9);color:rgba(255,255,255,.6);}
+.ba-n{right:8px;background:var(--red);color:#fff;}
+.ba-foot{
+  background:var(--black);border-top:2px solid var(--red);
+  padding:14px 16px;
+}
+.ba-loc{font-family:'Bebas Neue',sans-serif;font-size:15px;color:#fff;letter-spacing:.5px;}
+.ba-info{font-size:12px;color:rgba(255,255,255,.38);margin-top:3px;}
+
+/* ─────────────────────────────────────────
+   PROCESS
+───────────────────────────────────────── */
+.ps-grid{
+  display:grid;grid-template-columns:1fr;gap:0;
+  margin-top:8px;
+}
+@media(min-width:600px){.ps-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.ps-grid{grid-template-columns:repeat(4,1fr);}}
+.ps{
+  padding:28px 22px;
+  border-bottom:1px solid var(--border);
+}
+@media(min-width:600px){
+  .ps{border-right:1px solid var(--border);border-bottom:none;}
+  .ps:nth-child(2n){border-right:none;}
+}
+@media(min-width:900px){
+  .ps{border-bottom:none;}
+  .ps:nth-child(2n){border-right:1px solid var(--border);}
+  .ps:last-child{border-right:none;}
+}
+.ps-n{
+  font-family:'Bebas Neue',sans-serif;font-size:48px;
+  color:var(--red);opacity:.3;line-height:1;margin-bottom:6px;
+}
+.ps-title{
+  font-family:'Bebas Neue',sans-serif;font-size:18px;
+  letter-spacing:1.5px;color:var(--black);margin-bottom:8px;
+}
+.ps-text{font-size:14px;line-height:1.65;color:var(--muted);}
+
+/* ─────────────────────────────────────────
+   REVIEWS
+───────────────────────────────────────── */
+.rv-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:600px){.rv-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.rv-grid{grid-template-columns:1fr 1fr 1fr;}}
+.rv-card{
+  padding:26px 22px;border:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.rv-stars{color:var(--red);font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.rv-text{
+  font-size:15px;line-height:1.72;color:#2A2A2A;
+  font-style:italic;flex:1;margin-bottom:16px;
+}
+.rv-who{display:flex;align-items:center;gap:10px;}
+.rv-av{
+  width:36px;height:36px;background:var(--black);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:17px;color:#fff;flex-shrink:0;
+}
+.rv-name{font-size:13px;font-weight:700;color:var(--black);}
+.rv-src{font-size:11px;color:#999;letter-spacing:1px;margin-top:1px;}
+
+/* ─────────────────────────────────────────
+   FAQ
+───────────────────────────────────────── */
+.faq{display:flex;flex-direction:column;}
+.fq{border:1px solid var(--border);border-top:none;}
+.fq:first-child{border-top:1px solid var(--border);}
+.fq.open{border-color:var(--red);}
+.fq-btn{
+  width:100%;background:none;border:none;
+  padding:18px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-size:16px;font-weight:700;color:var(--black);text-align:left;
+  min-height:64px;               /* ruime touch target */
+  transition:background .2s;
+}
+.fq-btn:hover{background:var(--off);}
+.fq-ico{
+  width:28px;height:28px;flex-shrink:0;
+  background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;line-height:1;
+  transition:transform .25s;
+}
+.fq.open .fq-ico{transform:rotate(45deg);}
+.fq-ans{
+  max-height:0;overflow:hidden;
+  font-size:15px;line-height:1.75;color:var(--muted);
+  padding:0 20px;
+  transition:max-height .32s ease,padding .32s;
+}
+.fq.open .fq-ans{max-height:320px;padding:0 20px 22px;}
+
+/* ─────────────────────────────────────────
+   FINAL CTA
+───────────────────────────────────────── */
+.fcta{background:var(--black);padding:80px 0;text-align:center;}
+@media(min-width:768px){.fcta{padding:100px 0;}}
+.fcta-h{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,7vw,70px);
+  color:#fff;line-height:.93;margin-bottom:14px;
+}
+.fcta-rule{width:44px;height:3px;background:var(--red);margin:0 auto 20px;}
+.fcta-sub{
+  font-size:17px;color:rgba(255,255,255,.5);
+  max-width:560px;margin:0 auto 36px;line-height:1.75;
+}
+.fcta-sub strong{color:rgba(255,255,255,.9);}
+.fcta-btns{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  padding:0 var(--pad);
+}
+@media(min-width:520px){.fcta-btns{flex-direction:row;justify-content:center;}}
+.btn-red{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--red);color:#fff;border:none;
+  font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:3px;
+  padding:18px 36px;min-height:58px;
+  width:100%;max-width:320px;
+  transition:background .2s;
+}
+.btn-red:hover{background:#c42a21;}
+.btn-ghost{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:transparent;color:#fff;
+  border:2px solid rgba(255,255,255,.22);
+  font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:3px;
+  padding:18px 36px;min-height:58px;
+  width:100%;max-width:320px;
+  transition:border-color .2s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.6);}
+@media(min-width:520px){.btn-red,.btn-ghost{width:auto;max-width:none;}}
+
+/* ─────────────────────────────────────────
+   CTA BUTTON REUSE
+───────────────────────────────────────── */
+.btn-block{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--red);color:#fff;border:none;
+  font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:3px;
+  padding:17px 28px;min-height:56px;
+  transition:background .2s;
+}
+.btn-block:hover{background:#c42a21;}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer{
+  background:var(--black);border-top:2px solid var(--red);
+  padding:32px var(--pad) 24px;
+}
+.foot{max-width:var(--max);margin:0 auto;}
+.foot-top{
+  display:flex;flex-wrap:wrap;justify-content:space-between;
+  align-items:center;gap:16px;
+  margin-bottom:20px;padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.foot-brand{
+  font-family:'Bebas Neue',sans-serif;font-size:20px;
+  color:#fff;letter-spacing:2px;
+}
+.foot-brand span{color:var(--red);}
+.foot-links{display:flex;flex-wrap:wrap;gap:16px;}
+.foot-link{font-size:13px;color:rgba(255,255,255,.35);transition:color .2s;}
+.foot-link:hover{color:#fff;}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.2);}
+
+/* ─────────────────────────────────────────
+   FLOATING WA
+───────────────────────────────────────── */
+.flt{
+  position:fixed;bottom:20px;right:20px;z-index:9998;
+  width:56px;height:56px;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(37,211,102,.4);
+  opacity:0;transform:translateY(12px);
+  pointer-events:none;transition:all .3s;
+}
+.flt.show{opacity:1;transform:none;pointer-events:auto;}
+.flt:hover{background:#1da853;}
+
+/* ─────────────────────────────────────────
+   REVEAL ANIMATION
+───────────────────────────────────────── */
+.rv{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .6s cubic-bezier(.16,1,.3,1),
+             transform .6s cubic-bezier(.16,1,.3,1);
+}
+.rv.in{opacity:1;transform:none;}
+.rv[data-d="1"]{transition-delay:.07s;}
+.rv[data-d="2"]{transition-delay:.14s;}
+.rv[data-d="3"]{transition-delay:.21s;}
+.rv[data-d="4"]{transition-delay:.28s;}
+
+/* ─────────────────────────────────────────
+   SECTION BACKGROUNDS
+───────────────────────────────────────── */
+.bg-dark{background:var(--black);}
+.bg-off{background:var(--off);}
+.bg-white{background:#fff;}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59QCRF39"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59QCRF39"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-<!-- ══ FLOATING BUTTONS ══ -->
-<div class="float-btns" id="floatBtns" style="opacity:0;transform:translateY(16px);pointer-events:none;">
-  <a class="float-btn float-wa" href="https://wa.me/32465883919" target="_blank" rel="noopener" title="WhatsApp">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z"/></svg>
-  </a>
-  <a class="float-btn float-tel" href="tel:+32465883919" title="Bel ons">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-  </a>
-</div>
+<!-- FLOATING WA -->
+<a class="flt" id="flt" href="https://wa.me/32465883919" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z"/>
+  </svg>
+</a>
 
 <!-- ══ NAV ══ -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="https://www.renorangers.be" class="nav-logo">
-      <img src="/logo.png" alt="Reno Rangers"
-           onerror="this.style.display='none';this.parentNode.innerHTML='<span class=&quot;nav-logo-text&quot;>RENO<span>RANGERS</span></span>'"/>
+<nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
+  <div class="nav-in">
+    <a href="https://www.renorangers.be" aria-label="Reno Rangers homepage">
+      <img src="/logo.png" alt="Reno Rangers" class="nav-logo"
+           onerror="this.style.display='none';this.parentNode.innerHTML='<span class=nav-logo-txt>RENO<span>RANGERS</span></span>'"/>
     </a>
-    <!-- desktop links -->
-    <div class="nav-links">
-      <a href="https://www.renorangers.be" class="nav-link">HOME</a>
-      <a href="https://www.renorangers.be/diensten" class="nav-link">DIENSTEN</a>
-      <a href="https://www.renorangers.be/projecten" class="nav-link">PROJECTEN</a>
-      <a href="#plaatsbezoek-form" class="nav-cta-btn">PLAN PLAATSBEZOEK</a>
+    <div class="nav-actions">
+      <a class="nav-tel" href="tel:+32465883919">+32 465 88 39 19</a>
+      <a class="nav-cta" href="#form">Vraag offerte aan</a>
     </div>
-    <!-- hamburger -->
-    <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <!-- mobile dropdown -->
-  <div class="nav-mobile" id="mobileMenu">
-    <a href="https://www.renorangers.be">HOME</a>
-    <a href="https://www.renorangers.be/diensten">DIENSTEN</a>
-    <a href="https://www.renorangers.be/projecten">PROJECTEN</a>
-    <a href="https://www.renorangers.be/contact">CONTACT</a>
-    <a href="#plaatsbezoek-form">PLAN PLAATSBEZOEK →</a>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
-<div class="hero">
-  <div class="hero-bg-img">
-    <img src="badkamerantwerpenzwart.jpg" alt="Moderne afgewerkte badkamer" onerror="this.src='webphoto/bathroom.jpg'"/>
+<!-- ══════════════════════════════════════
+   HERO
+   Headline-scan leest:
+   "Uw badkamer gerenoveerd door één bedrijf —
+    vaste prijs, nul verrassingen."
+══════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img
+      src="badkamerantwerpenzwart.jpg"
+      alt="Gerenoveerde badkamer in Antwerpen door Reno Rangers"
+      fetchpriority="high"
+      decoding="async"
+      width="1920" height="1080"
+      onerror="this.src='/bathroom.jpg'"/>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-grid">
-      <div>
-        <div class="reveal">
-          <span class="hero-tag">BADKAMERRENOVATIE &nbsp;&#183;&nbsp; ANTWERPEN</span>
-        </div>
-        <div class="reveal" data-delay="1">
-          <h1 class="hero-h1">Badkamer renoveren in Antwerpen?<br/>Start met een <span class="red">gratis plaatsbezoek.</span></h1>
-        </div>
-        <div class="reveal" data-delay="2">
-          <div class="hero-bar"></div>
-          <p class="hero-sub">Wij bekijken uw badkamer ter plaatse, bespreken uw wensen en bezorgen u een gedetailleerde offerte met duidelijke planning &mdash; zonder verplichting.</p>
-          <ul class="hero-trust-list">
-            <li>Gratis plaatsbezoek in Antwerpen en omgeving</li>
-            <li>Gedetailleerde offerte na controle ter plaatse</li>
-            <li>E&eacute;n team van afbraak tot afwerking</li>
-            <li>Geen meerwerken zonder akkoord</li>
-          </ul>
-        </div>
-        <div class="reveal" data-delay="3">
-          <div class="hero-btns">
-            <a class="btn" href="#plaatsbezoek-form">Plan mijn gratis plaatsbezoek &#8594;</a>
-            <a class="btn btn-outline" href="https://wa.me/32465883919" target="_blank" rel="noopener">Maak afspraak via WhatsApp &#8594;</a>
-          </div>
-          <p class="hero-small">Voor volledige badkamerrenovaties in Antwerpen en omgeving.</p>
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- COPY -->
+    <div>
+      <div class="rv">
+        <div class="hero-badge" aria-hidden="true">
+          <span class="hero-badge-line"></span>
+          Badkamerrenovatie &nbsp;·&nbsp; Antwerpen
         </div>
       </div>
-      <div class="reveal" data-delay="2">
-        <div class="hero-form-card">
-          <h2 class="hero-form-title">Vraag uw gratis plaatsbezoek aan</h2>
-          <form id="plaatsbezoek-form" class="hero-form" action="https://formspree.io/f/xgopeqeb" method="POST">
-            <input type="hidden" name="_subject" value="Aanvraag gratis plaatsbezoek - badkamerrenovatie Antwerpen"/>
-            <input name="naam" type="text" placeholder="Naam" required/>
-            <input name="telefoonnummer" type="tel" placeholder="Telefoonnummer" required/>
-            <input name="gemeente" type="text" placeholder="Gemeente" required/>
-            <select name="wanneer_renoveren" required>
-              <option value="" selected disabled>Wanneer wilt u renoveren?</option>
-              <option>Zo snel mogelijk</option>
-              <option>Binnen 1&ndash;3 maanden</option>
-              <option>Binnen 3&ndash;6 maanden</option>
-              <option>Ik ori&euml;nteer mij nog</option>
-            </select>
-            <select name="type_project" required>
-              <option value="" selected disabled>Type project</option>
-              <option>Volledige badkamer</option>
-              <option>Kleine badkamer</option>
-              <option>Inloopdouche</option>
-              <option>Badkamer + toilet</option>
-            </select>
-            <textarea name="korte_omschrijving" placeholder="Korte omschrijving"></textarea>
-            <button class="btn" type="submit" style="min-width:100%;">Plan gratis plaatsbezoek &#8594;</button>
+
+      <!-- H1 — het complete verhaal in één zin -->
+      <div class="rv" data-d="1">
+        <div class="hero-h1-wrap">
+          <h1 class="h1">
+            Uw badkamer<br/>
+            gerenoveerd door<br/>
+            <em>één bedrijf</em> —<br/>
+            vaste prijs,<br/>
+            <em>nul</em> verrassingen.
+          </h1>
+        </div>
+      </div>
+
+      <div class="rv" data-d="2">
+        <div class="rule"></div>
+        <p class="lead">
+          Geen vijf verschillende aannemers zoeken en coördineren.
+          <strong>Wij regelen alles</strong> — van afbraak tot afwerking.
+          Eén prijs op papier. <strong>Nooit een euro meer zonder uw akkoord.</strong>
+        </p>
+      </div>
+
+      <div class="rv" data-d="3">
+        <div class="hero-bullets">
+          <div class="hb"><span class="hb-dot"></span><span>
+            <strong>Afbraak, leidingen, elektriciteit, tegelwerk, sanitair, afwerking</strong> — alles door ons</span></div>
+          <div class="hb"><span class="hb-dot"></span><span>
+            <strong>Vaste prijs op papier</strong> vóór de werken starten — nooit meer</span></div>
+          <div class="hb"><span class="hb-dot"></span><span>
+            <strong>Eén aanspreekpunt</strong> van eerste gesprek tot oplevering</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="rv" data-d="2" id="form">
+      <div class="fcard">
+        <span class="fc-tag">Gratis & vrijblijvend</span>
+        <h2 class="fc-title" style="font-size:24px;">Vraag een vaste prijs aan</h2>
+        <p class="fc-sub">Wij nemen zo snel mogelijk contact met u op.</p>
+
+        <div id="fw">
+          <form class="f-stack" id="mainform" action="https://formspree.io/f/xgopeqeb" method="POST">
+            <input type="hidden" name="_subject" value="Offerte aanvraag — badkamerrenovatie Antwerpen"/>
+            <input class="fi" name="naam" type="text"
+                   placeholder="Uw naam *" autocomplete="name" required/>
+            <div class="f-row">
+              <input class="fi" name="telefoon" type="tel"
+                     placeholder="Telefoonnummer *" autocomplete="tel" required/>
+              <input class="fi" name="gemeente" type="text"
+                     placeholder="Gemeente *" autocomplete="address-level2" required/>
+            </div>
+            <button class="f-submit" type="submit" id="fsub">
+              Vraag gratis offerte aan →
+            </button>
           </form>
-          <p class="hero-form-note">Na uw aanvraag bellen wij u kort om te kijken of uw project past binnen onze planning.</p>
+
+          <a class="f-wa" href="https://wa.me/32465883919" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z"/>
+            </svg>
+            Of neem contact op via WhatsApp
+          </a>
+          <p class="f-note">Geen spam · Geen verplichtingen · Vrijblijvend gesprek</p>
+        </div>
+
+        <div class="f-success" id="fsuc">
+          <div class="fs-icon" aria-hidden="true">✓</div>
+          <strong style="font-family:'Bebas Neue',sans-serif;font-size:22px;display:block;margin-bottom:6px;">Aanvraag ontvangen</strong>
+          <p style="font-size:15px;color:#777;line-height:1.6;">Wij nemen zo snel mogelijk contact met u op.</p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats" role="region" aria-label="Kerncijfers">
+  <div class="stats-in">
+    <div class="si rv"><div class="si-n">200+</div><div class="si-l">Renovaties</div></div>
+    <div class="si rv" data-d="1"><div class="si-n">5.0</div><div class="si-l">Google score</div></div>
+    <div class="si rv" data-d="2"><div class="si-n">100%</div><div class="si-l">Vaste prijs</div></div>
+    <div class="si rv" data-d="3"><div class="si-n">0</div><div class="si-l">Verrassingen</div></div>
   </div>
 </div>
 
-<!-- ══ MARQUEE ══ -->
-<div class="marquee-track">
-  <div class="marquee-inner">
-    <span class="marquee-item">GRATIS PLAATSBEZOEK <span class="marquee-sep">/</span></span>
-    <span class="marquee-item">GEDETAILLEERDE OFFERTE <span class="marquee-sep">/</span></span>
-    <span class="marquee-item">ANTWERPEN &amp; OMGEVING <span class="marquee-sep">/</span></span>
-    <span class="marquee-item">GEEN MEERWERKEN ZONDER AKKOORD <span class="marquee-sep">/</span></span>
-    <span class="marquee-item">BADKAMERRENOVATIE <span class="marquee-sep">/</span></span>
-    <span class="marquee-item">E&Eacute;N TEAM VAN AFBRAAK TOT AFWERKING <span class="marquee-sep">/</span></span>
-  </div>
-</div>
+<!-- MARQUEE -->
+<div class="mq" aria-hidden="true"><div class="mq-t" id="mqt">
+  <span class="mq-i"><b>ÉÉN BEDRIJF VOOR ALLES</b></span><span class="mq-i">·</span>
+  <span class="mq-i">Vaste prijs op papier</span><span class="mq-i">·</span>
+  <span class="mq-i"><b>GEEN MEERWERKEN ZONDER AKKOORD</b></span><span class="mq-i">·</span>
+  <span class="mq-i">200+ renovaties Antwerpen</span><span class="mq-i">·</span>
+  <span class="mq-i"><b>ALTIJD BEREIKBAAR</b></span><span class="mq-i">·</span>
+  <span class="mq-i">5.0 Google score</span><span class="mq-i">·</span>
+</div></div>
 
-<!-- ══ PRICE INDICATION ══ -->
-<section class="bg-off" id="prijzen">
+<!-- ══════════════════════════════════════
+   SECTIE 1
+   Headline-scan: "Geen vijf aannemers.
+   Eén bedrijf. Eén telefoonnummer."
+══════════════════════════════════════ -->
+<section class="sec bg-dark">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">PRIJSINDICATIE</span>
-      <h2 class="s-title dark">Wat kost een badkamerrenovatie gemiddeld?</h2>
-      <div class="s-bar"></div>
+    <div class="rv">
+      <span class="label">Waarom één bedrijf het verschil maakt</span>
+      <!-- H2 die vertrouwen opbouwt bij scannen -->
+      <h2 class="h2 light">
+        Geen vijf aannemers.<br/>
+        <em>Één bedrijf.</em><br/>
+        Één telefoonnummer.
+      </h2>
+      <div class="rule"></div>
+      <p class="body-text light" style="max-width:600px;margin-bottom:40px;">
+        Een badkamerrenovatie vraagt om loodgieter, elektriciën, tegelzetter, schilder en timmerman. De meeste mensen verspillen weken aan het zoeken, coördineren en opvolgen van al die partijen. Ondertussen wijst iedereen naar de ander als het misgaat.
+        <strong>Bij ons niet. Wij doen het allemaal.</strong>
+      </p>
     </div>
-    <p class="case-desc reveal" style="max-width:860px;margin-bottom:26px;">De exacte prijs hangt af van afbraak, leidingen, tegelwerk, sanitair en afwerking. Daarom komen we eerst ter plaatse kijken en ontvangt u daarna een duidelijke offerte.</p>
-    <div class="price-grid reveal">
-      <div class="price-card">
-        <div class="price-type">Kleine badkamer</div>
-        <div class="price-range">&euro;6.000&ndash;&euro;9.000</div>
-        <div class="price-desc-txt">Compacte renovatie met functionele indeling en nieuwe afwerking.</div>
+    <div class="een-grid">
+      <div class="ee rv" data-d="1">
+        <div class="ee-n">01</div>
+        <!-- H3 als trustmarker bij scannen -->
+        <h3 class="h3 light">Afbraak &amp; voorbereiding</h3>
+        <p class="ee-text">Wij breken af, voeren het puin af en bereiden de muren en vloer voor. <strong>U hoeft er niets voor te regelen.</strong></p>
       </div>
-      <div class="price-card featured">
-        <div class="price-type">Standaard badkamer</div>
-        <div class="price-range">&euro;9.000&ndash;&euro;14.000</div>
-        <div class="price-desc-txt">Volledige badkamerrenovatie met vernieuwde leidingen en tegelwerk.</div>
+      <div class="ee rv" data-d="2">
+        <div class="ee-n">02</div>
+        <h3 class="h3 light">Leidingen &amp; elektriciteit</h3>
+        <p class="ee-text">Nieuwe leidingen en elektrische installatie door ons eigen team. <strong>Alles conform Belgische AREI-normen.</strong></p>
       </div>
-      <div class="price-card">
-        <div class="price-type">Luxe afwerking</div>
-        <div class="price-range">vanaf &euro;14.000</div>
-        <div class="price-desc-txt">Premium materialen, maatwerk en uitgebreidere technische werken.</div>
+      <div class="ee rv" data-d="3">
+        <div class="ee-n">03</div>
+        <h3 class="h3 light">Tegelwerk &amp; sanitair</h3>
+        <p class="ee-text">Van vloer tot plafond, van douche tot badkamermeubel. <strong>Eén team legt alles.</strong> Geen miscommunicatie tussen vaklui.</p>
       </div>
-    </div>
-    <div class="section-cta reveal">
-      <a class="btn" href="#plaatsbezoek-form">Plan mijn gratis plaatsbezoek &#8594;</a>
-      <a class="btn btn-dark-outline" href="https://wa.me/32465883919" target="_blank" rel="noopener">Maak afspraak via WhatsApp &#8594;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TRUST ROW ══ -->
-<section class="bg-white" style="padding:40px 0;">
-  <div class="wrap">
-    <div class="trust-row reveal">
-      <div class="trust-pill">Gratis plaatsbezoek</div>
-      <div class="trust-pill">Gedetailleerde offerte</div>
-      <div class="trust-pill">Geen meerwerken zonder akkoord</div>
-      <div class="trust-pill">E&eacute;n aanspreekpunt</div>
-      <div class="trust-pill">Antwerpen en omgeving</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ HERKENT U DIT ══ -->
-<section class="bg-black">
-  <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">HERKENT U DIT?</span>
-      <h2 class="s-title light">Twijfelt u omdat u niet weet wat uw badkamer echt zal kosten?</h2>
-      <div class="s-bar"></div>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card reveal" data-delay="1">
-        <span class="pain-num">01</span>
-        <h3 class="pain-title">ONDUIDELIJKE PRIJZEN</h3>
-        <p class="pain-desc">U ziet online veel bedragen, maar weet niet wat realistisch is voor uw badkamer.</p>
+      <div class="ee rv" data-d="4">
+        <div class="ee-n">04</div>
+        <h3 class="h3 light">Afwerking &amp; oplevering</h3>
+        <p class="ee-text">Schilderwerk, ventilatie, details. We leveren pas op als <strong>u tevreden bent</strong> — en we blijven bereikbaar daarna.</p>
       </div>
-      <div class="pain-card reveal" data-delay="2">
-        <span class="pain-num">02</span>
-        <h3 class="pain-title">BANG VOOR EXTRA KOSTEN</h3>
-        <p class="pain-desc">U wilt vooraf weten wat inbegrepen is en wat niet.</p>
-      </div>
-      <div class="pain-card reveal" data-delay="3">
-        <span class="pain-num">03</span>
-        <h3 class="pain-title">GEEN ZIN IN CHAOS</h3>
-        <p class="pain-desc">U zoekt &eacute;&eacute;n team dat de renovatie co&ouml;rdineert van begin tot oplevering.</p>
-      </div>
-    </div>
-    <div class="section-cta reveal">
-      <a class="btn" href="#plaatsbezoek-form">Laat uw badkamer gratis bekijken &#8594;</a>
     </div>
   </div>
 </section>
 
-<!-- ══ PROCESS ══ -->
-<section class="bg-off">
+<!-- ══════════════════════════════════════
+   SECTIE 2
+   Headline-scan: "Wat u tekent, betaalt u.
+   Nooit een euro meer."
+══════════════════════════════════════ -->
+<section class="sec bg-white">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">ZO WERKT HET</span>
-      <h2 class="s-title dark">Zo werkt het</h2>
-      <div class="s-bar"></div>
-    </div>
-    <div class="sol-grid">
-      <div class="sol-step reveal" data-delay="1">
-        <span class="sol-n">01</span>
-        <div class="sol-bar"></div>
-        <h3 class="sol-title">U VRAAGT EEN GRATIS PLAATSBEZOEK AAN</h3>
-        <p class="sol-desc">Vul kort uw gegevens in of neem contact op via WhatsApp.</p>
-      </div>
-      <div class="sol-step reveal" data-delay="2">
-        <span class="sol-n">02</span>
-        <div class="sol-bar"></div>
-        <h3 class="sol-title">WIJ BELLEN U KORT OP</h3>
-        <p class="sol-desc">We bespreken uw situatie, timing en type renovatie.</p>
-      </div>
-      <div class="sol-step reveal" data-delay="3">
-        <span class="sol-n">03</span>
-        <div class="sol-bar"></div>
-        <h3 class="sol-title">WE KOMEN TER PLAATSE KIJKEN</h3>
-        <p class="sol-desc">We bekijken de badkamer, technische staat en uw wensen.</p>
-      </div>
-      <div class="sol-step reveal" data-delay="4">
-        <span class="sol-n">04</span>
-        <div class="sol-bar"></div>
-        <h3 class="sol-title">U ONTVANGT EEN GEDETAILLEERDE OFFERTE</h3>
-        <p class="sol-desc">U krijgt een duidelijke prijs, planning en overzicht van wat inbegrepen is.</p>
-      </div>
-      <div class="sol-step reveal" data-delay="5">
-        <span class="sol-n">05</span>
-        <div class="sol-bar"></div>
-        <h3 class="sol-title">NA AKKOORD PLANNEN WE DE RENOVATIE</h3>
-        <p class="sol-desc">Ons team voert de werken uit van afbraak tot afwerking.</p>
-      </div>
-    </div>
-    <div class="section-cta reveal">
-      <a class="btn" href="#plaatsbezoek-form">Plan mijn gratis plaatsbezoek &#8594;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ VOOR & NA ══ -->
-<section class="bg-black" style="padding:72px 0 0;">
-  <div class="wrap">
-    <div class="s-head reveal" style="margin-bottom:32px;">
-      <span class="s-label">BEWIJS IN BEELDEN</span>
-      <h2 class="s-title light">VOOR &amp; NA.&#10;ONZE RESULTATEN.</h2>
-      <div class="s-bar"></div>
-    </div>
-    <div class="ba-gallery">
-      <div class="ba-set reveal" data-delay="1">
-        <div class="ba-set-imgs">
-          <div class="ba-img-wrap">
-            <span class="ba-tag ba-tag-before">VOOR</span>
-            <img src="/toiletantwerpenvoor.jpg" alt="Badkamer voor renovatie Antwerpen" onerror="this.parentNode.style.background='linear-gradient(160deg,#2e1f18,#3a2820)'"/>
-          </div>
-          <div class="ba-img-wrap">
-            <span class="ba-tag ba-tag-after">NA</span>
-            <img src="/toiletantwerpen.jpg" alt="Badkamer na renovatie Antwerpen" onerror="this.parentNode.style.background='linear-gradient(160deg,#0d2035,#0a2d50)'"/>
-          </div>
+    <div class="gbox rv">
+      <span class="label">Onze belofte — zwart op wit</span>
+      <h2 class="h2 light">
+        Wat u tekent,<br/>
+        betaalt u.<br/>
+        <em>Nooit een euro meer.</em>
+      </h2>
+      <div class="rule"></div>
+      <p class="body-text light" style="max-width:640px;margin-bottom:32px;">
+        Veel aannemers geven een lage prijs om de opdracht te krijgen. Eens de werken bezig zijn, volgen de meerwerken. <strong>Wij werken anders.</strong> U krijgt een vaste prijs vóór we starten. Als er tijdens de werken iets onverwachts opduikt, bellen we u op en wachten op uw beslissing. We gaan nooit verder zonder uw expliciete akkoord.
+      </p>
+      <div class="g-grid">
+        <div class="gi">
+          <span class="gi-lbl">Schriftelijk contract</span>
+          <p class="gi-txt">Elke offerte is een <strong>bindend document</strong> met vaste prijs, planning en omschrijving van alle werken.</p>
         </div>
-        <div class="ba-set-meta">
-          <span class="ba-set-loc">Badkamerrenovatie &mdash; Antwerpen</span>
-          <span class="ba-set-days">16 werkdagen &middot; volledige afbraak &middot; nieuwe leidingen &middot; inloopdouche &middot; tegelwerk &middot; afwerking</span>
+        <div class="gi">
+          <span class="gi-lbl">Nooit stilzwijgend</span>
+          <p class="gi-txt">Extra werk? <strong>U beslist altijd zelf.</strong> Niets wordt uitgevoerd zonder uw schriftelijke bevestiging.</p>
+        </div>
+        <div class="gi">
+          <span class="gi-lbl">Na oplevering bereikbaar</span>
+          <p class="gi-txt">Als er na de werken iets opvalt, <strong>komen wij terug.</strong> Geen discussie, geen extra factuur.</p>
         </div>
       </div>
-      <div class="ba-set reveal" data-delay="2">
-        <div class="ba-set-imgs">
-          <div class="ba-img-wrap">
-            <span class="ba-tag ba-tag-before">VOOR</span>
-            <img src="/toiletmerksemvoor.jpg" alt="Badkamer voor renovatie Merksem" onerror="this.parentNode.style.background='linear-gradient(160deg,#2a1a14,#3d2820)'"/>
-          </div>
-          <div class="ba-img-wrap">
-            <span class="ba-tag ba-tag-after">NA</span>
-            <img src="/toiletmerksem.jpg" alt="Badkamer na renovatie Merksem" onerror="this.parentNode.style.background='linear-gradient(160deg,#0d1f35,#0a2d50)'"/>
-          </div>
-        </div>
-        <div class="ba-set-meta">
-          <span class="ba-set-loc">Badkamerrenovatie &mdash; Merksem</span>
-          <span class="ba-set-days">18 werkdagen &middot; kleine badkamer &middot; douchewand &middot; nieuw sanitair &middot; tegelwerk &middot; ventilatie</span>
-        </div>
-      </div>
-      <div class="ba-set reveal" data-delay="3">
-        <div class="ba-set-imgs">
-          <div class="ba-img-wrap">
-            <span class="ba-tag ba-tag-before">VOOR</span>
-            <img src="/badkamermetmortexvoor.jpg" alt="Badkamer voor renovatie Antwerpen" onerror="this.parentNode.style.background='linear-gradient(160deg,#251812,#382218)'"/>
-          </div>
-          <div class="ba-img-wrap">
-            <span class="ba-tag ba-tag-after">NA</span>
-            <img src="/badkamermetmortex.jpg" alt="Badkamer na renovatie Antwerpen" onerror="this.parentNode.style.background='linear-gradient(160deg,#0a1e30,#082840)'"/>
-          </div>
-        </div>
-        <div class="ba-set-meta">
-          <span class="ba-set-loc">Badkamerrenovatie &mdash; Antwerpen</span>
-          <span class="ba-set-days">14 werkdagen &middot; volledige renovatie &middot; douchezone &middot; maatwerkmeubel &middot; tegelwerk &middot; afwerking</span>
-        </div>
-      </div>
-    </div>
-    <div class="section-cta reveal" style="padding-bottom:72px;">
-      <a class="btn" href="#plaatsbezoek-form">Ik wil ook een plaatsbezoek plannen &#8594;</a>
+      <a class="btn-block" href="#form" style="display:inline-flex;max-width:340px;">
+        Vraag een vaste offerte aan →
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ══ GOOGLE REVIEWS ══ -->
-<section class="bg-white" style="padding-top:80px;">
+<!-- VOOR & NA -->
+<section class="sec bg-dark" style="padding-bottom:0;">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">GOOGLE REVIEWS</span>
-      <h2 class="s-title dark">Klanten kiezen Reno Rangers omdat ze vooraf duidelijkheid krijgen</h2>
-      <div class="s-bar"></div>
+    <div class="rv">
+      <span class="label">Bewijs in beelden</span>
+      <!-- H2 trustmarker -->
+      <h2 class="h2 light">
+        Van afbraak tot afwerking —<br/>
+        <em>wij regelen alles.</em>
+      </h2>
+      <div class="rule"></div>
     </div>
-    <div class="review-grid">
-      <div class="review-card reveal" data-delay="1">
-        <div class="review-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
-        <p class="review-text">&ldquo;Duidelijke communicatie van start tot einde. Offerte was helder en afspraken werden nagekomen.&rdquo;</p>
-        <div class="review-author-row"><div class="review-avatar">E</div><div><div class="review-name">Eva P.</div><div class="review-source">GOOGLE REVIEW</div></div></div>
+  </div>
+  <div class="ba-grid" style="margin-top:8px;">
+    <div class="ba-set rv" data-d="1">
+      <div class="ba-imgs">
+        <div class="ba-wrap">
+          <span class="ba-tag ba-v">VOOR</span>
+          <img src="/toiletantwerpenvoor.jpg" alt="Badkamer voor renovatie Antwerpen"
+               loading="lazy" decoding="async" width="600" height="750"
+               onerror="this.parentNode.style.background='#120806'"/>
+        </div>
+        <div class="ba-wrap">
+          <span class="ba-tag ba-n">NA</span>
+          <img src="/toiletantwerpen.jpg" alt="Badkamer na renovatie Antwerpen"
+               loading="lazy" decoding="async" width="600" height="750"
+               onerror="this.parentNode.style.background='#040f1c'"/>
+        </div>
       </div>
-      <div class="review-card reveal" data-delay="2">
-        <div class="review-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
-        <p class="review-text">&ldquo;Correcte prijs zonder verrassingen en proper gewerkt. We wisten op voorhand exact wat er zou gebeuren.&rdquo;</p>
-        <div class="review-author-row"><div class="review-avatar">D</div><div><div class="review-name">Dennis V.</div><div class="review-source">GOOGLE REVIEW</div></div></div>
-      </div>
-      <div class="review-card reveal" data-delay="3">
-        <div class="review-stars"><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span><span class="test-star">&#9733;</span></div>
-        <p class="review-text">&ldquo;Betrouwbaar team, netjes afgewerkt en altijd bereikbaar. Heel tevreden over planning en uitvoering.&rdquo;</p>
-        <div class="review-author-row"><div class="review-avatar">B</div><div><div class="review-name">Bart P.</div><div class="review-source">GOOGLE REVIEW</div></div></div>
+      <div class="ba-foot">
+        <div class="ba-loc">Antwerpen — Volledige renovatie</div>
+        <div class="ba-info">Vaste prijs · 16 werkdagen · alles door ons team</div>
       </div>
     </div>
-    <div class="review-extra reveal">
-      <a class="btn btn-dark-outline" href="https://www.google.com/search?q=Reno+Rangers+reviews" target="_blank" rel="noopener">Bekijk onze Google reviews &#8594;</a>
+    <div class="ba-set rv" data-d="2">
+      <div class="ba-imgs">
+        <div class="ba-wrap">
+          <span class="ba-tag ba-v">VOOR</span>
+          <img src="/toiletmerksemvoor.jpg" alt="Badkamer voor renovatie Merksem"
+               loading="lazy" decoding="async" width="600" height="750"
+               onerror="this.parentNode.style.background='#110804'"/>
+        </div>
+        <div class="ba-wrap">
+          <span class="ba-tag ba-n">NA</span>
+          <img src="/toiletmerksem.jpg" alt="Badkamer na renovatie Merksem"
+               loading="lazy" decoding="async" width="600" height="750"
+               onerror="this.parentNode.style.background='#040c18'"/>
+        </div>
+      </div>
+      <div class="ba-foot">
+        <div class="ba-loc">Merksem — Kleine badkamer</div>
+        <div class="ba-info">Vaste prijs · 18 werkdagen · één aanspreekpunt</div>
+      </div>
     </div>
-    <div class="section-cta reveal">
-      <a class="btn" href="#plaatsbezoek-form">Plan gratis plaatsbezoek &#8594;</a>
-      <a class="btn btn-dark-outline" href="https://wa.me/32465883919" target="_blank" rel="noopener">Maak afspraak via WhatsApp &#8594;</a>
+    <div class="ba-set rv" data-d="3">
+      <div class="ba-imgs">
+        <div class="ba-wrap">
+          <span class="ba-tag ba-v">VOOR</span>
+          <img src="/badkamermetmortexvoor.jpg" alt="Badkamer voor renovatie mortex"
+               loading="lazy" decoding="async" width="600" height="750"
+               onerror="this.parentNode.style.background='#0e0705'"/>
+        </div>
+        <div class="ba-wrap">
+          <span class="ba-tag ba-n">NA</span>
+          <img src="/badkamermetmortex.jpg" alt="Badkamer na renovatie mortex"
+               loading="lazy" decoding="async" width="600" height="750"
+               onerror="this.parentNode.style.background='#030d18'"/>
+        </div>
+      </div>
+      <div class="ba-foot">
+        <div class="ba-loc">Antwerpen — Mortex afwerking</div>
+        <div class="ba-info">Vaste prijs · 14 werkdagen · maatwerkmeubel</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:48px var(--pad);" class="rv">
+    <a class="btn-block" href="#form" style="display:inline-flex;max-width:360px;">
+      Ik wil ook een vaste prijs aanvragen →
+    </a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec bg-off">
+  <div class="wrap">
+    <div class="rv">
+      <span class="label">Zo werkt het</span>
+      <h2 class="h2 dark">
+        Van eerste gesprek<br/>
+        tot <em>opgeleverde badkamer.</em>
+      </h2>
+      <div class="rule"></div>
+    </div>
+    <div class="ps-grid rv">
+      <div class="ps">
+        <div class="ps-n">01</div>
+        <h3 class="ps-title">Gratis adviesgesprek thuis</h3>
+        <p class="ps-text">We komen bij u langs, bekijken de badkamer en bespreken uw wensen — geen verplichting, geen kosten.</p>
+      </div>
+      <div class="ps">
+        <div class="ps-n">02</div>
+        <h3 class="ps-title">Vaste prijs op papier</h3>
+        <p class="ps-text">U ontvangt een gedetailleerde offerte. Alles inbegrepen. Eén prijs. U beslist rustig of u verdergaat.</p>
+      </div>
+      <div class="ps">
+        <div class="ps-n">03</div>
+        <h3 class="ps-title">Renovatie door ons team</h3>
+        <p class="ps-text">Één team voert alles uit. U hoeft niets te coördineren. Dagelijkse communicatie over de voortgang.</p>
+      </div>
+      <div class="ps">
+        <div class="ps-n">04</div>
+        <h3 class="ps-title">Oplevering &amp; nazorg</h3>
+        <p class="ps-text">We leveren op als u tevreden bent. Nadien blijven we bereikbaar — voor elke vraag of opmerking.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ WAT IS INBEGREPEN ══ -->
-<section class="bg-black">
+<!-- ══════════════════════════════════════
+   REVIEWS
+   Headline-scan: "Wat klanten zeggen
+   over onze aanpak."
+══════════════════════════════════════ -->
+<section class="sec bg-white">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">WAT IS INBEGREPEN?</span>
-      <h2 class="s-title light">Wat zit inbegrepen in een complete badkamerrenovatie?</h2>
-      <div class="s-bar"></div>
+    <div class="rv">
+      <span class="label">Google reviews</span>
+      <h2 class="h2 dark">
+        Wat klanten zeggen<br/>
+        <em>over onze aanpak.</em>
+      </h2>
+      <div class="rule"></div>
     </div>
-    <div class="inc-grid">
-      <div class="inc-card reveal" data-delay="1"><span class="inc-num">01</span><h3 class="inc-title">AFBRAAK</h3><p class="inc-desc">Afbraak van de oude badkamer.</p></div>
-      <div class="inc-card reveal" data-delay="2"><span class="inc-num">02</span><h3 class="inc-title">VOORBEREIDING</h3><p class="inc-desc">Voorbereiding van muren en vloer.</p></div>
-      <div class="inc-card reveal" data-delay="3"><span class="inc-num">03</span><h3 class="inc-title">LEIDINGEN</h3><p class="inc-desc">Nieuwe leidingen waar nodig.</p></div>
-      <div class="inc-card reveal" data-delay="1"><span class="inc-num">04</span><h3 class="inc-title">ELEKTRICITEIT</h3><p class="inc-desc">Elektriciteit volgens Belgische AREI-voorschriften.</p></div>
-      <div class="inc-card reveal" data-delay="2"><span class="inc-num">05</span><h3 class="inc-title">PLAATSING SANITAIR</h3><p class="inc-desc">Plaatsing van douche, bad, toilet en badkamermeubel.</p></div>
-      <div class="inc-card reveal" data-delay="3"><span class="inc-num">06</span><h3 class="inc-title">TEGELWERK</h3><p class="inc-desc">Tegelwerk en afwerking.</p></div>
-      <div class="inc-card reveal" data-delay="1"><span class="inc-num">07</span><h3 class="inc-title">VENTILATIE</h3><p class="inc-desc">Ventilatie-oplossing indien nodig.</p></div>
-      <div class="inc-card reveal" data-delay="2"><span class="inc-num">08</span><h3 class="inc-title">OPLEVERING</h3><p class="inc-desc">Oplevering en controle.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CASE STUDY ══ -->
-<section class="bg-white">
-  <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">CASE STUDY</span>
-      <h2 class="s-title dark">Volledige badkamerrenovatie in Borgerhout</h2>
-      <div class="s-bar"></div>
-    </div>
-    <div class="case-grid">
-      <div class="reveal">
-        <ul class="case-detail-list">
-          <li><strong>Duur:</strong> 16 werkdagen</li>
-          <li><strong>Type:</strong> volledige renovatie</li>
-          <li><strong>Werken:</strong> afbraak, leidingen, sanitair, tegelwerk, afwerking</li>
-          <li><strong>Resultaat:</strong> moderne badkamer met duidelijke planning en vaste afspraken</li>
-        </ul>
-        <p class="case-desc">Deze klant wilde vooral duidelijkheid over prijs, timing en uitvoering. Na het plaatsbezoek kreeg hij een gedetailleerde offerte en planning. Zo wist hij vooraf waar hij aan toe was.</p>
-        <a class="btn" href="#plaatsbezoek-form">Plan mijn gratis plaatsbezoek &#8594;</a>
-      </div>
-      <div class="reveal" data-delay="2">
-        <div class="img-stack">
-          <div class="img-wrap img-placeholder img-placeholder-before">
-            <img src="/badkamerantwerpenzwartvoor.jpg" alt="Voor badkamerrenovatie" style="width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;" onerror="this.style.display='none'"/>
-            <span class="img-placeholder-label">VOOR</span>
+    <div class="rv-grid">
+      <div class="rv-card rv" data-d="1">
+        <div class="rv-stars" aria-label="5 sterren">★★★★★</div>
+        <p class="rv-text">"Eén bedrijf dat alles deed — ik hoefde zelf niets te regelen. De offerte klopte exact met de eindrekening. Dat is zeldzaam. Absolute aanrader."</p>
+        <div class="rv-who">
+          <div class="rv-av" aria-hidden="true">E</div>
+          <div>
+            <div class="rv-name">Eva Putteman</div>
+            <div class="rv-src">GOOGLE REVIEW</div>
           </div>
-          <div class="img-wrap img-placeholder img-placeholder-after" style="margin-top:36px;">
-            <img src="/badkamerantwerpenzwart.jpg" alt="Na badkamerrenovatie" style="width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;" onerror="this.style.display='none'"/>
-            <span class="img-placeholder-label">NA</span>
+        </div>
+      </div>
+      <div class="rv-card rv" data-d="2">
+        <div class="rv-stars" aria-label="5 sterren">★★★★★</div>
+        <p class="rv-text">"Duidelijke prijs vooraf, één aanspreekpunt, altijd bereikbaar. Geen gegoochel met meerdere aannemers. Reno Rangers regelt alles — en ze doen wat ze beloven."</p>
+        <div class="rv-who">
+          <div class="rv-av" aria-hidden="true">D</div>
+          <div>
+            <div class="rv-name">Dennis V.</div>
+            <div class="rv-src">GOOGLE REVIEW</div>
+          </div>
+        </div>
+      </div>
+      <div class="rv-card rv" data-d="3">
+        <div class="rv-stars" aria-label="5 sterren">★★★★★</div>
+        <p class="rv-text">"Ik was bang voor extra kosten en slechte communicatie. Dat was er niet. Ze kwamen altijd op tijd, werkten netjes en de prijs was precies wat we hadden afgesproken."</p>
+        <div class="rv-who">
+          <div class="rv-av" aria-hidden="true">M</div>
+          <div>
+            <div class="rv-name">Maja Buyle</div>
+            <div class="rv-src">GOOGLE REVIEW</div>
           </div>
         </div>
       </div>
     </div>
+    <div style="text-align:center;margin-top:28px;" class="rv">
+      <a href="https://www.google.com/search?q=Reno+Rangers+Antwerpen+reviews"
+         target="_blank" rel="noopener"
+         style="font-size:14px;color:#999;border-bottom:1px solid #ddd;padding-bottom:2px;">
+        Bekijk alle Google reviews →
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ══ FAQ ══ -->
-<section class="bg-white">
+<!-- FAQ -->
+<section class="sec bg-off">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="s-label">VEELGESTELDE VRAGEN</span>
-      <h2 class="s-title dark">FAQ</h2>
-      <div class="s-bar"></div>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item open">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Is het plaatsbezoek echt gratis?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Ja. Voor volledige badkamerrenovaties in Antwerpen en omgeving komen we gratis langs om uw situatie te bekijken en uw wensen te bespreken.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Krijg ik daarna een gedetailleerde offerte?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Ja. Na het plaatsbezoek ontvangt u een duidelijke offerte met overzicht van werken, materialen, prijs en planning.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Hoe snel kan mijn badkamer gerenoveerd worden?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Gemiddeld duurt een volledige badkamerrenovatie 2 tot 3 weken, afhankelijk van de staat van de ruimte, materialen en technische werken.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Komen er extra kosten bij?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Niet zonder akkoord. Als we tijdens de werken verborgen gebreken ontdekken, bespreken we dit eerst duidelijk met u.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Werken jullie ook buiten Antwerpen?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Ja, wij werken in Antwerpen en omgeving, waaronder Deurne, Merksem, Berchem, Borgerhout en omliggende gemeenten.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Voor welke projecten is het gratis plaatsbezoek bedoeld?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Voor volledige badkamerrenovaties of serieuze renovatieprojecten. Kleine herstellingen of losse klusjes vallen hier niet onder.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div style="display:grid;grid-template-columns:1fr;gap:40px;align-items:start;">
 
-<!-- ══ FINAL CTA ══ -->
-<section class="bg-black" style="padding:90px 0;text-align:center;" id="final-cta">
-  <div class="wrap">
-    <div class="reveal">
-      <h2 style="font-family:var(--bebas);font-size:clamp(42px,6vw,76px);color:var(--white);line-height:0.93;margin:0 0 18px;letter-spacing:1px;">Wilt u weten wat uw badkamerrenovatie echt zal kosten?</h2>
-      <div style="width:50px;height:3px;background:var(--red);margin:0 auto 24px;"></div>
-      <p style="font-family:var(--inter);font-size:16px;color:rgba(255,255,255,0.72);margin:0 0 30px;line-height:1.7;max-width:820px;margin-left:auto;margin-right:auto;">Plan een gratis plaatsbezoek. We bekijken uw badkamer ter plaatse, bespreken uw wensen en bezorgen u een gedetailleerde offerte met duidelijke planning.</p>
-      <div class="cta-btns">
-        <a class="btn" href="#plaatsbezoek-form">Plan mijn gratis plaatsbezoek &#8594;</a>
-        <a class="btn btn-outline" href="https://wa.me/32465883919" target="_blank" rel="noopener">Maak afspraak via WhatsApp &#8594;</a>
-      </div>
-      <p class="hero-small" style="margin-top:16px;">Gratis en vrijblijvend voor volledige badkamerrenovaties in Antwerpen en omgeving.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="foot-inner">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo">
-          <img src="/logo.png" alt="Reno Rangers" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=&quot;font-family:Bebas Neue,sans-serif;font-size:22px;color:#fff;letter-spacing:2px;&quot;>RENO<span style=&quot;color:#E63329;&quot;>RANGERS</span></span>'"/>
+      <!-- op desktop: 2 kolommen -->
+      <div style="display:grid;grid-template-columns:1fr;gap:40px;">
+        <div class="rv" style="max-width:540px;">
+          <span class="label">Veelgestelde vragen</span>
+          <h2 class="h2 dark">Alles wat u wil weten<br/><em>vóór u beslist.</em></h2>
+          <div class="rule"></div>
+          <p class="body-text" style="margin-bottom:28px;">Elke vraag is welkom. Stel ze ook gerust per WhatsApp — wij antwoorden eerlijk.</p>
+          <a class="btn-block" href="#form" style="display:inline-flex;max-width:300px;">
+            Vraag gratis offerte aan →
+          </a>
         </div>
-        <p class="foot-tagline">Renovatiebedrijf in Antwerpen. Duidelijke offerte en heldere planning.</p>
+
+        <div class="faq rv" data-d="1" style="max-width:680px;">
+          <div class="fq open">
+            <button class="fq-btn" onclick="tfaq(this)">
+              Regelen jullie echt alles — ook loodgieter en elektriciën?
+              <span class="fq-ico" aria-hidden="true">+</span>
+            </button>
+            <div class="fq-ans">Ja. Ons team voert alle werken uit: afbraak, leidingen, elektriciteit, tegelwerk, sanitair, ventilatie en afwerking. U hoeft geen aparte vaklui te zoeken of te coördineren. Eén aanspreekpunt voor alles.</div>
+          </div>
+          <div class="fq">
+            <button class="fq-btn" onclick="tfaq(this)">
+              Kan de prijs nog veranderen na de offerte?
+              <span class="fq-ico" aria-hidden="true">+</span>
+            </button>
+            <div class="fq-ans">Nee. De prijs in de offerte is de prijs die u betaalt. Als we tijdens de werken onverwachte problemen tegenkomen, stoppen we, bellen u op en leggen het uit. U beslist. Wij voeren nooit extra werk uit zonder uw schriftelijk akkoord.</div>
+          </div>
+          <div class="fq">
+            <button class="fq-btn" onclick="tfaq(this)">
+              Hoe lang zit ik zonder badkamer?
+              <span class="fq-ico" aria-hidden="true">+</span>
+            </button>
+            <div class="fq-ans">Een volledige renovatie duurt gemiddeld 2 tot 3 weken. In de offerte staat een concrete startdatum en opleverdatum. We werken dagelijks door zodat u zo snel mogelijk uw badkamer terug heeft.</div>
+          </div>
+          <div class="fq">
+            <button class="fq-btn" onclick="tfaq(this)">
+              Wat kost een badkamerrenovatie in Antwerpen?
+              <span class="fq-ico" aria-hidden="true">+</span>
+            </button>
+            <div class="fq-ans">Een kleine badkamer start vanaf circa €6.000. Een volledige renovatie ligt tussen €9.000 en €14.000. Luxe afwerking of maatwerk begint vanaf €14.000. De exacte prijs hangt af van uw situatie. Vraag een gratis offerte aan — u weet het na ons plaatsbezoek precies.</div>
+          </div>
+          <div class="fq">
+            <button class="fq-btn" onclick="tfaq(this)">
+              Werken jullie ook in mijn gemeente?
+              <span class="fq-ico" aria-hidden="true">+</span>
+            </button>
+            <div class="fq-ans">Wij werken in heel Antwerpen en omgeving: Deurne, Merksem, Berchem, Borgerhout, Wilrijk, Hoboken, Mortsel, Edegem, Kontich, Aartselaar, Hove, Boechout, Wijnegem en omliggende gemeenten.</div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4 class="foot-col-title">PAGINA'S</h4>
-        <a class="foot-link" href="https://www.renorangers.be">Home</a>
-        <a class="foot-link" href="https://www.renorangers.be/diensten">Diensten</a>
-        <a class="foot-link" href="https://www.renorangers.be/over">Over ons</a>
-        <a class="foot-link" href="https://www.renorangers.be/projecten">Projecten</a>
-        <a class="foot-link" href="https://www.renorangers.be/blog">Blog</a>
-        <a class="foot-link" href="https://www.renorangers.be/contact">Contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   FINAL CTA
+   Headline-scan: "Klaar voor een renovatie
+   zonder gedoe en zonder verrassingen?"
+══════════════════════════════════════ -->
+<section class="fcta">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="fcta-h">
+        Klaar voor een renovatie<br/>
+        <em>zonder gedoe</em><br/>
+        en zonder verrassingen?
+      </h2>
+      <div class="fcta-rule"></div>
+      <p class="fcta-sub">
+        <strong>Één bedrijf. Één prijs. Alles geregeld.</strong><br/>
+        Vraag een gratis en vrijblijvende offerte aan — wij nemen zo snel mogelijk contact op.
+      </p>
+      <div class="fcta-btns">
+        <a class="btn-red" href="#form">Vraag vaste offerte aan →</a>
+        <a class="btn-ghost" href="https://wa.me/32465883919" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z"/>
+          </svg>
+          WhatsApp
+        </a>
       </div>
-      <div>
-        <h4 class="foot-col-title">DIENSTEN</h4>
-        <a class="foot-link" href="https://www.renorangers.be/diensten">Badkamerrenovatie</a>
-        <a class="foot-link" href="https://www.renorangers.be/diensten">Totaalrenovatie</a>
-        <a class="foot-link" href="https://www.renorangers.be/diensten">Binnenafwerking</a>
-        <a class="foot-link" href="https://www.renorangers.be/diensten">Schilderwerken</a>
-        <a class="foot-link" href="https://www.renorangers.be/diensten">Vloeren &amp; tegels</a>
-      </div>
-      <div>
-        <h4 class="foot-col-title">CONTACT</h4>
+      <p style="font-size:13px;color:rgba(255,255,255,.22);margin-top:22px;">
+        Antwerpen &amp; omgeving &nbsp;·&nbsp; Gratis &amp; vrijblijvend &nbsp;·&nbsp; Wij nemen zo snel mogelijk contact op
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="foot">
+    <div class="foot-top">
+      <span class="foot-brand">RENO<span>RANGERS</span></span>
+      <nav class="foot-links" aria-label="Footer navigatie">
+        <a class="foot-link" href="https://www.renorangers.be">Website</a>
         <a class="foot-link" href="tel:+32465883919">+32 465 88 39 19</a>
         <a class="foot-link" href="mailto:info@renorangers.be">info@renorangers.be</a>
-        <span class="foot-link">Antwerpen, Belgi&#235;</span>
-      </div>
+        <a class="foot-link" href="https://www.renorangers.be/privacybeleid">Privacybeleid</a>
+      </nav>
     </div>
-    <div class="foot-bottom">
-      <span class="foot-copy">&copy; 2026 Reno Rangers BV. Alle rechten voorbehouden.</span>
-      <a class="foot-link" href="https://www.renorangers.be/privacybeleid" style="font-size:11px;">Privacybeleid</a>
-    </div>
+    <p class="foot-copy">© 2026 Reno Rangers BV · Alle rechten voorbehouden</p>
   </div>
 </footer>
 
 <script>
-/* ── NAV SCROLL ── */
-function toggleMenu(){
-  var burger = document.getElementById('burger');
-  var menu = document.getElementById('mobileMenu');
-  burger.classList.toggle('open');
-  menu.classList.toggle('open');
-}
-// close menu on link click
-document.querySelectorAll('.nav-mobile a').forEach(function(a){
-  a.addEventListener('click', function(){ 
-    document.getElementById('burger').classList.remove('open');
-    document.getElementById('mobileMenu').classList.remove('open');
-  });
-});
-window.addEventListener('scroll', function(){
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
-  var fb = document.getElementById('floatBtns');
-  if(window.scrollY > 400){
-    fb.style.opacity='1'; fb.style.transform='none'; fb.style.pointerEvents='auto';
-  } else {
-    fb.style.opacity='0'; fb.style.transform='translateY(16px)'; fb.style.pointerEvents='none';
-  }
-});
+/* marquee */
+(function(){var el=document.getElementById('mqt');if(el)el.innerHTML+=el.innerHTML;})();
 
-/* ── REVEAL ON SCROLL ── */
-var observer = new IntersectionObserver(function(entries){
+/* float WA */
+window.addEventListener('scroll',function(){
+  document.getElementById('flt').classList.toggle('show',window.scrollY>480);
+},{passive:true});
+
+/* reveal */
+var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
-    if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
   });
-}, {threshold:0.1});
-document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+},{threshold:.06,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
 
-/* ── FAQ ── */
-function toggleFaq(btn){
-  var item = btn.closest('.faq-item');
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-  if(!isOpen) item.classList.add('open');
+/* faq */
+function tfaq(btn){
+  var item=btn.closest('.fq');
+  var open=item.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(function(q){q.classList.remove('open');});
+  if(!open)item.classList.add('open');
 }
 
-/* ── MARQUEE duplicate for seamless loop ── */
-(function(){
-  var inner = document.querySelector('.marquee-inner');
-  if(inner){ inner.innerHTML += inner.innerHTML; }
-})();
+/* form */
+document.getElementById('mainform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=document.getElementById('fsub');
+  btn.textContent='Even geduld…';btn.disabled=true;
+  try{
+    var r=await fetch('https://formspree.io/f/xgopeqeb',{
+      method:'POST',body:new FormData(this),
+      headers:{Accept:'application/json'}
+    });
+    if(r.ok){
+      document.getElementById('fw').style.display='none';
+      document.getElementById('fsuc').classList.add('show');
+      if(typeof fbq!=='undefined')fbq('track','Lead');
+      if(window.dataLayer)window.dataLayer.push({event:'form_lead'});
+    }else{btn.textContent='Probeer opnieuw';btn.disabled=false;}
+  }catch(err){btn.textContent='Probeer opnieuw';btn.disabled=false;}
+});
+
+/* WA tracking */
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(typeof fbq!=='undefined')fbq('track','Contact');
+    if(window.dataLayer)window.dataLayer.push({event:'whatsapp_click'});
+  });
+});
 </script>
 </body>
 </html>
