@@ -135,12 +135,16 @@ button{font-family:inherit;cursor:pointer;}
   display:flex;justify-content:space-between;align-items:center;
   width:100%;
 }
-.nav-logo img{height:38px;width:auto;}
-.nav-logo-txt{
-  font-family:'Bebas Neue',sans-serif;font-size:21px;
-  color:#fff;letter-spacing:2px;
+.nav-logo-wrap{display:flex;flex-direction:column;gap:2px;text-decoration:none;}
+.nll{height:2px;width:100%;}
+.nll-top{background:#fff;}
+.nll-bot{background:var(--red);}
+.nll-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:2px;
+  color:#fff;font-style:italic;line-height:1;
 }
-.nav-logo-txt span{color:var(--red);}
+.nll-text span{color:var(--red);}
 .nav-actions{display:flex;gap:10px;align-items:center;}
 .nav-tel{
   font-size:13px;font-weight:600;color:rgba(255,255,255,.55);
@@ -617,8 +621,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
   <div class="nav-in">
     <a href="https://www.renorangers.be" aria-label="Reno Rangers homepage">
-      <img src="/logo.png" alt="Reno Rangers" class="nav-logo"
-           onerror="this.style.display='none';this.parentNode.innerHTML='<span class=nav-logo-txt>RENO<span>RANGERS</span></span>'"/>
+      <div class="nav-logo-wrap" aria-label="Reno Rangers">
+        <div class="nll nll-top"></div>
+        <div class="nll-text">RENO<span>RANGERS</span></div>
+        <div class="nll nll-bot"></div>
+      </div>
     </a>
     <div class="nav-actions">
       <a class="nav-tel" href="tel:+32465883919">+32 465 88 39 19</a>
