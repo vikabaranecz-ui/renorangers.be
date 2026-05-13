@@ -23,7 +23,7 @@ const IMG = {
   floor1: "/livingroom.jpg",
   team2: "/kitchen.jpg",
   proj1: "/livingroom.jpg",
-  hero: "/livingroom.jpg",
+  hero: "/home-hero-family.jpg",
   toiletantwerpen: "/toiletantwerpen.jpg",
   toiletmerksem: "/toiletmerksem.jpg",
   livingroom: "/livingroom.jpg",
@@ -542,11 +542,11 @@ function Home() {
       {/* HERO */}
       <section style={{ minHeight: "100vh", background: C.black, position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <img src={IMG.hero} alt="Renovatie Antwerpen" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.2 }} />
+          <img src={IMG.hero} alt="Renovatie Antwerpen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 45%", opacity: 0.78, filter: "grayscale(1) brightness(0.92) contrast(1.05)" }} />
         </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.92), rgba(10,10,10,0.55))" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.42))" }} />
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
-          <div className="hg" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="hg" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 56, alignItems: "center" }}>
             <div>
               <Reveal>
                 <div style={{ display: "inline-block", padding: "5px 14px", border: "1px solid " + C.red, fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, marginBottom: 24 }}>
@@ -594,20 +594,6 @@ function Home() {
                 </div>
               </Reveal>
             </div>
-
-            <Reveal delay={0.15} y={0}>
-              <div className="hi" style={{ overflow: "hidden", height: "60%", minHeight: 500 }}>
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                >
-                  <source src="/hero.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
