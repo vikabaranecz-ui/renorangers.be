@@ -39,8 +39,11 @@ const PHONE_HREF = `tel:${PHONE_NUMBER}`;
 const SITE_ORIGIN = "https://www.renorangers.be";
 const PRIMARY_HOST = "www.renorangers.be";
 const ALLOWED_HOSTS = Object.freeze([PRIMARY_HOST, "renorangers.be"]);
+const COOKIE_CONSENT_STORAGE_KEY = "rr_cookie_consent_v1";
+const COOKIE_CONSENT_EVENT = "cookie_consent_update";
 const PAGE_PATHS = Object.freeze({
   home: "/",
+  landing: "/badkamerrenovatie-antwerpen",
   diensten: "/diensten",
   over: "/over-ons",
   projecten: "/projecten",
@@ -54,6 +57,12 @@ const ROUTE_SEO = Object.freeze({
     description: "Reno Rangers is uw renovatie aannemer in Antwerpen voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, één aanspreekpunt, correcte oplevering.",
     ogTitle: "Reno Rangers — Renovatiebedrijf Antwerpen",
     ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen.",
+  },
+  [PAGE_PATHS.landing]: {
+    title: "Badkamerrenovatie Antwerpen | Reno Rangers",
+    description: "Badkamerrenovatie in Antwerpen door Reno Rangers. Eén aanspreekpunt, duidelijke planning en correcte oplevering.",
+    ogTitle: "Badkamerrenovatie Antwerpen — Reno Rangers",
+    ogDescription: "Professionele badkamerrenovatie in Antwerpen met Reno Rangers.",
   },
   [PAGE_PATHS.over]: {
     title: "Over Ons | Reno Rangers Renovatiebedrijf Antwerpen",
@@ -205,6 +214,40 @@ function handlePhoneClick(event, phoneNumber) {
   window.setTimeout(function () {
     window.location.href = phoneHref;
   }, 120);
+}
+
+function applyConsentMode(choice) {
+  if (typeof window === "undefined") return;
+
+  var consentPayload = choice === "accepted" ? {
+    ad_storage: "granted",
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+    analytics_storage: "granted",
+    functionality_storage: "granted",
+    security_storage: "granted",
+    personalization_storage: "granted",
+  } : {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "granted",
+    security_storage: "granted",
+    personalization_storage: "denied",
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", consentPayload);
+  } else {
+    window.dataLayer.push(["consent", "update", consentPayload]);
+  }
+
+  window.dataLayer.push({
+    event: COOKIE_CONSENT_EVENT,
+    cookie_consent: choice,
+  });
 }
 
 /* ── LOGO ── */
@@ -1456,6 +1499,96 @@ function RouteEffects() {
   return null;
 }
 
+function CookieConsentBanner() {
+  var _useState4 = useState(false);
+  var visible = _useState4[0];
+  var setVisible = _useState4[1];
+
+  useEffect(function () {
+    if (typeof window === "undefined") return;
+    try {
+      var savedChoice = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY);
+      if (savedChoice === "accepted" || savedChoice === "rejected") {
+        applyConsentMode(savedChoice);
+        setVisible(false);
+        return;
+      }
+    } catch (err) {}
+
+    setVisible(true);
+  }, []);
+
+  var saveChoice = function (choice) {
+    try {
+      window.localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, choice);
+    } catch (err) {}
+    applyConsentMode(choice);
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+
+  return (
+    <div
+      role="dialog"
+      aria-live="polite"
+      aria-label="Cookie instellingen"
+      style={{
+        position: "fixed",
+        left: 16,
+        right: 16,
+        bottom: 16,
+        zIndex: 10001,
+        background: C.white,
+        border: "1px solid " + C.ltGray,
+        boxShadow: "0 12px 36px rgba(0,0,0,0.18)",
+        padding: "16px",
+      }}
+    >
+      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.char, lineHeight: 1.6, margin: "0 0 12px" }}>
+        Wij gebruiken cookies voor een betere website-ervaring en statistieken. U kiest zelf of u analytische cookies toestaat. Lees meer in ons{" "}
+        <Link to={PAGE_PATHS.privacy} style={{ color: C.red, textDecoration: "underline" }}>
+          privacybeleid
+        </Link>.
+      </p>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <button
+          type="button"
+          onClick={function () { saveChoice("rejected"); }}
+          style={{
+            background: "transparent",
+            color: C.black,
+            border: "1px solid " + C.black,
+            cursor: "pointer",
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: 14,
+            letterSpacing: 2,
+            padding: "11px 16px",
+          }}
+        >
+          Alleen noodzakelijke
+        </button>
+        <button
+          type="button"
+          onClick={function () { saveChoice("accepted"); }}
+          style={{
+            background: C.red,
+            color: C.white,
+            border: "1px solid " + C.red,
+            cursor: "pointer",
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: 14,
+            letterSpacing: 2,
+            padding: "11px 16px",
+          }}
+        >
+          Accepteer cookies
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function NotFound() {
   var navigate = useNavigate();
 
@@ -1494,9 +1627,11 @@ export default function App() {
     <div style={{ background: C.white, minHeight: "100vh" }}>
       <style>{globalCSS}</style>
       <RouteEffects />
+      <CookieConsentBanner />
       <Nav />
       <Routes>
         <Route path={PAGE_PATHS.home} element={<Home />} />
+        <Route path={PAGE_PATHS.landing} element={<Home />} />
         <Route path={PAGE_PATHS.over} element={<Over />} />
         <Route path={PAGE_PATHS.diensten} element={<Diensten />} />
         <Route path={PAGE_PATHS.contact} element={<Contact />} />
