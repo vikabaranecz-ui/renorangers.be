@@ -823,6 +823,113 @@ function Home() {
 }
 
 /* ══════════════════════════════════
+   BADKAMER LANDING PAGE
+   ══════════════════════════════════ */
+function BadkamerLanding() {
+  var go = useGoToPage();
+
+  return (
+    <div>
+      <section style={{ minHeight: "100vh", background: C.black, position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+          <img src={IMG.hero} alt="Badkamerrenovatie Antwerpen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 38%", opacity: 0.75, filter: "grayscale(1) brightness(0.88) contrast(1.08)" }} />
+        </div>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(130deg, rgba(10,10,10,0.88), rgba(10,10,10,0.54))" }} />
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
+          <Reveal>
+            <span style={{ display: "inline-block", padding: "6px 14px", border: "1px solid " + C.red, color: C.red, fontFamily: "'Bebas Neue', sans-serif", letterSpacing: 4, fontSize: 12, marginBottom: 22 }}>
+              BADKAMERRENOVATIE ANTWERPEN
+            </span>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(48px, 7vw, 94px)", lineHeight: 0.9, color: C.white, margin: "0 0 12px" }}>
+              BADKAMER RENOVEREN<br />
+              IN <span style={{ color: C.red }}>ANTWERPEN</span>?
+            </h1>
+          </Reveal>
+          <Reveal delay={0.14}>
+            <div style={{ width: 64, height: 3, background: C.red, margin: "18px 0 20px" }} />
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, maxWidth: 620, color: "rgba(255,255,255,0.66)", margin: "0 0 30px" }}>
+              Start met een gratis plaatsbezoek. Wij bekijken uw badkamer ter plaatse en bezorgen u nadien een duidelijke offerte met planning.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+              <Btn label="PLAN GRATIS PLAATSBEZOEK" onClick={function () { go("contact"); }} />
+              <Btn label="WHATSAPP" onClick={function () { window.open("https://wa.me/32465883919", "_blank", "noopener,noreferrer"); }} outline light />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <Marquee items={["GRATIS PLAATSBEZOEK", "GEDETAILLEERDE OFFERTE", "GEEN MEERWERKEN ZONDER AKKOORD", "ANTWERPEN & OMGEVING"]} />
+
+      <section style={{ padding: "90px 0", background: C.white }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <STitle label="PRIJSINDICATIE" title={"WAT KOST EEN\nBADKAMERRENOVATIE?"} />
+          <div className="sg" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+            {[
+              { t: "KLEINE BADKAMER", p: "€6.000 – €9.000" },
+              { t: "STANDAARD BADKAMER", p: "€9.000 – €14.000" },
+              { t: "LUXE AFWERKING", p: "vanaf €14.000" },
+            ].map(function (item, i) {
+              return (
+                <Reveal key={item.t} delay={i * 0.07}>
+                  <div style={{ border: "1px solid " + C.ltGray, padding: "26px 22px", background: C.off }}>
+                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 2, color: C.gray }}>{item.t}</div>
+                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 42, lineHeight: 1, color: C.black, marginTop: 8 }}>{item.p}</div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+          <Reveal delay={0.25}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.75, color: C.gray, maxWidth: 880, margin: "24px 0 0" }}>
+              De exacte prijs hangt af van afbraak, leidingen, tegelwerk, sanitair en afwerking. Daarom komen we eerst ter plaatse kijken.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section style={{ padding: "90px 0", background: C.black, textAlign: "center" }}>
+        <div style={{ maxWidth: 840, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(36px, 5vw, 62px)", color: C.white, lineHeight: 0.93, margin: "0 0 14px" }}>
+              WILT U WETEN WAT UW BADKAMER<br />
+              ECHT ZAL KOSTEN?
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.62)", margin: "0 0 30px" }}>
+              Plan een gratis plaatsbezoek. We bekijken uw badkamer ter plaatse en bezorgen u een gedetailleerde offerte.
+            </p>
+            <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 12 }}>
+              <Btn label="PLAN MIJN GRATIS PLAATSBEZOEK" onClick={function () { go("contact"); }} />
+              <Btn label="WHATSAPP" onClick={function () { window.open("https://wa.me/32465883919", "_blank", "noopener,noreferrer"); }} outline light />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function BadkamerLandingStaticPage() {
+  return (
+    <iframe
+      title="Badkamerrenovatie Antwerpen"
+      src="/badkamerrenovatie-antwerpen.html"
+      style={{
+        width: "100%",
+        minHeight: "100svh",
+        height: "100svh",
+        border: "none",
+        display: "block",
+        background: C.white,
+      }}
+    />
+  );
+}
+
+/* ══════════════════════════════════
    DIENSTEN PAGE
    ══════════════════════════════════ */
 function Diensten() {
@@ -1623,15 +1730,18 @@ function NotFound() {
    APP ROOT
    ══════════════════════════════════ */
 export default function App() {
+  var location = useLocation();
+  var isStandaloneLanding = normalizePathname(location.pathname) === normalizePathname(PAGE_PATHS.landing);
+
   return (
     <div style={{ background: C.white, minHeight: "100vh" }}>
       <style>{globalCSS}</style>
       <RouteEffects />
-      <CookieConsentBanner />
-      <Nav />
+      {!isStandaloneLanding && <CookieConsentBanner />}
+      {!isStandaloneLanding && <Nav />}
       <Routes>
         <Route path={PAGE_PATHS.home} element={<Home />} />
-        <Route path={PAGE_PATHS.landing} element={<Home />} />
+        <Route path={PAGE_PATHS.landing} element={<BadkamerLandingStaticPage />} />
         <Route path={PAGE_PATHS.over} element={<Over />} />
         <Route path={PAGE_PATHS.diensten} element={<Diensten />} />
         <Route path={PAGE_PATHS.contact} element={<Contact />} />
@@ -1641,8 +1751,8 @@ export default function App() {
         <Route path="/over" element={<Navigate to={PAGE_PATHS.over} replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Foot />
-      <FloatBtns />
+      {!isStandaloneLanding && <Foot />}
+      {!isStandaloneLanding && <FloatBtns />}
     </div>
   );
 }
