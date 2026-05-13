@@ -1610,6 +1610,12 @@ function CookieConsentBanner() {
   var _useState4 = useState(false);
   var visible = _useState4[0];
   var setVisible = _useState4[1];
+  var _useState5 = useState(false);
+  var checked = _useState5[0];
+  var setChecked = _useState5[1];
+  var _useState6 = useState(false);
+  var hasSavedChoice = _useState6[0];
+  var setHasSavedChoice = _useState6[1];
 
   useEffect(function () {
     if (typeof window === "undefined") return;
@@ -1617,12 +1623,14 @@ function CookieConsentBanner() {
       var savedChoice = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY);
       if (savedChoice === "accepted" || savedChoice === "rejected") {
         applyConsentMode(savedChoice);
-        setVisible(false);
-        return;
+        setHasSavedChoice(true);
+      } else {
+        setHasSavedChoice(false);
       }
     } catch (err) {}
 
     setVisible(true);
+    setChecked(true);
   }, []);
 
   var saveChoice = function (choice) {
@@ -1630,69 +1638,84 @@ function CookieConsentBanner() {
       window.localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, choice);
     } catch (err) {}
     applyConsentMode(choice);
+    setHasSavedChoice(true);
     setVisible(false);
   };
 
-  if (!visible) return null;
+  if (!checked) return null;
 
   return (
-    <div
-      role="dialog"
-      aria-live="polite"
-      aria-label="Cookie instellingen"
-      style={{
-        position: "fixed",
-        left: 16,
-        right: 16,
-        bottom: 16,
-        zIndex: 10001,
-        background: C.white,
-        border: "1px solid " + C.ltGray,
-        boxShadow: "0 12px 36px rgba(0,0,0,0.18)",
-        padding: "16px",
-      }}
-    >
-      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.char, lineHeight: 1.6, margin: "0 0 12px" }}>
-        Wij gebruiken cookies voor een betere website-ervaring en statistieken. U kiest zelf of u analytische cookies toestaat. Lees meer in ons{" "}
-        <Link to={PAGE_PATHS.privacy} style={{ color: C.red, textDecoration: "underline" }}>
-          privacybeleid
-        </Link>.
-      </p>
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <button
-          type="button"
-          onClick={function () { saveChoice("rejected"); }}
+    <>
+      {visible && (
+        <div
+          role="dialog"
+          aria-live="polite"
+          aria-label="Cookie instellingen"
           style={{
-            background: "transparent",
-            color: C.black,
-            border: "1px solid " + C.black,
-            cursor: "pointer",
-            fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: 14,
-            letterSpacing: 2,
-            padding: "11px 16px",
-          }}
-        >
-          Alleen noodzakelijke
-        </button>
-        <button
-          type="button"
-          onClick={function () { saveChoice("accepted"); }}
-          style={{
-            background: C.red,
+            position: "fixed",
+            left: 20,
+            right: 20,
+            bottom: 20,
+            zIndex: 10020,
+            maxWidth: 980,
+            margin: "0 auto",
+            background: C.black,
             color: C.white,
-            border: "1px solid " + C.red,
-            cursor: "pointer",
-            fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: 14,
-            letterSpacing: 2,
-            padding: "11px 16px",
+            border: "2px solid " + C.red,
+            boxShadow: "0 14px 44px rgba(0,0,0,0.42)",
+            padding: "18px",
           }}
         >
-          Accepteer cookies
-        </button>
-      </div>
-    </div>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.88)", lineHeight: 1.6, margin: "0 0 12px" }}>
+            Wij gebruiken cookies voor een betere website-ervaring en statistieken. U kiest zelf of u analytische cookies toestaat. Lees meer in ons{" "}
+            <Link to={PAGE_PATHS.privacy} style={{ color: C.red, textDecoration: "underline", fontWeight: 600 }}>
+              privacybeleid
+            </Link>.
+          </p>
+          {hasSavedChoice && (
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.65)", margin: "0 0 12px" }}>
+              Huidige keuze: {window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY) === "accepted" ? "Alle cookies toegestaan" : "Alleen noodzakelijke cookies"}
+            </p>
+          )}
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <button
+              type="button"
+              onClick={function () { saveChoice("rejected"); }}
+              style={{
+                background: "transparent",
+                color: C.white,
+                border: "1px solid rgba(255,255,255,0.7)",
+                cursor: "pointer",
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: 14,
+                letterSpacing: 2,
+                padding: "11px 16px",
+                minHeight: 44,
+              }}
+            >
+              Alleen noodzakelijke
+            </button>
+            <button
+              type="button"
+              onClick={function () { saveChoice("accepted"); }}
+              style={{
+                background: C.red,
+                color: C.white,
+                border: "1px solid " + C.red,
+                cursor: "pointer",
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: 14,
+                letterSpacing: 2,
+                padding: "11px 16px",
+                minHeight: 44,
+              }}
+            >
+              Accepteer cookies
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
