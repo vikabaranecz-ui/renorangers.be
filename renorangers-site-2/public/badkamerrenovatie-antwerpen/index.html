@@ -625,6 +625,33 @@ footer{
 }
 .flt.show{opacity:1;transform:none;pointer-events:auto;}
 .flt:hover{background:#1da853;}
+body.cookie-open .flt{bottom:132px;}
+@media(max-width:480px){body.cookie-open .flt{bottom:154px;}}
+
+/* ─────────────────────────────────────────
+   COOKIE BANNER
+───────────────────────────────────────── */
+.cookie-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;
+  z-index:10002;
+  max-width:760px;margin:0 auto;
+  background:#fff;border:1px solid var(--border);
+  box-shadow:0 12px 36px rgba(0,0,0,.18);
+  padding:16px;
+}
+.cookie-banner.hidden{display:none;}
+.cookie-text{
+  font-size:14px;line-height:1.6;color:#2a2a2a;margin:0 0 12px;
+}
+.cookie-text a{color:var(--red);text-decoration:underline;}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.cookie-btn{
+  min-height:44px;padding:10px 14px;border:1px solid #0a0a0a;
+  background:#fff;color:#0a0a0a;
+  font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;
+}
+.cookie-btn.primary{background:var(--red);border-color:var(--red);color:#fff;}
+@media(min-width:768px){.cookie-banner{left:24px;right:24px;}}
 
 /* ─────────────────────────────────────────
    REVEAL ANIMATION
@@ -659,6 +686,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.636-1.467A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-2.168 0-4.183-.588-5.927-1.606l-.424-.252-2.75.87.884-2.684-.277-.44A9.77 9.77 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12s-4.395 9.818-9.818 9.818z"/>
   </svg>
 </a>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner hidden" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie instellingen">
+  <p class="cookie-text">
+    Wij gebruiken cookies voor statistieken en advertentiemeting. Kies zelf welke cookies u toestaat. Lees meer in ons
+    <a href="https://www.renorangers.be/privacybeleid">privacybeleid</a>.
+  </p>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn" id="cookieNecessary">Alleen noodzakelijke</button>
+    <button type="button" class="cookie-btn primary" id="cookieAccept">Accepteer cookies</button>
+  </div>
+</div>
 
 <!-- ══ NAV ══ -->
 <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
@@ -1260,6 +1299,67 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
     setTimeout(function(){window.location.href='tel:'+phone;},120);
   });
 });
+
+/* cookie banner */
+(function(){
+  var consentKey='rr_cookie_consent_v1';
+  var banner=document.getElementById('cookieBanner');
+  var acceptBtn=document.getElementById('cookieAccept');
+  var necessaryBtn=document.getElementById('cookieNecessary');
+  if(!banner||!acceptBtn||!necessaryBtn)return;
+
+  function setBannerOpen(open){
+    banner.classList.toggle('hidden',!open);
+    document.body.classList.toggle('cookie-open',open);
+  }
+
+  function applyConsent(choice){
+    var granted=choice==='accepted';
+    var payload={
+      analytics_storage:granted?'granted':'denied',
+      ad_storage:granted?'granted':'denied',
+      ad_user_data:granted?'granted':'denied',
+      ad_personalization:granted?'granted':'denied',
+      functionality_storage:'granted',
+      security_storage:'granted'
+    };
+
+    window.dataLayer=window.dataLayer||[];
+    if(typeof gtag==='function'){
+      gtag('consent','update',payload);
+    }else{
+      window.dataLayer.push(['consent','update',payload]);
+    }
+
+    window.dataLayer.push({
+      event:'cookie_consent_update',
+      cookie_consent:choice
+    });
+  }
+
+  try{
+    var saved=window.localStorage.getItem(consentKey);
+    if(saved==='accepted'||saved==='rejected'){
+      applyConsent(saved);
+      setBannerOpen(false);
+      return;
+    }
+  }catch(err){}
+
+  setBannerOpen(true);
+
+  necessaryBtn.addEventListener('click',function(){
+    try{window.localStorage.setItem(consentKey,'rejected');}catch(err){}
+    applyConsent('rejected');
+    setBannerOpen(false);
+  });
+
+  acceptBtn.addEventListener('click',function(){
+    try{window.localStorage.setItem(consentKey,'accepted');}catch(err){}
+    applyConsent('accepted');
+    setBannerOpen(false);
+  });
+})();
 </script>
 </body>
 </html>
