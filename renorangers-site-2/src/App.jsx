@@ -195,6 +195,26 @@ function normalizePhoneNumber(phoneNumber) {
   return phoneNumber.trim().replace(/^tel:/i, "").replace(/\s+/g, "");
 }
 
+function ensureConsentDefaultState() {
+  if (typeof window === "undefined") return;
+
+  var defaultConsent = {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    functionality_storage: "granted",
+    security_storage: "granted",
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "default", defaultConsent);
+  } else {
+    window.dataLayer.push(["consent", "default", defaultConsent]);
+  }
+}
+
 function handlePhoneClick(event, phoneNumber) {
   if (event && typeof event.preventDefault === "function") {
     event.preventDefault();
@@ -1542,6 +1562,10 @@ function FloatBtns() {
 
 function RouteEffects() {
   var location = useLocation();
+
+  useEffect(function () {
+    ensureConsentDefaultState();
+  }, []);
 
   useEffect(function () {
     if (typeof window === "undefined") return;
