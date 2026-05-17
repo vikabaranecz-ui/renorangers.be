@@ -23,8 +23,10 @@ src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
 <!-- CONSENT MODE -->
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
+window.gtag = window.gtag || function () {
+  window.dataLayer.push(arguments);
+};
+window.gtag('consent', 'default', {
   analytics_storage: 'denied',
   ad_storage: 'denied',
   ad_user_data: 'denied',
@@ -36,7 +38,7 @@ gtag('consent', 'default', {
 try {
   var rrCookieConsent = window.localStorage.getItem('rr_cookie_consent_v1');
   if (rrCookieConsent === 'accepted') {
-    gtag('consent', 'update', {
+    window.gtag('consent', 'update', {
       analytics_storage: 'granted',
       ad_storage: 'granted',
       ad_user_data: 'granted',
@@ -45,7 +47,7 @@ try {
       security_storage: 'granted'
     });
   } else if (rrCookieConsent === 'rejected') {
-    gtag('consent', 'update', {
+    window.gtag('consent', 'update', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
@@ -67,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- FONTS & PRELOAD -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="image" href="badkamer-hero-desktop.jpg" fetchpriority="high"/>
+<link rel="preload" as="image" href="badkamer-hero-desktop.webp" fetchpriority="high"/>
 <link rel="preload" as="style"
   href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
   onload="this.onload=null;this.rel='stylesheet'"/>
@@ -721,14 +723,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero" aria-label="Hero">
   <div class="hero-bg" aria-hidden="true">
     <picture>
-      <source media="(max-width: 767px)" srcset="badkamer-hero-mobile.jpg"/>
+      <source media="(max-width: 767px)" srcset="badkamer-hero-mobile.webp"/>
       <img
-        src="badkamer-hero-desktop.jpg"
+        src="badkamer-hero-desktop.webp"
         alt="Gerenoveerde badkamer in Antwerpen door Reno Rangers"
         fetchpriority="high"
         decoding="async"
         width="1920" height="1080"
-        onerror="this.src='webphoto/bathroom.jpg'"/>
+        onerror="this.src='badkamer-hero-desktop.jpg'"/>
     </picture>
   </div>
   <div class="hero-veil" aria-hidden="true"></div>
@@ -944,13 +946,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="ba-imgs">
         <div class="ba-wrap">
           <span class="ba-tag ba-v">VOOR</span>
-          <img src="/toiletantwerpenvoor.jpg" alt="Badkamer voor renovatie Antwerpen"
+          <img src="/toiletantwerpenvoor.webp" alt="Badkamer voor renovatie Antwerpen"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#120806'"/>
         </div>
         <div class="ba-wrap">
           <span class="ba-tag ba-n">NA</span>
-          <img src="/toiletantwerpen.jpg" alt="Badkamer na renovatie Antwerpen"
+          <img src="/toiletantwerpen.webp" alt="Badkamer na renovatie Antwerpen"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#040f1c'"/>
         </div>
@@ -964,13 +966,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="ba-imgs">
         <div class="ba-wrap">
           <span class="ba-tag ba-v">VOOR</span>
-          <img src="/toiletmerksemvoor.jpg" alt="Badkamer voor renovatie Merksem"
+          <img src="/toiletmerksemvoor.webp" alt="Badkamer voor renovatie Merksem"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#110804'"/>
         </div>
         <div class="ba-wrap">
           <span class="ba-tag ba-n">NA</span>
-          <img src="/toiletmerksem.jpg" alt="Badkamer na renovatie Merksem"
+          <img src="/toiletmerksem.webp" alt="Badkamer na renovatie Merksem"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#040c18'"/>
         </div>
@@ -984,13 +986,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="ba-imgs">
         <div class="ba-wrap">
           <span class="ba-tag ba-v">VOOR</span>
-          <img src="/badkamermetmortexvoor.jpg" alt="Badkamer voor renovatie mortex"
+          <img src="/badkamermetmortexvoor.webp" alt="Badkamer voor renovatie mortex"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#0e0705'"/>
         </div>
         <div class="ba-wrap">
           <span class="ba-tag ba-n">NA</span>
-          <img src="/badkamermetmortex.jpg" alt="Badkamer na renovatie mortex"
+          <img src="/badkamermetmortex.webp" alt="Badkamer na renovatie mortex"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#030d18'"/>
         </div>
@@ -1004,13 +1006,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="ba-imgs">
         <div class="ba-wrap">
           <span class="ba-tag ba-v">VOOR</span>
-          <img src="badkamerantwerpenzwartvoor.jpg" alt="Badkamer voor renovatie Antwerpen zwart design"
+          <img src="badkamerantwerpenzwartvoor.webp" alt="Badkamer voor renovatie Antwerpen zwart design"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#140a08'"/>
         </div>
         <div class="ba-wrap">
           <span class="ba-tag ba-n">NA</span>
-          <img src="badkamerantwerpenzwart.jpg" alt="Badkamer na renovatie Antwerpen zwart design"
+          <img src="badkamerantwerpenzwart.webp" alt="Badkamer na renovatie Antwerpen zwart design"
                loading="lazy" decoding="async" width="600" height="750"
                onerror="this.parentNode.style.background='#03101a'"/>
         </div>
