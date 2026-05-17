@@ -19,16 +19,16 @@ const IMG = {
   bath2: "/toiletmerksem.webp",
   kitchen1: "/badkamerantwerpenzwart.webp",
   living1: "/badkamermetmortex.webp",
-  interior1: "/toiletmerksemvoor.webp",
+  interior1: "/badkamerantwerpenzwartvoor.webp",
   floor1: "/badkamermetmortexvoor.webp",
-  team2: "/badkamerantwerpenzwart.webp",
-  proj1: "/toiletantwerpen.webp",
-  hero: "/home-hero-family.webp",
+  team2: "/toiletmerksem.webp",
+  proj1: "/badkamerantwerpenzwart.webp",
+  hero: "/badkamer-hero-desktop.webp",
   toiletantwerpen: "/toiletantwerpen.webp",
   toiletmerksem: "/toiletmerksem.webp",
   livingroom: "/badkamermetmortex.webp",
   kitchen: "/badkamerantwerpenzwart.webp",
-  shower: "/toiletmerksemvoor.webp",
+  shower: "/toiletmerksem.webp",
   bathroom: "/toiletantwerpen.webp",
   toilet: "/toiletantwerpenvoor.webp",
 };
@@ -1172,12 +1172,12 @@ function Over() {
    ══════════════════════════════════ */
 function Projecten() {
   var projects = [
-    { t: "KEUKENRENOVATIE", loc: "Antwerpen-Zuid", img: IMG.kitchen1, c: "Totaalrenovatie" },
-    { t: "BADKAMERRENOVATIE", loc: "Mortsel", img: IMG.bath1, c: "Badkamerrenovatie" },
-    { t: "APPARTEMENT RENOVATIE", loc: "Deurne", img: IMG.proj1, c: "Totaalrenovatie" },
-    { t: "SLAAPKAMER AFWERKING", loc: "Edegem", img: IMG.interior1, c: "Binnenafwerking" },
-    { t: "WOONKAMER RENOVATIE", loc: "Wilrijk", img: IMG.living1, c: "Totaalrenovatie" },
-    { t: "VLOER & TEGELWERK", loc: "Kontich", img: IMG.floor1, c: "Binnenafwerking" },
+    { t: "BADKAMERRENOVATIE", loc: "Antwerpen", img: IMG.kitchen1, c: "Complete renovatie" },
+    { t: "BADKAMERRENOVATIE", loc: "Merksem", img: IMG.bath1, c: "Complete renovatie" },
+    { t: "BADKAMERRENOVATIE", loc: "Borgerhout", img: IMG.proj1, c: "Complete renovatie" },
+    { t: "DOUCHE & AFWERKING", loc: "Antwerpen-Zuid", img: IMG.interior1, c: "Complete renovatie" },
+    { t: "MORTEX BADKAMER", loc: "Antwerpen", img: IMG.living1, c: "Complete renovatie" },
+    { t: "VOORBEREIDING & TEGELWERK", loc: "Merksem", img: IMG.floor1, c: "Complete renovatie" },
   ];
 
   return (
