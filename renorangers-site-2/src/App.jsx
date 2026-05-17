@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, Navigate, NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 
 /* ── BRAND COLORS ── */
 const C = {
@@ -57,7 +57,7 @@ const BLOG_POSTS = [
     title: "Wat kost een badkamerrenovatie in Antwerpen in 2026?",
     date: "15 MAART 2026",
     category: "BADKAMER",
-    img: "/toiletmerksem.webp",
+    img: "/badkamer-hero-desktop.webp",
     excerpt: "Een badkamerrenovatie in Antwerpen kost gemiddeld tussen 5.000 en 15.000 euro, afhankelijk van grootte, materialen en complexiteit.",
     seo: {
       title: "Wat kost een badkamerrenovatie in Antwerpen in 2026? | Reno Rangers",
@@ -173,7 +173,7 @@ const BLOG_POSTS = [
     title: "Totaalrenovatie: alles wat u moet weten",
     date: "8 MAART 2026",
     category: "RENOVATIE",
-    img: "/badkamermetmortex.webp",
+    img: "/projects/project-living-1.png",
     excerpt: "Een totaalrenovatie is een grote investering die uw woningwaarde aanzienlijk kan verhogen. Van vergunningen tot het kiezen van de juiste aannemer.",
     seo: {
       title: "Totaalrenovatie: alles wat u moet weten | Reno Rangers Antwerpen",
@@ -286,7 +286,7 @@ const BLOG_POSTS = [
     title: "5 trends in binnenafwerking voor Belgische woningen",
     date: "1 MAART 2026",
     category: "INTERIEUR",
-    img: "/toiletantwerpen.webp",
+    img: "/projects/project-mortex-after-1.jpg",
     excerpt: "Van warme aardetinten tot minimalistische afwerking — de trends in binnenafwerking evolueren snel. Ontdek de 5 populairste stijlen van 2026.",
     seo: {
       title: "5 trends in binnenafwerking voor Belgische woningen in 2026 | Reno Rangers",
@@ -375,7 +375,7 @@ const BLOG_POSTS = [
     title: "Hoe kiest u de juiste renovatie-aannemer?",
     date: "22 FEB 2026",
     category: "TIPS",
-    img: "/home-hero-family.webp",
+    img: "/projects/project-bathroom-purple-1.png",
     excerpt: "Het kiezen van een betrouwbare aannemer is de belangrijkste beslissing bij elke renovatie. Ontdek de 7 criteria waarop u moet letten.",
     seo: {
       title: "Hoe kiest u de juiste renovatie-aannemer? 7 tips | Reno Rangers",
@@ -1837,9 +1837,8 @@ function Blog() {
    BLOG POST PAGE
    ══════════════════════════════════ */
 function BlogPost() {
-  var navigate = useNavigate();
-  var location = useLocation();
-  var slug = normalizePathname(location.pathname).replace(/^\/blog\//, "");
+  var params = useParams();
+  var slug = params.slug || "";
   var post = BLOG_POSTS.find(function (p) { return p.slug === slug; });
   var go = useGoToPage();
 
