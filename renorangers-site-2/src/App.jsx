@@ -51,6 +51,428 @@ const PAGE_PATHS = Object.freeze({
   contact: "/contact",
   privacy: "/privacybeleid",
 });
+const BLOG_POSTS = [
+  {
+    slug: "wat-kost-badkamerrenovatie-antwerpen-2026",
+    title: "Wat kost een badkamerrenovatie in Antwerpen in 2026?",
+    date: "15 MAART 2026",
+    category: "BADKAMER",
+    img: "/toiletmerksem.webp",
+    excerpt: "Een badkamerrenovatie in Antwerpen kost gemiddeld tussen 5.000 en 15.000 euro, afhankelijk van grootte, materialen en complexiteit.",
+    seo: {
+      title: "Wat kost een badkamerrenovatie in Antwerpen in 2026? | Reno Rangers",
+      description: "Ontdek de werkelijke kostprijs van een badkamerrenovatie in Antwerpen in 2026. Van 5.000 tot 15.000 euro — wij leggen uit wat de prijs bepaalt.",
+      ogTitle: "Kostprijs badkamerrenovatie Antwerpen 2026 — Reno Rangers",
+      ogDescription: "Wat kost een badkamerrenovatie in Antwerpen in 2026? Alle kosten op een rij.",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "Een nieuwe badkamer is een van de populairste en meest waardeverhogende renovaties die u aan uw woning kunt uitvoeren. Maar hoeveel mag u daarvoor budgetteren in Antwerpen in 2026? In dit artikel zetten we alle kosten op een rij, zodat u geen verrassingen krijgt.",
+      },
+      {
+        type: "h2",
+        text: "Gemiddelde kostprijs badkamerrenovatie in Antwerpen",
+      },
+      {
+        type: "p",
+        text: "De gemiddelde kostprijs voor een badkamerrenovatie in Antwerpen schommelt tussen 5.000 en 15.000 euro voor een standaard badkamer van 6 à 10 m². Dit budget omvat zowel de arbeid als de materialen. Voor een luxueuze badkamer met premium tegels, inloopdouche en design sanitair kan het budget oplopen tot 20.000 euro of meer.",
+      },
+      {
+        type: "h2",
+        text: "Factoren die de prijs bepalen",
+      },
+      {
+        type: "list",
+        items: [
+          "Grootte van de badkamer: Een kleine badkamer van 4 m² kost minder dan een ruime familiale badkamer van 12 m².",
+          "Keuze van materialen: Tegels variëren van 15 euro per m² tot meer dan 100 euro per m² voor Italiaans marmer of keramische designtegels.",
+          "Type sanitair: Een instapmodel douche kost enkele honderden euro, een vrijstaand bad kan 2.000 tot 5.000 euro kosten.",
+          "Loodgieterij en elektriciteit: Verplaatsen van leidingen of aanpassen van de elektrische installatie drijft de kosten op.",
+          "Demontage en afbraak: Verwijderen van de oude badkamer, inclusief afvoer van puin, rekent u op 500 tot 1.500 euro.",
+          "Vloerverwarming: Een populaire optie die 800 tot 1.500 euro extra kost.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Prijsraming per type badkamerrenovatie",
+      },
+      {
+        type: "table",
+        rows: [
+          ["Type renovatie", "Oppervlakte", "Geschatte kostprijs"],
+          ["Basisrenovatie", "4–6 m²", "€ 4.000 – € 7.000"],
+          ["Standaardrenovatie", "6–10 m²", "€ 7.000 – € 12.000"],
+          ["Volledige renovatie met luxematerialen", "8–12 m²", "€ 12.000 – € 20.000"],
+          ["Luxe badkamer met maatwerk", "10–15 m²", "€ 18.000 – € 30.000"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Arbeidskosten vs. materiaalkosten",
+      },
+      {
+        type: "p",
+        text: "Bij een doorsnee badkamerrenovatie bestaat het budget voor ongeveer 40 à 50% uit arbeidskosten en 50 à 60% uit materiaalkosten. Vakmannen in de regio Antwerpen rekenen gemiddeld 45 tot 65 euro per uur. Een complete badkamerrenovatie vergt doorgaans 80 tot 150 uur arbeid, afhankelijk van de complexiteit.",
+      },
+      {
+        type: "h2",
+        text: "Bespaartips zonder kwaliteitsverlies",
+      },
+      {
+        type: "list",
+        items: [
+          "Behoud de bestaande sanitairposities: Verplaatsen van een douche of bad verdubbelt de loodgieterijkosten.",
+          "Kies keramische tegels in de middenklasse: Kwaliteitsvolle tegels rond 30 à 50 euro per m² bieden uitstekende duurzaamheid zonder de prijs van luxemodellen.",
+          "Vergelijk minstens drie offertes: De prijsverschillen tussen aannemers kunnen oplopen tot 30%.",
+          "Plan buiten het hoogseizoen: Aannemers zijn soms bereid tot korting als u het werk in januarion of februarion inplant.",
+          "Gebruik vaste prijs-contracten: Zo vermijdt u kostenoverschrijdingen achteraf.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Waarom kiezen voor een all-in aannemer?",
+      },
+      {
+        type: "p",
+        text: "Veel Antwerpenaars werken liever met aparte vaklieden — een tegelzetter, een loodgieter en een elektricien — in de hoop zo te besparen. In de praktijk leidt dit echter vaak tot coördinatieproblemen, hogere totaalkosten en een langere doorlooptijd. Een all-in renovatiebedrijf zoals Reno Rangers werkt met één vaste prijs, één aanspreekpunt en een duidelijke planning. U weet vooraf exact wat het kost en wanneer het klaar is.",
+      },
+      {
+        type: "h2",
+        text: "Veelgestelde vragen over de kostprijs van badkamerrenovatie",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Hoelang duurt een badkamerrenovatie in Antwerpen?",
+            a: "Een standaard badkamerrenovatie duurt gemiddeld 5 tot 10 werkdagen. Bij complexere projecten met het verplaatsen van leidingen of maatwerkmeubilair kan dit oplopen tot 2 à 3 weken.",
+          },
+          {
+            q: "Is een badkamerrenovatie BTW-aftrekbaar of subsidieerbaar?",
+            a: "In België geniet u van 6% BTW in plaats van 21% voor renovatiewerken aan woningen ouder dan 10 jaar. Dit levert een aanzienlijke besparing op. Informeer ook naar de energiepremies bij uw gemeente voor specifieke ingrepen.",
+          },
+          {
+            q: "Wat is het verschil tussen een opfrissing en een volledige renovatie?",
+            a: "Een opfrissing (nieuwe tegels schilderen, kranen vervangen) kost tussen 1.000 en 3.000 euro. Een volledige renovatie waarbij alles gesloopt en opnieuw opgebouwd wordt, valt in de hogere categorieën hierboven.",
+          },
+          {
+            q: "Vraagt u een vergunning aan voor een badkamerrenovatie?",
+            a: "Voor de meeste badkamerrenovaties is geen omgevingsvergunning vereist, tenzij u structurele muren verplaatst. Reno Rangers zorgt voor alle nodige formaliteiten.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Wilt u een nauwkeurige offerte voor uw badkamerrenovatie in Antwerpen? Reno Rangers biedt gratis en vrijblijvend advies aan huis.",
+      },
+    ],
+  },
+  {
+    slug: "totaalrenovatie-alles-wat-u-moet-weten",
+    title: "Totaalrenovatie: alles wat u moet weten",
+    date: "8 MAART 2026",
+    category: "RENOVATIE",
+    img: "/badkamermetmortex.webp",
+    excerpt: "Een totaalrenovatie is een grote investering die uw woningwaarde aanzienlijk kan verhogen. Van vergunningen tot het kiezen van de juiste aannemer.",
+    seo: {
+      title: "Totaalrenovatie: alles wat u moet weten | Reno Rangers Antwerpen",
+      description: "Overweegt u een totaalrenovatie? Ontdek alles over planning, vergunningen, kosten en het kiezen van de juiste aannemer in Antwerpen.",
+      ogTitle: "Totaalrenovatie: de complete gids — Reno Rangers",
+      ogDescription: "Alles wat u moet weten over een totaalrenovatie: kosten, planning en aannemer kiezen.",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "Een totaalrenovatie van uw woning is één van de ingrijpendste en meest lonende investeringen die u als eigenaar kunt doen. Van het vernieuwen van de elektrische installatie tot het volledig herdenken van de indeling — een totaalrenovatie verhoogt niet alleen uw wooncomfort, maar ook de waarde van uw eigendom. In dit artikel leidt Reno Rangers u stap voor stap door het volledige proces.",
+      },
+      {
+        type: "h2",
+        text: "Wat is een totaalrenovatie precies?",
+      },
+      {
+        type: "p",
+        text: "Een totaalrenovatie houdt in dat u meerdere of alle gebouwdelen grondig aanpakt: de structuur, de technische installaties (elektrriciteit, sanitair, verwarming), de isolatie, de gevels, de binnenwanden én de afwerking. Het is het tegenovergestelde van een partiële renovatie waarbij slechts één ruimte of één onderdeel wordt aangepakt.",
+      },
+      {
+        type: "h2",
+        text: "De 5 fasen van een totaalrenovatie",
+      },
+      {
+        type: "numbered",
+        items: [
+          "Voorbereidingsfase: Staat van de woning opmeten, problemen in kaart brengen (vocht, asbest, stabiliteit) en een renovatieplan opstellen.",
+          "Vergunningsfase: Aanvragen van de nodige omgevingsvergunning bij de gemeente, indien van toepassing.",
+          "Ruwbouwfase: Slopen van niet-dragende muren, plaatsen van nieuwe balken, isolatie en leidingwerk.",
+          "Afwerkingsfase: Plaatsen van vloeren, tegels, plafonds, deuren en schilderwerk.",
+          "Installatiefase: Plaatsen van sanitair, verlichtingsarmaturen, keukentoestellen en domotica.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Hoeveel kost een totaalrenovatie in Antwerpen?",
+      },
+      {
+        type: "p",
+        text: "De kostprijs van een totaalrenovatie in Antwerpen varieert sterk afhankelijk van de omvang en de staat van de woning. Als ruwe richtlijn kunt u rekenen op 500 tot 1.200 euro per m² voor een volledige renovatie. Een woning van 120 m² kost al snel tussen de 60.000 en 150.000 euro. Wilt u energetisch renoveren met nieuwe ramen, isolatie en een warmtepomp, dan komen daar nog extra kosten bij, al worden die deels gecompenseerd door premies.",
+      },
+      {
+        type: "h2",
+        text: "Vergunningen: wat heeft u nodig?",
+      },
+      {
+        type: "list",
+        items: [
+          "Omgevingsvergunning (stedenbouwkundige vergunning): Verplicht bij het slopen of plaatsen van dragende muren, het wijzigen van de gevelindeling of het uitbreiden van de woning.",
+          "Energieprestatieattest (EPC): Bij verkoop of verhuur verplicht, maar handig om ook vóór de renovatie te kennen.",
+          "Meldingsplicht: Kleinere werken (niet-dragende muren, dakisolatie) zijn soms enkel meldingsplichtig in plaats van vergunningsplichtig.",
+          "Gemeentelijke regelgeving: In Antwerpen gelden soms specifieke bepalingen voor woningen in beschermd stadsgezicht.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Renovatiepremies en belastingvoordelen in 2026",
+      },
+      {
+        type: "list",
+        items: [
+          "Mijn VerbouwPremie (Vlaanderen): Tot 10.000 euro voor energiebesparende maatregelen afhankelijk van uw inkomen.",
+          "Renovatielening aan 0% of 1%: Voor eigenaar-bewoners met een lager inkomen.",
+          "6% BTW: Van toepassing op renovatiewerken aan woningen ouder dan 10 jaar (in plaats van 21%).",
+          "Gemeentelijke premies: De stad Antwerpen biedt bijkomende premies voor gevelrenovatie, dakisolatie en herbestrating.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "De juiste aannemer kiezen: workaround of verstandige keuze?",
+      },
+      {
+        type: "p",
+        text: "Bij een totaalrenovatie is de keuze van uw aannemer cruciaal. Werken met losse vaklieden kan goedkoper lijken, maar de coördinatie is tijdrovend en problemen komen vaker voor. Een gespecialiseerd renovatiebedrijf zoals Reno Rangers neemt de volledige projectcoördinatie op zich: één contactpersoon, één planning, één vaste prijs. Zo heeft u geen last van vaklieden die op elkaar wachten of miscommunicatie over plannen.",
+      },
+      {
+        type: "h2",
+        text: "Veelgestelde vragen over totaalrenovatie",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Hoe lang duurt een totaalrenovatie?",
+            a: "Voor een volledig te renoveren rijwoning van 120 à 150 m² rekent u gemiddeld op 4 tot 8 maanden. Grotere woningen of complexe projecten kunnen langer duren.",
+          },
+          {
+            q: "Kan ik tijdens de renovatie in de woning blijven wonen?",
+            a: "Dat hangt af van de omvang. Bij een volledige renovatie is dat zelden aangenaam en soms onmogelijk omwille van stof, lawaai en afwezigheid van sanitair. Het tijdelijk huren van een andere woonst is dan aan te raden.",
+          },
+          {
+            q: "Wat is het verschil tussen een totaalrenovatie en nieuwbouw?",
+            a: "Bij nieuwbouw start u van een leeg terrein. Bij renovatie werkt u verder op een bestaand gebouw, wat goedkoper is maar soms ook beperkingen met zich meebrengt (muren die niet verplaatst kunnen worden, bestaand funderingswerk).",
+          },
+          {
+            q: "Moet ik een architect inschakelen?",
+            a: "In België is een architect wettelijk verplicht bij structurele werken, nieuwbouw en bepaalde vergrotingen. Voor louter interieurwerken (zonder structuurwijzigingen) is dat niet verplicht, maar kan het toch nuttig zijn.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Overweegt u een totaalrenovatie in Antwerpen? Reno Rangers verzorgt uw volledige renovatie van A tot Z — vraag vandaag nog een gratis vrijblijvende offerte.",
+      },
+    ],
+  },
+  {
+    slug: "trends-binnenafwerking-belgische-woningen-2026",
+    title: "5 trends in binnenafwerking voor Belgische woningen",
+    date: "1 MAART 2026",
+    category: "INTERIEUR",
+    img: "/toiletantwerpen.webp",
+    excerpt: "Van warme aardetinten tot minimalistische afwerking — de trends in binnenafwerking evolueren snel. Ontdek de 5 populairste stijlen van 2026.",
+    seo: {
+      title: "5 trends in binnenafwerking voor Belgische woningen in 2026 | Reno Rangers",
+      description: "Ontdek de 5 grootste binnenafwerkingstrends van 2026 voor Belgische woningen: van mortex tot microcement en warme aardetinten.",
+      ogTitle: "5 binnenafwerkingstrends 2026 — Reno Rangers",
+      ogDescription: "Welke trends domineren binnenafwerking in 2026? Reno Rangers zet de 5 populairste stijlen op een rij.",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "De wereld van binnenafwerking staat nooit stil. Elk jaar duiken er nieuwe materialen, texturen en kleurpaletten op die de manier waarop we onze woningen inrichten grondig hertekenen. Als renovatiebedrijf met ruime ervaring in Antwerpen en omstreken ziet Reno Rangers dagelijks welke keuzes klanten maken en welke trends dominant worden. We sommen de 5 grootste trends van 2026 op.",
+      },
+      {
+        type: "h2",
+        text: "1. Mortex en microcement: de tijdloze minimalist",
+      },
+      {
+        type: "p",
+        text: "Mortex — een soepele cementgebonden afwerking — is al een aantal jaar populair en blijft dat in 2026. De aantrekkingskracht? Naadloze muren en vloeren, een industrieel-chique uitstraling en enorme veelzijdigheid. Mortex kan worden aangebracht op muren, vloeren, aanrechtbladen, badkamerwanden en zelfs meubelen. Het materiaal is waterdicht maakbaar, waardoor het ook in de badkamer of keuken functioneel is. De neutrale grijze of beige tinten passen in vrijwel elk interieurconcept.",
+      },
+      {
+        type: "h2",
+        text: "2. Warme aardetinten als reactie op het koude minimalisme",
+      },
+      {
+        type: "p",
+        text: "Na jaren van koele grijzen en strakke witte wanden zien we een duidelijke verschuiving naar warmere, aardse kleuren: terracotta, oker, zandbeige en roestbruin. Deze tinten creëren een gezellige, bijna mediterrane sfeer en combineren prachtig met natuurlijke materialen als hout, leisteen en linnen. In de badkamer zie je dit terug in warmgekleurde tegels en houtachtige meubels. In de leefruimte gaat het over warme verven, aardetinten vloertegels of wandbekleding in raffia.",
+      },
+      {
+        type: "h2",
+        text: "3. Grote formaat tegels in doorlopend patroon",
+      },
+      {
+        type: "p",
+        text: "Kleine tegels van 20×20 cm worden steeds meer verdrongen door XXL-formaten: 60×120 cm, 80×160 cm of zelfs 120×260 cm in slabs. Het voordeel van grote tegels is drieledig: minder voegwerk (dus makkelijker te onderhouden), een rustig en luxueus visueel effect, én de mogelijkheid om vloer en wand naadloos door te trekken met hetzelfde patroon — het zogenaamde 'wall-to-floor' effect dat een ruimte visueel groter maakt.",
+      },
+      {
+        type: "h2",
+        text: "4. Beton, hout en staal: het industrieel-warm hybride",
+      },
+      {
+        type: "p",
+        text: "De combinatie van industriële materialen (gegoten beton, stalen profielen, onbehandeld hout) met warme texturen (vilt, wol, linnen) is populairder dan ooit. Dit hybride concept vermijdt de koudheid van puur industrieel design terwijl het toch een karaktervolle, eigentijdse uitstraling behoudt. In de praktijk zien we dit in eetkamers met betonnen vloer en houten plafond, of in keukens met stalen kastdeurtjes gecombineerd met een eiken blad.",
+      },
+      {
+        type: "h2",
+        text: "5. Duurzame en ecologische materialen",
+      },
+      {
+        type: "p",
+        text: "Duurzaamheid is geen marketingterm meer, maar een echte keuzecriteria geworden voor Belgische woningeigenaren. Bamboe vloeren, gerecyclede tegels, natuurlijke kalkverf (zonder VOC's), kurk en linoleum maken een sterke comeback. Deze materialen zijn niet alleen ecologisch verantwoord, maar bieden ook een unieke esthetische warmte en textuur die je met synthetische producten moeilijk evenaart. Bovendien stijgt de vraag naar lokaal geproduceerde materialen, wat de carbon footprint van een renovatie verder reduceert.",
+      },
+      {
+        type: "h2",
+        text: "Welke trend past bij uw woning?",
+      },
+      {
+        type: "p",
+        text: "De keuze van binnenafwerking is uiteraard persoonlijk en afhankelijk van uw smaak, budget en het karakter van uw woning. Een renovatiebedrijf met interieurervaring kan u helpen de juiste keuzes te maken die zowel tijdloos als budgetvriendelijk zijn. Reno Rangers adviseert altijd op basis van uw persoonlijke wensen en de mogelijkheden van uw ruimte.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Is mortex geschikt voor een vloer in de keuken?",
+            a: "Ja, mits correct geïmpregneerd is mortex uitstekend geschikt voor keukenvloeren. Het is slijtvast en waterdicht, al vereist het periodiek onderhoud met een speciaal beschermend product.",
+          },
+          {
+            q: "Zijn grote tegels duurder dan kleine?",
+            a: "De materiaalprijs per m² is vergelijkbaar of soms zelfs hoger voor XXL-tegels, maar de arbeidskosten voor het leggen liggen soms lager omdat er minder voegwerk nodig is.",
+          },
+          {
+            q: "Welke kleur is tijdloos voor een badkamer?",
+            a: "Neutralen als crème, beige en lichtgrijs zijn tijdloos. Donkere accenten in mat zwart of antraciet combineren perfect en gaan jaren mee.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Bent u geïnspireerd en wilt u uw woning laten renoveren met de modernste binnenafwerking? Neem contact op met Reno Rangers voor een gratis adviesgesprek.",
+      },
+    ],
+  },
+  {
+    slug: "hoe-juiste-renovatie-aannemer-kiezen",
+    title: "Hoe kiest u de juiste renovatie-aannemer?",
+    date: "22 FEB 2026",
+    category: "TIPS",
+    img: "/home-hero-family.webp",
+    excerpt: "Het kiezen van een betrouwbare aannemer is de belangrijkste beslissing bij elke renovatie. Ontdek de 7 criteria waarop u moet letten.",
+    seo: {
+      title: "Hoe kiest u de juiste renovatie-aannemer? 7 tips | Reno Rangers",
+      description: "De juiste renovatie-aannemer kiezen is cruciaal. Ontdek 7 concrete tips om een betrouwbare aannemer te vinden in Antwerpen en omgeving.",
+      ogTitle: "De juiste renovatie-aannemer kiezen — 7 tips | Reno Rangers",
+      ogDescription: "7 praktische tips om de beste aannemer voor uw renovatieproject in Antwerpen te kiezen.",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "De keuze van uw renovatie-aannemer bepaalt voor een groot deel het succes van uw project. Een vakkundige en betrouwbare aannemer bezorgt u een stressvrije renovatie, een correcte oplevering en een eindresultaat waar u jarenlang van geniet. Een slechte keuze daarentegen leidt tot frustraties, kostenoverschrijdingen en zelfs rechtsgeschillen. In dit artikel geeft Reno Rangers u 7 concrete criteria om de juiste keuze te maken.",
+      },
+      {
+        type: "h2",
+        text: "1. Controleer erkenning en registratie",
+      },
+      {
+        type: "p",
+        text: "Een serieuze aannemer is ingeschreven in de Kruispuntbank van Ondernemingen (KBO) en beschikt over de nodige erkenning voor de uit te voeren werken. In België is een BTW-nummer verplicht voor elke aannemer. Vraag altijd om het ondernemingsnummer en controleer het via de KBO-website. Is de aannemer niet correct geregistreerd, dan riskeert u als opdrachtgever medeaansprakelijkheid voor belastingontduiking en sociale fraude.",
+      },
+      {
+        type: "h2",
+        text: "2. Vraag minstens drie offertes",
+      },
+      {
+        type: "p",
+        text: "Vergelijk altijd meerdere offertes voordat u beslist. Let niet alleen op de totaalprijs, maar ook op wat exact is inbegrepen: materialen, arbeidsuren, afvoer van puin, BTW. Een goedkope offerte zonder BTW of zonder afvoerkosten kan uiteindelijk duurder uitvallen dan een offerte die alles omvat. Een gedetailleerde, transparante offerte is een teken van professionalisme.",
+      },
+      {
+        type: "h2",
+        text: "3. Controleer referenties en vorige projecten",
+      },
+      {
+        type: "p",
+        text: "Vraag om referenties van vorige klanten en neem de moeite om die te contacteren. Bekijk foto's van afgeronde projecten — liefst bij klanten ter plaatse. Een goede aannemer toont trots zijn werk en heeft tevreden klanten die graag een getuigenis geven. Online reviews op Google zijn ook nuttig, maar verifieer of ze authentiek lijken.",
+      },
+      {
+        type: "h2",
+        text: "4. Let op communicatie en responsiviteit",
+      },
+      {
+        type: "p",
+        text: "Al tijdens het offerteproces krijgt u een goede indruk van hoe de samenwerking zal verlopen. Beantwoordt de aannemer uw mails snel? Legt hij zijn werkwijze duidelijk uit? Neemt hij de tijd om uw vragen te beantwoorden? Goede communicatie is essentieel, zeker bij een project van enkele weken of maanden. Een aannemer die al voor het begin van het werk slecht bereikbaar is, zal dat tijdens de werken ook zijn.",
+      },
+      {
+        type: "h2",
+        text: "5. Informeer naar de planning en doorlooptijd",
+      },
+      {
+        type: "p",
+        text: "Vraag een concrete timing: wanneer starten de werken, wat is de verwachte doorlooptijd en wat zijn de mijlpalen? Laat dit ook opnemen in het contract. Aannemers die geen duidelijke planning geven, werken vaak aan meerdere projecten tegelijk en geven uw werf niet de volle aandacht. Een realistische maar strikte planning beschermt u als opdrachtgever.",
+      },
+      {
+        type: "h2",
+        text: "6. Controleer de verzekering van de aannemer",
+      },
+      {
+        type: "p",
+        text: "Een professionele aannemer beschikt over een burgerlijke aansprakelijkheidsverzekering (BA) én een verzekering voor schade aan derden. Vraag altijd naar het attest van zijn verzekeraar. Werken zonder verzekering is niet alleen onverantwoord, maar kan u als opdrachtgever in grote problemen brengen als er schade optreedt aan uw eigendom of dat van de buren.",
+      },
+      {
+        type: "h2",
+        text: "7. Kies voor een vaste prijs, niet voor regie",
+      },
+      {
+        type: "p",
+        text: "Er zijn twee prijssystemen: vaste prijs (forfait) waarbij de aannemer een vast bedrag afspreekt voor het volledige werk, en regie waarbij u betaalt per gepresteerd uur. Regie-contracten kunnen goedkoper lijken, maar lopen vaak uit. Onverwachte complicaties worden doorgerekend aan de klant en de eindfactuur is zelden wat oorspronkelijk werd geschat. Kies bij voorkeur voor een duidelijk omschreven vaste prijs.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Is de goedkoopste offerte altijd de beste keuze?",
+            a: "Nee. Een te lage prijs kan wijzen op het gebruik van goedkopere materialen, onderaannemers zonder erkenning of het weglaten van kosten die later bijkomen. Vergelijk offertes inhoudelijk, niet enkel qua totaalprijs.",
+          },
+          {
+            q: "Wat als er problemen zijn na de oplevering?",
+            a: "In België bent u als opdrachtgever beschermd door de 10-jarige aansprakelijkheid van de aannemer voor verborgen gebreken. Dit geldt voor structurele fouten. Voor kleinere gebreken is een duidelijke opleveringsbon met garantiebepalingen in het contract essentieel.",
+          },
+          {
+            q: "Hoe weet ik of een aannemer zwart werkt?",
+            a: "Vraag altijd een factuur met BTW. Een aannemer die 'korting' aanbiedt bij betaling in cash zonder factuur werkt vermoedelijk in het zwart. Dit beschermt u niet bij problemen en is illegaal.",
+          },
+          {
+            q: "Kan ik een aannemer vragen om maar een deel van de renovatie uit te voeren?",
+            a: "Ja, dat is zeker mogelijk. Een gespecialiseerd bedrijf kan een specifieke kamer of installatie aanpakken. Bespreek duidelijk de afbakening van het werk om discussies achteraf te vermijden.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Op zoek naar een betrouwbare renovatie-aannemer in Antwerpen? Reno Rangers voldoet aan alle bovenstaande criteria — vraag een vrijblijvende offerte aan.",
+      },
+    ],
+  },
+];
+
 const ROUTE_SEO = Object.freeze({
   [PAGE_PATHS.home]: {
     title: "Reno Rangers — Renovatiebedrijf Antwerpen | Totaalrenovatie, Badkamerrenovatie & Binnenafwerking",
@@ -111,7 +533,7 @@ const globalCSS = `
   @keyframes mL { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes mR { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   @media (max-width: 900px) {
-    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg { grid-template-columns: 1fr !important; }
+    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg, .sv2 { grid-template-columns: 1fr !important; }
     .stg { grid-template-columns: 1fr 1fr !important; }
     .hi { display: none !important; }
     .dn { display: none !important; }
@@ -141,12 +563,25 @@ function useGoToPage() {
 
 function getRouteSeo(pathname) {
   var normalizedPathname = normalizePathname(pathname);
-  return ROUTE_SEO[normalizedPathname] || {
+  if (ROUTE_SEO[normalizedPathname]) return ROUTE_SEO[normalizedPathname];
+  var blogMatch = normalizedPathname.match(/^\/blog\/(.+)$/);
+  if (blogMatch) {
+    var post = BLOG_POSTS.find(function (p) { return p.slug === blogMatch[1]; });
+    if (post) return post.seo;
+  }
+  return {
     title: "404 | Reno Rangers",
     description: "Pagina niet gevonden.",
     ogTitle: "404 — Reno Rangers",
     ogDescription: "De gevraagde pagina bestaat niet.",
   };
+}
+
+function isBlogPostRoute(pathname) {
+  var normalizedPathname = normalizePathname(pathname);
+  var blogMatch = normalizedPathname.match(/^\/blog\/(.+)$/);
+  if (!blogMatch) return false;
+  return BLOG_POSTS.some(function (p) { return p.slug === blogMatch[1]; });
 }
 
 /* ── HOOKS ── */
@@ -1351,13 +1786,6 @@ function Projecten() {
    BLOG PAGE
    ══════════════════════════════════ */
 function Blog() {
-  var posts = [
-    { t: "WAT KOST EEN BADKAMERRENOVATIE IN ANTWERPEN IN 2026?", img: IMG.bath1, d: "15 MAART 2026", c: "BADKAMER", ex: "Een badkamerrenovatie in Antwerpen kost gemiddeld tussen 5.000 en 15.000 euro, afhankelijk van grootte, materialen en complexiteit." },
-    { t: "TOTAALRENOVATIE: ALLES WAT U MOET WETEN", img: IMG.living1, d: "8 MAART 2026", c: "RENOVATIE", ex: "Een totaalrenovatie is een grote investering die uw woningwaarde aanzienlijk kan verhogen. Van vergunningen tot het kiezen van de juiste aannemer." },
-    { t: "5 TRENDS IN BINNENAFWERKING VOOR BELGISCHE WONINGEN", img: IMG.interior1, d: "1 MAART 2026", c: "INTERIEUR", ex: "Van warme aardetinten tot minimalistische afwerking — de trends in binnenafwerking evolueren snel." },
-    { t: "HOE KIEST U DE JUISTE RENOVATIE AANNEMER?", img: IMG.team2, d: "22 FEB 2026", c: "TIPS", ex: "Het kiezen van een betrouwbare aannemer is de belangrijkste beslissing bij elke renovatie." },
-  ];
-
   return (
     <section style={{ paddingTop: 72 }}>
       <div style={{ background: C.black, padding: "76px 0 56px" }}>
@@ -1373,26 +1801,234 @@ function Blog() {
       <div style={{ padding: "72px 0", background: C.white }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
-            {posts.map(function (post, i) {
+            {BLOG_POSTS.map(function (post, i) {
               return (
-                <Reveal key={i} delay={i * 0.08}>
-                  <div className="bg" style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: 36, alignItems: "center", borderBottom: "1px solid " + C.ltGray, paddingBottom: 40, cursor: "pointer" }}>
-                    <div style={{ overflow: "hidden", aspectRatio: "16/10", background: C.dark }}>
-                      <img src={post.img} alt={post.t} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                    </div>
-                    <div>
-                      <div style={{ display: "flex", gap: 14, marginBottom: 10 }}>
-                        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>{post.c}</span>
-                        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: C.gray }}>{post.d}</span>
+                <Reveal key={post.slug} delay={i * 0.08}>
+                  <Link to={"/blog/" + post.slug} style={{ textDecoration: "none", color: "inherit" }}>
+                    <div className="bg" style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: 36, alignItems: "center", borderBottom: "1px solid " + C.ltGray, paddingBottom: 40, cursor: "pointer" }}>
+                      <div style={{ overflow: "hidden", aspectRatio: "16/10", background: C.dark }}>
+                        <img src={post.img} alt={post.title} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s ease" }}
+                          onMouseEnter={function (e) { e.currentTarget.style.transform = "scale(1.04)"; }}
+                          onMouseLeave={function (e) { e.currentTarget.style.transform = "scale(1)"; }}
+                        />
                       </div>
-                      <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.black, lineHeight: 1.05, margin: "0 0 14px" }}>{post.t}</h2>
-                      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: C.gray, margin: 0 }}>{post.ex}</p>
+                      <div>
+                        <div style={{ display: "flex", gap: 14, marginBottom: 10 }}>
+                          <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>{post.category}</span>
+                          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: C.gray }}>{post.date}</span>
+                        </div>
+                        <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.black, lineHeight: 1.05, margin: "0 0 14px" }}>{post.title.toUpperCase()}</h2>
+                        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: C.gray, margin: "0 0 18px" }}>{post.excerpt}</p>
+                        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2, color: C.red }}>LEES MEER →</span>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Reveal>
               );
             })}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════
+   BLOG POST PAGE
+   ══════════════════════════════════ */
+function BlogPost() {
+  var navigate = useNavigate();
+  var location = useLocation();
+  var slug = normalizePathname(location.pathname).replace(/^\/blog\//, "");
+  var post = BLOG_POSTS.find(function (p) { return p.slug === slug; });
+  var go = useGoToPage();
+
+  if (!post) {
+    return <Navigate to="/blog" replace />;
+  }
+
+  var postIdx = BLOG_POSTS.indexOf(post);
+  var prevPost = BLOG_POSTS[postIdx - 1] || null;
+  var nextPost = BLOG_POSTS[postIdx + 1] || null;
+
+  function renderBlock(block, i) {
+    switch (block.type) {
+      case "intro":
+        return (
+          <p key={i} style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, lineHeight: 1.85, color: "#444", margin: "0 0 28px", fontStyle: "italic", borderLeft: "4px solid " + C.red, paddingLeft: 18 }}>
+            {block.text}
+          </p>
+        );
+      case "h2":
+        return (
+          <h2 key={i} style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(24px, 3vw, 32px)", color: C.black, margin: "36px 0 14px", lineHeight: 1.1 }}>
+            {block.text}
+          </h2>
+        );
+      case "p":
+        return (
+          <p key={i} style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.85, color: "#444", margin: "0 0 22px" }}>
+            {block.text}
+          </p>
+        );
+      case "list":
+        return (
+          <ul key={i} style={{ margin: "0 0 22px", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 8 }}>
+            {block.items.map(function (item, j) {
+              return (
+                <li key={j} style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#444" }}>
+                  {item}
+                </li>
+              );
+            })}
+          </ul>
+        );
+      case "numbered":
+        return (
+          <ol key={i} style={{ margin: "0 0 22px", paddingLeft: 22, display: "flex", flexDirection: "column", gap: 10 }}>
+            {block.items.map(function (item, j) {
+              return (
+                <li key={j} style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#444" }}>
+                  {item}
+                </li>
+              );
+            })}
+          </ol>
+        );
+      case "table":
+        return (
+          <div key={i} style={{ overflowX: "auto", margin: "0 0 28px" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Inter', sans-serif", fontSize: 14 }}>
+              {block.rows.map(function (row, ri) {
+                var isHeader = ri === 0;
+                return (
+                  <tr key={ri} style={{ background: isHeader ? C.black : ri % 2 === 0 ? C.off : C.white }}>
+                    {row.map(function (cell, ci) {
+                      return isHeader
+                        ? <th key={ci} style={{ padding: "12px 16px", color: C.white, textAlign: "left", fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2 }}>{cell}</th>
+                        : <td key={ci} style={{ padding: "11px 16px", color: "#444", borderBottom: "1px solid " + C.ltGray }}>{cell}</td>;
+                    })}
+                  </tr>
+                );
+              })}
+            </table>
+          </div>
+        );
+      case "faq":
+        return (
+          <div key={i} style={{ margin: "32px 0 28px" }}>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(24px, 3vw, 32px)", color: C.black, margin: "0 0 20px" }}>
+              VEELGESTELDE VRAGEN
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {block.items.map(function (item, j) {
+                return (
+                  <div key={j} style={{ background: C.off, padding: "20px 22px", borderLeft: "4px solid " + C.red }}>
+                    <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: C.black, margin: "0 0 8px", letterSpacing: 0.5 }}>{item.q}</p>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.75, color: "#555", margin: 0 }}>{item.a}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      case "cta":
+        return (
+          <div key={i} style={{ background: C.black, padding: "32px 36px", margin: "36px 0 0" }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.7, color: C.ltGray, margin: "0 0 20px" }}>{block.text}</p>
+            <button
+              onClick={function () { go("contact"); }}
+              style={{ display: "inline-block", padding: "13px 32px", background: C.red, color: C.white, border: "none", fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 2, cursor: "pointer" }}
+            >
+              GRATIS OFFERTE AANVRAGEN
+            </button>
+          </div>
+        );
+      default:
+        return null;
+    }
+  }
+
+  return (
+    <section style={{ paddingTop: 72 }}>
+      <div style={{ background: C.black, padding: "76px 0 56px" }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+              <Link to="/blog" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 3, color: C.gray, textDecoration: "none" }}>BLOG</Link>
+              <span style={{ color: C.gray, fontSize: 12 }}>›</span>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 3, color: C.red }}>{post.category}</span>
+            </div>
+            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(34px, 5vw, 68px)", color: C.white, lineHeight: 0.95, margin: "0 0 18px", maxWidth: 860 }}>
+              {post.title.toUpperCase()}
+            </h1>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray }}>{post.date}</span>
+          </Reveal>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+        <div style={{ aspectRatio: "21/8", overflow: "hidden", background: C.dark, marginBottom: 0 }}>
+          <img src={post.img} alt={post.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="eager" decoding="async" />
+        </div>
+      </div>
+
+      <div style={{ padding: "64px 0 80px", background: C.white }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <div className="sv2" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 64, alignItems: "start" }}>
+            <div style={{ minWidth: 0 }}>
+              {post.content.map(renderBlock)}
+            </div>
+
+            <div style={{ position: "sticky", top: 100 }}>
+              <div style={{ background: C.off, padding: "28px 24px", marginBottom: 28 }}>
+                <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 2, color: C.black, margin: "0 0 16px" }}>MEER ARTIKELEN</h3>
+                <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                  {BLOG_POSTS.filter(function (p) { return p.slug !== post.slug; }).map(function (p) {
+                    return (
+                      <Link key={p.slug} to={"/blog/" + p.slug} style={{ textDecoration: "none", display: "flex", gap: 12, alignItems: "flex-start" }}>
+                        <div style={{ width: 60, height: 50, flexShrink: 0, overflow: "hidden", background: C.dark }}>
+                          <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
+                        </div>
+                        <div>
+                          <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, color: C.red, display: "block", marginBottom: 3 }}>{p.category}</span>
+                          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.black, lineHeight: 1.4 }}>{p.title}</span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div style={{ background: C.black, padding: "28px 24px" }}>
+                <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 2, color: C.white, margin: "0 0 10px" }}>GRATIS OFFERTE</h3>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.ltGray, lineHeight: 1.6, margin: "0 0 16px" }}>Klaar om uw renovatie te starten? Vraag een vrijblijvende offerte aan.</p>
+                <button
+                  onClick={function () { go("contact"); }}
+                  style={{ width: "100%", padding: "12px 0", background: C.red, color: C.white, border: "none", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 2, cursor: "pointer" }}
+                >
+                  NEEM CONTACT OP
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {(prevPost || nextPost) && (
+            <div style={{ marginTop: 64, paddingTop: 40, borderTop: "1px solid " + C.ltGray, display: "flex", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
+              {prevPost ? (
+                <Link to={"/blog/" + prevPost.slug} style={{ textDecoration: "none", maxWidth: 400 }}>
+                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray }}>← VORIG ARTIKEL</span>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, color: C.black, margin: "6px 0 0" }}>{prevPost.title.toUpperCase()}</p>
+                </Link>
+              ) : <div />}
+              {nextPost && (
+                <Link to={"/blog/" + nextPost.slug} style={{ textDecoration: "none", maxWidth: 400, textAlign: "right" }}>
+                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray }}>VOLGEND ARTIKEL →</span>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, color: C.black, margin: "6px 0 0" }}>{nextPost.title.toUpperCase()}</p>
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -1652,7 +2288,7 @@ function RouteEffects() {
 
     var canonicalPath = normalizePathname(location.pathname);
     var routeSeo = getRouteSeo(canonicalPath);
-    var isKnownRoute = Boolean(ROUTE_SEO[canonicalPath]);
+    var isKnownRoute = Boolean(ROUTE_SEO[canonicalPath]) || isBlogPostRoute(canonicalPath);
     var canonicalHref = canonicalPath === "/" ? SITE_ORIGIN + "/" : SITE_ORIGIN + canonicalPath;
     var canonicalEl = document.querySelector('link[rel="canonical"]');
     var ensureMeta = function (selector, attrName, attrValue) {
@@ -1844,6 +2480,7 @@ export default function App() {
         <Route path={PAGE_PATHS.contact} element={<Contact />} />
         <Route path={PAGE_PATHS.projecten} element={<Projecten />} />
         <Route path={PAGE_PATHS.blog} element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path={PAGE_PATHS.privacy} element={<Privacy />} />
         <Route path="/over" element={<Navigate to={PAGE_PATHS.over} replace />} />
         <Route path="*" element={<NotFound />} />
