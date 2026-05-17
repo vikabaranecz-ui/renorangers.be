@@ -12,25 +12,25 @@ const C = {
   off: "#F5F5F5",
   white: "#FFFFFF",
 };
-
+Ч
 /* ── IMAGES ── */
 const IMG = {
-  bath1: "/toilet.jpg",
-  bath2: "/bathroom.jpg",
-  kitchen1: "/kitchen.jpg",
-  living1: "/livingroom.jpg",
-  interior1: "/shower.jpg",
-  floor1: "/livingroom.jpg",
-  team2: "/kitchen.jpg",
-  proj1: "/livingroom.jpg",
-  hero: "/home-hero-family.jpg",
-  toiletantwerpen: "/toiletantwerpen.jpg",
-  toiletmerksem: "/toiletmerksem.jpg",
-  livingroom: "/livingroom.jpg",
-  kitchen: "/kitchen.jpg",
-  shower: "/shower.jpg",
-  bathroom: "/bathroom.jpg",
-  toilet: "/toilet.jpg",
+  bath1: "/toiletantwerpen.webp",
+  bath2: "/toiletmerksem.webp",
+  kitchen1: "/badkamerantwerpenzwart.webp",
+  living1: "/badkamermetmortex.webp",
+  interior1: "/toiletmerksemvoor.webp",
+  floor1: "/badkamermetmortexvoor.webp",
+  team2: "/badkamerantwerpenzwart.webp",
+  proj1: "/toiletantwerpen.webp",
+  hero: "/home-hero-family.webp",
+  toiletantwerpen: "/toiletantwerpen.webp",
+  toiletmerksem: "/toiletmerksem.webp",
+  livingroom: "/badkamermetmortex.webp",
+  kitchen: "/badkamerantwerpenzwart.webp",
+  shower: "/toiletmerksemvoor.webp",
+  bathroom: "/toiletantwerpen.webp",
+  toilet: "/toiletantwerpenvoor.webp",
 };
 
 const YT_VIDEO = "https://www.youtube.com/embed/cfiRq57YIW4";
@@ -276,6 +276,8 @@ function Logo() {
     <img
       src="/logo.png"
       alt="Reno Rangers"
+      loading="eager"
+      decoding="async"
       style={{
         height: "55px",
         display: "block",
@@ -605,7 +607,7 @@ function Home() {
       {/* HERO */}
       <section style={{ minHeight: "100vh", background: C.black, position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <img src={IMG.hero} alt="Renovatie Antwerpen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 45%", opacity: 0.78, filter: "grayscale(1) brightness(0.92) contrast(1.05)" }} />
+          <img src={IMG.hero} alt="Renovatie Antwerpen" loading="eager" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 45%", opacity: 0.78, filter: "grayscale(1) brightness(0.92) contrast(1.05)" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.42))" }} />
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
@@ -689,6 +691,8 @@ function Home() {
                     <img
                       src={service.img}
                       alt={service.t}
+                      loading="lazy"
+                      decoding="async"
                       style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.3, transition: "all 0.5s" }}
                     />
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.85) 100%)" }} />
@@ -842,96 +846,6 @@ function Home() {
   );
 }
 
-/* ══════════════════════════════════
-   BADKAMER LANDING PAGE
-   ══════════════════════════════════ */
-function BadkamerLanding() {
-  var go = useGoToPage();
-
-  return (
-    <div>
-      <section style={{ minHeight: "100vh", background: C.black, position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
-        <div style={{ position: "absolute", inset: 0 }}>
-          <img src={IMG.hero} alt="Badkamerrenovatie Antwerpen" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 38%", opacity: 0.75, filter: "grayscale(1) brightness(0.88) contrast(1.08)" }} />
-        </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(130deg, rgba(10,10,10,0.88), rgba(10,10,10,0.54))" }} />
-        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
-          <Reveal>
-            <span style={{ display: "inline-block", padding: "6px 14px", border: "1px solid " + C.red, color: C.red, fontFamily: "'Bebas Neue', sans-serif", letterSpacing: 4, fontSize: 12, marginBottom: 22 }}>
-              BADKAMERRENOVATIE ANTWERPEN
-            </span>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(48px, 7vw, 94px)", lineHeight: 0.9, color: C.white, margin: "0 0 12px" }}>
-              BADKAMER RENOVEREN<br />
-              IN <span style={{ color: C.red }}>ANTWERPEN</span>?
-            </h1>
-          </Reveal>
-          <Reveal delay={0.14}>
-            <div style={{ width: 64, height: 3, background: C.red, margin: "18px 0 20px" }} />
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, maxWidth: 620, color: "rgba(255,255,255,0.66)", margin: "0 0 30px" }}>
-              Start met een gratis plaatsbezoek. Wij bekijken uw badkamer ter plaatse en bezorgen u nadien een duidelijke offerte met planning.
-            </p>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-              <Btn label="PLAN GRATIS PLAATSBEZOEK" onClick={function () { go("contact"); }} />
-              <Btn label="WHATSAPP" onClick={function () { window.open("https://wa.me/32465883919", "_blank", "noopener,noreferrer"); }} outline light />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <Marquee items={["GRATIS PLAATSBEZOEK", "GEDETAILLEERDE OFFERTE", "GEEN MEERWERKEN ZONDER AKKOORD", "ANTWERPEN & OMGEVING"]} />
-
-      <section style={{ padding: "90px 0", background: C.white }}>
-        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
-          <STitle label="PRIJSINDICATIE" title={"WAT KOST EEN\nBADKAMERRENOVATIE?"} />
-          <div className="sg" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
-            {[
-              { t: "KLEINE BADKAMER", p: "€6.000 – €9.000" },
-              { t: "STANDAARD BADKAMER", p: "€9.000 – €14.000" },
-              { t: "LUXE AFWERKING", p: "vanaf €14.000" },
-            ].map(function (item, i) {
-              return (
-                <Reveal key={item.t} delay={i * 0.07}>
-                  <div style={{ border: "1px solid " + C.ltGray, padding: "26px 22px", background: C.off }}>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 2, color: C.gray }}>{item.t}</div>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 42, lineHeight: 1, color: C.black, marginTop: 8 }}>{item.p}</div>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-          <Reveal delay={0.25}>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.75, color: C.gray, maxWidth: 880, margin: "24px 0 0" }}>
-              De exacte prijs hangt af van afbraak, leidingen, tegelwerk, sanitair en afwerking. Daarom komen we eerst ter plaatse kijken.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section style={{ padding: "90px 0", background: C.black, textAlign: "center" }}>
-        <div style={{ maxWidth: 840, margin: "0 auto", padding: "0 32px" }}>
-          <Reveal>
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(36px, 5vw, 62px)", color: C.white, lineHeight: 0.93, margin: "0 0 14px" }}>
-              WILT U WETEN WAT UW BADKAMER<br />
-              ECHT ZAL KOSTEN?
-            </h2>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.62)", margin: "0 0 30px" }}>
-              Plan een gratis plaatsbezoek. We bekijken uw badkamer ter plaatse en bezorgen u een gedetailleerde offerte.
-            </p>
-            <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 12 }}>
-              <Btn label="PLAN MIJN GRATIS PLAATSBEZOEK" onClick={function () { go("contact"); }} />
-              <Btn label="WHATSAPP" onClick={function () { window.open("https://wa.me/32465883919", "_blank", "noopener,noreferrer"); }} outline light />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    </div>
-  );
-}
-
 function BadkamerLandingStaticPage() {
   return (
     <iframe
@@ -1025,10 +939,10 @@ function Diensten() {
                 <Reveal delay={0.12} style={{ order: idx % 2 === 0 ? 1 : 0 }}>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                     <div style={{ overflow: "hidden", aspectRatio: "3/4", background: C.dark }}>
-                      <img src={s.img} alt={s.t} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src={s.img} alt={s.t} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
                     <div style={{ overflow: "hidden", aspectRatio: "3/4", background: C.dark, marginTop: 36 }}>
-                      <img src={s.img2} alt={s.t} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src={s.img2} alt={s.t} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
                   </div>
                 </Reveal>
@@ -1187,7 +1101,7 @@ function Over() {
           <div className="svg2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
             <Reveal>
               <div style={{ overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
-                <img src={IMG.team2} alt="Reno Rangers Team" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={IMG.team2} alt="Reno Rangers Team" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
             </Reveal>
             <Reveal delay={0.12}>
@@ -1272,7 +1186,7 @@ function Projecten() {
                 <Reveal key={i} delay={i * 0.07}>
                   <div style={{ background: C.off, overflow: "hidden", cursor: "pointer" }}>
                     <div style={{ overflow: "hidden", aspectRatio: "16/10", background: C.dark }}>
-                      <img src={p.img} alt={p.t} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src={p.img} alt={p.t} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
                     <div style={{ padding: "22px 24px" }}>
                       <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>{p.c}</span>
@@ -1321,7 +1235,7 @@ function Blog() {
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="bg" style={{ display: "grid", gridTemplateColumns: "360px 1fr", gap: 36, alignItems: "center", borderBottom: "1px solid " + C.ltGray, paddingBottom: 40, cursor: "pointer" }}>
                     <div style={{ overflow: "hidden", aspectRatio: "16/10", background: C.dark }}>
-                      <img src={post.img} alt={post.t} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                      <img src={post.img} alt={post.t} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
                     <div>
                       <div style={{ display: "flex", gap: 14, marginBottom: 10 }}>
