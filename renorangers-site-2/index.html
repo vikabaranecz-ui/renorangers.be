@@ -18,7 +18,10 @@
       });
 
       try {
-        var rrCookieConsent = window.localStorage.getItem('rr_cookie_consent_v1');
+        var rrCookieConsent = null;
+        if (window.localStorage) {
+          rrCookieConsent = window.localStorage.getItem('rr_cookie_consent_v1');
+        }
         if (rrCookieConsent === 'accepted') {
           window.gtag('consent', 'update', {
             analytics_storage: 'granted',

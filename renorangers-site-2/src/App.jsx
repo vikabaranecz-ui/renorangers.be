@@ -12,7 +12,7 @@ const C = {
   off: "#F5F5F5",
   white: "#FFFFFF",
 };
-Ч
+
 /* ── IMAGES ── */
 const IMG = {
   bath1: "/toiletantwerpen.webp",
@@ -268,6 +268,30 @@ function applyConsentMode(choice) {
     event: COOKIE_CONSENT_EVENT,
     cookie_consent: choice,
   });
+}
+
+function getStoredConsentChoice() {
+  if (typeof window === "undefined") return null;
+  try {
+    var storage = window.localStorage;
+    if (!storage) return null;
+    var savedChoice = storage.getItem(COOKIE_CONSENT_STORAGE_KEY);
+    return savedChoice === "accepted" || savedChoice === "rejected" ? savedChoice : null;
+  } catch (err) {
+    return null;
+  }
+}
+
+function setStoredConsentChoice(choice) {
+  if (typeof window === "undefined") return false;
+  try {
+    var storage = window.localStorage;
+    if (!storage) return false;
+    storage.setItem(COOKIE_CONSENT_STORAGE_KEY, choice);
+    return true;
+  } catch (err) {
+    return false;
+  }
 }
 
 /* ── LOGO ── */
@@ -1551,32 +1575,25 @@ function CookieConsentBanner() {
   var _useState5 = useState(false);
   var checked = _useState5[0];
   var setChecked = _useState5[1];
-  var _useState6 = useState(false);
-  var hasSavedChoice = _useState6[0];
-  var setHasSavedChoice = _useState6[1];
+  var _useState6 = useState(null);
+  var consentChoice = _useState6[0];
+  var setConsentChoice = _useState6[1];
 
   useEffect(function () {
-    if (typeof window === "undefined") return;
-    try {
-      var savedChoice = window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY);
-      if (savedChoice === "accepted" || savedChoice === "rejected") {
-        applyConsentMode(savedChoice);
-        setHasSavedChoice(true);
-      } else {
-        setHasSavedChoice(false);
-      }
-    } catch (err) {}
+    var savedChoice = getStoredConsentChoice();
+    if (savedChoice) {
+      applyConsentMode(savedChoice);
+      setConsentChoice(savedChoice);
+    }
 
     setVisible(true);
     setChecked(true);
   }, []);
 
   var saveChoice = function (choice) {
-    try {
-      window.localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, choice);
-    } catch (err) {}
+    setStoredConsentChoice(choice);
     applyConsentMode(choice);
-    setHasSavedChoice(true);
+    setConsentChoice(choice);
     setVisible(false);
   };
 
@@ -1610,9 +1627,9 @@ function CookieConsentBanner() {
               privacybeleid
             </Link>.
           </p>
-          {hasSavedChoice && (
+          {Boolean(consentChoice) && (
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.65)", margin: "0 0 12px" }}>
-              Huidige keuze: {window.localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY) === "accepted" ? "Alle cookies toegestaan" : "Alleen noodzakelijke cookies"}
+              Huidige keuze: {consentChoice === "accepted" ? "Alle cookies toegestaan" : "Alleen noodzakelijke cookies"}
             </p>
           )}
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
