@@ -15,15 +15,15 @@ const C = {
 
 /* ── IMAGES ── */
 const IMG = {
-  bath1: "/toiletantwerpen.webp",
-  bath2: "/toiletmerksem.webp",
+  bath1: "/toiletmerksem.webp",
+  bath2: "/toiletantwerpen.webp",
   kitchen1: "/badkamerantwerpenzwart.webp",
   living1: "/badkamermetmortex.webp",
-  interior1: "/badkamerantwerpenzwartvoor.webp",
-  floor1: "/badkamermetmortexvoor.webp",
-  team2: "/toiletmerksem.webp",
-  proj1: "/badkamerantwerpenzwart.webp",
-  hero: "/badkamer-hero-desktop.webp",
+  interior1: "/toiletantwerpen.webp",
+  floor1: "/toiletmerksemvoor.jpg",
+  team2: "/home-hero-family.webp",
+  proj1: "/badkamermetmortex.webp",
+  hero: "/home-hero-family.jpg",
   toiletantwerpen: "/toiletantwerpen.webp",
   toiletmerksem: "/toiletmerksem.webp",
   livingroom: "/badkamermetmortex.webp",
@@ -631,7 +631,7 @@ function Home() {
       {/* HERO */}
       <section style={{ minHeight: "100vh", background: C.black, position: "relative", overflow: "hidden", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <img src={IMG.hero} alt="Renovatie Antwerpen" loading="eager" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 45%", opacity: 0.78, filter: "grayscale(1) brightness(0.92) contrast(1.05)" }} />
+          <img src={IMG.hero} alt="Renovatie Antwerpen" loading="eager" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 45%", opacity: 0.78, filter: "grayscale(1) saturate(0) brightness(0.92) contrast(1.08)" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.8), rgba(10,10,10,0.42))" }} />
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 2, width: "100%" }}>
@@ -1171,13 +1171,81 @@ function Over() {
    PROJECTEN PAGE
    ══════════════════════════════════ */
 function Projecten() {
-  var projects = [
-    { t: "BADKAMERRENOVATIE", loc: "Antwerpen", img: IMG.kitchen1, c: "Complete renovatie" },
-    { t: "BADKAMERRENOVATIE", loc: "Merksem", img: IMG.bath1, c: "Complete renovatie" },
-    { t: "BADKAMERRENOVATIE", loc: "Borgerhout", img: IMG.proj1, c: "Complete renovatie" },
-    { t: "DOUCHE & AFWERKING", loc: "Antwerpen-Zuid", img: IMG.interior1, c: "Complete renovatie" },
-    { t: "MORTEX BADKAMER", loc: "Antwerpen", img: IMG.living1, c: "Complete renovatie" },
-    { t: "VOORBEREIDING & TEGELWERK", loc: "Merksem", img: IMG.floor1, c: "Complete renovatie" },
+  var beforeAfterProjects = [
+    {
+      t: "BADKAMERRENOVATIE",
+      loc: "Antwerpen",
+      before: "/toiletantwerpenvoor.webp",
+      after: "/toiletantwerpen.webp",
+      d: "Volledige badkamerrenovatie met nieuwe indeling, sanitair en afwerking.",
+    },
+    {
+      t: "BADKAMERRENOVATIE",
+      loc: "Merksem",
+      before: "/toiletmerksemvoor.jpg",
+      after: "/toiletmerksem.webp",
+      d: "Compacte badkamer vernieuwd met meer comfort en moderne materialen.",
+    },
+    {
+      t: "MORTEX BADKAMER",
+      loc: "Antwerpen",
+      before: "/projects/project-mortex-before-1.jpg",
+      after: "/projects/project-mortex-after-1.jpg",
+      d: "Transformatie naar een strakke mortex badkamer met zwarte accenten.",
+    },
+    {
+      t: "VOLLEDIGE BADKAMER",
+      loc: "Antwerpen",
+      before: "/badkamerantwerpenzwartvoor.webp",
+      after: "/badkamerantwerpenzwart.webp",
+      d: "Totaalrenovatie met nieuwe douchezone, tegelwerk en maatwerk.",
+    },
+  ];
+
+  var resultProjects = [
+    {
+      t: "MORTEX BADKAMER DETAILS",
+      loc: "Antwerpen",
+      c: "Complete renovatie",
+      photos: [
+        "/projects/project-mortex-detail-7.jpg",
+        "/projects/project-mortex-detail-8.jpg",
+        "/projects/project-mortex-detail-1.jpg",
+        "/projects/project-mortex-detail-2.jpg",
+        "/projects/project-mortex-detail-3.jpg",
+        "/projects/project-mortex-detail-4.jpg",
+        "/projects/project-mortex-detail-5.jpg",
+        "/projects/project-mortex-detail-6.jpg",
+      ],
+    },
+    {
+      t: "BADKAMER MET PAARS MEUBEL",
+      loc: "Merksem",
+      c: "Complete renovatie",
+      photos: [
+        "/projects/project-bathroom-purple-1.png",
+        "/projects/project-bathroom-purple-2.png",
+      ],
+    },
+    {
+      t: "KEUKENRENOVATIE",
+      loc: "Antwerpen",
+      c: "Complete renovatie",
+      photos: [
+        "/projects/project-kitchen-3.png",
+        "/projects/project-kitchen-1.png",
+        "/projects/project-kitchen-2.png",
+      ],
+    },
+    {
+      t: "LIVING & BINNENAFWERKING",
+      loc: "Antwerpen",
+      c: "Complete renovatie",
+      photos: [
+        "/projects/project-living-1.png",
+        "/projects/project-living-2.png",
+      ],
+    },
   ];
 
   return (
@@ -1204,18 +1272,69 @@ function Projecten() {
       </div>
       <div style={{ padding: "72px 0", background: C.white }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <STitle label="VOOR & NA" title={"PROJECTEN MET\nVOOR EN NA"} />
           <div className="pg" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
-            {projects.map(function (p, i) {
+            {beforeAfterProjects.map(function (p, i) {
               return (
                 <Reveal key={i} delay={i * 0.07}>
-                  <div style={{ background: C.off, overflow: "hidden", cursor: "pointer" }}>
-                    <div style={{ overflow: "hidden", aspectRatio: "16/10", background: C.dark }}>
-                      <img src={p.img} alt={p.t} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <div style={{ background: C.off, overflow: "hidden", border: "1px solid " + C.ltGray }}>
+                    <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+                      <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
+                        <img src={p.before} alt={p.t + " voor"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <span style={{ position: "absolute", top: 10, left: 10, background: "rgba(10,10,10,0.85)", color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>
+                          VOOR
+                        </span>
+                      </div>
+                      <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
+                        <img src={p.after} alt={p.t + " na"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <span style={{ position: "absolute", top: 10, right: 10, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>
+                          NA
+                        </span>
+                      </div>
                     </div>
                     <div style={{ padding: "22px 24px" }}>
-                      <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>{p.c}</span>
+                      <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>Complete renovatie</span>
                       <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.black, margin: "4px 0 3px", letterSpacing: 0.5 }}>{p.t}</h3>
-                      <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray }}>{p.loc}</span>
+                      <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, display: "block", marginBottom: 10 }}>{p.loc}</span>
+                      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.65, color: C.gray, margin: 0 }}>{p.d}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div style={{ padding: "72px 0", background: C.off }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <STitle label="RESULTATEN" title={"AFGEWERKTE PROJECTEN\nIN DETAIL"} />
+          <div className="pg" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+            {resultProjects.map(function (project, i) {
+              return (
+                <Reveal key={project.t} delay={i * 0.08}>
+                  <div style={{ background: C.white, border: "1px solid " + C.ltGray, overflow: "hidden" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 6, padding: 6, background: C.dark }}>
+                      {project.photos.map(function (photo, photoIndex) {
+                        var isLead = photoIndex === 0;
+                        return (
+                          <div
+                            key={photo}
+                            style={{
+                              overflow: "hidden",
+                              background: C.dark,
+                              aspectRatio: isLead ? "16/10" : "4/5",
+                              gridColumn: isLead ? "1 / -1" : "auto",
+                            }}
+                          >
+                            <img src={photo} alt={project.t + " detail " + (photoIndex + 1)} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div style={{ padding: "20px 24px" }}>
+                      <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>{project.c}</span>
+                      <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.black, margin: "4px 0 6px", letterSpacing: 0.5 }}>{project.t}</h3>
+                      <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray }}>{project.loc}</span>
                     </div>
                   </div>
                 </Reveal>
