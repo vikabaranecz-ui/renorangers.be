@@ -26,10 +26,10 @@ const IMG = {
   hero: "/home-hero-family.jpg",
   toiletantwerpen: "/toiletantwerpen.webp",
   toiletmerksem: "/toiletmerksem.webp",
-  livingroom: "/badkamermetmortex.webp",
-  kitchen: "/badkamerantwerpenzwart.webp",
+  livingroom: "/projects/project-living-1.png",
+  kitchen: "/projects/project-kitchen-3.png",
   shower: "/toiletmerksem.webp",
-  bathroom: "/toiletantwerpen.webp",
+  bathroom: "/projects/project-bathroom-purple-1.png",
   toilet: "/toiletantwerpenvoor.webp",
 };
 
