@@ -2356,73 +2356,117 @@ function CookieConsentBanner() {
   return (
     <>
       {visible && (
-        <div
-          role="dialog"
-          aria-live="polite"
-          aria-label="Cookie instellingen"
-          style={{
+        <>
+          {/* Overlay */}
+          <div style={{
             position: "fixed",
-            left: 20,
-            right: 20,
-            bottom: 20,
-            zIndex: 10020,
-            maxWidth: 980,
-            margin: "0 auto",
-            background: C.black,
-            color: C.white,
-            border: "2px solid " + C.red,
-            boxShadow: "0 14px 44px rgba(0,0,0,0.42)",
-            padding: "18px",
-          }}
-        >
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.88)", lineHeight: 1.6, margin: "0 0 12px" }}>
-            Wij gebruiken cookies voor een betere website-ervaring en statistieken. U kiest zelf of u analytische cookies toestaat. Lees meer in ons{" "}
-            <Link to={PAGE_PATHS.privacy} style={{ color: C.red, textDecoration: "underline", fontWeight: 600 }}>
-              privacybeleid
-            </Link>.
-          </p>
-          {Boolean(consentChoice) && (
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.65)", margin: "0 0 12px" }}>
-              Huidige keuze: {consentChoice === "accepted" ? "Alle cookies toegestaan" : "Alleen noodzakelijke cookies"}
+            inset: 0,
+            background: "rgba(10,10,10,0.55)",
+            zIndex: 10019,
+            backdropFilter: "blur(3px)",
+          }} />
+
+          {/* Modal */}
+          <div
+            role="dialog"
+            aria-live="polite"
+            aria-label="Cookie instellingen"
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 10020,
+              width: "min(520px, calc(100vw - 32px))",
+              background: C.white,
+              boxShadow: "0 24px 64px rgba(0,0,0,0.22)",
+              padding: "40px 36px 32px",
+            }}
+          >
+            {/* Cookie icon */}
+            <div style={{ width: 48, height: 48, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="#E63329" strokeWidth="1.8" />
+                <circle cx="9" cy="10" r="1.5" fill="#E63329" />
+                <circle cx="14" cy="8" r="1" fill="#E63329" />
+                <circle cx="15" cy="14" r="1.5" fill="#E63329" />
+                <circle cx="9.5" cy="15" r="1" fill="#E63329" />
+                <circle cx="12" cy="12" r="1" fill="#E63329" />
+              </svg>
+            </div>
+
+            {/* Accent line */}
+            <div style={{ width: 40, height: 3, background: C.red, marginBottom: 18 }} />
+
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.black, letterSpacing: 1, margin: "0 0 10px", lineHeight: 1 }}>
+              COOKIE INSTELLINGEN
+            </h2>
+
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, lineHeight: 1.7, margin: "0 0 10px" }}>
+              Wij gebruiken cookies voor een betere website-ervaring en statistieken. U kiest zelf of u analytische cookies toestaat.
             </p>
-          )}
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <button
-              type="button"
-              onClick={function () { saveChoice("rejected"); }}
-              style={{
-                background: "transparent",
-                color: C.white,
-                border: "1px solid rgba(255,255,255,0.7)",
-                cursor: "pointer",
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: 14,
-                letterSpacing: 2,
-                padding: "11px 16px",
-                minHeight: 44,
-              }}
-            >
-              Alleen noodzakelijke
-            </button>
-            <button
-              type="button"
-              onClick={function () { saveChoice("accepted"); }}
-              style={{
-                background: C.red,
-                color: C.white,
-                border: "1px solid " + C.red,
-                cursor: "pointer",
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: 14,
-                letterSpacing: 2,
-                padding: "11px 16px",
-                minHeight: 44,
-              }}
-            >
-              Accepteer cookies
-            </button>
+
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.6, margin: "0 0 24px" }}>
+              Lees meer in ons{" "}
+              <Link to={PAGE_PATHS.privacy} style={{ color: C.red, textDecoration: "underline", fontWeight: 600 }}>
+                privacybeleid
+              </Link>.
+            </p>
+
+            {Boolean(consentChoice) && (
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, margin: "0 0 16px", padding: "8px 12px", background: C.off, borderLeft: "3px solid " + C.red }}>
+                Huidige keuze: {consentChoice === "accepted" ? "Alle cookies toegestaan" : "Alleen noodzakelijke cookies"}
+              </p>
+            )}
+
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <button
+                type="button"
+                onClick={function () { saveChoice("rejected"); }}
+                style={{
+                  flex: 1,
+                  minWidth: 140,
+                  background: C.white,
+                  color: C.black,
+                  border: "1px solid " + C.ltGray,
+                  cursor: "pointer",
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 14,
+                  letterSpacing: 2,
+                  padding: "13px 16px",
+                  minHeight: 48,
+                  transition: "border-color .2s",
+                }}
+                onMouseEnter={function (e) { e.currentTarget.style.borderColor = C.black; }}
+                onMouseLeave={function (e) { e.currentTarget.style.borderColor = C.ltGray; }}
+              >
+                Alleen noodzakelijke
+              </button>
+              <button
+                type="button"
+                onClick={function () { saveChoice("accepted"); }}
+                style={{
+                  flex: 1,
+                  minWidth: 140,
+                  background: C.red,
+                  color: C.white,
+                  border: "1px solid " + C.red,
+                  cursor: "pointer",
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 14,
+                  letterSpacing: 2,
+                  padding: "13px 16px",
+                  minHeight: 48,
+                  transition: "opacity .2s",
+                }}
+                onMouseEnter={function (e) { e.currentTarget.style.opacity = "0.88"; }}
+                onMouseLeave={function (e) { e.currentTarget.style.opacity = "1"; }}
+              >
+                Accepteer cookies
+              </button>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
