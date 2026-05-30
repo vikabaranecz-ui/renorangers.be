@@ -1,0 +1,17 @@
+{
+  "name": "Reno Rangers — Renovatiebedrijf Antwerpen",
+  "short_name": "Reno Rangers",
+  "description": "Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, één aanspreekpunt.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#E63329",
+  "lang": "nl-BE",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
