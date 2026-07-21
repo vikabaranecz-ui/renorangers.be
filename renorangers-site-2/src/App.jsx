@@ -26,10 +26,10 @@ const IMG = {
   hero: "/home-hero-family.jpg",
   toiletantwerpen: "/toiletantwerpen.webp",
   toiletmerksem: "/toiletmerksem.webp",
-  livingroom: "/projects/project-living-1.png",
-  kitchen: "/projects/project-kitchen-3.png",
+  livingroom: "/projects/project-living-1.webp",
+  kitchen: "/projects/project-kitchen-3.webp",
   shower: "/toiletmerksem.webp",
-  bathroom: "/projects/project-bathroom-purple-1.png",
+  bathroom: "/projects/project-bathroom-purple-1.webp",
   toilet: "/toiletantwerpenvoor.webp",
 };
 
@@ -64,6 +64,7 @@ const BLOG_POSTS = [
       description: "Ontdek de werkelijke kostprijs van een badkamerrenovatie in Antwerpen in 2026. Van 5.000 tot 15.000 euro — wij leggen uit wat de prijs bepaalt.",
       ogTitle: "Kostprijs badkamerrenovatie Antwerpen 2026 — Reno Rangers",
       ogDescription: "Wat kost een badkamerrenovatie in Antwerpen in 2026? Alle kosten op een rij.",
+      ogImage: "https://www.renorangers.be/badkamer-hero-desktop.webp",
     },
     content: [
       {
@@ -173,13 +174,14 @@ const BLOG_POSTS = [
     title: "Totaalrenovatie: alles wat u moet weten",
     date: "8 MAART 2026",
     category: "RENOVATIE",
-    img: "/projects/project-living-1.png",
+    img: "/projects/project-living-1.webp",
     excerpt: "Een totaalrenovatie is een grote investering die uw woningwaarde aanzienlijk kan verhogen. Van vergunningen tot het kiezen van de juiste aannemer.",
     seo: {
       title: "Totaalrenovatie: alles wat u moet weten | Reno Rangers Antwerpen",
       description: "Overweegt u een totaalrenovatie? Ontdek alles over planning, vergunningen, kosten en het kiezen van de juiste aannemer in Antwerpen.",
       ogTitle: "Totaalrenovatie: de complete gids — Reno Rangers",
       ogDescription: "Alles wat u moet weten over een totaalrenovatie: kosten, planning en aannemer kiezen.",
+      ogImage: "https://www.renorangers.be/projects/project-living-1.webp",
     },
     content: [
       {
@@ -286,13 +288,14 @@ const BLOG_POSTS = [
     title: "5 trends in binnenafwerking voor Belgische woningen",
     date: "1 MAART 2026",
     category: "INTERIEUR",
-    img: "/projects/project-mortex-after-1.jpg",
+    img: "/projects/project-mortex-after-1.webp",
     excerpt: "Van warme aardetinten tot minimalistische afwerking — de trends in binnenafwerking evolueren snel. Ontdek de 5 populairste stijlen van 2026.",
     seo: {
       title: "5 trends in binnenafwerking voor Belgische woningen in 2026 | Reno Rangers",
       description: "Ontdek de 5 grootste binnenafwerkingstrends van 2026 voor Belgische woningen: van mortex tot microcement en warme aardetinten.",
       ogTitle: "5 binnenafwerkingstrends 2026 — Reno Rangers",
       ogDescription: "Welke trends domineren binnenafwerking in 2026? Reno Rangers zet de 5 populairste stijlen op een rij.",
+      ogImage: "https://www.renorangers.be/projects/project-mortex-after-1.webp",
     },
     content: [
       {
@@ -375,13 +378,14 @@ const BLOG_POSTS = [
     title: "Hoe kiest u de juiste renovatie-aannemer?",
     date: "22 FEB 2026",
     category: "TIPS",
-    img: "/projects/project-bathroom-purple-1.png",
+    img: "/projects/project-bathroom-purple-1.webp",
     excerpt: "Het kiezen van een betrouwbare aannemer is de belangrijkste beslissing bij elke renovatie. Ontdek de 7 criteria waarop u moet letten.",
     seo: {
       title: "Hoe kiest u de juiste renovatie-aannemer? 7 tips | Reno Rangers",
       description: "De juiste renovatie-aannemer kiezen is cruciaal. Ontdek 7 concrete tips om een betrouwbare aannemer te vinden in Antwerpen en omgeving.",
       ogTitle: "De juiste renovatie-aannemer kiezen — 7 tips | Reno Rangers",
       ogDescription: "7 praktische tips om de beste aannemer voor uw renovatieproject in Antwerpen te kiezen.",
+      ogImage: "https://www.renorangers.be/projects/project-bathroom-purple-1.webp",
     },
     content: [
       {
@@ -475,8 +479,8 @@ const BLOG_POSTS = [
 
 const ROUTE_SEO = Object.freeze({
   [PAGE_PATHS.home]: {
-    title: "Reno Rangers — Renovatiebedrijf Antwerpen | Totaalrenovatie, Badkamerrenovatie & Binnenafwerking",
-    description: "Reno Rangers is uw renovatie aannemer in Antwerpen voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, één aanspreekpunt, correcte oplevering.",
+    title: "Reno Rangers | Renovatiebedrijf Antwerpen",
+    description: "Renovatiebedrijf in Antwerpen voor totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte aanvragen.",
     ogTitle: "Reno Rangers — Renovatiebedrijf Antwerpen",
     ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen.",
   },
@@ -1625,7 +1629,7 @@ function Projecten() {
       t: "MORTEX BADKAMER",
       loc: "Antwerpen",
       before: "/projects/project-mortex-before-1.jpg",
-      after: "/projects/project-mortex-after-1.jpg",
+      after: "/projects/project-mortex-after-1.webp",
       d: "Transformatie naar een strakke mortex badkamer met zwarte accenten.",
     },
     {
@@ -1658,8 +1662,8 @@ function Projecten() {
       loc: "Merksem",
       c: "Complete renovatie",
       photos: [
-        "/projects/project-bathroom-purple-1.png",
-        "/projects/project-bathroom-purple-2.png",
+        "/projects/project-bathroom-purple-1.webp",
+        "/projects/project-bathroom-purple-2.webp",
       ],
     },
     {
@@ -1667,9 +1671,9 @@ function Projecten() {
       loc: "Antwerpen",
       c: "Complete renovatie",
       photos: [
-        "/projects/project-kitchen-3.png",
-        "/projects/project-kitchen-1.png",
-        "/projects/project-kitchen-2.png",
+        "/projects/project-kitchen-3.webp",
+        "/projects/project-kitchen-1.webp",
+        "/projects/project-kitchen-2.webp",
       ],
     },
     {
@@ -1677,8 +1681,8 @@ function Projecten() {
       loc: "Antwerpen",
       c: "Complete renovatie",
       photos: [
-        "/projects/project-living-1.png",
-        "/projects/project-living-2.png",
+        "/projects/project-living-1.webp",
+        "/projects/project-living-2.webp",
       ],
     },
   ];
@@ -2178,7 +2182,7 @@ function Foot() {
   return (
     <footer style={{ background: C.black, borderTop: "3px solid " + C.red }}>
       <div style={{ maxWidth: 1320, margin: "0 auto", padding: "56px 32px 28px" }}>
-        <div className="fg" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
+        <div className="fg" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
           <div>
             <Logo light size={0.85} />
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.35)", marginTop: 18, maxWidth: 260 }}>
@@ -2212,6 +2216,21 @@ function Foot() {
               <a href="mailto:info@renorangers.be" style={{ color: "inherit", textDecoration: "none", display: "block" }}>info@renorangers.be</a>
               <span style={{ display: "block" }}>{"Antwerpen, Belgi\u00eb"}</span>
             </div>
+          </div>
+          <div>
+            <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, margin: "0 0 16px" }}>NUTTIGE LINKS</h4>
+            {[
+              { l: "Mijn VerbouwPremie", h: "https://www.mijnverbouwpremie.be" },
+              { l: "Stad Antwerpen", h: "https://www.antwerpen.be" },
+              { l: "Premies & subsidies", h: "https://www.energiesparen.be/premies" },
+              { l: "KBO Ondernemingen", h: "https://kbopub.economie.fgov.be" },
+            ].map(function (link) {
+              return (
+                <a key={link.h} href={link.h} target="_blank" rel="noopener noreferrer" style={{ display: "block", padding: "4px 0", fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", textDecoration: "none" }}>
+                  {link.l}
+                </a>
+              );
+            })}
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 20, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
@@ -2314,8 +2333,11 @@ function RouteEffects() {
     ensureMeta('meta[property="og:title"]', "property", "og:title").setAttribute("content", routeSeo.ogTitle || routeSeo.title);
     ensureMeta('meta[property="og:description"]', "property", "og:description").setAttribute("content", routeSeo.ogDescription || routeSeo.description);
     ensureMeta('meta[property="og:url"]', "property", "og:url").setAttribute("content", canonicalHref);
+    var ogImage = routeSeo.ogImage || SITE_ORIGIN + "/badkamer-hero-desktop.webp";
+    ensureMeta('meta[property="og:image"]', "property", "og:image").setAttribute("content", ogImage);
     ensureMeta('meta[name="twitter:title"]', "name", "twitter:title").setAttribute("content", routeSeo.ogTitle || routeSeo.title);
     ensureMeta('meta[name="twitter:description"]', "name", "twitter:description").setAttribute("content", routeSeo.ogDescription || routeSeo.description);
+    ensureMeta('meta[name="twitter:image"]', "name", "twitter:image").setAttribute("content", ogImage);
     ensureMeta('meta[name="robots"]', "name", "robots").setAttribute("content", isKnownRoute ? "index, follow" : "noindex, follow");
   }, [location.pathname]);
 

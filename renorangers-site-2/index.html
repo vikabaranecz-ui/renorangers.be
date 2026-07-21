@@ -54,18 +54,24 @@
     <!-- End Google Tag Manager -->
 
     <!-- PRIMARY SEO -->
-    <title>Reno Rangers — Renovatiebedrijf Antwerpen | Totaalrenovatie, Badkamerrenovatie & Binnenafwerking</title>
-    <meta name="description" content="Reno Rangers is uw renovatie aannemer in Antwerpen voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, één aanspreekpunt, correcte oplevering. Vraag een gratis offerte aan." />
+    <title>Reno Rangers | Renovatiebedrijf Antwerpen</title>
+    <meta name="description" content="Renovatiebedrijf in Antwerpen voor totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte aanvragen." />
     <meta name="keywords" content="renovatie aannemer Antwerpen, badkamerrenovatie Antwerpen, totaalrenovatie Antwerpen, binnenafwerking Antwerpen, renovatiebedrijf Antwerpen, schilderwerken Antwerpen, vloeren leggen Antwerpen" />
     <meta name="author" content="Reno Rangers BV" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#E63329" />
     <link rel="canonical" href="https://www.renorangers.be/" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- OPEN GRAPH / FACEBOOK -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.renorangers.be/" />
     <meta property="og:title" content="Reno Rangers — Renovatiebedrijf Antwerpen" />
     <meta property="og:description" content="Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen. Vraag een gratis adviesgesprek aan." />
+    <meta property="og:image" content="https://www.renorangers.be/badkamer-hero-desktop.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Reno Rangers — professionele badkamerrenovatie in Antwerpen" />
     <meta property="og:locale" content="nl_BE" />
     <meta property="og:site_name" content="Reno Rangers" />
 
@@ -73,12 +79,15 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Reno Rangers — Renovatiebedrijf Antwerpen" />
     <meta name="twitter:description" content="Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen." />
+    <meta name="twitter:image" content="https://www.renorangers.be/badkamer-hero-desktop.webp" />
 
     <!-- GEO / LOCAL SEO -->
     <meta name="geo.region" content="BE-VAN" />
     <meta name="geo.placename" content="Antwerpen" />
+    <meta name="geo.position" content="51.2194;4.4025" />
+    <meta name="ICBM" content="51.2194, 4.4025" />
 
-    <!-- FAVICON (replace with actual logo later) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- FONTS PRECONNECT -->
@@ -98,7 +107,7 @@
       />
     </noscript>
 
-    <!-- JSON-LD STRUCTURED DATA / SCHEMA MARKUP -->
+    <!-- JSON-LD: LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -108,6 +117,7 @@
       "url": "https://www.renorangers.be",
       "telephone": "+32465883919",
       "email": "info@renorangers.be",
+      "image": "https://www.renorangers.be/badkamer-hero-desktop.webp",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Antwerpen",
@@ -120,24 +130,9 @@
         "longitude": 4.4025
       },
       "areaServed": [
-        "Antwerpen",
-        "Mortsel",
-        "Hove",
-        "Edegem",
-        "Borsbeek",
-        "Boechout",
-        "Kontich",
-        "Lint",
-        "Aartselaar",
-        "Wommelgem",
-        "Wijnegem",
-        "Schoten",
-        "Deurne",
-        "Wilrijk",
-        "Hoboken",
-        "Kapellen",
-        "Brasschaat",
-        "Ekeren"
+        "Antwerpen", "Mortsel", "Hove", "Edegem", "Borsbeek", "Boechout",
+        "Kontich", "Lint", "Aartselaar", "Wommelgem", "Wijnegem", "Schoten",
+        "Deurne", "Wilrijk", "Hoboken", "Kapellen", "Brasschaat", "Ekeren"
       ],
       "openingHoursSpecification": [
         {
@@ -190,6 +185,67 @@
           }
         ]
       }
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Reno Rangers",
+      "url": "https://www.renorangers.be",
+      "inLanguage": "nl-BE",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.renorangers.be/blog?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost een badkamerrenovatie in Antwerpen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De gemiddelde kostprijs voor een badkamerrenovatie in Antwerpen bedraagt tussen 5.000 en 15.000 euro voor een standaard badkamer van 6 à 10 m². Reno Rangers werkt altijd met een vaste prijs, zodat u achteraf nooit voor verrassingen staat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe lang duurt een badkamerrenovatie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een standaard badkamerrenovatie duurt gemiddeld 5 tot 10 werkdagen. Bij complexere projecten kan dit oplopen tot 2 à 3 weken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In welke gemeenten werkt Reno Rangers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reno Rangers is actief in Antwerpen en de volledige Antwerpse regio: Mortsel, Edegem, Hove, Kontich, Aartselaar, Wilrijk, Hoboken, Deurne, Borsbeek, Wommelgem, Wijnegem, Schoten, Brasschaat, Kapellen en Ekeren."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werkt Reno Rangers met een vaste prijs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Reno Rangers werkt uitsluitend met vaste prijzen (forfaitaire offertes). U weet vooraf exact wat de renovatie kost, zonder verborgen kosten of meerwerken achteraf."
+          }
+        }
+      ]
     }
     </script>
   </head>
