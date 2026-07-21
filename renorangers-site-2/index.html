@@ -60,6 +60,7 @@
     <meta name="author" content="Reno Rangers BV" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#E63329" />
+    <meta name="msapplication-TileColor" content="#E63329" />
     <link rel="canonical" href="https://www.renorangers.be/" />
     <link rel="manifest" href="/manifest.json" />
 
@@ -71,15 +72,16 @@
     <meta property="og:image" content="https://www.renorangers.be/badkamer-hero-desktop.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Reno Rangers — professionele badkamerrenovatie in Antwerpen" />
+    <meta property="og:image:alt" content="Professionele badkamerrenovatie door Reno Rangers Antwerpen" />
     <meta property="og:locale" content="nl_BE" />
     <meta property="og:site_name" content="Reno Rangers" />
 
-    <!-- TWITTER -->
+    <!-- TWITTER / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Reno Rangers — Renovatiebedrijf Antwerpen" />
     <meta name="twitter:description" content="Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen." />
     <meta name="twitter:image" content="https://www.renorangers.be/badkamer-hero-desktop.webp" />
+    <meta name="twitter:image:alt" content="Professionele badkamerrenovatie door Reno Rangers Antwerpen" />
 
     <!-- GEO / LOCAL SEO -->
     <meta name="geo.region" content="BE-VAN" />
@@ -112,16 +114,19 @@
     {
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
+      "@id": "https://www.renorangers.be/#business",
       "name": "Reno Rangers",
       "description": "Renovatiebedrijf in Antwerpen voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, één aanspreekpunt.",
       "url": "https://www.renorangers.be",
+      "logo": "https://www.renorangers.be/logo.png",
+      "image": "https://www.renorangers.be/badkamer-hero-desktop.webp",
       "telephone": "+32465883919",
       "email": "info@renorangers.be",
-      "image": "https://www.renorangers.be/badkamer-hero-desktop.webp",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Antwerpen",
         "addressRegion": "Antwerpen",
+        "postalCode": "2000",
         "addressCountry": "BE"
       },
       "geo": {
@@ -130,9 +135,24 @@
         "longitude": 4.4025
       },
       "areaServed": [
-        "Antwerpen", "Mortsel", "Hove", "Edegem", "Borsbeek", "Boechout",
-        "Kontich", "Lint", "Aartselaar", "Wommelgem", "Wijnegem", "Schoten",
-        "Deurne", "Wilrijk", "Hoboken", "Kapellen", "Brasschaat", "Ekeren"
+        {"@type": "City", "name": "Antwerpen"},
+        {"@type": "City", "name": "Mortsel"},
+        {"@type": "City", "name": "Hove"},
+        {"@type": "City", "name": "Edegem"},
+        {"@type": "City", "name": "Borsbeek"},
+        {"@type": "City", "name": "Boechout"},
+        {"@type": "City", "name": "Kontich"},
+        {"@type": "City", "name": "Lint"},
+        {"@type": "City", "name": "Aartselaar"},
+        {"@type": "City", "name": "Wommelgem"},
+        {"@type": "City", "name": "Wijnegem"},
+        {"@type": "City", "name": "Schoten"},
+        {"@type": "City", "name": "Deurne"},
+        {"@type": "City", "name": "Wilrijk"},
+        {"@type": "City", "name": "Hoboken"},
+        {"@type": "City", "name": "Kapellen"},
+        {"@type": "City", "name": "Brasschaat"},
+        {"@type": "City", "name": "Ekeren"}
       ],
       "openingHoursSpecification": [
         {
@@ -152,9 +172,11 @@
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "reviewCount": "12",
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "priceRange": "$$",
+      "sameAs": [],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Renovatiediensten",
@@ -188,14 +210,19 @@
     }
     </script>
 
-    <!-- JSON-LD: WebSite with SearchAction -->
+    <!-- JSON-LD: WebSite + SearchAction -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Reno Rangers",
+      "@id": "https://www.renorangers.be/#website",
       "url": "https://www.renorangers.be",
+      "name": "Reno Rangers",
+      "description": "Renovatiebedrijf Antwerpen",
       "inLanguage": "nl-BE",
+      "publisher": {
+        "@id": "https://www.renorangers.be/#business"
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -204,6 +231,77 @@
         },
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- JSON-LD: Blog posts -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://www.renorangers.be/blog#blog",
+      "name": "Reno Rangers Blog — Renovatietips",
+      "description": "Praktische renovatietips voor uw woning in Antwerpen",
+      "url": "https://www.renorangers.be/blog",
+      "publisher": {"@id": "https://www.renorangers.be/#business"},
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.renorangers.be/blog/wat-kost-badkamerrenovatie-antwerpen-2026",
+          "headline": "Wat kost een badkamerrenovatie in Antwerpen in 2026?",
+          "description": "Ontdek de werkelijke kostprijs van een badkamerrenovatie in Antwerpen in 2026. Van 5.000 tot 15.000 euro — wij leggen uit wat de prijs bepaalt.",
+          "url": "https://www.renorangers.be/blog/wat-kost-badkamerrenovatie-antwerpen-2026",
+          "datePublished": "2026-03-15",
+          "dateModified": "2026-03-15",
+          "image": "https://www.renorangers.be/badkamer-hero-desktop.webp",
+          "author": {"@id": "https://www.renorangers.be/#business"},
+          "publisher": {"@id": "https://www.renorangers.be/#business"},
+          "articleSection": "Badkamer",
+          "inLanguage": "nl-BE"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.renorangers.be/blog/totaalrenovatie-alles-wat-u-moet-weten",
+          "headline": "Totaalrenovatie: alles wat u moet weten",
+          "description": "Overweegt u een totaalrenovatie? Ontdek alles over planning, vergunningen, kosten en het kiezen van de juiste aannemer in Antwerpen.",
+          "url": "https://www.renorangers.be/blog/totaalrenovatie-alles-wat-u-moet-weten",
+          "datePublished": "2026-03-08",
+          "dateModified": "2026-03-08",
+          "image": "https://www.renorangers.be/projects/project-living-1.webp",
+          "author": {"@id": "https://www.renorangers.be/#business"},
+          "publisher": {"@id": "https://www.renorangers.be/#business"},
+          "articleSection": "Renovatie",
+          "inLanguage": "nl-BE"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.renorangers.be/blog/trends-binnenafwerking-belgische-woningen-2026",
+          "headline": "5 trends in binnenafwerking voor Belgische woningen",
+          "description": "Ontdek de 5 grootste binnenafwerkingstrends van 2026 voor Belgische woningen: van mortex tot microcement en warme aardetinten.",
+          "url": "https://www.renorangers.be/blog/trends-binnenafwerking-belgische-woningen-2026",
+          "datePublished": "2026-03-01",
+          "dateModified": "2026-03-01",
+          "image": "https://www.renorangers.be/projects/project-mortex-after-1.webp",
+          "author": {"@id": "https://www.renorangers.be/#business"},
+          "publisher": {"@id": "https://www.renorangers.be/#business"},
+          "articleSection": "Interieur",
+          "inLanguage": "nl-BE"
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.renorangers.be/blog/hoe-juiste-renovatie-aannemer-kiezen",
+          "headline": "Hoe kiest u de juiste renovatie-aannemer?",
+          "description": "De juiste renovatie-aannemer kiezen is cruciaal. Ontdek 7 concrete tips om een betrouwbare aannemer te vinden in Antwerpen en omgeving.",
+          "url": "https://www.renorangers.be/blog/hoe-juiste-renovatie-aannemer-kiezen",
+          "datePublished": "2026-02-22",
+          "dateModified": "2026-02-22",
+          "image": "https://www.renorangers.be/projects/project-bathroom-purple-1.webp",
+          "author": {"@id": "https://www.renorangers.be/#business"},
+          "publisher": {"@id": "https://www.renorangers.be/#business"},
+          "articleSection": "Tips",
+          "inLanguage": "nl-BE"
+        }
+      ]
     }
     </script>
 
@@ -218,7 +316,15 @@
           "name": "Wat kost een badkamerrenovatie in Antwerpen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "De gemiddelde kostprijs voor een badkamerrenovatie in Antwerpen bedraagt tussen 5.000 en 15.000 euro voor een standaard badkamer van 6 à 10 m². Reno Rangers werkt altijd met een vaste prijs, zodat u achteraf nooit voor verrassingen staat."
+            "text": "Een badkamerrenovatie in Antwerpen kost gemiddeld tussen 5.000 en 15.000 euro voor een standaard badkamer van 6 à 10 m², afhankelijk van materialen en complexiteit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werkt Reno Rangers met vaste prijzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Reno Rangers werkt uitsluitend met vaste prijzen (forfait). U weet vooraf exact wat het kost — geen verrassingen achteraf."
           }
         },
         {
@@ -226,23 +332,15 @@
           "name": "Hoe lang duurt een badkamerrenovatie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Een standaard badkamerrenovatie duurt gemiddeld 5 tot 10 werkdagen. Bij complexere projecten kan dit oplopen tot 2 à 3 weken."
+            "text": "Een standaard badkamerrenovatie door Reno Rangers duurt gemiddeld 5 tot 10 werkdagen. Bij complexere projecten kan dit oplopen tot 2 à 3 weken."
           }
         },
         {
           "@type": "Question",
-          "name": "In welke gemeenten werkt Reno Rangers?",
+          "name": "In welke steden werkt Reno Rangers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Reno Rangers is actief in Antwerpen en de volledige Antwerpse regio: Mortsel, Edegem, Hove, Kontich, Aartselaar, Wilrijk, Hoboken, Deurne, Borsbeek, Wommelgem, Wijnegem, Schoten, Brasschaat, Kapellen en Ekeren."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Werkt Reno Rangers met een vaste prijs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja. Reno Rangers werkt uitsluitend met vaste prijzen (forfaitaire offertes). U weet vooraf exact wat de renovatie kost, zonder verborgen kosten of meerwerken achteraf."
+            "text": "Reno Rangers is actief in Antwerpen en omstreken: Mortsel, Edegem, Hove, Kontich, Aartselaar, Wilrijk, Hoboken, Deurne, Borsbeek, Wommelgem, Wijnegem, Schoten, Brasschaat, Kapellen en Ekeren."
           }
         }
       ]
