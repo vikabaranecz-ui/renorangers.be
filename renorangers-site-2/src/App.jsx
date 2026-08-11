@@ -546,7 +546,7 @@ const PROJECT_PAGES = [
       "Verbeterde ventilatie en waterdichte afwerking",
     ],
     resultaat: "De klant heeft een strakke, moderne badkamer gekregen die optimaal gebruikmaakt van de beschikbare ruimte. De lichte tegels geven de kamer een gevoel van ruimte en helderheid. Alles is waterdicht afgewerkt en klaar voor jaren gebruik.",
-    gallery: ["/toiletantwerpenvoor.webp", "/toiletantwerpen.webp", "/projects/IMG_5387.jpg", "/projects/IMG_5388.jpg", "/projects/IMG_5389.jpg", "/projects/IMG_5390.jpg"],
+    gallery: ["/toiletantwerpenvoor.webp", "/toiletantwerpen.webp"],
     seo: {
       title: "Badkamerrenovatie Antwerpen | Reno Rangers Project",
       description: "Bekijk dit badkamerrenovatieproject in Antwerpen door Reno Rangers: van verouderde badkamer naar een moderne, strakke ruimte.",
@@ -555,27 +555,38 @@ const PROJECT_PAGES = [
     },
   },
   {
-    slug: "badkamerrenovatie-merksem",
-    title: "BADKAMERRENOVATIE",
+    slug: "mortex-badkamer-merksem",
+    title: "MORTEX BADKAMER",
     location: "Merksem",
-    category: "BADKAMERRENOVATIE",
-    heroAfter: "/toiletmerksem.webp",
+    category: "MORTEX AFWERKING",
+    heroAfter: "/projects/project-mortex-after-1.webp",
     heroBefore: "/badkammermerksemvoor.jpg",
-    situatie: "Een compacte badkamer in Merksem die dringend aan renovatie toe was. De bestaande indeling was inefficiënt en de materialen waren verouderd. De klant wou meer comfort en een frissere uitstraling.",
+    situatie: "De klant in Merksem had een gedateerde badkamer met witte tegels, een bad en verouderd sanitair. Ze droomden van iets volledig anders — een donkere, sfeervolle badkamer met mortex afwerking, zwarte accenten en een inloopdouche. Een totale transformatie.",
     werkzaamheden: [
-      "Volledige sloop en herinrichting van de badkamer",
-      "Nieuwe wandtegels en vloer gelegd in neutrale tinten",
-      "Compact sanitair geplaatst dat de beschikbare ruimte optimaal benut",
-      "Nieuwe verlichting en accessoires geïnstalleerd",
-      "Waterdichte afwerking en voegen",
+      "Volledige sloop van de bestaande badkamer inclusief bad, tegels en sanitair",
+      "Nieuwe leidingen en aansluitingen gelegd voor douche, wastafel en toilet",
+      "Mortex aangebracht op wanden en vloer in meerdere lagen — donkergrijs met een betonlook",
+      "Inloopdouche geplaatst met grote regensproeier en zwarte glazen wand",
+      "Zwart sanitair en maatwerk wastafelblad geïnstalleerd",
+      "Ronde LED spiegel en sfeerverlichting aangebracht",
+      "Aparte toiletruimte volledig afgewerkt in mortex met zwarte accenten",
     ],
-    resultaat: "De klant heeft een comfortabele, moderne badkamer gekregen die ondanks het compacte formaat alles heeft wat nodig is. De strakke afwerking en doordachte indeling maken het dagelijks gebruik aangenamer.",
-    gallery: ["/badkammermerksemvoor.jpg", "/toiletmerksemvoor.jpg", "/toiletmerksem.webp", "/projects/IMG_5395.jpg", "/projects/IMG_5396.jpg"],
+    resultaat: "Een complete transformatie van een gewone witte badkamer naar een duistere, luxueuze mortex badkamer. De klant heeft een badkamer gekregen die aanvoelt als een designhotel — elke dag een premium ervaring. Ook de aparte toiletruimte straalt rust en kwaliteit uit.",
+    gallery: [
+      "/badkammermerksemvoor.jpg",
+      "/projects/project-mortex-after-1.webp",
+      "/projects/project-mortex-detail-7.jpg",
+      "/projects/project-mortex-detail-8.jpg",
+      "/projects/project-mortex-detail-5.jpg",
+      "/projects/project-mortex-detail-6.jpg",
+      "/toiletmerksemvoor.jpg",
+      "/toiletmerksem.webp",
+    ],
     seo: {
-      title: "Badkamerrenovatie Merksem | Reno Rangers Project",
-      description: "Compacte badkamer in Merksem volledig gerenoveerd door Reno Rangers. Modern comfort in een kleine ruimte.",
-      ogTitle: "Badkamerrenovatie Merksem — Reno Rangers",
-      ogDescription: "Gerenoveerde compacte badkamer in Merksem. Bekijk voor en na.",
+      title: "Mortex Badkamer Merksem | Reno Rangers Project",
+      description: "Donkere mortex badkamer in Merksem: van verouderde witte badkamer naar designbadkamer met zwarte accenten. Bekijk voor en na.",
+      ogTitle: "Mortex Badkamer Merksem — Reno Rangers",
+      ogDescription: "Volledige mortex renovatie in Merksem. Van wit naar donker design. Bekijk het resultaat.",
     },
   },
   {
@@ -583,35 +594,29 @@ const PROJECT_PAGES = [
     title: "MORTEX BADKAMER",
     location: "Antwerpen",
     category: "MORTEX AFWERKING",
-    heroAfter: "/projects/project-mortex-after-1.webp",
-    heroBefore: "/projects/project-mortex-before-1.jpg",
-    situatie: "De klant droomde van een minimalistische, design badkamer en koos bewust voor mortex als afwerkingsmateriaal. De bestaande badkamer was gedateerd en bood geen enkele sfeer. Er moest een volledig nieuwe look komen.",
+    heroAfter: "/projects/project-mortex-detail-2.jpg",
+    heroBefore: null,
+    situatie: "De klant wou een tijdloze, lichte badkamer met een warm en natuurlijk karakter. Ze kozen bewust voor mortex in een warme beige tint als afwerking — zowel op de wanden als de vloer. Een vrijstaand bad was een absolute must.",
     werkzaamheden: [
-      "Volledige sloop van de bestaande badkamer",
-      "Grondige voorbehandeling van de wanden en vloer voor mortex applicatie",
-      "Professionele aanbrenging van mortex in meerdere lagen met zwarte accenten",
-      "Plaatsen van inloopdouche met glazen wand",
-      "Design sanitair en meubilair op maat gekozen en geplaatst",
-      "Verlichting op maat voor de sfeervolle uitstraling",
+      "Volledige sloop en heropbouw van de badkamer",
+      "Mortex aangebracht in warme beige tint op alle wanden en vloer",
+      "Vrijstaand bad geplaatst met wandmontage kranen in mat zwart",
+      "Organisch gevormde LED spiegel op maat geïnstalleerd",
+      "Ingebouwde verlichting en verlichte niche aangebracht",
+      "Zwart mat sanitair en accessoires geplaatst",
     ],
-    resultaat: "Een strak, architecturaal geheel dat doet denken aan een hotelkamer. De mortex afwerking geeft een unieke textuur en de zwarte accenten zorgen voor een luxueuze uitstraling. De klant heeft een echte showroom-badkamer gekregen.",
+    resultaat: "Een badkamer die rust en warmte uitstraalt. De lichte mortex tint in combinatie met het vrijstaande bad en de organische spiegel geeft de ruimte een uniek, hotelachtig karakter. De klant is bijzonder trots op dit eindresultaat.",
     gallery: [
-      "/projects/project-mortex-before-1.jpg",
-      "/projects/project-mortex-after-1.webp",
-      "/projects/project-mortex-detail-7.jpg",
-      "/projects/project-mortex-detail-8.jpg",
       "/projects/project-mortex-detail-1.jpg",
       "/projects/project-mortex-detail-2.jpg",
       "/projects/project-mortex-detail-3.jpg",
       "/projects/project-mortex-detail-4.jpg",
-      "/projects/project-mortex-detail-5.jpg",
-      "/projects/project-mortex-detail-6.jpg",
     ],
     seo: {
       title: "Mortex Badkamer Antwerpen | Reno Rangers Project",
-      description: "Strakke mortex badkamer in Antwerpen met zwarte accenten. Bekijk dit designproject van Reno Rangers.",
+      description: "Lichte mortex badkamer in Antwerpen met vrijstaand bad en organische spiegel. Bekijk dit designproject van Reno Rangers.",
       ogTitle: "Mortex Badkamer Antwerpen — Reno Rangers",
-      ogDescription: "Mortex badkamerrenovatie in Antwerpen. Minimalistische afwerking met luxueuze uitstraling.",
+      ogDescription: "Warme beige mortex badkamer in Antwerpen met vrijstaand bad. Bekijk het resultaat.",
     },
   },
   {
@@ -730,12 +735,15 @@ const PROJECT_PAGES = [
     resultaat: "Een heldere, ruimtevoelende badkamer die de klant in Londerzeel dagelijks met plezier gebruikt. De kwaliteitsvolle afwerking en strakke lijnen zorgen voor een tijdloze look die nog jaren meegaat.",
     gallery: [
       "/badka,er_londerzeel_voor1.jpg",
+      "/bakkamer_londerzeel_voor2.JPG",
       "/badkamer_londerzeel_na.jpg",
+      "/badkamer_londerzeel_na.PNG",
       "/badkamer_londerzeel_na1.jpg",
       "/badkamer_londerzeel_na2.jpg",
       "/badkamer_londerxeel_na4.jpg",
       "/badkamer_londerxeel_na5.jpg",
       "/badkamer_londerxeel_na8.jpg",
+      "/badkamer_londerxeel_na10.PNG",
     ],
     seo: {
       title: "Badkamerrenovatie Londerzeel | Reno Rangers Project",
@@ -1843,20 +1851,20 @@ function Projecten() {
       d: "Volledige badkamerrenovatie met nieuwe indeling, sanitair en afwerking.",
     },
     {
-      t: "BADKAMERRENOVATIE",
+      t: "MORTEX BADKAMER",
       loc: "Merksem",
-      slug: "badkamerrenovatie-merksem",
+      slug: "mortex-badkamer-merksem",
       before: "/badkammermerksemvoor.jpg",
-      after: "/toiletmerksem.webp",
-      d: "Compacte badkamer vernieuwd met meer comfort en moderne materialen.",
+      after: "/projects/project-mortex-after-1.webp",
+      d: "Transformatie van een verouderde badkamer naar een donkere mortex designbadkamer met zwarte accenten.",
     },
     {
       t: "MORTEX BADKAMER",
       loc: "Antwerpen",
       slug: "mortex-badkamer-antwerpen",
-      before: "/projects/project-mortex-before-1.jpg",
-      after: "/projects/project-mortex-after-1.webp",
-      d: "Transformatie naar een strakke mortex badkamer met zwarte accenten.",
+      before: null,
+      after: "/projects/project-mortex-detail-2.jpg",
+      d: "Lichte beige mortex badkamer met vrijstaand bad, organische spiegel en zwart sanitair.",
     },
     {
       t: "VOLLEDIGE BADKAMER",
@@ -1878,19 +1886,29 @@ function Projecten() {
 
   var resultProjects = [
     {
-      t: "MORTEX BADKAMER DETAILS",
-      loc: "Antwerpen",
-      slug: "mortex-badkamer-antwerpen",
-      c: "Complete renovatie",
+      t: "MORTEX BADKAMER",
+      loc: "Merksem",
+      slug: "mortex-badkamer-merksem",
+      c: "Mortex renovatie",
       photos: [
+        "/projects/project-mortex-after-1.webp",
         "/projects/project-mortex-detail-7.jpg",
         "/projects/project-mortex-detail-8.jpg",
-        "/projects/project-mortex-detail-1.jpg",
-        "/projects/project-mortex-detail-2.jpg",
-        "/projects/project-mortex-detail-3.jpg",
-        "/projects/project-mortex-detail-4.jpg",
         "/projects/project-mortex-detail-5.jpg",
         "/projects/project-mortex-detail-6.jpg",
+        "/toiletmerksem.webp",
+      ],
+    },
+    {
+      t: "MORTEX BADKAMER",
+      loc: "Antwerpen",
+      slug: "mortex-badkamer-antwerpen",
+      c: "Mortex renovatie",
+      photos: [
+        "/projects/project-mortex-detail-2.jpg",
+        "/projects/project-mortex-detail-1.jpg",
+        "/projects/project-mortex-detail-3.jpg",
+        "/projects/project-mortex-detail-4.jpg",
       ],
     },
     {
@@ -1957,20 +1975,23 @@ function Projecten() {
                 <Reveal key={i} delay={i * 0.07}>
                   <Link to={"/projecten/" + p.slug} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
                   <div style={{ background: C.off, overflow: "hidden", border: "1px solid " + C.ltGray, cursor: "pointer" }}>
-                    <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
-                      <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
-                        <img src={p.before} alt={p.t + " voor"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                        <span style={{ position: "absolute", top: 10, left: 10, background: "rgba(10,10,10,0.85)", color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>
-                          VOOR
-                        </span>
+                    {p.before ? (
+                      <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+                        <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
+                          <img src={p.before} alt={p.t + " voor"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          <span style={{ position: "absolute", top: 10, left: 10, background: "rgba(10,10,10,0.85)", color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>VOOR</span>
+                        </div>
+                        <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
+                          <img src={p.after} alt={p.t + " na"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          <span style={{ position: "absolute", top: 10, right: 10, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>NA</span>
+                        </div>
                       </div>
-                      <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
+                    ) : (
+                      <div style={{ position: "relative", overflow: "hidden", aspectRatio: "16/9", background: C.dark }}>
                         <img src={p.after} alt={p.t + " na"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                        <span style={{ position: "absolute", top: 10, right: 10, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>
-                          NA
-                        </span>
+                        <span style={{ position: "absolute", top: 10, right: 10, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 2, padding: "4px 10px" }}>NA</span>
                       </div>
-                    </div>
+                    )}
                     <div style={{ padding: "22px 24px" }}>
                       <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>Complete renovatie</span>
                       <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.black, margin: "4px 0 3px", letterSpacing: 0.5 }}>{p.t}</h3>
@@ -2031,6 +2052,58 @@ function Projecten() {
   );
 }
 
+/* ── LIGHTBOX ── */
+function Lightbox({ photos, startIdx, onClose }) {
+  var [idx, setIdx] = useState(startIdx);
+  useEffect(function () {
+    function handleKey(e) {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") setIdx(function (i) { return (i + 1) % photos.length; });
+      if (e.key === "ArrowLeft") setIdx(function (i) { return (i - 1 + photos.length) % photos.length; });
+    }
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return function () {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [photos.length, onClose]);
+
+  return (
+    <div
+      onClick={onClose}
+      style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.94)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
+      <div onClick={function (e) { e.stopPropagation(); }} style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", maxWidth: "92vw", maxHeight: "92vh" }}>
+        <img
+          src={photos[idx]}
+          alt={"foto " + (idx + 1)}
+          style={{ maxWidth: "92vw", maxHeight: "88vh", objectFit: "contain", display: "block" }}
+        />
+        <button
+          onClick={onClose}
+          style={{ position: "fixed", top: 18, right: 22, background: "rgba(0,0,0,0.7)", border: "none", color: "#fff", fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 1, padding: "6px 14px", cursor: "pointer", zIndex: 10001 }}
+        >✕</button>
+        {photos.length > 1 && (
+          <>
+            <button
+              onClick={function () { setIdx(function (i) { return (i - 1 + photos.length) % photos.length; }); }}
+              style={{ position: "fixed", left: 12, top: "50%", transform: "translateY(-50%)", background: "rgba(0,0,0,0.7)", border: "none", color: "#fff", fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, padding: "12px 18px", cursor: "pointer", zIndex: 10001 }}
+            >‹</button>
+            <button
+              onClick={function () { setIdx(function (i) { return (i + 1) % photos.length; }); }}
+              style={{ position: "fixed", right: 12, top: "50%", transform: "translateY(-50%)", background: "rgba(0,0,0,0.7)", border: "none", color: "#fff", fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, padding: "12px 18px", cursor: "pointer", zIndex: 10001 }}
+            >›</button>
+          </>
+        )}
+        <span style={{ position: "fixed", bottom: 18, left: "50%", transform: "translateX(-50%)", fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: "rgba(255,255,255,0.6)" }}>
+          {idx + 1} / {photos.length}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 /* ══════════════════════════════════
    PROJECT DETAIL PAGE
    ══════════════════════════════════ */
@@ -2039,6 +2112,7 @@ function ProjectDetail() {
   var slug = params.slug || "";
   var project = PROJECT_PAGES.find(function (p) { return p.slug === slug; });
   var go = useGoToPage();
+  var [lbIdx, setLbIdx] = useState(null);
 
   if (!project) {
     return <Navigate to="/projecten" replace />;
@@ -2137,9 +2211,22 @@ function ProjectDetail() {
               {project.gallery.map(function (photo, i) {
                 var isFirst = i === 0;
                 return (
-                  <Reveal key={photo} delay={i * 0.05}>
-                    <div style={{ overflow: "hidden", aspectRatio: isFirst && project.gallery.length > 2 ? "16/9" : "4/3", background: C.dark, gridColumn: isFirst && project.gallery.length > 2 ? "1 / -1" : "auto" }}>
-                      <img src={photo} alt={project.title + " foto " + (i + 1)} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <Reveal key={photo + i} delay={i * 0.05}>
+                    <div
+                      onClick={function () { setLbIdx(i); }}
+                      style={{ overflow: "hidden", aspectRatio: isFirst && project.gallery.length > 2 ? "16/9" : "4/3", background: C.dark, gridColumn: isFirst && project.gallery.length > 2 ? "1 / -1" : "auto", cursor: "zoom-in", position: "relative" }}
+                    >
+                      <img src={photo} alt={project.title + " foto " + (i + 1)} loading="lazy" decoding="async"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.3s ease" }}
+                        onMouseEnter={function (e) { e.currentTarget.style.transform = "scale(1.03)"; }}
+                        onMouseLeave={function (e) { e.currentTarget.style.transform = "scale(1)"; }}
+                      />
+                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", opacity: 0, transition: "opacity 0.2s", background: "rgba(0,0,0,0.25)" }}
+                        onMouseEnter={function (e) { e.currentTarget.style.opacity = 1; }}
+                        onMouseLeave={function (e) { e.currentTarget.style.opacity = 0; }}
+                      >
+                        <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: "#fff", background: "rgba(0,0,0,0.6)", padding: "6px 14px" }}>VERGROOT</span>
+                      </div>
                     </div>
                   </Reveal>
                 );
@@ -2147,6 +2234,9 @@ function ProjectDetail() {
             </div>
           </div>
         </div>
+      )}
+      {lbIdx !== null && (
+        <Lightbox photos={project.gallery} startIdx={lbIdx} onClose={function () { setLbIdx(null); }} />
       )}
 
       {/* CTA */}
