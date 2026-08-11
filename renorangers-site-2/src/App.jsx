@@ -528,6 +528,224 @@ const ROUTE_SEO = Object.freeze({
   },
 });
 
+/* ── PROJECT DETAIL PAGES ── */
+const PROJECT_PAGES = [
+  {
+    slug: "badkamerrenovatie-antwerpen",
+    title: "BADKAMERRENOVATIE",
+    location: "Antwerpen",
+    category: "BADKAMERRENOVATIE",
+    heroAfter: "/toiletantwerpen.webp",
+    heroBefore: "/toiletantwerpenvoor.webp",
+    situatie: "De klant had een verouderde badkamer met een gedateerde indeling en versleten sanitair. De ruimte voelde donker en klein aan, en de tegels waren na jaren gebruik duidelijk aan vervanging toe. Er was ook geen goede ventilatie aanwezig.",
+    werkzaamheden: [
+      "Volledige demontage van de bestaande badkamer inclusief tegels, sanitair en leidingwerk",
+      "Nieuwe leidingen voor water en afvoer op maat gelegd",
+      "Vloer- en wandtegels volledig vernieuwd in lichte, tijdloze kleuren",
+      "Nieuw toilet, wastafel met meubel en douche geplaatst",
+      "Verbeterde ventilatie en waterdichte afwerking",
+    ],
+    resultaat: "De klant heeft een strakke, moderne badkamer gekregen die optimaal gebruikmaakt van de beschikbare ruimte. De lichte tegels geven de kamer een gevoel van ruimte en helderheid. Alles is waterdicht afgewerkt en klaar voor jaren gebruik.",
+    gallery: ["/toiletantwerpenvoor.webp", "/toiletantwerpen.webp", "/projects/IMG_5387.jpg", "/projects/IMG_5388.jpg", "/projects/IMG_5389.jpg", "/projects/IMG_5390.jpg"],
+    seo: {
+      title: "Badkamerrenovatie Antwerpen | Reno Rangers Project",
+      description: "Bekijk dit badkamerrenovatieproject in Antwerpen door Reno Rangers: van verouderde badkamer naar een moderne, strakke ruimte.",
+      ogTitle: "Badkamerrenovatie Antwerpen — Reno Rangers",
+      ogDescription: "Volledig vernieuwde badkamer in Antwerpen door Reno Rangers. Bekijk voor en na.",
+    },
+  },
+  {
+    slug: "badkamerrenovatie-merksem",
+    title: "BADKAMERRENOVATIE",
+    location: "Merksem",
+    category: "BADKAMERRENOVATIE",
+    heroAfter: "/toiletmerksem.webp",
+    heroBefore: "/badkammermerksemvoor.jpg",
+    situatie: "Een compacte badkamer in Merksem die dringend aan renovatie toe was. De bestaande indeling was inefficiënt en de materialen waren verouderd. De klant wou meer comfort en een frissere uitstraling.",
+    werkzaamheden: [
+      "Volledige sloop en herinrichting van de badkamer",
+      "Nieuwe wandtegels en vloer gelegd in neutrale tinten",
+      "Compact sanitair geplaatst dat de beschikbare ruimte optimaal benut",
+      "Nieuwe verlichting en accessoires geïnstalleerd",
+      "Waterdichte afwerking en voegen",
+    ],
+    resultaat: "De klant heeft een comfortabele, moderne badkamer gekregen die ondanks het compacte formaat alles heeft wat nodig is. De strakke afwerking en doordachte indeling maken het dagelijks gebruik aangenamer.",
+    gallery: ["/badkammermerksemvoor.jpg", "/toiletmerksemvoor.jpg", "/toiletmerksem.webp", "/projects/IMG_5395.jpg", "/projects/IMG_5396.jpg"],
+    seo: {
+      title: "Badkamerrenovatie Merksem | Reno Rangers Project",
+      description: "Compacte badkamer in Merksem volledig gerenoveerd door Reno Rangers. Modern comfort in een kleine ruimte.",
+      ogTitle: "Badkamerrenovatie Merksem — Reno Rangers",
+      ogDescription: "Gerenoveerde compacte badkamer in Merksem. Bekijk voor en na.",
+    },
+  },
+  {
+    slug: "mortex-badkamer-antwerpen",
+    title: "MORTEX BADKAMER",
+    location: "Antwerpen",
+    category: "MORTEX AFWERKING",
+    heroAfter: "/projects/project-mortex-after-1.webp",
+    heroBefore: "/projects/project-mortex-before-1.jpg",
+    situatie: "De klant droomde van een minimalistische, design badkamer en koos bewust voor mortex als afwerkingsmateriaal. De bestaande badkamer was gedateerd en bood geen enkele sfeer. Er moest een volledig nieuwe look komen.",
+    werkzaamheden: [
+      "Volledige sloop van de bestaande badkamer",
+      "Grondige voorbehandeling van de wanden en vloer voor mortex applicatie",
+      "Professionele aanbrenging van mortex in meerdere lagen met zwarte accenten",
+      "Plaatsen van inloopdouche met glazen wand",
+      "Design sanitair en meubilair op maat gekozen en geplaatst",
+      "Verlichting op maat voor de sfeervolle uitstraling",
+    ],
+    resultaat: "Een strak, architecturaal geheel dat doet denken aan een hotelkamer. De mortex afwerking geeft een unieke textuur en de zwarte accenten zorgen voor een luxueuze uitstraling. De klant heeft een echte showroom-badkamer gekregen.",
+    gallery: [
+      "/projects/project-mortex-before-1.jpg",
+      "/projects/project-mortex-after-1.webp",
+      "/projects/project-mortex-detail-7.jpg",
+      "/projects/project-mortex-detail-8.jpg",
+      "/projects/project-mortex-detail-1.jpg",
+      "/projects/project-mortex-detail-2.jpg",
+      "/projects/project-mortex-detail-3.jpg",
+      "/projects/project-mortex-detail-4.jpg",
+      "/projects/project-mortex-detail-5.jpg",
+      "/projects/project-mortex-detail-6.jpg",
+    ],
+    seo: {
+      title: "Mortex Badkamer Antwerpen | Reno Rangers Project",
+      description: "Strakke mortex badkamer in Antwerpen met zwarte accenten. Bekijk dit designproject van Reno Rangers.",
+      ogTitle: "Mortex Badkamer Antwerpen — Reno Rangers",
+      ogDescription: "Mortex badkamerrenovatie in Antwerpen. Minimalistische afwerking met luxueuze uitstraling.",
+    },
+  },
+  {
+    slug: "volledige-badkamer-antwerpen",
+    title: "VOLLEDIGE BADKAMERRENOVATIE",
+    location: "Antwerpen",
+    category: "TOTAALRENOVATIE",
+    heroAfter: "/badkamerantwerpenzwart.webp",
+    heroBefore: "/badkamerantwerpenzwartvoor.webp",
+    situatie: "Een gedateerde badkamer met een klassieke maar versleten uitstraling. De klant wou een eigentijdse badkamer met een douchezone, nieuwe tegels en een maatwerkmeubilair in donkere tinten.",
+    werkzaamheden: [
+      "Volledige sloop en heropbouw van de badkamer",
+      "Nieuwe indeling met ruimere douchezone",
+      "Donkere wandtegels en vloertegels gelegd in visgraatpatroon",
+      "Maatwerk meubilair en wastafel geplaatst",
+      "Inloopdouche met regensproeier geïnstalleerd",
+      "Verlichting en spiegels op maat aangebracht",
+    ],
+    resultaat: "Een complete transformatie naar een tijdloze, elegante badkamer. De donkere tegels gecombineerd met het maatwerk meubilair geven een luxueuze sfeer. De ruimere douchezone maakt het dagelijks comfort aanzienlijk beter.",
+    gallery: ["/badkamerantwerpenzwartvoor.webp", "/badkamerantwerpenzwart.webp", "/projects/IMG_5481.jpg", "/projects/IMG_5483.jpg"],
+    seo: {
+      title: "Volledige Badkamerrenovatie Antwerpen | Reno Rangers",
+      description: "Totaalrenovatie van een badkamer in Antwerpen met donkere tegels en maatwerk. Bekijk het voor en na.",
+      ogTitle: "Badkamerrenovatie Antwerpen (Zwart) — Reno Rangers",
+      ogDescription: "Volledige badkamerrenovatie in Antwerpen met elegante donkere afwerking.",
+    },
+  },
+  {
+    slug: "badkamer-paars-meubel-merksem",
+    title: "BADKAMER MET PAARS MEUBEL",
+    location: "Merksem",
+    category: "BADKAMERRENOVATIE",
+    heroAfter: "/projects/project-bathroom-purple-1.webp",
+    heroBefore: null,
+    situatie: "De klant in Merksem wou een unieke badkamer die volledig op hun persoonlijke smaak was afgestemd. Een standaard witte badkamer was niet voldoende — ze zochten karakter en een persoonlijk accent.",
+    werkzaamheden: [
+      "Renovatie van de bestaande badkamer met behoud van de structuur",
+      "Plaatsen van een paars badkamermeubel als blikvanger",
+      "Bijpassende wandtegels en vloer gekozen en gelegd",
+      "Nieuwe verlichting om het meubel optimaal in de verf te zetten",
+      "Sanitair en accessoires afgestemd op de gekozen stijl",
+    ],
+    resultaat: "Een unieke, persoonlijke badkamer die de klant exact weerspiegelt. Het paarse meubel is de eye-catcher van de ruimte en maakt de badkamer onmiskenbaar hun eigen. Tegelijk blijft de kwaliteit van de afwerking hoog.",
+    gallery: ["/projects/project-bathroom-purple-1.webp", "/projects/project-bathroom-purple-2.webp"],
+    seo: {
+      title: "Badkamer met Paars Meubel Merksem | Reno Rangers",
+      description: "Badkamerrenovatie in Merksem met een uniek paars meubel als blikvanger. Een persoonlijk project van Reno Rangers.",
+      ogTitle: "Badkamer Paars Meubel Merksem — Reno Rangers",
+      ogDescription: "Unieke badkamerrenovatie in Merksem met design meubel. Bekijk het resultaat.",
+    },
+  },
+  {
+    slug: "keukenrenovatie-antwerpen",
+    title: "KEUKENRENOVATIE",
+    location: "Antwerpen",
+    category: "KEUKENRENOVATIE",
+    heroAfter: "/projects/project-kitchen-3.webp",
+    heroBefore: null,
+    situatie: "De klant had een verouderde keuken die niet meer aansloot bij hun levensstijl. De indeling was onpraktisch, de kasten waren gedateerd en er was een gebrek aan werkruimte en opbergruimte.",
+    werkzaamheden: [
+      "Volledige demontage van de bestaande keuken",
+      "Nieuwe keukenindeling ontworpen en gerealiseerd",
+      "Maatwerk kasten en werkblad geplaatst",
+      "Nieuwe kraan, spoelbak en inbouwtoestellen geïnstalleerd",
+      "Wandtegels en spatwand vernieuwd",
+      "Verlichting afgestemd op de keukenomgeving",
+    ],
+    resultaat: "Een functionele, modern ingerichte keuken die aansluit bij de leefstijl van de klant. Meer werkruimte, betere opberging en een frisse uitstraling maken het koken tot een plezier. De klant is bijzonder tevreden met de praktische indeling.",
+    gallery: ["/projects/project-kitchen-3.webp", "/projects/project-kitchen-1.webp", "/projects/project-kitchen-2.webp"],
+    seo: {
+      title: "Keukenrenovatie Antwerpen | Reno Rangers Project",
+      description: "Volledige keukenrenovatie in Antwerpen door Reno Rangers. Maatwerk, praktisch en modern.",
+      ogTitle: "Keukenrenovatie Antwerpen — Reno Rangers",
+      ogDescription: "Renovatie van een complete keuken in Antwerpen. Bekijk het eindresultaat.",
+    },
+  },
+  {
+    slug: "living-binnenafwerking-antwerpen",
+    title: "LIVING & BINNENAFWERKING",
+    location: "Antwerpen",
+    category: "BINNENAFWERKING",
+    heroAfter: "/projects/project-living-1.webp",
+    heroBefore: null,
+    situatie: "Een volledig appartementsrenovatie waarbij ook de living en de binnenafwerking aan de beurt kwamen. De bestaande ruimte had een gedateerde uitstraling met ongelijke muren en een versleten vloer.",
+    werkzaamheden: [
+      "Muren gladgepleisterd en geschilderd",
+      "Nieuwe vloer gelegd over de volledige woonruimte",
+      "Plinten, deuromlijstingen en binnendeuren vernieuwd",
+      "Plafondafwerking en ingebouwde verlichting geplaatst",
+      "Schilderwerk van muren en plafond in afgestemde kleuren",
+    ],
+    resultaat: "Een frisse, strakke woonruimte die volledig klaar is voor bewoning. De klant heeft een afgewerkte living gekregen met gladde muren, een mooie vloer en doordachte details. Het geheel ademt rust en kwaliteit.",
+    gallery: ["/projects/project-living-1.webp", "/projects/project-living-2.webp"],
+    seo: {
+      title: "Living & Binnenafwerking Antwerpen | Reno Rangers",
+      description: "Living en binnenafwerking gerenoveerd in Antwerpen door Reno Rangers. Gladde muren, nieuwe vloer en frisse afwerking.",
+      ogTitle: "Living & Binnenafwerking Antwerpen — Reno Rangers",
+      ogDescription: "Binnenafwerking en livingrenovatie in Antwerpen. Bekijk het resultaat van Reno Rangers.",
+    },
+  },
+  {
+    slug: "badkamerrenovatie-londerzeel",
+    title: "BADKAMERRENOVATIE",
+    location: "Londerzeel",
+    category: "BADKAMERRENOVATIE",
+    heroAfter: "/badkamer_londerzeel_na.jpg",
+    heroBefore: "/badka,er_londerzeel_voor1.jpg",
+    situatie: "In Londerzeel renoveerden we een badkamer die toe was aan een volledige make-over. De bestaande indeling was verouderd en niet meer functioneel. De klant wou een lichte, moderne badkamer die aangenaam aanvoelt.",
+    werkzaamheden: [
+      "Volledige sloop van de oude badkamer",
+      "Nieuwe leidingen en aansluitingen gelegd",
+      "Lichte wandtegels en vloertegels geplaatst",
+      "Nieuw sanitair, douche en wasmeubel geïnstalleerd",
+      "Afwerking met aandacht voor details en waterdichtheid",
+    ],
+    resultaat: "Een heldere, ruimtevoelende badkamer die de klant in Londerzeel dagelijks met plezier gebruikt. De kwaliteitsvolle afwerking en strakke lijnen zorgen voor een tijdloze look die nog jaren meegaat.",
+    gallery: [
+      "/badka,er_londerzeel_voor1.jpg",
+      "/badkamer_londerzeel_na.jpg",
+      "/badkamer_londerzeel_na1.jpg",
+      "/badkamer_londerzeel_na2.jpg",
+      "/badkamer_londerxeel_na4.jpg",
+      "/badkamer_londerxeel_na5.jpg",
+      "/badkamer_londerxeel_na8.jpg",
+    ],
+    seo: {
+      title: "Badkamerrenovatie Londerzeel | Reno Rangers Project",
+      description: "Badkamerrenovatie in Londerzeel door Reno Rangers. Van verouderd naar modern en licht.",
+      ogTitle: "Badkamerrenovatie Londerzeel — Reno Rangers",
+      ogDescription: "Renovatie van een badkamer in Londerzeel. Bekijk het voor en na resultaat.",
+    },
+  },
+];
+
 /* ── GLOBAL STYLES ── */
 const globalCSS = `
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -572,6 +790,11 @@ function getRouteSeo(pathname) {
   if (blogMatch) {
     var post = BLOG_POSTS.find(function (p) { return p.slug === blogMatch[1]; });
     if (post) return post.seo;
+  }
+  var projectMatch = normalizedPathname.match(/^\/projecten\/(.+)$/);
+  if (projectMatch) {
+    var project = PROJECT_PAGES.find(function (p) { return p.slug === projectMatch[1]; });
+    if (project) return project.seo;
   }
   return {
     title: "404 | Reno Rangers",
@@ -1614,6 +1837,7 @@ function Projecten() {
     {
       t: "BADKAMERRENOVATIE",
       loc: "Antwerpen",
+      slug: "badkamerrenovatie-antwerpen",
       before: "/toiletantwerpenvoor.webp",
       after: "/toiletantwerpen.webp",
       d: "Volledige badkamerrenovatie met nieuwe indeling, sanitair en afwerking.",
@@ -1621,13 +1845,15 @@ function Projecten() {
     {
       t: "BADKAMERRENOVATIE",
       loc: "Merksem",
-      before: "/toiletmerksemvoor.jpg",
+      slug: "badkamerrenovatie-merksem",
+      before: "/badkammermerksemvoor.jpg",
       after: "/toiletmerksem.webp",
       d: "Compacte badkamer vernieuwd met meer comfort en moderne materialen.",
     },
     {
       t: "MORTEX BADKAMER",
       loc: "Antwerpen",
+      slug: "mortex-badkamer-antwerpen",
       before: "/projects/project-mortex-before-1.jpg",
       after: "/projects/project-mortex-after-1.webp",
       d: "Transformatie naar een strakke mortex badkamer met zwarte accenten.",
@@ -1635,9 +1861,18 @@ function Projecten() {
     {
       t: "VOLLEDIGE BADKAMER",
       loc: "Antwerpen",
+      slug: "volledige-badkamer-antwerpen",
       before: "/badkamerantwerpenzwartvoor.webp",
       after: "/badkamerantwerpenzwart.webp",
       d: "Totaalrenovatie met nieuwe douchezone, tegelwerk en maatwerk.",
+    },
+    {
+      t: "BADKAMERRENOVATIE",
+      loc: "Londerzeel",
+      slug: "badkamerrenovatie-londerzeel",
+      before: "/badka,er_londerzeel_voor1.jpg",
+      after: "/badkamer_londerzeel_na.jpg",
+      d: "Verouderde badkamer volledig vernieuwd naar een lichte, moderne ruimte.",
     },
   ];
 
@@ -1645,6 +1880,7 @@ function Projecten() {
     {
       t: "MORTEX BADKAMER DETAILS",
       loc: "Antwerpen",
+      slug: "mortex-badkamer-antwerpen",
       c: "Complete renovatie",
       photos: [
         "/projects/project-mortex-detail-7.jpg",
@@ -1660,6 +1896,7 @@ function Projecten() {
     {
       t: "BADKAMER MET PAARS MEUBEL",
       loc: "Merksem",
+      slug: "badkamer-paars-meubel-merksem",
       c: "Complete renovatie",
       photos: [
         "/projects/project-bathroom-purple-1.webp",
@@ -1669,6 +1906,7 @@ function Projecten() {
     {
       t: "KEUKENRENOVATIE",
       loc: "Antwerpen",
+      slug: "keukenrenovatie-antwerpen",
       c: "Complete renovatie",
       photos: [
         "/projects/project-kitchen-3.webp",
@@ -1679,6 +1917,7 @@ function Projecten() {
     {
       t: "LIVING & BINNENAFWERKING",
       loc: "Antwerpen",
+      slug: "living-binnenafwerking-antwerpen",
       c: "Complete renovatie",
       photos: [
         "/projects/project-living-1.webp",
@@ -1716,7 +1955,8 @@ function Projecten() {
             {beforeAfterProjects.map(function (p, i) {
               return (
                 <Reveal key={i} delay={i * 0.07}>
-                  <div style={{ background: C.off, overflow: "hidden", border: "1px solid " + C.ltGray }}>
+                  <Link to={"/projecten/" + p.slug} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+                  <div style={{ background: C.off, overflow: "hidden", border: "1px solid " + C.ltGray, cursor: "pointer" }}>
                     <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
                       <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
                         <img src={p.before} alt={p.t + " voor"} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -1735,9 +1975,11 @@ function Projecten() {
                       <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>Complete renovatie</span>
                       <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.black, margin: "4px 0 3px", letterSpacing: 0.5 }}>{p.t}</h3>
                       <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, display: "block", marginBottom: 10 }}>{p.loc}</span>
-                      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.65, color: C.gray, margin: 0 }}>{p.d}</p>
+                      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.65, color: C.gray, margin: "0 0 12px" }}>{p.d}</p>
+                      <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2, color: C.red }}>BEKIJK PROJECT →</span>
                     </div>
                   </div>
+                  </Link>
                 </Reveal>
               );
             })}
@@ -1751,7 +1993,8 @@ function Projecten() {
             {resultProjects.map(function (project, i) {
               return (
                 <Reveal key={project.t} delay={i * 0.08}>
-                  <div style={{ background: C.white, border: "1px solid " + C.ltGray, overflow: "hidden" }}>
+                  <Link to={"/projecten/" + project.slug} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+                  <div style={{ background: C.white, border: "1px solid " + C.ltGray, overflow: "hidden", cursor: "pointer" }}>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 6, padding: 6, background: C.dark }}>
                       {project.photos.map(function (photo, photoIndex) {
                         var isLead = photoIndex === 0;
@@ -1773,13 +2016,162 @@ function Projecten() {
                     <div style={{ padding: "20px 24px" }}>
                       <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.red }}>{project.c}</span>
                       <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.black, margin: "4px 0 6px", letterSpacing: 0.5 }}>{project.t}</h3>
-                      <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray }}>{project.loc}</span>
+                      <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, display: "block", marginBottom: 10 }}>{project.loc}</span>
+                      <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2, color: C.red }}>BEKIJK PROJECT →</span>
                     </div>
                   </div>
+                  </Link>
                 </Reveal>
               );
             })}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════
+   PROJECT DETAIL PAGE
+   ══════════════════════════════════ */
+function ProjectDetail() {
+  var params = useParams();
+  var slug = params.slug || "";
+  var project = PROJECT_PAGES.find(function (p) { return p.slug === slug; });
+  var go = useGoToPage();
+
+  if (!project) {
+    return <Navigate to="/projecten" replace />;
+  }
+
+  return (
+    <section style={{ paddingTop: 72 }}>
+      <div style={{ background: C.black, padding: "76px 0 56px" }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+              <Link to="/projecten" style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 3, color: C.gray, textDecoration: "none" }}>PROJECTEN</Link>
+              <span style={{ color: C.gray, fontSize: 12 }}>›</span>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 3, color: C.red }}>{project.category}</span>
+            </div>
+            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(34px, 5vw, 68px)", color: C.white, lineHeight: 0.95, margin: "0 0 10px", maxWidth: 860 }}>
+              {project.title}
+            </h1>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray }}>{project.location}</span>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* Hero before/after */}
+      {project.heroBefore && (
+        <div style={{ background: C.dark, padding: "0" }}>
+          <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0" }}>
+            <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", background: C.black }}>
+                <img src={project.heroBefore} alt={project.title + " voor"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <span style={{ position: "absolute", top: 14, left: 14, background: "rgba(10,10,10,0.85)", color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, padding: "6px 14px" }}>VOOR</span>
+              </div>
+              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", background: C.black }}>
+                <img src={project.heroAfter} alt={project.title + " na"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <span style={{ position: "absolute", top: 14, right: 14, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, padding: "6px 14px" }}>NA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Hero after only */}
+      {!project.heroBefore && (
+        <div style={{ overflow: "hidden", aspectRatio: "21/8", background: C.black }}>
+          <img src={project.heroAfter} alt={project.title} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+      )}
+
+      {/* Story section */}
+      <div style={{ padding: "72px 0", background: C.white }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>DE SITUATIE</span>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: C.black, margin: "8px 0 18px", lineHeight: 1.05 }}>WAT WAS DE UITGANGSSITUATIE?</h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.85, color: "#444", borderLeft: "4px solid " + C.red, paddingLeft: 18 }}>
+              {project.situatie}
+            </p>
+          </Reveal>
+
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red, display: "block", marginTop: 48 }}>WAT HEBBEN WE GEDAAN</span>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: C.black, margin: "8px 0 18px", lineHeight: 1.05 }}>ONZE AANPAK</h2>
+            <ul style={{ margin: 0, paddingLeft: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+              {project.werkzaamheden.map(function (item, i) {
+                return (
+                  <li key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <span style={{ color: C.red, fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, lineHeight: 1.6, flexShrink: 0 }}>→</span>
+                    <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#444" }}>{item}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
+
+          <Reveal>
+            <div style={{ background: C.off, padding: "32px 36px", marginTop: 48, borderLeft: "4px solid " + C.red }}>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red, display: "block", marginBottom: 8 }}>HET RESULTAAT</span>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(22px, 3vw, 34px)", color: C.black, margin: "0 0 14px", lineHeight: 1.05 }}>WAT HEEFT DE KLANT GEKREGEN?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.85, color: "#444", margin: 0 }}>
+                {project.resultaat}
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* Photo gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <div style={{ padding: "0 0 72px", background: C.white }}>
+          <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+            <Reveal>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>FOTOGALERIJ</span>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: C.black, margin: "8px 0 28px", lineHeight: 1.05 }}>ALLE FOTO'S</h2>
+            </Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+              {project.gallery.map(function (photo, i) {
+                var isFirst = i === 0;
+                return (
+                  <Reveal key={photo} delay={i * 0.05}>
+                    <div style={{ overflow: "hidden", aspectRatio: isFirst && project.gallery.length > 2 ? "16/9" : "4/3", background: C.dark, gridColumn: isFirst && project.gallery.length > 2 ? "1 / -1" : "auto" }}>
+                      <img src={photo} alt={project.title + " foto " + (i + 1)} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CTA */}
+      <div style={{ background: C.black, padding: "64px 0" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px", textAlign: "center" }}>
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>INTERESSE?</span>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px, 4vw, 52px)", color: C.white, margin: "10px 0 18px", lineHeight: 1 }}>
+              OOK ZO'N RESULTAAT <span style={{ color: C.red }}>VOOR UW WONING?</span>
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>
+              Reno Rangers verzorgt uw renovatie van A tot Z — vaste prijs, één aanspreekpunt.
+            </p>
+            <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+              <button
+                onClick={function () { go("contact"); }}
+                style={{ padding: "14px 36px", background: C.red, color: C.white, border: "none", fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 2, cursor: "pointer" }}
+              >
+                GRATIS OFFERTE AANVRAGEN
+              </button>
+              <Link to="/projecten" style={{ display: "inline-block", padding: "14px 36px", background: "transparent", color: C.white, border: "1px solid " + C.gray, fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 2, textDecoration: "none" }}>
+                ← TERUG NAAR PROJECTEN
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -2544,6 +2936,7 @@ export default function App() {
         <Route path={PAGE_PATHS.diensten} element={<Diensten />} />
         <Route path={PAGE_PATHS.contact} element={<Contact />} />
         <Route path={PAGE_PATHS.projecten} element={<Projecten />} />
+        <Route path="/projecten/:slug" element={<ProjectDetail />} />
         <Route path={PAGE_PATHS.blog} element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path={PAGE_PATHS.privacy} element={<Privacy />} />
