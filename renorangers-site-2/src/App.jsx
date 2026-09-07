@@ -885,6 +885,29 @@ function ensureConsentDefaultState() {
   }
 }
 
+function pushDataLayerEvent(eventName, parameters) {
+  if (typeof window === "undefined") return;
+
+  window.dataLayer = window.dataLayer || [];
+
+  var payload = {
+    event: eventName,
+  };
+
+  if (parameters && typeof parameters === "object") {
+    Object.assign(payload, parameters);
+  }
+
+  window.dataLayer.push(payload);
+}
+
+function handleEmailClick(emailAddress, location) {
+  pushDataLayerEvent("email_click", {
+    email_address: emailAddress,
+    link_location: location || "website",
+  });
+}
+
 function handlePhoneClick(event, phoneNumber) {
   if (event && typeof event.preventDefault === "function") {
     event.preventDefault();
@@ -2527,6 +2550,18 @@ function Contact() {
   const [f, sF] = useState({ name: "", email: "", phone: "", service: "", msg: "" });
   const [sent, sSent] = useState(false);
   const [status, sStatus] = useState("idle");
+  const formStartedRef = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStartedRef.current) return;
+
+    formStartedRef.current = true;
+
+    pushDataLayerEvent("form_start", {
+      form_name: "contact_form",
+      form_location: "contact_page",
+    });
+  };
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -2538,6 +2573,20 @@ function Contact() {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
+        pushDataLayerEvent("generate_lead", {
+          form_name: "contact_form",
+          form_location: "contact_page",
+          lead_source: "formspree",
+        });
+
+        // Temporary compatibility event.
+        // Existing GTM currently listens for form_submit.
+        pushDataLayerEvent("form_submit", {
+          form_name: "contact_form",
+          form_location: "contact_page",
+          lead_source: "formspree",
+        });
+
         sSent(true);
         sF({ name: "", email: "", phone: "", service: "", msg: "" });
         sStatus("ok");
@@ -2568,7 +2617,13 @@ function Contact() {
               <div style={{ width: 44, height: 3, background: C.red, marginBottom: 28 }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 36 }}>
                 {[{ l: "TELEFOON", v: "+32 465 88 39 19", h: PHONE_HREF }, { l: "E-MAIL", v: "info@renorangers.be", h: "mailto:info@renorangers.be" }, { l: "WHATSAPP", v: "Stuur een bericht", h: "https://wa.me/32465883919" }].map(c => (
-                  <a key={c.l} href={c.h} onClick={c.h.startsWith("tel:") ? function (e) { handlePhoneClick(e, c.h); } : undefined} target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
+                  <a key={c.l} href={c.h} onClick={
+                    c.h.startsWith("tel:")
+                      ? function (e) { handlePhoneClick(e, c.h); }
+                      : c.h.startsWith("mailto:")
+                        ? function () { handleEmailClick("info@renorangers.be", "contact_page"); }
+                        : undefined
+                  } target={c.l === "WHATSAPP" ? "_blank" : undefined} rel="noopener" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 14 }}>
                     <div style={{ width: 44, height: 44, background: C.black, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 14, color: C.red }}>{c.l.charAt(0)}</span></div>
                     <div><div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 12, letterSpacing: 2, color: C.gray }}>{c.l}</div><div style={{ fontFamily: "'Inter',sans-serif", fontSize: 15, fontWeight: 600, color: C.black }}>{c.v}</div></div>
                   </a>
@@ -2585,7 +2640,7 @@ function Contact() {
             </Reveal>
 
             <Reveal delay={.12}>
-              <form onSubmit={handleSubmit} action="https://formspree.io/f/xgopeqeb" method="POST" style={{ padding: 36, background: C.off, border: `1px solid ${C.ltGray}` }}>
+              <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} action="https://formspree.io/f/xgopeqeb" method="POST" style={{ padding: 36, background: C.off, border: `1px solid ${C.ltGray}` }}>
                 {sent ? (
                   <div style={{ textAlign: "center", padding: "44px 0" }}>
                     <div style={{ width: 52, height: 52, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 18px" }}><span style={{ color: C.white, fontSize: 26 }}>&#10003;</span></div>
@@ -2695,7 +2750,7 @@ function Foot() {
             <h4 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, margin: "0 0 16px" }}>CONTACT</h4>
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.9 }}>
               <a href={PHONE_HREF} onClick={function (e) { handlePhoneClick(e, PHONE_NUMBER); }} style={{ color: "inherit", textDecoration: "none", display: "block" }}>+32 465 88 39 19</a>
-              <a href="mailto:info@renorangers.be" style={{ color: "inherit", textDecoration: "none", display: "block" }}>info@renorangers.be</a>
+              <a href="mailto:info@renorangers.be" onClick={function () { handleEmailClick("info@renorangers.be", "footer"); }} style={{ color: "inherit", textDecoration: "none", display: "block" }}>info@renorangers.be</a>
               <span style={{ display: "block" }}>{"Antwerpen, Belgi\u00eb"}</span>
             </div>
           </div>
