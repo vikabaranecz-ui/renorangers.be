@@ -23,8 +23,8 @@
     },
     {
       "id": "business_profile_truth",
-      "status": "partially_hardened_needs_owner_verification",
-      "evidence": "Public business data confirms Reno Rangers phone and opening hours, while the public business location is Bergensesteenweg 24, 1600 Sint-Pieters-Leeuw. Build output strips unverified address/geo, aggregateRating and priceRange structured-data facts until profile/service-area facts are confirmed.",
+      "status": "passed_owner_verified",
+      "evidence": "Owner verified on 2026-09-09: Reno Rangers address is Bergensesteenweg 24, 1600 Sint-Pieters-Leeuw; phone is +32 465 88 39 19; opening hours are Mon-Fri 07:00-17:30 and Sat 08:30-16:00; core services include totaalrenovatie, badkamerrenovatie and binnenafwerking. The operational/SEO service area is Antwerp and approximately 25 km around Antwerp. Do not position Reno Rangers as serving all of Vlaanderen unless separately approved later.",
       "rule": "Business name, phone, email, opening hours, service areas, review count/rating, address/geo, services and priceRange schema facts must be verified against the actual Google Business Profile/business records."
     },
     {
