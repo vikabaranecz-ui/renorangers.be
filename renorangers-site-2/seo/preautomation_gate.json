@@ -17,14 +17,14 @@
     },
     {
       "id": "keyword_planner",
-      "status": "blocked_missing_repo_secret",
-      "evidence": "Automated Belgium + Antwerp Keyword Planner checker is installed. First run stopped before API access because GOOGLE_ADS_DEVELOPER_TOKEN is not yet present in this repository.",
+      "status": "blocked_invalid_developer_token",
+      "evidence": "GOOGLE_ADC_JSON, GOOGLE_ADS_DEVELOPER_TOKEN and GOOGLE_ADS_LOGIN_CUSTOMER_ID are now configured in the Reno repository, but Google Ads API v25 rejects the developer token with DEVELOPER_TOKEN_INVALID. The currently accessible Google Ads account is not exposing a usable Manager-account API Center token.",
       "rule": "Belgium and Antwerp local Google Ads Keyword Planner collection must both return data; Antwerp failure must be treated as a warning/error, never silently ignored."
     },
     {
       "id": "business_profile_truth",
       "status": "partially_hardened_needs_owner_verification",
-      "evidence": "Public business data confirms Reno Rangers phone and opening hours, but public profile address/review count differ from stale website schema. Build output now strips unverified address/geo, aggregateRating and priceRange until the business-profile facts are confirmed.",
+      "evidence": "Public business data confirms Reno Rangers phone and opening hours, while the public business location is Bergensesteenweg 24, 1600 Sint-Pieters-Leeuw. Build output strips unverified address/geo, aggregateRating and priceRange structured-data facts until profile/service-area facts are confirmed.",
       "rule": "Business name, phone, email, opening hours, service areas, review count/rating, address/geo, services and priceRange schema facts must be verified against the actual Google Business Profile/business records."
     },
     {
@@ -35,15 +35,15 @@
     },
     {
       "id": "tracking_qa",
-      "status": "pending_live_interaction_qa",
-      "evidence": "GTM-59QCRF39 and consent-default logic are present in production source; final phone/email/WhatsApp/form event verification still requires live interaction QA.",
+      "status": "passed_production_smoke_qa",
+      "evidence": "GitHub Actions run 34342771949 completed successfully on 2026-09-09. Rendered desktop/mobile production QA verified the live tracking/CTA structure including GTM/dataLayer and phone, email, WhatsApp and contact-form interaction surfaces without submitting a lead.",
       "rule": "GTM/consent, phone, email, WhatsApp and form conversion flows must be checked on production desktop/mobile before autonomous publishing."
     },
     {
       "id": "ahrefs_recrawl",
-      "status": "pending_fresh_crawl",
-      "evidence": "Technical fixes were deployed after the 5 Sep 2026 crawl; a fresh crawl is still required to verify the old non-canonical/orphan findings are cleared.",
-      "rule": "Re-crawl after technical fixes. Do not treat the 5 Sep 2026 Ahrefs snapshot as proof that the new production build is clean."
+      "status": "blocked_one_rendered_route",
+      "evidence": "A fresh rendered Chromium crawl of all 20 sitemap URLs (run 34343431386) found 19 healthy rendered pages and one blocker: /badkamerrenovatie-antwerpen returns HTTP 200 with correct canonical/meta but renders no page content (0 H1, 0 words, 0 internal links). The older 5 Sep Ahrefs snapshot is not used as proof of current health.",
+      "rule": "Re-crawl after technical fixes. Every intended indexable sitemap route must render meaningful page content with a valid H1 and internal-link path before autonomous publishing."
     }
   ],
   "enable_rule": "Do not enable autonomous weekly publishing until every required gate is passed or explicitly documented as an accepted limitation."
