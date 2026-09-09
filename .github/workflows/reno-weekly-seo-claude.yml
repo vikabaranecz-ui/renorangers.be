@@ -21,6 +21,7 @@ permissions:
   pull-requests: write
   issues: write
   actions: read
+  id-token: write
 
 jobs:
   weekly-seo:
@@ -137,14 +138,17 @@ jobs:
             Read `.claude/agents/reno-weekly-seo.md` in full and follow it as the governing policy.
             Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
 
-            Execute one coherent evidence-based ranking sprint for the highest-value cluster. The KPI is 40 commercially relevant queries progressing toward Google Top 5; never describe it as guaranteed.
+            Execute one coherent evidence-based ranking sprint for the highest-value cluster. The year-end KPI is 25 commercially relevant primary queries in Google Top 5 by 2026-12-31; never describe it as guaranteed.
+            Protect website technical health and conversion paths before growth changes.
+            Optimize for qualified renovation leads, not traffic alone.
+            Maintain a strategic B2B track to attract architects, interior architects and designers looking for a dependable execution/work partner.
             Antwerp + approximately 25 km is the verified market. Do not broaden to all Vlaanderen.
             Use Antwerp Keyword Planner evidence before Belgium-wide volume when choosing local priorities.
             Do not target new-build merely because Search Console shows impressions.
 
             For SAFE FIX, create a PR, QA it and merge only if every change is inside the safe-auto-publish policy and checks pass.
             For NEEDS APPROVAL, prepare the exact PR and QA it but leave it open and unmerged.
-            Always create the required `SEO Weekly — YYYY-MM-DD — <MODE>` GitHub issue with evidence, Top-5 progress and completed work.
+            Always create the required `SEO Weekly — YYYY-MM-DD — <MODE>` GitHub issue with Top-5 progress X/25, website-health status, evidence, lead/partnership value and completed work.
           claude_args: |
             --model claude-sonnet-5
             --effort medium
