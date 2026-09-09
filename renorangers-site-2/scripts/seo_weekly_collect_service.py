@@ -45,6 +45,13 @@ def gsc(token, start, end, dimensions, limit):
     return out
 
 
+def _as_int(value):
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
 def ads(token, geo_id, seeds):
     if not DEV_TOKEN:
         raise RuntimeError("GOOGLE_ADS_DEVELOPER_TOKEN missing")
@@ -64,11 +71,11 @@ def ads(token, geo_id, seeds):
         m = row.get("keywordIdeaMetrics") or {}
         ideas.append({
             "keyword": row.get("text"),
-            "avg_monthly_searches": m.get("avgMonthlySearches"),
+            "avg_monthly_searches": _as_int(m.get("avgMonthlySearches")),
             "competition": m.get("competition"),
-            "competition_index": m.get("competitionIndex")
+            "competition_index": _as_int(m.get("competitionIndex"))
         })
-    ideas.sort(key=lambda x: (x.get("avg_monthly_searches") or 0), reverse=True)
+    ideas.sort(key=lambda x: x.get("avg_monthly_searches", 0), reverse=True)
     return ideas[:400]
 
 
