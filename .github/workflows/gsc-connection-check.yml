@@ -1,0 +1,23 @@
+name: Reno Rangers GSC Connection Check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-gsc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GSC_SITE_URL: sc-domain:renorangers.be
+      GOOGLE_ADC_JSON: ${{ secrets.GOOGLE_ADC_JSON }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests google-auth
+      - name: Check Search Console access and sample data
+        run: python renorangers-site-2/scripts/gsc_connection_check.py
