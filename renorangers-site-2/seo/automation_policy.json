@@ -1,0 +1,49 @@
+{
+  "site": "Reno Rangers",
+  "mode": "disabled_until_preautomation_gate_passes",
+  "safe_auto_publish": [
+    "clear title/meta corrections on existing URLs",
+    "broken internal-link fixes that preserve destination intent",
+    "alt-text corrections based on the actual image/project",
+    "duplicate brand suffix/title cleanup",
+    "small typo/grammar fixes with no change to business meaning",
+    "small evidence-based on-page improvements on existing URLs with no new claims",
+    "small relevant internal links",
+    "low-risk technical SEO corrections",
+    "structured-data corrections using verified business facts only"
+  ],
+  "approval_required": [
+    "new public URL creation",
+    "URL deletion",
+    "redirect creation/change/removal except a clearly broken legacy path with verified replacement",
+    "canonical target changes",
+    "service-page merger or primary-intent change",
+    "major internal-link architecture changes",
+    "new or changed exact prices",
+    "new savings or ROI percentages",
+    "new guarantees or fixed completion durations",
+    "VAT, subsidy, permit, legal, insurance or regulatory claims",
+    "new business facts or unverified technical claims",
+    "removing an indexed URL from sitemap",
+    "large/bulk content rewrites"
+  ],
+  "forbidden_without_verification": [
+    "inventing project facts",
+    "inventing review ratings/counts",
+    "inventing service areas/opening hours",
+    "inventing price ranges or labour rates",
+    "changing year-sensitive legal or subsidy information by simply replacing the year"
+  ],
+  "content_limits": {
+    "max_existing_pages_with_meaningful_copy_changes_per_week": 2,
+    "one_primary_cluster_per_week": true
+  },
+  "future_core_clusters_to_validate_with_evidence": [
+    "badkamerrenovatie",
+    "totaalrenovatie",
+    "renovatiebedrijf Antwerpen",
+    "renovatie Antwerpen",
+    "binnenafwerking",
+    "local renovation intent"
+  ]
+}
