@@ -1,0 +1,27 @@
+name: Reno Rangers Live Tracking QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reno-live-tracking-qa.yml'
+      - 'renorangers-site-2/scripts/live_tracking_qa.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  live-tracking-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm init -y >/dev/null 2>&1
+      - run: npm install playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - name: Run production desktop/mobile tracking QA
+        run: node renorangers-site-2/scripts/live_tracking_qa.mjs
