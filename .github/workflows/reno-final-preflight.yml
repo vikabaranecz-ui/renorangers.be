@@ -1,0 +1,60 @@
+name: Reno Final Weekly SEO Preflight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reno-final-preflight.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GSC_SITE_URL: sc-domain:renorangers.be
+      GOOGLE_ADS_CUSTOMER_ID: "6046553882"
+      GOOGLE_ADS_API_VERSION: v25
+      GOOGLE_ADC_JSON: ${{ secrets.GOOGLE_ADC_JSON }}
+      GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests google-auth
+      - name: Test GSC and Google Ads
+        run: |
+          python renorangers-site-2/scripts/seo_weekly_collect_service.py
+          python - <<'PY'
+          import json
+          d=json.load(open('seo-weekly-context.json', encoding='utf-8'))
+          g=d.get('gsc') or {}
+          a=d.get('google_ads') or {}
+          print('GSC_OK', not bool(g.get('error')))
+          print('ADS_OK', not bool(a.get('error')))
+          if g.get('error') or a.get('error'):
+              raise SystemExit('Evidence collection failed')
+          PY
+      - name: Test Anthropic API key
+        shell: bash
+        run: |
+          CODE="$(curl -sS -o /tmp/anthropic.json -w '%{http_code}' https://api.anthropic.com/v1/models \
+            -H "x-api-key: ${ANTHROPIC_API_KEY}" \
+            -H "anthropic-version: 2023-06-01")"
+          echo "ANTHROPIC_HTTP=${CODE}"
+          test "$CODE" = "200"
+      - name: Test Telegram delivery
+        shell: bash
+        run: |
+          CODE="$(curl -sS -o /tmp/tg.json -w '%{http_code}' -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=Reno Rangers SEO final preflight OK ✅")"
+          echo "TELEGRAM_HTTP=${CODE}"
+          test "$CODE" = "200"
