@@ -479,10 +479,10 @@ const BLOG_POSTS = [
 
 const ROUTE_SEO = Object.freeze({
   [PAGE_PATHS.home]: {
-    title: "Reno Rangers | Renovatiebedrijf Antwerpen",
-    description: "Renovatiebedrijf in Antwerpen voor totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte aanvragen.",
-    ogTitle: "Reno Rangers — Renovatiebedrijf Antwerpen",
-    ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen.",
+    title: "Reno Rangers | Renovatiebedrijf & Aannemer Antwerpen",
+    description: "Renovatiebedrijf en aannemer in Antwerpen: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
+    ogTitle: "Reno Rangers — Renovatiebedrijf & Aannemer Antwerpen",
+    ogDescription: "Renovatiebedrijf en aannemer voor totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen.",
   },
   [PAGE_PATHS.landing]: {
     title: "Badkamerrenovatie Antwerpen | Reno Rangers",
@@ -1348,7 +1348,7 @@ function Home() {
 
               <Reveal delay={0.18}>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.55)", maxWidth: 460, margin: "0 0 36px" }}>
-                  {"E\u00e9n aanspreekpunt voor totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs. Duidelijke planning. Correcte oplevering."}
+                  {"Reno Rangers is uw renovatiebedrijf en aannemer in Antwerpen: \u00e9\u00e9n aanspreekpunt voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs. Duidelijke planning. Correcte oplevering."}
                 </p>
               </Reveal>
 
@@ -1439,7 +1439,7 @@ function Home() {
           <STitle label="WAAROM RENO RANGERS" title="RENOVEREN ZONDER STRESS" light />
           <div className="wg" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {[
-              { n: "01", t: "EEN AANSPREEKPUNT", d: "Geen gedoe met meerdere aannemers. Eén contactpersoon voor al uw werken." },
+              { n: "01", t: "EEN AANSPREEKPUNT", d: "Als vast aannemer en renovatiebedrijf regelen wij alles. Eén contactpersoon voor al uw werken." },
               { n: "02", t: "VASTE PRIJS", d: "Wat we afspreken, betaalt u. Geen verborgen kosten of verrassingen." },
               { n: "03", t: "DUIDELIJKE PLANNING", d: "Transparante communicatie en heldere tijdslijn van begin tot eind." },
               { n: "04", t: "VAKMANSCHAP", d: "Ervaren vakmensen die het goed doen vanaf de eerste keer." },
