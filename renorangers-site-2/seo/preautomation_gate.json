@@ -17,8 +17,8 @@
     },
     {
       "id": "keyword_planner",
-      "status": "blocked_pending_shared_credentials_and_ads_access",
-      "evidence": "Reno Rangers Google Ads customer ID is now verified as 6046553882 from the administrative-access invitation. The previous 8448356366 value was an IsoproTech account invitation and is not a Reno login/customer ID. A private WAT agency hub now holds the client registry and shared Keyword Planner workflow. Remaining requirements: install the known-good shared Google Cloud credential + developer token in that private hub and grant the shared service-account identity access to Reno customer 6046553882. The old Reno repository token remains invalid and is no longer the target architecture.",
+      "status": "passed_shared_agency_hub",
+      "evidence": "Private WAT agency diagnostic run 34402566407 on 2026-09-09 verified the shared Google Cloud service account and valid developer token. listAccessibleCustomers returned both Reno Rangers 6046553882 and IsoproTech 1501901578. Reno customer access returned HTTP 200 as Reno Rangers BV, and Keyword Planner returned HTTP 200 for both Belgium and Antwerp Province. IsoproTech also passed both geographies in the same isolated client-scoped test.",
       "rule": "Belgium and Antwerp local Google Ads Keyword Planner collection must both return data for Reno customer 6046553882 before this gate passes."
     },
     {
