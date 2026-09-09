@@ -5,37 +5,44 @@
   "required_before_enable": [
     {
       "id": "technical_build_gate",
-      "status": "required",
+      "status": "passed",
+      "evidence": "Route-specific static SEO shells, canonical/indexability checks and production build health gate are live and Vercel deployment passed.",
       "rule": "Production build must pass the SEO health check for every sitemap URL: static shell exists, canonical matches, robots index/follow, title and description present."
     },
     {
       "id": "gsc_access",
-      "status": "blocked_external_verification",
+      "status": "passed",
+      "evidence": "Service account wat-seo-automation@steadfast-sign-506214-r8.iam.gserviceaccount.com successfully returned real 28-day Search Console query data for sc-domain:renorangers.be on 2026-09-09.",
       "rule": "The Reno Rangers Search Console property must be verified for the automation service account and return real query/page data."
     },
     {
       "id": "keyword_planner",
-      "status": "blocked_external_verification",
+      "status": "blocked_missing_repo_secret",
+      "evidence": "Automated Belgium + Antwerp Keyword Planner checker is installed. First run stopped before API access because GOOGLE_ADS_DEVELOPER_TOKEN is not yet present in this repository.",
       "rule": "Belgium and Antwerp local Google Ads Keyword Planner collection must both return data; Antwerp failure must be treated as a warning/error, never silently ignored."
     },
     {
       "id": "business_profile_truth",
-      "status": "blocked_owner_or_gbp_verification",
+      "status": "partially_hardened_needs_owner_verification",
+      "evidence": "Public business data confirms Reno Rangers phone and opening hours, but public profile address/review count differ from stale website schema. Build output now strips unverified address/geo, aggregateRating and priceRange until the business-profile facts are confirmed.",
       "rule": "Business name, phone, email, opening hours, service areas, review count/rating, address/geo, services and priceRange schema facts must be verified against the actual Google Business Profile/business records."
     },
     {
       "id": "content_claim_safety",
-      "status": "required",
+      "status": "passed_policy_gate",
+      "evidence": "Automation policy blocks autonomous creation/expansion/material alteration of exact prices, labour rates, durations, VAT, subsidy, permit, insurance, legal, guarantee and other unverified factual claims.",
       "rule": "Existing exact prices, labour rates, durations, VAT, subsidy, permit, insurance and legal claims may remain pending review but autonomous SEO may not create, expand or materially alter such facts without current evidence/owner approval."
     },
     {
       "id": "tracking_qa",
-      "status": "required",
+      "status": "pending_live_interaction_qa",
+      "evidence": "GTM-59QCRF39 and consent-default logic are present in production source; final phone/email/WhatsApp/form event verification still requires live interaction QA.",
       "rule": "GTM/consent, phone, email, WhatsApp and form conversion flows must be checked on production desktop/mobile before autonomous publishing."
     },
     {
       "id": "ahrefs_recrawl",
-      "status": "required_after_deploy",
+      "status": "pending_fresh_crawl",
+      "evidence": "Technical fixes were deployed after the 5 Sep 2026 crawl; a fresh crawl is still required to verify the old non-canonical/orphan findings are cleared.",
       "rule": "Re-crawl after technical fixes. Do not treat the 5 Sep 2026 Ahrefs snapshot as proof that the new production build is clean."
     }
   ],
