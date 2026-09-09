@@ -11,6 +11,10 @@
         "Location": "/projecten/mortex-badkamer-merksem"
       }
     },
+    {
+      "src": "/badkamerrenovatie-antwerpen/?",
+      "dest": "/badkamerrenovatie-antwerpen.html"
+    },
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ]
