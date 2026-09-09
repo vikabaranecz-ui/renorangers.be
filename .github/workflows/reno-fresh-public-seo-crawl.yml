@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'renorangers-site-2/scripts/fresh_public_seo_crawl.py'
+      - 'renorangers-site-2/scripts/fresh_rendered_seo_crawl.mjs'
       - '.github/workflows/reno-fresh-public-seo-crawl.yml'
 
 jobs:
@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
-      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
-      - name: Crawl live production site
-        run: python renorangers-site-2/scripts/fresh_public_seo_crawl.py
+          node-version: '22'
+      - run: npm init -y >/dev/null 2>&1
+      - run: npm install playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - name: Crawl rendered live production site
+        run: node renorangers-site-2/scripts/fresh_rendered_seo_crawl.mjs
