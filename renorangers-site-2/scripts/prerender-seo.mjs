@@ -8,7 +8,7 @@ if (!fs.existsSync(indexPath)) throw new Error(`Missing Vite output: ${indexPath
 const baseHtml = fs.readFileSync(indexPath, 'utf8');
 const origin = 'https://www.renorangers.be';
 const routes = [
-  ['/', 'Reno Rangers | Renovatiebedrijf Antwerpen', 'Renovatiebedrijf in Antwerpen voor totaalrenovatie, badkamerrenovatie & binnenafwerking. Vraag een gratis offerte aan.'],
+  ['/', 'Reno Rangers | Renovatiebedrijf & Aannemer Antwerpen', 'Renovatiebedrijf en aannemer in Antwerpen: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.'],
   ['/badkamerrenovatie-antwerpen', 'Badkamerrenovatie Antwerpen | Reno Rangers', 'Badkamerrenovatie in Antwerpen door Reno Rangers. Eén aanspreekpunt, duidelijke planning en correcte oplevering.'],
   ['/diensten', 'Diensten | Reno Rangers Antwerpen', 'Bekijk de renovatiediensten van Reno Rangers in Antwerpen: badkamerrenovatie, totaalrenovatie en binnenafwerking.'],
   ['/projecten', 'Projecten | Reno Rangers Antwerpen', 'Bekijk recente renovatieprojecten van Reno Rangers in Antwerpen en omgeving.'],
