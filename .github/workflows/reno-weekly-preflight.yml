@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/reno-weekly-preflight.yml'
+      - 'renorangers-site-2/scripts/seo_weekly_collect_service.py'
 
 permissions:
   contents: read
