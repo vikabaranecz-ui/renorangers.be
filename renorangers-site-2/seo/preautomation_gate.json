@@ -1,0 +1,43 @@
+{
+  "site": "https://www.renorangers.be",
+  "automation_enabled": false,
+  "status": "PRE-AUTOMATION HARDENING",
+  "required_before_enable": [
+    {
+      "id": "technical_build_gate",
+      "status": "required",
+      "rule": "Production build must pass the SEO health check for every sitemap URL: static shell exists, canonical matches, robots index/follow, title and description present."
+    },
+    {
+      "id": "gsc_access",
+      "status": "blocked_external_verification",
+      "rule": "The Reno Rangers Search Console property must be verified for the automation service account and return real query/page data."
+    },
+    {
+      "id": "keyword_planner",
+      "status": "blocked_external_verification",
+      "rule": "Belgium and Antwerp local Google Ads Keyword Planner collection must both return data; Antwerp failure must be treated as a warning/error, never silently ignored."
+    },
+    {
+      "id": "business_profile_truth",
+      "status": "blocked_owner_or_gbp_verification",
+      "rule": "Business name, phone, email, opening hours, service areas, review count/rating, address/geo, services and priceRange schema facts must be verified against the actual Google Business Profile/business records."
+    },
+    {
+      "id": "content_claim_safety",
+      "status": "required",
+      "rule": "Existing exact prices, labour rates, durations, VAT, subsidy, permit, insurance and legal claims may remain pending review but autonomous SEO may not create, expand or materially alter such facts without current evidence/owner approval."
+    },
+    {
+      "id": "tracking_qa",
+      "status": "required",
+      "rule": "GTM/consent, phone, email, WhatsApp and form conversion flows must be checked on production desktop/mobile before autonomous publishing."
+    },
+    {
+      "id": "ahrefs_recrawl",
+      "status": "required_after_deploy",
+      "rule": "Re-crawl after technical fixes. Do not treat the 5 Sep 2026 Ahrefs snapshot as proof that the new production build is clean."
+    }
+  ],
+  "enable_rule": "Do not enable autonomous weekly publishing until every required gate is passed or explicitly documented as an accepted limitation."
+}
