@@ -36,9 +36,17 @@ function stripUnverifiedSearchAction(html) {
   return html.replace(/\s*<!-- JSON-LD: WebSite \+ SearchAction -->[\s\S]*?<script type="application\/ld\+json">[\s\S]*?"potentialAction"[\s\S]*?<\/script>/i, '');
 }
 
+function stripUnverifiedBusinessFacts(html) {
+  let out = html;
+  out = out.replace(/\s*"address"\s*:\s*\{[\s\S]*?\}\s*,\s*"geo"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
+  out = out.replace(/\s*"aggregateRating"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
+  out = out.replace(/\s*"priceRange"\s*:\s*"[^"]*"\s*,/i, '');
+  return out;
+}
+
 function buildHtml(route, title, description) {
   const canonical = route === '/' ? `${origin}/` : `${origin}${route}`;
-  let html = stripUnverifiedSearchAction(baseHtml);
+  let html = stripUnverifiedBusinessFacts(stripUnverifiedSearchAction(baseHtml));
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
   html = html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/i, `<meta name="description" content="${esc(description)}" />`);
   html = html.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?\s*>/i, `<link rel="canonical" href="${canonical}" />`);
