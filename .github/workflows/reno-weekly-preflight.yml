@@ -54,12 +54,27 @@ jobs:
             -H "anthropic-version: 2023-06-01")"
           echo "ANTHROPIC_HTTP=${CODE}"
           test "$CODE" = "200"
-      - name: Test Telegram delivery
+      - name: Diagnose Telegram delivery
         shell: bash
         run: |
-          test -n "$TELEGRAM_BOT_TOKEN"
-          test -n "$TELEGRAM_CHAT_ID"
-          curl -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=Reno Rangers SEO automation preflight OK ✅" >/dev/null
-          echo "TELEGRAM_OK=true"
+          python - <<'PY'
+          import os, requests
+          token=os.environ['TELEGRAM_BOT_TOKEN']
+          chat=os.environ['TELEGRAM_CHAT_ID']
+          base=f'https://api.telegram.org/bot{token}'
+          for label, method, payload in [
+              ('GET_ME','get',None),
+              ('GET_CHAT','post',{'chat_id':chat}),
+              ('SEND','post',{'chat_id':chat,'text':'Reno Rangers SEO automation preflight OK ✅'}),
+          ]:
+              url=base + ('/getMe' if label=='GET_ME' else '/getChat' if label=='GET_CHAT' else '/sendMessage')
+              r=requests.get(url,timeout=20) if method=='get' else requests.post(url,data=payload,timeout=20)
+              try:
+                  data=r.json()
+                  desc=data.get('description','')
+              except Exception:
+                  desc='non-json response'
+              print(f'{label}_HTTP={r.status_code} DESCRIPTION={desc}')
+              if label=='GET_ME' and r.status_code != 200:
+                  raise SystemExit('Telegram bot token is invalid or inaccessible')
+          PY
