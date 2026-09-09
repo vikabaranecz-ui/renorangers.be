@@ -1,15 +1,33 @@
 {
   "site": "https://www.renorangers.be",
-  "status": "PRE-AUTOMATION STRATEGY",
-  "primary_market": "Antwerpen en relevante servicegebieden in Vlaanderen",
-  "business_goal": "Grow qualified organic demand for renovation projects while also becoming visible to architects, interior designers, property investors and other professional partners looking for a reliable renovation/construction execution partner.",
-  "operating_principle": "Do not optimize only for people already searching for badkamerrenovatie Antwerpen. Build demand capture across direct service intent, problem awareness, investment intent, project planning and B2B partner/contractor discovery.",
+  "status": "WEEKLY_GROWTH_STRATEGY_ACTIVE",
+  "primary_market": "Antwerpen + approximately 25 km around Antwerpen",
+  "deadline": "2026-12-31",
+  "primary_kpi": {
+    "metric": "25 commercially relevant tracked keywords in Google Top 5",
+    "target": 25,
+    "deadline": "2026-12-31",
+    "note": "Operating KPI, not a guarantee. GSC average position is directional and should be verified with query/page evidence."
+  },
+  "business_goal": "Build a healthy, technically reliable website that grows qualified organic renovation leads in Antwerpen + approximately 25 km and attracts architects, interior architects and designers looking for a reliable execution/work partnership.",
+  "success_definition": [
+    "25 primary commercially relevant keywords progressing to Google Top 5 by 2026-12-31",
+    "website remains technically healthy, crawlable, indexable and conversion-ready",
+    "organic visibility produces qualified renovation enquiries rather than traffic-only growth",
+    "Reno Rangers becomes discoverable to architects, interior architects and designers seeking an execution partner",
+    "weekly work prioritizes lead value, business fit and ranking opportunity over vanity traffic"
+  ],
+  "operating_principle": "Use the same growth logic as IsoproTech: protect technical health first, use live Search Console + Keyword Planner evidence, focus weekly effort on the highest-value ranking opportunity, and connect SEO work to qualified lead generation. Do not optimize only for bathroom terms that are already strong; grow broader renovation and contractor authority and a dedicated B2B partnership footprint.",
   "keyword_layers": [
     {
       "id": "direct_commercial",
+      "priority": "highest",
       "purpose": "Capture users already looking for renovation execution.",
       "examples": [
+        "renovatie",
+        "renovatie bedrijf",
         "renovatiebedrijf Antwerpen",
+        "aannemer renovatie",
         "aannemer renovatie Antwerpen",
         "totaalrenovatie Antwerpen",
         "badkamerrenovatie Antwerpen",
@@ -19,25 +37,35 @@
       ]
     },
     {
-      "id": "problem_awareness",
-      "purpose": "Reach people who feel the problem but do not yet know renovation is the solution.",
+      "id": "contractor_discovery",
+      "priority": "high",
+      "purpose": "Capture broader contractor searches with strong commercial intent.",
       "examples": [
-        "oude badkamer wat doen",
-        "badkamer voelt klein",
-        "slechte indeling woning",
-        "woning verouderd moderniseren",
-        "appartement opfrissen",
-        "woning praktischer indelen",
-        "donkere woning lichter maken",
-        "oude leidingen badkamer",
-        "vochtige badkamer renovatie",
-        "woning klaar maken voor verhuur"
+        "aannemer",
+        "aannemer Antwerpen",
+        "aannemersbedrijf Antwerpen",
+        "bouwbedrijf Antwerpen renovatie",
+        "contractor Antwerpen",
+        "construction company Antwerp"
       ],
-      "content_rule": "Map problem -> symptom -> possible renovation solution -> relevant service -> local/commercial page -> lead. Do not force renovation as the answer when diagnosis or another specialist may be needed."
+      "relevance_rule": "Do not target new-build or services Reno Rangers does not actually perform merely because GSC impressions exist. Keep business fit above raw volume."
+    },
+    {
+      "id": "local_and_project_type",
+      "priority": "high",
+      "purpose": "Combine renovation intent with real service area and project type.",
+      "examples": [
+        "renovatie appartement Antwerpen",
+        "renovatie woning Antwerpen",
+        "totaalrenovatie appartement Antwerpen",
+        "renovatie voor verhuur Antwerpen",
+        "badkamerrenovatie Merksem"
+      ]
     },
     {
       "id": "investment_property",
-      "purpose": "Capture owners, landlords, investors and developers who treat renovation as an asset/investment decision.",
+      "priority": "medium_high",
+      "purpose": "Capture owners, landlords and investors who treat renovation as an asset decision.",
       "examples": [
         "appartement renoveren voor verhuur",
         "renovatie als investering",
@@ -45,14 +73,32 @@
         "vastgoed renoveren Antwerpen",
         "investeringspand renoveren",
         "renovatie appartement Antwerpen",
-        "meerwaarde woning door renovatie",
-        "renovatiebudget investeringspand",
         "renovatie voor verhuur Antwerpen"
       ],
       "claim_rule": "Do not invent ROI, resale uplift, rental uplift, payback or exact financial outcomes. Use current evidence or frame as factors/considerations."
     },
     {
+      "id": "b2b_architect_designer",
+      "priority": "strategic",
+      "purpose": "Generate partnership opportunities from architects, interior architects and designers who need a dependable execution partner for renovation projects.",
+      "examples": [
+        "aannemer voor architecten Antwerpen",
+        "uitvoerende aannemer architect Antwerpen",
+        "renovatie aannemer voor architect",
+        "bouwpartner architect Antwerpen",
+        "aannemer interieurarchitect Antwerpen",
+        "uitvoerder interieurproject Antwerpen",
+        "renovatiepartner interieurarchitect",
+        "contractor for architects Antwerp",
+        "construction partner interior designer Antwerp",
+        "renovation contractor for designers Antwerp"
+      ],
+      "page_intent": "Professional collaboration / execution partner page for architects and designers. Explain drawings/specifications workflow, planning, communication, execution coordination and handover without inventing credentials or capacities.",
+      "conversion_goal": "Partnership/contact enquiry from an architect, interior architect or designer."
+    },
+    {
       "id": "planning_and_decision",
+      "priority": "medium",
       "purpose": "Capture users before they select a contractor.",
       "examples": [
         "renovatie plannen",
@@ -66,58 +112,44 @@
       ]
     },
     {
-      "id": "b2b_architect_designer",
-      "purpose": "Build discoverability for architects, interieurarchitecten, interior designers, designers and project professionals looking for execution partners.",
+      "id": "problem_awareness",
+      "priority": "supporting",
+      "purpose": "Reach people who feel the renovation problem before they search for a contractor.",
       "examples": [
-        "aannemer voor architecten Antwerpen",
-        "uitvoerende aannemer architect Antwerpen",
-        "renovatie aannemer voor architect",
-        "bouwpartner architect Antwerpen",
-        "aannemer interieurarchitect Antwerpen",
-        "uitvoerder interieurproject Antwerpen",
-        "renovatiepartner interieurarchitect",
-        "contractor for architects Antwerp",
-        "construction partner interior designer Antwerp",
-        "renovation contractor for designers Antwerp"
+        "oude badkamer wat doen",
+        "badkamer voelt klein",
+        "slechte indeling woning",
+        "woning verouderd moderniseren",
+        "appartement opfrissen",
+        "woning praktischer indelen",
+        "woning klaar maken voor verhuur"
       ],
-      "page_intent": "Professional collaboration / execution partner page. Explain process, communication, planning, execution scope, drawings/specifications workflow and handover without claiming credentials or capacities that are not verified."
-    },
-    {
-      "id": "contractor_discovery",
-      "purpose": "Capture broader searches from clients or professionals looking for a contractor/construction partner even when they do not use the word renovation.",
-      "examples": [
-        "aannemer Antwerpen",
-        "aannemersbedrijf Antwerpen",
-        "bouwbedrijf Antwerpen renovatie",
-        "contractor Antwerpen",
-        "construction company Antwerp",
-        "uitvoerder bouwproject Antwerpen",
-        "bouwpartner Antwerpen"
-      ],
-      "relevance_rule": "Do not target new-build or services Reno Rangers does not actually perform merely because GSC impressions exist. Keep business fit above raw volume."
-    },
-    {
-      "id": "local_and_project_type",
-      "purpose": "Combine service/project intent with real service areas and project types.",
-      "examples": [
-        "renovatie appartement Antwerpen",
-        "renovatie woning Antwerpen",
-        "badkamerrenovatie Merksem",
-        "totaalrenovatie appartement Antwerpen",
-        "renovatie voor verhuur Antwerpen"
-      ]
+      "content_rule": "Map problem -> symptom -> possible renovation solution -> relevant service -> commercial page -> lead. Do not force renovation as the answer when diagnosis or another specialist may be needed."
     }
   ],
+  "website_health_gate": {
+    "rule": "Do not sacrifice technical health for content velocity.",
+    "weekly_checks": [
+      "important URLs return 200 and remain crawlable/indexable",
+      "canonical/title/H1 basics remain valid",
+      "no new broken internal links or redirect mistakes",
+      "sitemap and robots behavior remain intentional",
+      "tracking and conversion paths remain functional",
+      "avoid keyword cannibalization before expanding content"
+    ]
+  },
+  "lead_quality_rule": "Prefer keywords and changes likely to generate renovation enquiries, larger project opportunities or B2B partnership enquiries. Traffic growth without business relevance is not a successful sprint.",
   "evidence_priority": [
     "Google Search Console query/page performance",
     "Antwerp local Google Ads Keyword Planner demand",
     "Belgium Keyword Planner demand for market breadth",
-    "business fit and lead value",
+    "business fit and likely lead value",
     "existing page authority and cannibalization risk",
+    "B2B partnership potential",
     "seasonality/project timing"
   ],
-  "selection_rule": "The final tracked keyword set must be evidence-based. Seed examples are discovery inputs, not automatically approved primary targets. Promote terms only after GSC/Keyword Planner/business-fit review.",
-  "weekly_sprint_rule": "A weekly sprint should focus on one coherent cluster but may contain several related meaningful tasks. Do not repeatedly optimize only bathroom pages while other high-value renovation, investment or B2B partner opportunities have evidence.",
+  "selection_rule": "Maintain a 25-keyword primary scoreboard for the year-end KPI. A broader discovery universe may be used, but weekly reporting must distinguish the 25 primary KPI terms from secondary discovery terms. Promote or replace a KPI term only when live evidence and business fit justify it.",
+  "weekly_sprint_rule": "Each weekly sprint focuses on one coherent highest-value cluster and may contain several related meaningful tasks. The sprint must state how the work supports rankings, technical health, qualified leads or architect/designer partnership demand.",
   "page_creation_rule": "Create a new page only when evidence shows distinct intent not adequately served by an existing page, after cannibalization and internal-link review. New public URLs remain approval-gated before autonomous publishing.",
   "safety": {
     "no_invented_claims": true,
