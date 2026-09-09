@@ -2,7 +2,7 @@ name: Reno Weekly SEO Claude
 
 on:
   schedule:
-    - cron: "28 23 * * 3"
+    - cron: "40 23 * * 3"
       timezone: "Europe/Brussels"
   workflow_dispatch:
     inputs:
