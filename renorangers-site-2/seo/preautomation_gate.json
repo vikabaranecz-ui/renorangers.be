@@ -18,7 +18,7 @@
     {
       "id": "keyword_planner",
       "status": "blocked_invalid_developer_token",
-      "evidence": "GOOGLE_ADC_JSON, GOOGLE_ADS_DEVELOPER_TOKEN and GOOGLE_ADS_LOGIN_CUSTOMER_ID are now configured in the Reno repository, but Google Ads API v25 rejects the developer token with DEVELOPER_TOKEN_INVALID. The currently accessible Google Ads account is not exposing a usable Manager-account API Center token.",
+      "evidence": "GOOGLE_ADC_JSON, GOOGLE_ADS_DEVELOPER_TOKEN and GOOGLE_ADS_LOGIN_CUSTOMER_ID are configured in the Reno repository, but Google Ads API v25 rejects the developer token with DEVELOPER_TOKEN_INVALID. The currently accessible Google Ads account is not exposing a usable Manager-account API Center token.",
       "rule": "Belgium and Antwerp local Google Ads Keyword Planner collection must both return data; Antwerp failure must be treated as a warning/error, never silently ignored."
     },
     {
@@ -41,8 +41,8 @@
     },
     {
       "id": "ahrefs_recrawl",
-      "status": "blocked_one_rendered_route",
-      "evidence": "A fresh rendered Chromium crawl of all 20 sitemap URLs (run 34343431386) found 19 healthy rendered pages and one blocker: /badkamerrenovatie-antwerpen returns HTTP 200 with correct canonical/meta but renders no page content (0 H1, 0 words, 0 internal links). The older 5 Sep Ahrefs snapshot is not used as proof of current health.",
+      "status": "passed_rendered_public_crawl",
+      "evidence": "Fresh rendered Chromium crawl rerun 34343431386 checked all 20 sitemap URLs after the landing-page routing fix. It completed successfully with 0 blocking findings. /badkamerrenovatie-antwerpen now renders HTTP 200, one H1, 977 rendered words and internal links. Two non-blocking metadata warnings remain on that standalone page: missing Open Graph and Twitter Card tags. The old 5 Sep Ahrefs snapshot is not treated as proof of current production health.",
       "rule": "Re-crawl after technical fixes. Every intended indexable sitemap route must render meaningful page content with a valid H1 and internal-link path before autonomous publishing."
     }
   ],
