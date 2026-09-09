@@ -1,0 +1,157 @@
+name: Reno Monday SEO Simulation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reno-monday-simulation.yml'
+
+concurrency:
+  group: reno-weekly-seo-claude
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: read
+
+jobs:
+  weekly-seo:
+    if: vars.SEO_AUTOMATION_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GSC_SITE_URL: sc-domain:renorangers.be
+      GOOGLE_ADS_CUSTOMER_ID: "6046553882"
+      GOOGLE_ADS_API_VERSION: v25
+      GOOGLE_ADC_JSON: ${{ secrets.GOOGLE_ADC_JSON }}
+      GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+
+    steps:
+      - name: Skip duplicate same-day run
+        id: duplicate
+        shell: bash
+        run: |
+          TODAY="$(TZ=Europe/Brussels date +%F)"
+          COUNT="$(gh issue list --repo "$GITHUB_REPOSITORY" --search "SEO Weekly — ${TODAY} in:title" --limit 1 --json number --jq 'length')"
+          if [ "$COUNT" != "0" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.duplicate.outputs.skip != 'true'
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        if: steps.duplicate.outputs.skip != 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install collector dependencies
+        if: steps.duplicate.outputs.skip != 'true'
+        run: python -m pip install --disable-pip-version-check requests google-auth
+
+      - name: Collect GSC and Keyword Planner evidence
+        if: steps.duplicate.outputs.skip != 'true'
+        run: python renorangers-site-2/scripts/seo_weekly_collect_service.py
+
+      - name: Validate evidence
+        if: steps.duplicate.outputs.skip != 'true'
+        id: evidence
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path('seo-weekly-context.json')
+          out = Path(os.environ['GITHUB_OUTPUT'])
+          ready = False
+          reason = ''
+          warning = ''
+          if not p.exists():
+              reason = 'SEO evidence file missing.'
+          else:
+              d = json.loads(p.read_text(encoding='utf-8'))
+              gsc_error = (d.get('gsc') or {}).get('error') if isinstance(d.get('gsc'), dict) else 'invalid GSC block'
+              ads_error = (d.get('google_ads') or {}).get('error') if isinstance(d.get('google_ads'), dict) else 'invalid Ads block'
+              ready = not bool(gsc_error)
+              if gsc_error:
+                  reason = f'GSC unavailable: {gsc_error}'
+              if ads_error:
+                  warning = f'Keyword Planner unavailable: {ads_error}'
+          with out.open('a', encoding='utf-8') as f:
+              f.write(f"ready={'true' if ready else 'false'}\n")
+              f.write(f"reason={reason}\n")
+              f.write(f"warning={warning}\n")
+          print('Claude ready:', ready)
+          print(reason or warning)
+          PY
+
+      - name: Upload weekly evidence
+        if: steps.duplicate.outputs.skip != 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reno-seo-weekly-context-${{ github.run_id }}
+          path: seo-weekly-context.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Verify Claude key
+        if: steps.duplicate.outputs.skip != 'true' && steps.evidence.outputs.ready == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "ANTHROPIC_API_KEY is missing"
+            exit 1
+          fi
+
+      - name: Run Reno weekly SEO growth agent
+        if: steps.duplicate.outputs.skip != 'true' && steps.evidence.outputs.ready == 'true'
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            This is the scheduled RENO RANGERS weekly SEO growth run. Determine today's date in Europe/Brussels.
+
+            Read `.claude/agents/reno-weekly-seo.md` in full and follow it as the governing policy.
+            Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
+
+            Execute one coherent evidence-based ranking sprint for the highest-value cluster. The KPI is 40 commercially relevant queries progressing toward Google Top 5; never describe it as guaranteed.
+            Antwerp + approximately 25 km is the verified market. Do not broaden to all Vlaanderen.
+            Use Antwerp Keyword Planner evidence before Belgium-wide volume when choosing local priorities.
+            Do not target new-build merely because Search Console shows impressions.
+
+            For SAFE FIX, create a PR, QA it and merge only if every change is inside the safe-auto-publish policy and checks pass.
+            For NEEDS APPROVAL, prepare the exact PR and QA it but leave it open and unmerged.
+            Always create the required `SEO Weekly — YYYY-MM-DD — <MODE>` GitHub issue with evidence, Top-5 progress and completed work.
+          claude_args: |
+            --model claude-sonnet-5
+            --effort medium
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(python:*),Bash(python3:*),Bash(cat:*),Bash(pwd),Bash(ls:*)"
+
+      - name: Send Telegram summary
+        if: steps.duplicate.outputs.skip != 'true' && always()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CLAUDE_OUTCOME: ${{ steps.claude.outcome }}
+          EVIDENCE_READY: ${{ steps.evidence.outputs.ready }}
+          EVIDENCE_WARNING: ${{ steps.evidence.outputs.warning }}
+        shell: bash
+        run: |
+          TODAY="$(TZ=Europe/Brussels date +%F)"
+          ISSUE_URL="$(gh issue list --repo "$GITHUB_REPOSITORY" --search "SEO Weekly — ${TODAY} in:title" --limit 1 --json url --jq '.[0].url // empty')"
+          TEXT="Reno Rangers SEO ${TODAY}\nClaude: ${CLAUDE_OUTCOME:-not-run}\nEvidence ready: ${EVIDENCE_READY:-false}\n${EVIDENCE_WARNING}\n${ISSUE_URL}"
+          curl -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${TEXT}" >/dev/null
