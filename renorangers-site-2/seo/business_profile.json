@@ -1,0 +1,33 @@
+{
+  "business_name": "Reno Rangers BV",
+  "website": "https://www.renorangers.be",
+  "google_ads_customer_id": "6046553882",
+  "gsc_site_url": "sc-domain:renorangers.be",
+  "address": "Bergensesteenweg 24, 1600 Sint-Pieters-Leeuw, Belgium",
+  "phone": "+32 465 88 39 19",
+  "email": "info@renorangers.be",
+  "opening_hours": {
+    "monday_friday": "07:00-17:30",
+    "saturday": "08:30-16:00"
+  },
+  "service_area": {
+    "primary_city": "Antwerpen",
+    "radius_km": 25,
+    "rule": "Position the company for Antwerp and approximately 25 km around Antwerp. Do not claim all of Vlaanderen without owner approval."
+  },
+  "core_services": [
+    "totaalrenovatie",
+    "badkamerrenovatie",
+    "binnenafwerking"
+  ],
+  "verified_on": "2026-09-09",
+  "verification_source": "owner_confirmed",
+  "claim_safety": {
+    "do_not_invent_prices": true,
+    "do_not_invent_durations": true,
+    "do_not_invent_guarantees": true,
+    "do_not_invent_roi_or_savings": true,
+    "do_not_invent_reviews_or_ratings": true,
+    "do_not_expand_service_area_without_approval": true
+  }
+}
