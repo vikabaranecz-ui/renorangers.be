@@ -98,10 +98,10 @@ jobs:
               if gsc_error:
                   reason = f'GSC unavailable: {gsc_error}'
               if ads_error:
-                  warning = f'Keyword Planner unavailable: {ads_error}'
+                  warning = 'Keyword Planner unavailable; see seo-weekly-context artifact for details.'
           with out.open('a', encoding='utf-8') as f:
               f.write(f"ready={'true' if ready else 'false'}\n")
-              f.write(f"reason={reason}\n")
+              f.write(f"reason={reason.replace(chr(10), ' ').replace(chr(13), ' ')}\n")
               f.write(f"warning={warning}\n")
           print('Claude ready:', ready)
           print(reason or warning)
