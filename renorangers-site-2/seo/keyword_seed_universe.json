@@ -1,0 +1,100 @@
+{
+  "status": "SEED UNIVERSE - NOT FINAL TARGETS",
+  "note": "These terms are inputs for GSC + Antwerp/Belgium Keyword Planner validation. Do not treat all of them as approved targets or create pages for them automatically.",
+  "clusters": {
+    "core_renovation": [
+      "renovatie",
+      "renovatiebedrijf",
+      "renovatiebedrijf Antwerpen",
+      "aannemer renovatie",
+      "aannemer renovatie Antwerpen",
+      "totaalrenovatie",
+      "totaalrenovatie Antwerpen",
+      "renovatie appartement Antwerpen",
+      "renovatie woning Antwerpen"
+    ],
+    "bathroom": [
+      "badkamerrenovatie",
+      "badkamerrenovatie Antwerpen",
+      "badkamer renovatie Antwerpen",
+      "badkamer laten renoveren",
+      "badkamer verbouwen Antwerpen",
+      "mortex badkamer Antwerpen"
+    ],
+    "problem_awareness": [
+      "oude badkamer wat doen",
+      "badkamer voelt klein",
+      "woning verouderd moderniseren",
+      "slechte indeling woning",
+      "appartement opfrissen",
+      "woning praktischer indelen",
+      "donkere woning lichter maken",
+      "oude leidingen badkamer",
+      "vochtige badkamer renovatie",
+      "woning klaar maken voor verhuur"
+    ],
+    "investment_property": [
+      "renovatie als investering",
+      "appartement renoveren voor verhuur",
+      "renovatie voor verhuur Antwerpen",
+      "woning renoveren voor verkoop",
+      "vastgoed renoveren Antwerpen",
+      "investeringspand renoveren",
+      "renovatiebudget investeringspand",
+      "meerwaarde woning door renovatie"
+    ],
+    "planning_decision": [
+      "renovatie plannen",
+      "renovatie stappenplan",
+      "aannemer kiezen renovatie",
+      "offerte renovatie vergelijken",
+      "wat eerst renoveren",
+      "architect nodig voor renovatie",
+      "renovatie coördinatie",
+      "één aannemer totaalrenovatie"
+    ],
+    "b2b_architect_designer": [
+      "aannemer voor architecten Antwerpen",
+      "uitvoerende aannemer architect Antwerpen",
+      "renovatie aannemer voor architect",
+      "bouwpartner architect Antwerpen",
+      "aannemer interieurarchitect Antwerpen",
+      "uitvoerder interieurproject Antwerpen",
+      "renovatiepartner interieurarchitect",
+      "contractor for architects Antwerp",
+      "construction partner interior designer Antwerp",
+      "renovation contractor for designers Antwerp"
+    ],
+    "contractor_discovery": [
+      "aannemer Antwerpen",
+      "aannemersbedrijf Antwerpen",
+      "bouwbedrijf Antwerpen renovatie",
+      "contractor Antwerpen",
+      "construction company Antwerp",
+      "uitvoerder bouwproject Antwerpen",
+      "bouwpartner Antwerpen"
+    ],
+    "interior_finishing": [
+      "binnenafwerking Antwerpen",
+      "interieur renovatie Antwerpen",
+      "schilderwerken renovatie Antwerpen",
+      "vloer renovatie Antwerpen",
+      "tegels plaatsen Antwerpen",
+      "living renovatie Antwerpen"
+    ],
+    "kitchen": [
+      "keukenrenovatie",
+      "keukenrenovatie Antwerpen",
+      "keuken verbouwen Antwerpen"
+    ]
+  },
+  "exclusions_or_review": [
+    "nieuwbouw aannemer",
+    "nieuwbouw contractor",
+    "architectenbureau",
+    "interieurarchitect zoeken",
+    "doe-het-zelf renovatie",
+    "materiaal kopen"
+  ],
+  "rule": "Business fit overrides raw impressions or search volume. Broad/new-build terms may be informational context but must not reposition Reno Rangers as a service provider for work it does not actually perform."
+}

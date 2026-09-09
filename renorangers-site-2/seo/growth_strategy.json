@@ -1,0 +1,129 @@
+{
+  "site": "https://www.renorangers.be",
+  "status": "PRE-AUTOMATION STRATEGY",
+  "primary_market": "Antwerpen en relevante servicegebieden in Vlaanderen",
+  "business_goal": "Grow qualified organic demand for renovation projects while also becoming visible to architects, interior designers, property investors and other professional partners looking for a reliable renovation/construction execution partner.",
+  "operating_principle": "Do not optimize only for people already searching for badkamerrenovatie Antwerpen. Build demand capture across direct service intent, problem awareness, investment intent, project planning and B2B partner/contractor discovery.",
+  "keyword_layers": [
+    {
+      "id": "direct_commercial",
+      "purpose": "Capture users already looking for renovation execution.",
+      "examples": [
+        "renovatiebedrijf Antwerpen",
+        "aannemer renovatie Antwerpen",
+        "totaalrenovatie Antwerpen",
+        "badkamerrenovatie Antwerpen",
+        "badkamer renovatie Antwerpen",
+        "binnenafwerking Antwerpen",
+        "keukenrenovatie Antwerpen"
+      ]
+    },
+    {
+      "id": "problem_awareness",
+      "purpose": "Reach people who feel the problem but do not yet know renovation is the solution.",
+      "examples": [
+        "oude badkamer wat doen",
+        "badkamer voelt klein",
+        "slechte indeling woning",
+        "woning verouderd moderniseren",
+        "appartement opfrissen",
+        "woning praktischer indelen",
+        "donkere woning lichter maken",
+        "oude leidingen badkamer",
+        "vochtige badkamer renovatie",
+        "woning klaar maken voor verhuur"
+      ],
+      "content_rule": "Map problem -> symptom -> possible renovation solution -> relevant service -> local/commercial page -> lead. Do not force renovation as the answer when diagnosis or another specialist may be needed."
+    },
+    {
+      "id": "investment_property",
+      "purpose": "Capture owners, landlords, investors and developers who treat renovation as an asset/investment decision.",
+      "examples": [
+        "appartement renoveren voor verhuur",
+        "renovatie als investering",
+        "woning renoveren voor verkoop",
+        "vastgoed renoveren Antwerpen",
+        "investeringspand renoveren",
+        "renovatie appartement Antwerpen",
+        "meerwaarde woning door renovatie",
+        "renovatiebudget investeringspand",
+        "renovatie voor verhuur Antwerpen"
+      ],
+      "claim_rule": "Do not invent ROI, resale uplift, rental uplift, payback or exact financial outcomes. Use current evidence or frame as factors/considerations."
+    },
+    {
+      "id": "planning_and_decision",
+      "purpose": "Capture users before they select a contractor.",
+      "examples": [
+        "renovatie plannen",
+        "renovatie stappenplan",
+        "aannemer kiezen renovatie",
+        "offerte renovatie vergelijken",
+        "wat eerst renoveren",
+        "architect nodig voor renovatie",
+        "renovatie coördinatie",
+        "één aannemer totaalrenovatie"
+      ]
+    },
+    {
+      "id": "b2b_architect_designer",
+      "purpose": "Build discoverability for architects, interieurarchitecten, interior designers, designers and project professionals looking for execution partners.",
+      "examples": [
+        "aannemer voor architecten Antwerpen",
+        "uitvoerende aannemer architect Antwerpen",
+        "renovatie aannemer voor architect",
+        "bouwpartner architect Antwerpen",
+        "aannemer interieurarchitect Antwerpen",
+        "uitvoerder interieurproject Antwerpen",
+        "renovatiepartner interieurarchitect",
+        "contractor for architects Antwerp",
+        "construction partner interior designer Antwerp",
+        "renovation contractor for designers Antwerp"
+      ],
+      "page_intent": "Professional collaboration / execution partner page. Explain process, communication, planning, execution scope, drawings/specifications workflow and handover without claiming credentials or capacities that are not verified."
+    },
+    {
+      "id": "contractor_discovery",
+      "purpose": "Capture broader searches from clients or professionals looking for a contractor/construction partner even when they do not use the word renovation.",
+      "examples": [
+        "aannemer Antwerpen",
+        "aannemersbedrijf Antwerpen",
+        "bouwbedrijf Antwerpen renovatie",
+        "contractor Antwerpen",
+        "construction company Antwerp",
+        "uitvoerder bouwproject Antwerpen",
+        "bouwpartner Antwerpen"
+      ],
+      "relevance_rule": "Do not target new-build or services Reno Rangers does not actually perform merely because GSC impressions exist. Keep business fit above raw volume."
+    },
+    {
+      "id": "local_and_project_type",
+      "purpose": "Combine service/project intent with real service areas and project types.",
+      "examples": [
+        "renovatie appartement Antwerpen",
+        "renovatie woning Antwerpen",
+        "badkamerrenovatie Merksem",
+        "totaalrenovatie appartement Antwerpen",
+        "renovatie voor verhuur Antwerpen"
+      ]
+    }
+  ],
+  "evidence_priority": [
+    "Google Search Console query/page performance",
+    "Antwerp local Google Ads Keyword Planner demand",
+    "Belgium Keyword Planner demand for market breadth",
+    "business fit and lead value",
+    "existing page authority and cannibalization risk",
+    "seasonality/project timing"
+  ],
+  "selection_rule": "The final tracked keyword set must be evidence-based. Seed examples are discovery inputs, not automatically approved primary targets. Promote terms only after GSC/Keyword Planner/business-fit review.",
+  "weekly_sprint_rule": "A weekly sprint should focus on one coherent cluster but may contain several related meaningful tasks. Do not repeatedly optimize only bathroom pages while other high-value renovation, investment or B2B partner opportunities have evidence.",
+  "page_creation_rule": "Create a new page only when evidence shows distinct intent not adequately served by an existing page, after cannibalization and internal-link review. New public URLs remain approval-gated before autonomous publishing.",
+  "safety": {
+    "no_invented_claims": true,
+    "no_unverified_prices": true,
+    "no_unverified_roi": true,
+    "no_unverified_partner_credentials": true,
+    "no_targeting_irrelevant_new_build_intent": true
+  }
+}
