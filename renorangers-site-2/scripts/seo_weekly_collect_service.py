@@ -55,12 +55,15 @@ def _as_int(value):
 def ads(token, geo_id, seeds):
     if not DEV_TOKEN:
         raise RuntimeError("GOOGLE_ADS_DEVELOPER_TOKEN missing")
+    cleaned = [str(s).strip() for s in seeds if str(s).strip()][:20]
+    if not cleaned:
+        raise RuntimeError("No keyword seeds available")
     url = f"https://googleads.googleapis.com/{API_VERSION}/customers/{CUSTOMER_ID}:generateKeywordIdeas"
     headers = {"Authorization": f"Bearer {token}", "developer-token": DEV_TOKEN, "Content-Type": "application/json"}
     body = {
         "language": "languageConstants/1010",
         "geoTargetConstants": [f"geoTargetConstants/{geo_id}"],
-        "keywordSeed": {"keywords": seeds[:20]},
+        "keywordSeed": {"keywords": cleaned},
         "keywordPlanNetwork": "GOOGLE_SEARCH"
     }
     r = requests.post(url, headers=headers, json=body, timeout=60)
@@ -82,7 +85,7 @@ def ads(token, geo_id, seeds):
 def main():
     target_data = json.loads(TARGETS.read_text(encoding="utf-8"))
     profile = json.loads(PROFILE.read_text(encoding="utf-8"))
-    target_rows = target_data.get("targets", [])
+    target_rows = target_data.get("primary_targets") or target_data.get("targets") or []
     seeds = []
     for row in target_rows:
         kw = row.get("keyword")
