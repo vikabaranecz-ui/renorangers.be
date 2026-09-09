@@ -1,6 +1,6 @@
 {
   "site": "Reno Rangers",
-  "mode": "disabled_until_preautomation_gate_passes",
+  "mode": "weekly_growth_automation_ready",
   "safe_auto_publish": [
     "clear title/meta corrections on existing URLs",
     "broken internal-link fixes that preserve destination intent",
@@ -32,13 +32,14 @@
     "inventing review ratings/counts",
     "inventing service areas/opening hours",
     "inventing price ranges or labour rates",
-    "changing year-sensitive legal or subsidy information by simply replacing the year"
+    "changing year-sensitive legal or subsidy information by simply replacing the year",
+    "positioning Reno Rangers as serving all of Vlaanderen"
   ],
   "content_limits": {
     "max_existing_pages_with_meaningful_copy_changes_per_week": 2,
     "one_primary_cluster_per_week": true
   },
-  "future_core_clusters_to_validate_with_evidence": [
+  "core_clusters": [
     "badkamerrenovatie",
     "totaalrenovatie",
     "renovatiebedrijf Antwerpen",
@@ -48,5 +49,6 @@
     "property investment renovation intent",
     "architect/interior-designer execution partner intent"
   ],
-  "keyword_target_rule": "Operate against a provisional 40-keyword set using Search Console evidence and business-fit strategy while Keyword Planner is blocked. Any term without GSC evidence remains provisional and may be replaced once Belgium + Antwerp Keyword Planner is available."
+  "keyword_target_rule": "Use Search Console plus live Belgium and Antwerp Province Keyword Planner evidence. Antwerp-local demand has priority for local commercial decisions. Keep the tracked set at 40 commercially relevant terms and replace weak provisional seeds when stronger evidence-based terms emerge.",
+  "service_area_rule": "Target Antwerpen and approximately 25 km around Antwerpen. Do not broaden service-area positioning without owner approval."
 }
