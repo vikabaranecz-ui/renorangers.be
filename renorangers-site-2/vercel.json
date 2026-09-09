@@ -1,6 +1,6 @@
 {
   "installCommand": "npm install",
-  "buildCommand": "npx vite build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
   "routes": [
@@ -11,7 +11,6 @@
         "Location": "/projecten/mortex-badkamer-merksem"
       }
     },
-    { "src": "/badkamerrenovatie-antwerpen/?", "dest": "/badkamerrenovatie-antwerpen.html" },
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ]

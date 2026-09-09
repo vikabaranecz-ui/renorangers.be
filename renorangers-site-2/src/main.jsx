@@ -1,7 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom'
 import App from './App.jsx'
+
+const INDEXABLE_PROJECT_PATHS = new Set([
+  '/projecten/badkamerrenovatie-antwerpen',
+  '/projecten/mortex-badkamer-merksem',
+  '/projecten/mortex-badkamer-antwerpen',
+  '/projecten/volledige-badkamer-antwerpen',
+  '/projecten/badkamer-paars-meubel-merksem',
+  '/projecten/keukenrenovatie-antwerpen',
+  '/projecten/living-binnenafwerking-antwerpen',
+  '/projecten/badkamerrenovatie-londerzeel',
+])
+
+function normalizePathname(pathname) {
+  if (!pathname || pathname === '/') return '/'
+  return pathname.replace(/\/+$/, '').toLowerCase()
+}
+
+function ProjectIndexabilityGuard() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const path = normalizePathname(location.pathname)
+    if (!INDEXABLE_PROJECT_PATHS.has(path)) return
+
+    let robots = document.querySelector('meta[name="robots"]')
+    if (!robots) {
+      robots = document.createElement('meta')
+      robots.setAttribute('name', 'robots')
+      document.head.appendChild(robots)
+    }
+    robots.setAttribute('content', 'index, follow')
+  }, [location.pathname])
+
+  return null
+}
 
 class RootErrorBoundary extends React.Component {
   constructor(props) {
@@ -47,6 +82,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <RootErrorBoundary>
         <App />
+        <ProjectIndexabilityGuard />
       </RootErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>,
