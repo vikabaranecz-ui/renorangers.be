@@ -1,0 +1,23 @@
+name: Reno Telegram Test
+on:
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send report
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          TEXT="✅ Reno Rangers SEO — 2026-09-10
+KPI: 2/25 keywords in Top 5
+Focus: Homepage commercial renovation cluster
+Rankings: renovatie 5.54; aannemer 8.68; renovatiebedrijf Antwerpen ~30
+Demand: renovatie 1,900/mo; aannemer 1,600/mo; renovatiebedrijf Antwerpen 140/mo
+Action: Homepage SEO copy/meta improved and merged
+Website health: PASS — 20/20 sitemap URLs
+Result: merged and live
+Next: strengthen renovatiebedrijf Antwerpen"
+          curl -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" --data-urlencode "text=${TEXT}" >/dev/null
