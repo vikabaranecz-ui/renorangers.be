@@ -1,9 +1,6 @@
 name: Reno Weekly SEO Claude
 
 on:
-  schedule:
-    - cron: "0 8 * * 1"
-      timezone: "Europe/Brussels"
   workflow_dispatch:
     inputs:
       force:
@@ -11,6 +8,9 @@ on:
         required: false
         default: false
         type: boolean
+  schedule:
+    - cron: "0 6 * * 1"
+    - cron: "0 7 * * 1"
 
 concurrency:
   group: reno-weekly-seo-claude
@@ -37,8 +37,21 @@ jobs:
       GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
 
     steps:
+      - name: Check Brussels schedule hour
+        id: localtime
+        if: github.event_name == 'schedule'
+        shell: bash
+        run: |
+          HOUR="$(TZ=Europe/Brussels date +%H)"
+          if [ "$HOUR" = "08" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Skip duplicate same-day run
         id: duplicate
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true'
         env:
           FORCE_RUN: ${{ inputs.force || 'false' }}
         shell: bash
@@ -56,27 +69,27 @@ jobs:
           fi
 
       - name: Checkout
-        if: steps.duplicate.outputs.skip != 'true'
+        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        if: steps.duplicate.outputs.skip != 'true'
+        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install collector dependencies
-        if: steps.duplicate.outputs.skip != 'true'
+        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         run: python -m pip install --disable-pip-version-check requests google-auth
 
       - name: Collect GSC and Keyword Planner evidence
-        if: steps.duplicate.outputs.skip != 'true'
+        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         run: python renorangers-site-2/scripts/seo_weekly_collect_service.py
 
       - name: Validate evidence
-        if: steps.duplicate.outputs.skip != 'true'
+        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         id: evidence
         shell: bash
         run: |
@@ -108,7 +121,7 @@ jobs:
           PY
 
       - name: Upload weekly evidence
-        if: steps.duplicate.outputs.skip != 'true' && always()
+        if: always() && steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         uses: actions/upload-artifact@v4
         with:
           name: reno-seo-weekly-context-${{ github.run_id }}
@@ -167,7 +180,7 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(python:*),Bash(python3:*),Bash(cat:*),Bash(pwd),Bash(ls:*)"
 
       - name: Send optional Telegram summary
-        if: steps.duplicate.outputs.skip != 'true' && always()
+        if: always() && steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -181,29 +194,21 @@ jobs:
             echo "Telegram not configured; GitHub issue/PR remains the source of truth."
             exit 0
           fi
-
           TODAY="$(TZ=Europe/Brussels date +%F)"
           ISSUE_URL="$(gh issue list --repo "$GITHUB_REPOSITORY" --search "SEO Weekly — ${TODAY} in:title" --limit 1 --json url --jq '.[0].url // empty')"
-
           if [ -s seo-telegram-summary.txt ]; then
             TEXT="$(cat seo-telegram-summary.txt)"
           else
             STATUS="⚠️ Claude ${CLAUDE_OUTCOME:-not-run}"
             if [ "${CLAUDE_OUTCOME:-}" = "success" ]; then STATUS="✅ Claude success"; fi
-            TEXT="Reno Rangers SEO — ${TODAY}
-${STATUS}
-Evidence ready: ${EVIDENCE_READY:-false}"
+            TEXT="$(printf '%s\n%s\n%s' "Reno Rangers SEO — ${TODAY}" "${STATUS}" "Evidence ready: ${EVIDENCE_READY:-false}")"
             if [ -n "${EVIDENCE_WARNING:-}" ]; then
-              TEXT="${TEXT}
-${EVIDENCE_WARNING}"
+              TEXT="$(printf '%s\n%s' "$TEXT" "$EVIDENCE_WARNING")"
             fi
           fi
-
           if [ -n "$ISSUE_URL" ]; then
-            TEXT="${TEXT}
-Report: ${ISSUE_URL}"
+            TEXT="$(printf '%s\n%s' "$TEXT" "Report: ${ISSUE_URL}")"
           fi
-
           curl -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=${TEXT}" >/dev/null
