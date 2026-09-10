@@ -149,6 +149,18 @@ jobs:
             For SAFE FIX, create a PR, QA it and merge only if every change is inside the safe-auto-publish policy and checks pass.
             For NEEDS APPROVAL, prepare the exact PR and QA it but leave it open and unmerged.
             Always create the required `SEO Weekly — YYYY-MM-DD — <MODE>` GitHub issue with Top-5 progress X/25, website-health status, evidence, lead/partnership value and completed work.
+
+            Also write a short plain-text file named `seo-telegram-summary.txt` for the owner. It must contain only the most important information, maximum 9 lines, in this exact structure:
+            ✅ Reno Rangers SEO — YYYY-MM-DD
+            KPI: X/25 keywords in Top 5
+            Focus: <short chosen cluster>
+            Rankings: <up to 3 most important current ranking positions/opportunities>
+            Demand: <up to 3 most important Antwerp monthly-search figures>
+            Action: <what was actually changed or prepared>
+            Website health: <PASS/ISSUE + one short fact>
+            Result: <merged / awaiting approval / analysis only>
+            Next: <single highest-value next move>
+            Use normal line breaks, no markdown table, no percent-encoded characters, no invented numbers.
           claude_args: |
             --model claude-sonnet-5
             --effort medium
@@ -169,9 +181,29 @@ jobs:
             echo "Telegram not configured; GitHub issue/PR remains the source of truth."
             exit 0
           fi
+
           TODAY="$(TZ=Europe/Brussels date +%F)"
           ISSUE_URL="$(gh issue list --repo "$GITHUB_REPOSITORY" --search "SEO Weekly — ${TODAY} in:title" --limit 1 --json url --jq '.[0].url // empty')"
-          TEXT="Reno Rangers SEO ${TODAY}%0AClaude: ${CLAUDE_OUTCOME:-not-run}%0AEvidence ready: ${EVIDENCE_READY:-false}%0A${EVIDENCE_WARNING}%0A${ISSUE_URL}"
+
+          if [ -s seo-telegram-summary.txt ]; then
+            TEXT="$(cat seo-telegram-summary.txt)"
+          else
+            STATUS="⚠️ Claude ${CLAUDE_OUTCOME:-not-run}"
+            if [ "${CLAUDE_OUTCOME:-}" = "success" ]; then STATUS="✅ Claude success"; fi
+            TEXT="Reno Rangers SEO — ${TODAY}
+${STATUS}
+Evidence ready: ${EVIDENCE_READY:-false}"
+            if [ -n "${EVIDENCE_WARNING:-}" ]; then
+              TEXT="${TEXT}
+${EVIDENCE_WARNING}"
+            fi
+          fi
+
+          if [ -n "$ISSUE_URL" ]; then
+            TEXT="${TEXT}
+Report: ${ISSUE_URL}"
+          fi
+
           curl -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=${TEXT}" >/dev/null
