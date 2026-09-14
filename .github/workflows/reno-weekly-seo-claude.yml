@@ -9,8 +9,8 @@ on:
         default: false
         type: boolean
   schedule:
-    - cron: "0 6 * * 1"
-    - cron: "0 7 * * 1"
+    - cron: "0 8 * * 1"
+      timezone: "Europe/Brussels"
 
 concurrency:
   group: reno-weekly-seo-claude
@@ -37,21 +37,8 @@ jobs:
       GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
 
     steps:
-      - name: Check Brussels schedule hour
-        id: localtime
-        if: github.event_name == 'schedule'
-        shell: bash
-        run: |
-          HOUR="$(TZ=Europe/Brussels date +%H)"
-          if [ "$HOUR" = "08" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Skip duplicate same-day run
         id: duplicate
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true'
         env:
           FORCE_RUN: ${{ inputs.force || 'false' }}
         shell: bash
@@ -69,27 +56,27 @@ jobs:
           fi
 
       - name: Checkout
-        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: steps.duplicate.outputs.skip != 'true'
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: steps.duplicate.outputs.skip != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install collector dependencies
-        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: steps.duplicate.outputs.skip != 'true'
         run: python -m pip install --disable-pip-version-check requests google-auth
 
       - name: Collect GSC and Keyword Planner evidence
-        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: steps.duplicate.outputs.skip != 'true'
         run: python renorangers-site-2/scripts/seo_weekly_collect_service.py
 
       - name: Validate evidence
-        if: steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: steps.duplicate.outputs.skip != 'true'
         id: evidence
         shell: bash
         run: |
@@ -121,7 +108,7 @@ jobs:
           PY
 
       - name: Upload weekly evidence
-        if: always() && steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: always() && steps.duplicate.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: reno-seo-weekly-context-${{ github.run_id }}
@@ -180,7 +167,7 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(python:*),Bash(python3:*),Bash(cat:*),Bash(pwd),Bash(ls:*)"
 
       - name: Send optional Telegram summary
-        if: always() && steps.duplicate.outputs.skip != 'true' && (github.event_name == 'workflow_dispatch' || steps.localtime.outputs.run == 'true')
+        if: always() && steps.duplicate.outputs.skip != 'true'
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
