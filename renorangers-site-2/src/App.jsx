@@ -1623,7 +1623,7 @@ function Diensten() {
               WAT WIJ <span style={{ color: C.red }}>DOEN</span>
             </h1>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 520, lineHeight: 1.7 }}>
-              Van badkamerrenovatie tot totaalrenovatie — alle renovatiediensten onder een dak.
+              Van badkamerrenovatie tot totaalrenovatie — alle renovatiediensten onder een dak bij Reno Rangers, uw <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link>.
             </p>
           </Reveal>
         </div>
@@ -1827,7 +1827,7 @@ function Over() {
               </h2>
               <div style={{ width: 44, height: 3, background: C.red, marginBottom: 20 }} />
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
-                We begrijpen hoe stressvol een renovatie kan zijn: van het kiezen van de juiste aannemer tot beslissingen over materialen, planning en budget. Daarom nemen wij alles uit handen.
+                We begrijpen hoe stressvol een renovatie kan zijn: van het kiezen van de juiste aannemer tot beslissingen over materialen, planning en budget. Als <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link> nemen wij alles uit handen.
               </p>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
                 Of u nu een huiseigenaar bent die zijn eerste woning verbouwt, een gezin dat meer comfort zoekt, of een investeerder die efficiëntie verwacht — wij zorgen voor een zorgeloze aanpak van A tot Z.
