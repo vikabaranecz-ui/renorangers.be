@@ -1,0 +1,27 @@
+name: Reno Telegram Recovery
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/reno-telegram-recovery.yml'
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Reno status
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        shell: bash
+        run: |
+          TEXT="⚠️ Reno Rangers SEO — 2026-09-14
+KPI: 2/25 keywords confirmed in Top 5 (last completed SEO sprint)
+Today: scheduled SEO sprint did not run because the old time guard skipped a delayed GitHub schedule
+Action: Monday schedule fixed to 08:00 Europe/Brussels, same logic as IsoproTech
+Website health: last full QA PASS — 20/20 sitemap URLs
+Result: no Reno SEO changes were made today
+Next: normal evidence-based sprint will run on the next Monday schedule"
+          curl -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${TEXT}" >/dev/null
