@@ -1976,6 +1976,9 @@ function Projecten() {
             <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(46px, 6vw, 84px)", color: C.white, lineHeight: 0.9, margin: "10px 0 18px" }}>
               ONZE <span style={{ color: C.red }}>PROJECTEN</span>
             </h1>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 520, lineHeight: 1.7 }}>
+              Bekijk hieronder recente renovatieprojecten van Reno Rangers, uw <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link>.
+            </p>
           </Reveal>
         </div>
       </div>
