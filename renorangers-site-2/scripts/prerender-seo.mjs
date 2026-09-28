@@ -52,10 +52,10 @@ const blogLinks = [
 const routes = [
   {
     route: '/',
-    title: 'Reno Rangers | Renovatiebedrijf & Aannemer Antwerpen',
-    description: 'Renovatiebedrijf en aannemer in Antwerpen voor totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte aanvragen.',
-    h1: 'Renovatiebedrijf en Aannemer in Antwerpen',
-    bodyText: 'Reno Rangers is uw betrouwbare renovatiebedrijf in Antwerpen en omgeving. Wij zijn gespecialiseerd in badkamerrenovatie, totaalrenovatie en kwalitatieve binnenafwerking. Met één aanspreekpunt, een vaste prijs en een duidelijke planning bezorgen wij u een zorgeloze renovatie-ervaring. Onze vakmensen werken nauwkeurig en respecteren altijd de afgesproken deadline. Of u nu een badkamer wilt vernieuwen, een volledige woning wilt aanpakken of enkel de binnenafwerking wilt verbeteren — Reno Rangers staat voor u klaar. Vraag vandaag nog gratis een offerte aan.',
+    title: 'Renovatiebedrijf & Aannemer Antwerpen | Reno Rangers',
+    description: 'Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.',
+    h1: 'Renovatiebedrijf Antwerpen — Aannemer voor Renovatie',
+    bodyText: 'Reno Rangers is uw renovatiebedrijf Antwerpen en aannemer voor renovatie in Antwerpen en omgeving. Wij zijn gespecialiseerd in badkamerrenovatie, totaalrenovatie en kwalitatieve binnenafwerking. Met één aanspreekpunt, een vaste prijs en een duidelijke planning bezorgen wij u een zorgeloze renovatie-ervaring. Onze vakmensen werken nauwkeurig en respecteren altijd de afgesproken deadline. Of u nu een badkamer wilt vernieuwen, een volledige woning wilt aanpakken of enkel de binnenafwerking wilt verbeteren — Reno Rangers staat voor u klaar als aannemer renovatie Antwerpen. Vraag vandaag nog gratis een offerte aan.',
     links: [...mainLinks, ...projectLinks.slice(0, 3), ...blogLinks.slice(0, 2),
       { href: 'https://www.antwerpen.be', text: 'Stad Antwerpen' },
       { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie aanvragen' },
