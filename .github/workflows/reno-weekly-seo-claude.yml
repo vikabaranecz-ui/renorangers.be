@@ -132,6 +132,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          allowed_bots: "github-actions[bot]"
           prompt: |
             This is the scheduled RENO RANGERS weekly SEO growth run. Determine today's date in Europe/Brussels.
 
