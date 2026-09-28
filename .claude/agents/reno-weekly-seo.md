@@ -47,6 +47,19 @@ Before growth changes, check for material technical problems that could block SE
 
 Do not sacrifice website health for publishing velocity.
 
+## Fast-growth mode
+Prioritize the fastest credible path to Top-5 gains without sacrificing website health or lead quality.
+
+Use this order when choosing the weekly cluster:
+1. commercially relevant primary KPI terms already around positions 4-20 with real GSC impressions and Antwerp demand,
+2. terms where the correct existing page already matches intent and can be strengthened safely,
+3. supporting internal-authority opportunities from closely related existing pages,
+4. only then farther-away terms, unless they have materially higher business value and no stronger near-win exists.
+
+When evidence supports it and policy permits, prefer a combined sprint: one meaningful on-page relevance improvement plus one contextual internal-link/authority reinforcement action. Do not spend a week on cosmetic wording changes. Do not keep targeting position-30-to-60 terms while comparable lead-value terms are sitting near Top 5.
+
+If a keyword is already Top 5, protect it and move effort to the next closest commercially valuable opportunity. Every sprint needs a specific ranking hypothesis that can be checked in subsequent GSC refreshes.
+
 ## Weekly operating model
 Choose one coherent highest-value cluster each week. A sprint may contain multiple related tasks. Do not reduce the week to a cosmetic micro-fix when a stronger ranking or lead opportunity is supported.
 
