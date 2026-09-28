@@ -479,10 +479,10 @@ const BLOG_POSTS = [
 
 const ROUTE_SEO = Object.freeze({
   [PAGE_PATHS.home]: {
-    title: "Reno Rangers | Renovatiebedrijf & Aannemer Antwerpen",
-    description: "Renovatiebedrijf en aannemer in Antwerpen: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
-    ogTitle: "Reno Rangers — Renovatiebedrijf & Aannemer Antwerpen",
-    ogDescription: "Renovatiebedrijf en aannemer voor totaalrenovatie, badkamerrenovatie en binnenafwerking in Antwerpen. Vaste prijs, geen verrassingen.",
+    title: "Renovatiebedrijf & Aannemer Antwerpen | Reno Rangers",
+    description: "Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
+    ogTitle: "Renovatiebedrijf Antwerpen — Aannemer voor Renovatie | Reno Rangers",
+    ogDescription: "Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, geen verrassingen.",
   },
   [PAGE_PATHS.landing]: {
     title: "Badkamerrenovatie Antwerpen | Reno Rangers",
