@@ -149,7 +149,7 @@
     "seasonality/project timing"
   ],
   "selection_rule": "Maintain a 25-keyword primary scoreboard for the year-end KPI. A broader discovery universe may be used, but weekly reporting must distinguish the 25 primary KPI terms from secondary discovery terms. Promote or replace a KPI term only when live evidence and business fit justify it.",
-  "weekly_sprint_rule": "Each weekly sprint focuses on one coherent highest-value cluster and may contain several related meaningful tasks. The sprint must state how the work supports rankings, technical health, qualified leads or architect/designer partnership demand.",
+  "weekly_sprint_rule": "FAST GROWTH MODE: each weekly sprint focuses on the highest-value near-win cluster first, especially primary commercial keywords roughly positions 4-20 with real impressions and Antwerp demand. Use the strongest safe combination of on-page relevance + internal authority support when justified. Avoid cosmetic micro-fixes and avoid repeatedly spending sprints on very distant terms while closer commercially valuable Top-5 opportunities exist. All safety and approval rules remain unchanged.",
   "page_creation_rule": "Create a new page only when evidence shows distinct intent not adequately served by an existing page, after cannibalization and internal-link review. New public URLs remain approval-gated before autonomous publishing.",
   "safety": {
     "no_invented_claims": true,
@@ -157,5 +157,18 @@
     "no_unverified_roi": true,
     "no_unverified_partner_credentials": true,
     "no_targeting_irrelevant_new_build_intent": true
+  },
+  "fast_growth_mode": {
+    "enabled": true,
+    "objective": "Reach meaningful Top-5 gains as quickly as possible without sacrificing technical health, conversion quality, or factual accuracy.",
+    "prioritization": [
+      "First prioritize commercially relevant primary keywords already ranking roughly positions 4-20 with real GSC impressions and Antwerp demand.",
+      "Prefer near-win keywords where one existing page already matches intent and can be strengthened without cannibalization.",
+      "Do not spend repeated weekly sprints on terms around position 30-60 when closer Top-5 opportunities with comparable lead value exist.",
+      "When safe policy allows it, combine one on-page relevance improvement with one authority-support action such as contextual internal linking from an existing relevant page.",
+      "If a high-value term is already Top 5, protect it and shift effort to the next closest commercially valuable term."
+    ],
+    "weekly_success_test": "A sprint should have a credible path to measurable ranking movement within the next few GSC refresh cycles; cosmetic changes without a ranking hypothesis are not enough.",
+    "constraints": "All existing safety, approval, claim, technical-health, and max-pages rules still apply."
   }
 }
