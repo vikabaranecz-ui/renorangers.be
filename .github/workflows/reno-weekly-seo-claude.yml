@@ -137,6 +137,7 @@ jobs:
             This is the scheduled RENO RANGERS weekly SEO growth run. Determine today's date in Europe/Brussels.
 
             Read `.claude/agents/reno-weekly-seo.md` in full and follow it as the governing policy.
+            Also read `.claude/agents/reno-conversion-growth.md` and use it to maintain a whole-market coverage plan and conversion-first content standard.
             Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
 
             Execute one coherent evidence-based ranking sprint for the highest-value cluster. The year-end KPI is 25 commercially relevant primary queries in Google Top 5 by 2026-12-31; never describe it as guaranteed.
