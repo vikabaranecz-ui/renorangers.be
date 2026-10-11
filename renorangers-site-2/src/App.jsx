@@ -497,10 +497,10 @@ const ROUTE_SEO = Object.freeze({
     ogDescription: "Wie zijn wij? Ontdek onze aanpak, expertise en werkgebied in Antwerpen.",
   },
   [PAGE_PATHS.diensten]: {
-    title: "Diensten | Reno Rangers Antwerpen",
-    description: "Bekijk onze renovatiediensten in Antwerpen: badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking door Reno Rangers.",
-    ogTitle: "Onze Diensten — Reno Rangers",
-    ogDescription: "Van badkamerrenovatie tot totaalrenovatie en binnenafwerking in Antwerpen.",
+    title: "Totaalrenovatie & Renovatiediensten Antwerpen | Reno Rangers",
+    description: "Totaalrenovatie Antwerpen voor woning, appartement of investeringspand: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.",
+    ogTitle: "Totaalrenovatie & Renovatiediensten Antwerpen — Reno Rangers",
+    ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking voor woning, appartement of investeringspand in Antwerpen.",
   },
   [PAGE_PATHS.contact]: {
     title: "Contact | Reno Rangers Antwerpen",
@@ -1593,15 +1593,27 @@ function Diensten() {
       img2: IMG.toiletmerksem,
       intro: "Een badkamerrenovatie is een van de meest waardevolle investeringen in uw woning. Bij Reno Rangers zorgen wij voor een complete badkamerrenovatie in Antwerpen.",
       items: ["Volledige afbraak en afvoer", "Waterdichte membraan en isolatie", "Sanitaire installaties", "Tegelwerken vloer en muur", "Meubelen en verlichting", "Ventilatie en afwerking"],
-      seo: "Bent u op zoek naar een betrouwbare aannemer voor uw badkamerrenovatie in Antwerpen? Reno Rangers realiseert moderne, functionele badkamers die jarenlang meegaan. Wij werken uitsluitend met duurzame materialen en bieden waterdichte afwerking met garantie.",
+      seo: (
+        <>
+          Bent u op zoek naar een betrouwbare aannemer voor uw badkamerrenovatie in Antwerpen? Reno Rangers realiseert moderne, functionele badkamers die jarenlang meegaan. Wij werken uitsluitend met duurzame materialen en bieden waterdichte afwerking met garantie.{" "}
+          <Link to="/badkamerrenovatie-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk onze badkamerrenovatie Antwerpen pagina</Link> voor meer details en voorbeelden.
+        </>
+      ),
     },
     {
       t: "TOTAALRENOVATIE",
       img: IMG.livingroom,
       img2: IMG.kitchen,
-      intro: "Een totaalrenovatie vraagt om coordinatie, vakmanschap en een duidelijk plan. Reno Rangers is uw totaalrenovatie aannemer in Antwerpen.",
+      intro: "Een totaalrenovatie vraagt om coordinatie, vakmanschap en een duidelijk plan. Reno Rangers is uw totaalrenovatie aannemer in Antwerpen, voor een woning, appartement of investeringspand.",
       items: ["Ontwerp en planning", "Afbraak en structurele werken", "Elektriciteit en loodgieterij", "Ramen en deuren", "Vloeren, muren en plafonds", "Keuken- en badkamerinrichting"],
-      seo: "Als renovatie aannemer in Antwerpen begrijpen wij dat een totaalrenovatie een grote stap is. Daarom bieden wij een zorgeloos traject met een vast aanspreekpunt, een gedetailleerde offerte zonder verborgen kosten, en een duidelijke planning.",
+      seo: (
+        <>
+          Als renovatie aannemer in Antwerpen begrijpen wij dat een totaalrenovatie een grote stap is — voor uw eigen woning, een appartement, of een pand dat u wilt verhuren of verkopen. Daarom bieden wij een zorgeloos traject met een vast aanspreekpunt, een gedetailleerde offerte zonder verborgen kosten, en een duidelijke planning. Twijfelt u nog over de juiste aanpak?{" "}
+          <Link to="/blog/hoe-juiste-renovatie-aannemer-kiezen" style={{ color: "inherit", textDecoration: "underline" }}>Lees hoe u de juiste aannemer kiest</Link>{" "}
+          of bekijk ons{" "}
+          <Link to="/blog/totaalrenovatie-alles-wat-u-moet-weten" style={{ color: "inherit", textDecoration: "underline" }}>stappenplan voor een totaalrenovatie</Link>.
+        </>
+      ),
     },
     {
       t: "BINNENAFWERKING",
