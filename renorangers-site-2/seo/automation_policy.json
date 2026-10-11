@@ -36,8 +36,11 @@
     "positioning Reno Rangers as serving all of Vlaanderen"
   ],
   "content_limits": {
-    "max_existing_pages_with_meaningful_copy_changes_per_week": 2,
-    "one_primary_cluster_per_week": true
+    "max_existing_pages_with_meaningful_copy_changes_per_week": 5,
+    "one_primary_cluster_per_week": false,
+    "target_clusters_per_week": 2,
+    "max_clusters_per_week": 4,
+    "rule": "Use several focused evidence-backed changes rather than a bulk rewrite. Keep every change inside safe_auto_publish or route it to approval."
   },
   "core_clusters": [
     "badkamerrenovatie",
