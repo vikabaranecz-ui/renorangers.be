@@ -9,8 +9,8 @@ on:
         default: false
         type: boolean
   schedule:
-    - cron: "0 6 * * 1"
-    - cron: "0 7 * * 1"
+    - cron: "0 8 * * 1"
+      timezone: "Europe/Brussels"
 
 concurrency:
   group: reno-weekly-seo-claude
@@ -27,7 +27,7 @@ jobs:
   weekly-seo:
     if: github.event_name == 'workflow_dispatch' || vars.SEO_AUTOMATION_ENABLED == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     env:
       GH_TOKEN: ${{ github.token }}
       GSC_SITE_URL: sc-domain:renorangers.be
@@ -140,7 +140,16 @@ jobs:
             Also read `.claude/agents/reno-conversion-growth.md` and use it to maintain a whole-market coverage plan and conversion-first content standard.
             Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
 
-            Execute one coherent evidence-based ranking sprint for the highest-value cluster. The year-end KPI is 25 commercially relevant primary queries in Google Top 5 by 2026-12-31; never describe it as guaranteed.
+            Execute ONE comprehensive weekly MASTER SEO + CONVERSION RUN, not a narrow two-keyword edit. The year-end KPI is 25 commercially relevant primary queries in Google Top 5 by 2026-12-31; never describe it as guaranteed.
+
+            First audit the whole opportunity map before choosing work: all 25 KPI terms, secondary GSC opportunities, commercial/local/project-type/problem/decision/B2B gaps, query-to-page mapping, cannibalization, internal-link authority, technical health, conversion path, CTA/form friction and recent sprint history.
+
+            Then execute the strongest coherent package that can materially improve rankings AND qualified form submissions this week. A master run should normally include:
+            1) one primary commercial ranking move on the highest-value cluster,
+            2) supporting internal-authority/cannibalization work where justified,
+            3) one conversion/trust improvement on the same journey where safe,
+            4) a gap register showing what remains uncovered and the next highest-value move.
+            Do not limit the run to two phrases if a wider cluster or customer journey clearly needs work. Do not add filler copy merely to make pages longer. Every paragraph changed or added must help search intent, buyer understanding, trust or conversion.
             Protect website technical health and conversion paths before growth changes.
             Optimize for qualified renovation leads, not traffic alone.
             Maintain a strategic B2B track to attract architects, interior architects and designers looking for a dependable execution/work partner.
@@ -165,7 +174,7 @@ jobs:
             Use normal line breaks, no markdown table, no percent-encoded characters, no invented numbers.
           claude_args: |
             --model claude-sonnet-5
-            --effort medium
+            --effort high
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(python:*),Bash(python3:*),Bash(cat:*),Bash(pwd),Bash(ls:*)"
 
       - name: Send optional Telegram summary
