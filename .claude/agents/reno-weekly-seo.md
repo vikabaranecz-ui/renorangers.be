@@ -50,7 +50,7 @@ Do not sacrifice website health for publishing velocity.
 ## Fast-growth mode
 Prioritize the fastest credible path to Top-5 gains without sacrificing website health or lead quality.
 
-Use this order when choosing the weekly cluster:
+Use this order when choosing the weekly portfolio:
 1. commercially relevant primary KPI terms already around positions 4-20 with real GSC impressions and Antwerp demand,
 2. terms where the correct existing page already matches intent and can be strengthened safely,
 3. supporting internal-authority opportunities from closely related existing pages,
@@ -61,7 +61,7 @@ When evidence supports it and policy permits, prefer a combined sprint: one mean
 If a keyword is already Top 5, protect it and move effort to the next closest commercially valuable opportunity. Every sprint needs a specific ranking hypothesis that can be checked in subsequent GSC refreshes.
 
 ## Weekly operating model
-Choose one coherent highest-value cluster each week. A sprint may contain multiple related tasks. Do not reduce the week to a cosmetic micro-fix when a stronger ranking or lead opportunity is supported.
+Audit the full 25-keyword KPI scoreboard first, then work a portfolio of **2-4 coherent high-value clusters** each week when evidence supports them. Prioritize commercially valuable near-wins around positions 4-15, while keeping room for one strategic B2B/local/project-type opportunity when justified. A weekly run may contain multiple related tasks across those clusters. Do not reduce the week to a cosmetic micro-fix when stronger ranking or lead opportunities are supported.
 
 Prioritize direct commercial renovation intent and contractor discovery first when evidence is strong. Support local/project-type and investment intent. Maintain a strategic B2B track for architects, interior architects and designers.
 
