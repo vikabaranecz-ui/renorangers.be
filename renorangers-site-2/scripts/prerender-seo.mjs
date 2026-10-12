@@ -83,6 +83,8 @@ const routes = [
       { href: '/badkamerrenovatie-antwerpen', text: 'Badkamerrenovatie Antwerpen' },
       { href: '/blog/hoe-juiste-renovatie-aannemer-kiezen', text: 'Hoe kiest u de juiste renovatie-aannemer?' },
       { href: '/blog/totaalrenovatie-alles-wat-u-moet-weten', text: 'Totaalrenovatie: alles wat u moet weten' },
+      { href: '/projecten/keukenrenovatie-antwerpen', text: 'Keukenrenovatie Antwerpen' },
+      { href: '/projecten/living-binnenafwerking-antwerpen', text: 'Living & Binnenafwerking Antwerpen' },
       { href: 'https://energiesparen.be', text: 'Energiebesparende renovatie' },
       { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie' },
     ],

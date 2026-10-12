@@ -1611,7 +1611,8 @@ function Diensten() {
           Als renovatie aannemer in Antwerpen begrijpen wij dat een totaalrenovatie een grote stap is — voor uw eigen woning, een appartement, of een pand dat u wilt verhuren of verkopen. Daarom bieden wij een zorgeloos traject met een vast aanspreekpunt, een gedetailleerde offerte zonder verborgen kosten, en een duidelijke planning. Twijfelt u nog over de juiste aanpak?{" "}
           <Link to="/blog/hoe-juiste-renovatie-aannemer-kiezen" style={{ color: "inherit", textDecoration: "underline" }}>Lees hoe u de juiste aannemer kiest</Link>{" "}
           of bekijk ons{" "}
-          <Link to="/blog/totaalrenovatie-alles-wat-u-moet-weten" style={{ color: "inherit", textDecoration: "underline" }}>stappenplan voor een totaalrenovatie</Link>.
+          <Link to="/blog/totaalrenovatie-alles-wat-u-moet-weten" style={{ color: "inherit", textDecoration: "underline" }}>stappenplan voor een totaalrenovatie</Link>. Benieuwd hoe dat er in de praktijk uitziet?{" "}
+          <Link to="/projecten/keukenrenovatie-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk onze keukenrenovatie in Antwerpen</Link>.
         </>
       ),
     },
@@ -1621,7 +1622,12 @@ function Diensten() {
       img2: IMG.livingroom,
       intro: "De binnenafwerking bepaalt hoe uw woning aanvoelt. Reno Rangers verzorgt hoogwaardige binnenafwerking in Antwerpen.",
       items: ["Schilderwerken interieur", "Pleisterwerken en gyproc", "Vloeren en tegelwerk", "Plafondafwerking", "Decoratieve technieken", "Houtwerk en schrijnwerkerij"],
-      seo: "Wilt u uw interieur strak, modern en professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren en geschilderde plafonds tot perfect gelegde vloeren en tegels.",
+      seo: (
+        <>
+          Wilt u uw interieur strak, modern en professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren en geschilderde plafonds tot perfect gelegde vloeren en tegels.{" "}
+          <Link to="/projecten/living-binnenafwerking-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk een voorbeeld van onze binnenafwerking in Antwerpen</Link>.
+        </>
+      ),
     },
   ];
 
