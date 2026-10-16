@@ -754,6 +754,34 @@ const PROJECT_PAGES = [
     },
   },
   {
+    slug: "mortex-toilet-bornem",
+    title: "MORTEX TOILET",
+    location: "Bornem",
+    category: "MORTEX AFWERKING",
+    heroAfter: "/projects/project-mortex-toilet-bornem-after-1.webp",
+    heroBefore: "/projects/project-mortex-toilet-bornem-before-1.webp",
+    situatie: "In Bornem renoveerden we een verouderd toilet met witte metro tegels naar een strakke, luxueuze ruimte in beige mortex. De klant wou dezelfde warme sfeer als de bijhorende badkamer: mortex wanden, eiken meubel en mat zwart sanitair.",
+    werkzaamheden: [
+      "Volledige sloop van de bestaande betegeling en sanitair",
+      "Mortex aangebracht op alle wanden in warme beige tint",
+      "Wand-WC in mat zwart geplaatst met ingebouwde stortbak en zwarte bedieningsplaat",
+      "Compact eiken meubel met ronde zwarte opzetwastafel en zwarte kraan geïnstalleerd",
+      "Ronde LED spiegel gemonteerd",
+      "Inbouwspots in het plafond aangebracht",
+    ],
+    resultaat: "Een compacte maar bijzonder sfeervolle toiletruimte in beige mortex met mat zwart sanitair en eiken accenten. De ruimte vormt een perfect geheel met de bijhorende badkamer en straalt warmte en luxe uit.",
+    gallery: [
+      "/projects/project-mortex-toilet-bornem-before-1.webp",
+      "/projects/project-mortex-toilet-bornem-after-1.webp",
+    ],
+    seo: {
+      title: "Mortex Toilet Bornem | Reno Rangers Project",
+      description: "Toiletruimte gerenoveerd in Bornem naar beige mortex met mat zwart sanitair en eiken meubel door Reno Rangers. Bekijk voor en na.",
+      ogTitle: "Mortex Toilet Bornem — Reno Rangers",
+      ogDescription: "Van verouderd betegeld toilet naar luxueuze mortex toiletruimte in Bornem. Bekijk het resultaat.",
+    },
+  },
+  {
     slug: "badkamerrenovatie-londerzeel",
     title: "BADKAMERRENOVATIE",
     location: "Londerzeel",
@@ -1960,6 +1988,14 @@ function Projecten() {
       d: "Volledige transformatie van een zolderbadkamer naar een warme beige mortex badkamer met eiken meubel en inloopdouche.",
     },
     {
+      t: "MORTEX TOILET",
+      loc: "Bornem",
+      slug: "mortex-toilet-bornem",
+      before: "/projects/project-mortex-toilet-bornem-before-1.webp",
+      after: "/projects/project-mortex-toilet-bornem-after-1.webp",
+      d: "Verouderde betegelde toiletruimte getransformeerd naar beige mortex met mat zwart sanitair en eiken meubel.",
+    },
+    {
       t: "BADKAMERRENOVATIE",
       loc: "Londerzeel",
       slug: "badkamerrenovatie-londerzeel",
@@ -2028,6 +2064,16 @@ function Projecten() {
         "/projects/project-mortex-bornem-vanity-detail.webp",
         "/projects/project-mortex-bornem-shower-detail.webp",
         "/projects/project-mortex-bornem-shower-close.webp",
+      ],
+    },
+    {
+      t: "MORTEX TOILET",
+      loc: "Bornem",
+      slug: "mortex-toilet-bornem",
+      c: "Mortex renovatie",
+      photos: [
+        "/projects/project-mortex-toilet-bornem-after-1.webp",
+        "/projects/project-mortex-toilet-bornem-before-1.webp",
       ],
     },
     {

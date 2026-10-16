@@ -36,6 +36,7 @@ const projectLinks = [
   { href: '/projecten/mortex-badkamer-merksem', text: 'Mortex Badkamer Merksem' },
   { href: '/projecten/mortex-badkamer-antwerpen', text: 'Mortex Badkamer Antwerpen' },
   { href: '/projecten/mortex-badkamer-bornem', text: 'Mortex Badkamer Bornem' },
+  { href: '/projecten/mortex-toilet-bornem', text: 'Mortex Toilet Bornem' },
   { href: '/projecten/volledige-badkamer-antwerpen', text: 'Volledige Badkamerrenovatie Antwerpen' },
   { href: '/projecten/badkamer-paars-meubel-merksem', text: 'Badkamer Paars Meubel Merksem' },
   { href: '/projecten/keukenrenovatie-antwerpen', text: 'Keukenrenovatie Antwerpen' },
@@ -233,6 +234,19 @@ const routes = [
     ],
   },
   {
+    route: '/projecten/mortex-toilet-bornem',
+    title: 'Mortex Toilet Bornem | Reno Rangers Project',
+    description: 'Toiletruimte in Bornem gerenoveerd naar warme beige mortex met mat zwart wand-WC, ronde zwarte opzetwastafel en eiken meubel door Reno Rangers. Bekijk voor en na.',
+    h1: 'Mortex Toilet in Bornem — Project door Reno Rangers',
+    bodyText: 'In Bornem renoveerde Reno Rangers een verouderde toiletruimte met witte metro tegels naar een strakke beige mortex ruimte. Een mat zwart wand-WC met ingebouwde stortbak en zwarte bedieningsplaat, een compact eiken meubel met ronde zwarte opzetwastafel en een ronde LED spiegel maken het geheel af. Inbouwspots in het plafond zorgen voor sfeervolle verlichting. De toiletruimte sluit perfect aan bij de bijhorende mortex badkamer in Bornem.',
+    links: [
+      ...mainLinks,
+      ...projectLinks.filter(l => l.href !== '/projecten/mortex-toilet-bornem'),
+      { href: '/contact', text: 'Offerte aanvragen' },
+      { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie aanvragen' },
+    ],
+  },
+  {
     route: '/projecten/badkamerrenovatie-londerzeel',
     title: 'Badkamerrenovatie Londerzeel | Reno Rangers Project',
     description: 'Badkamerrenovatie in Londerzeel door Reno Rangers: van verouderde donkere badkamer naar lichte, moderne ruimte met nieuw sanitair en kwaliteitsvolle tijdloze afwerking.',
@@ -336,6 +350,8 @@ function buildHtml(routeData) {
   html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?\s*>/i, `<meta name="twitter:title" content="${esc(title)}" />`);
   html = html.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?\s*>/i, `<meta name="twitter:description" content="${esc(description)}" />`);
   html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?\s*>/i, '<meta name="robots" content="index, follow" />');
+  html = html.replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?\s*>/i, '<meta property="og:type" content="website" />');
+  html = html.replace(/<meta\s+name="twitter:card"\s+content="[^"]*"\s*\/?\s*>/i, '<meta name="twitter:card" content="summary_large_image" />');
 
   // Inject SEO prerender block: H1, descriptive text, and internal/external links.
   // Uses sr-only positioning so it doesn't affect visual layout once React hydrates.
