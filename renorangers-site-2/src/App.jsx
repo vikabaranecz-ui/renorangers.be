@@ -2246,11 +2246,11 @@ function ProjectDetail() {
           <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0" }}>
             <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
               <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", background: C.black }}>
-                <img src={project.heroBefore} alt={project.title + " voor"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={project.heroBefore} alt={project.title + " voor"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
                 <span style={{ position: "absolute", top: 14, left: 14, background: "rgba(10,10,10,0.85)", color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, padding: "6px 14px" }}>VOOR</span>
               </div>
               <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", background: C.black }}>
-                <img src={project.heroAfter} alt={project.title + " na"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={project.heroAfter} alt={project.title + " na"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
                 <span style={{ position: "absolute", top: 14, right: 14, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, padding: "6px 14px" }}>NA</span>
               </div>
             </div>
