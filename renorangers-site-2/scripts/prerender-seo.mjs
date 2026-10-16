@@ -35,6 +35,7 @@ const projectLinks = [
   { href: '/projecten/badkamerrenovatie-antwerpen', text: 'Badkamerrenovatie Antwerpen' },
   { href: '/projecten/mortex-badkamer-merksem', text: 'Mortex Badkamer Merksem' },
   { href: '/projecten/mortex-badkamer-antwerpen', text: 'Mortex Badkamer Antwerpen' },
+  { href: '/projecten/mortex-badkamer-bornem', text: 'Mortex Badkamer Bornem' },
   { href: '/projecten/volledige-badkamer-antwerpen', text: 'Volledige Badkamerrenovatie Antwerpen' },
   { href: '/projecten/badkamer-paars-meubel-merksem', text: 'Badkamer Paars Meubel Merksem' },
   { href: '/projecten/keukenrenovatie-antwerpen', text: 'Keukenrenovatie Antwerpen' },
@@ -242,6 +243,19 @@ const routes = [
       ...projectLinks.filter(l => l.href !== '/projecten/badkamerrenovatie-londerzeel'),
       { href: '/contact', text: 'Offerte aanvragen' },
       { href: 'https://energiesparen.be', text: 'Energiepremies' },
+    ],
+  },
+  {
+    route: '/projecten/mortex-badkamer-bornem',
+    title: 'Mortex Badkamer Bornem | Reno Rangers Project',
+    description: 'Volledige renovatie van een zolderbadkamer in Bornem naar warme beige mortex met eiken maatwerk meubel, inloopdouche en organische spiegel. Bekijk voor en na door Reno Rangers.',
+    h1: 'Mortex Badkamer in Bornem — Project door Reno Rangers',
+    bodyText: 'In Bornem transformeerde Reno Rangers een verouderde zolderbadkamer volledig. De oude witte tegels, het bad en de blauwe vloertegels maakten plaats voor warme beige mortex op alle wanden — ook in de douchezone. Een eiken maatwerk meubel met geïntegreerde wastafel en een organische ovale spiegel geven de ruimte een luxueuze uitstraling. De inloopdouche met glazen wand en ronde regen douchekop maakt het plaatje compleet. Vraag een offerte aan voor uw eigen mortex badkamer.',
+    links: [
+      ...mainLinks,
+      ...projectLinks.filter(l => l.href !== '/projecten/mortex-badkamer-bornem'),
+      { href: '/contact', text: 'Offerte aanvragen' },
+      { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie aanvragen' },
     ],
   },
   // ── BLOG POSTS ──
