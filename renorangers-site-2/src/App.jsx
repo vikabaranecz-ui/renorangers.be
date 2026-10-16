@@ -1954,6 +1954,14 @@ function Projecten() {
       d: "Totaalrenovatie met nieuwe douchezone, tegelwerk en maatwerk.",
     },
     {
+      t: "MORTEX BADKAMER",
+      loc: "Bornem",
+      slug: "mortex-badkamer-bornem",
+      before: "/projects/project-mortex-bornem-before-1.webp",
+      after: "/projects/project-mortex-bornem-after-1.webp",
+      d: "Volledige transformatie van een zolderbadkamer naar een warme beige mortex badkamer met eiken meubel en inloopdouche.",
+    },
+    {
       t: "BADKAMERRENOVATIE",
       loc: "Londerzeel",
       slug: "badkamerrenovatie-londerzeel",
@@ -2009,6 +2017,20 @@ function Projecten() {
         "/projects/project-kitchen-3.webp",
         "/projects/project-kitchen-1.webp",
         "/projects/project-kitchen-2.webp",
+      ],
+    },
+    {
+      t: "MORTEX BADKAMER",
+      loc: "Bornem",
+      slug: "mortex-badkamer-bornem",
+      c: "Mortex renovatie",
+      photos: [
+        "/projects/project-mortex-bornem-after-1.webp",
+        "/projects/project-mortex-bornem-after-2.webp",
+        "/projects/project-mortex-bornem-vanity-detail.webp",
+        "/projects/project-mortex-bornem-shower-detail.webp",
+        "/projects/project-mortex-bornem-shower-close.webp",
+        "/projects/project-mortex-bornem-radiator.webp",
       ],
     },
     {
