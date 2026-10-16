@@ -743,10 +743,8 @@ const PROJECT_PAGES = [
       "/projects/project-mortex-bornem-before-1.webp",
       "/projects/project-mortex-bornem-after-1.webp",
       "/projects/project-mortex-bornem-vanity-detail.webp",
-      "/projects/project-mortex-bornem-vanity-close.webp",
       "/projects/project-mortex-bornem-shower-detail.webp",
       "/projects/project-mortex-bornem-shower-close.webp",
-      "/projects/project-mortex-bornem-radiator.webp",
     ],
     seo: {
       title: "Mortex Badkamer Bornem | Reno Rangers Project",
@@ -2030,7 +2028,6 @@ function Projecten() {
         "/projects/project-mortex-bornem-vanity-detail.webp",
         "/projects/project-mortex-bornem-shower-detail.webp",
         "/projects/project-mortex-bornem-shower-close.webp",
-        "/projects/project-mortex-bornem-radiator.webp",
       ],
     },
     {
