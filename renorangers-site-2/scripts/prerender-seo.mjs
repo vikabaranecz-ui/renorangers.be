@@ -21,6 +21,15 @@ function stripUnverifiedBusinessFacts(html) {
   return out;
 }
 
+// The FAQPage JSON-LD only matches the visible FAQ accordion on the bathroom-cost
+// blog post. Strip it from every other route so structured data never claims
+// content that isn't actually visible on that page.
+const FAQ_PAGE_ROUTE = '/blog/wat-kost-badkamerrenovatie-antwerpen-2026';
+function stripFaqPageExceptRoute(html, route) {
+  if (route === FAQ_PAGE_ROUTE) return html;
+  return html.replace(/\s*<!-- JSON-LD: FAQPage[\s\S]*?-->[\s\S]*?<script type="application\/ld\+json">[\s\S]*?"@type":\s*"FAQPage"[\s\S]*?<\/script>/i, '');
+}
+
 // Shared link sets
 const mainLinks = [
   { href: '/', text: 'Home' },
@@ -338,7 +347,7 @@ function buildLinksHtml(links) {
 function buildHtml(routeData) {
   const { route, title, description, h1, bodyText, links } = routeData;
   const canonical = route === '/' ? `${origin}/` : `${origin}${route}`;
-  let html = stripUnverifiedBusinessFacts(stripUnverifiedSearchAction(baseHtml));
+  let html = stripFaqPageExceptRoute(stripUnverifiedBusinessFacts(stripUnverifiedSearchAction(baseHtml)), route);
 
   // Update meta tags
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
