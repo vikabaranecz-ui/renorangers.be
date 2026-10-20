@@ -50,6 +50,7 @@ const PAGE_PATHS = Object.freeze({
   blog: "/blog",
   contact: "/contact",
   privacy: "/privacybeleid",
+  architecten: "/aannemer-voor-architecten",
 });
 const BLOG_POSTS = [
   {
@@ -525,6 +526,12 @@ const ROUTE_SEO = Object.freeze({
     description: "Lees het privacybeleid van Reno Rangers en ontdek hoe we persoonsgegevens verwerken en beschermen.",
     ogTitle: "Privacybeleid — Reno Rangers",
     ogDescription: "Informatie over privacy, gegevensverwerking en uw rechten.",
+  },
+  [PAGE_PATHS.architecten]: {
+    title: "Aannemer voor Architecten & Interieurarchitecten Antwerpen | Reno Rangers",
+    description: "Reno Rangers is uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen: uitvoering volgens tekeningen, één aanspreekpunt en duidelijke coördinatie.",
+    ogTitle: "Aannemer voor Architecten & Interieurarchitecten — Reno Rangers",
+    ogDescription: "Uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen en omgeving.",
   },
 });
 
@@ -1755,6 +1762,125 @@ function Diensten() {
 }
 
 /* ══════════════════════════════════
+   AANNEMER VOOR ARCHITECTEN PAGE (B2B)
+   ══════════════════════════════════ */
+function ArchitectenPartner() {
+  var go = useGoToPage();
+
+  var werkwijze = [
+    { n: "01", t: "TEKENINGEN & LASTENBOEK", d: "Wij werken de uitvoering uit op basis van de plannen en specificaties die u als architect of interieurarchitect aanlevert." },
+    { n: "02", t: "PLANNING & FASERING", d: "Een duidelijke planning, afgestemd op uw projecttijdlijn en de verwachtingen van de eindklant." },
+    { n: "03", t: "ÉÉN AANSPREEKPUNT", d: "Eén vast contactpersoon coördineert de uitvoering op de werf en stemt rechtstreeks met u af." },
+    { n: "04", t: "COMMUNICATIE", d: "Proactieve updates bij voortgang, wijzigingen of aandachtspunten tijdens de werken." },
+    { n: "05", t: "OPLEVERING", d: "Nette oplevering volgens de afgesproken tekeningen en specificaties, met gezamenlijk nazicht." },
+  ];
+
+  return (
+    <section style={{ paddingTop: 72 }}>
+      <div style={{ background: C.black, padding: "76px 0 56px" }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>VOOR ARCHITECTEN &amp; INTERIEURARCHITECTEN</span>
+            <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(38px, 5vw, 70px)", color: C.white, lineHeight: 0.97, margin: "10px 0 18px" }}>
+              UITVOERINGSPARTNER VOOR <span style={{ color: C.red }}>ARCHITECTEN &amp; INTERIEURARCHITECTEN</span> IN ANTWERPEN
+            </h1>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 620, lineHeight: 1.7 }}>
+              Reno Rangers werkt als uitvoerende aannemer samen met architecten en interieurarchitecten in Antwerpen en omgeving (±25 km), op basis van uw tekeningen en specificaties.
+            </p>
+          </Reveal>
+        </div>
+      </div>
+      <Marquee items={["TOTAALRENOVATIE", "BADKAMERRENOVATIE", "BINNENAFWERKING", "UITVOERING OP MAAT", "COÖRDINATIE", "OPLEVERING"]} />
+
+      <div style={{ padding: "90px 0", background: C.white }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <div className="svg2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
+            <Reveal>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>SAMENWERKING</span>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(30px, 3.6vw, 48px)", color: C.black, lineHeight: 0.95, margin: "6px 0 18px" }}>
+                UITVOERING VOLGENS UW PLANNEN
+              </h2>
+              <div style={{ width: 44, height: 3, background: C.red, marginBottom: 20 }} />
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
+                Als architect of interieurarchitect bepaalt u het ontwerp; Reno Rangers zorgt voor de uitvoering op de werf. Wij werken op basis van de tekeningen, materialenlijst en specificaties die u aanlevert, en stemmen praktische uitvoeringsvragen rechtstreeks met u af.
+              </p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: 0 }}>
+                Dit geldt voor totaalrenovaties, badkamerrenovaties en binnenafwerking van woningen en appartementen in Antwerpen en omgeving, in opdracht van uw klant.
+              </p>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <div style={{ overflow: "hidden", aspectRatio: "4/5", background: C.dark }}>
+                <img src={IMG.livingroom} alt="Uitvoering van een renovatieproject volgens plannen van een architect" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ padding: "90px 0", background: C.off }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <STitle label="HOE WIJ SAMENWERKEN" title={"VAN TEKENING TOT\nOPLEVERING"} />
+          <div className="stg" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0 }}>
+            {werkwijze.map(function (step, i) {
+              return (
+                <Reveal key={step.n} delay={i * 0.08}>
+                  <div style={{ padding: "28px 20px", borderLeft: i > 0 ? "1px solid " + C.ltGray : "none", height: "100%" }}>
+                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 44, color: C.red, lineHeight: 1, display: "block" }}>{step.n}</span>
+                    <div style={{ width: 26, height: 2, background: C.black, margin: "14px 0" }} />
+                    <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 1.5, color: C.black, margin: "0 0 8px" }}>{step.t}</h3>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, lineHeight: 1.6, color: C.gray, margin: 0 }}>{step.d}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div style={{ padding: "90px 0", background: C.white }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px" }}>
+          <STitle label="WAT U VAN ONS MAG VERWACHTEN" title={"DUIDELIJKE AFSPRAKEN,\nGEEN VERRASSINGEN"} />
+          <Reveal delay={0.1}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 28px" }}>
+              {[
+                "Uitvoering volgens de aangeleverde tekeningen en specificaties",
+                "Eén vast aanspreekpunt voor coördinatie op de werf",
+                "Transparante planning en tijdige communicatie bij wijzigingen",
+                "Gedetailleerde offerte zonder verborgen kosten",
+                "Werkgebied Antwerpen en omgeving (±25 km)",
+                "Oplevering met gezamenlijk nazicht",
+              ].map(function (item) {
+                return (
+                  <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "6px 0" }}>
+                    <div style={{ width: 7, height: 7, background: C.red, flexShrink: 0, marginTop: 7 }} />
+                    <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.char, lineHeight: 1.6 }}>{item}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <section style={{ padding: "90px 0", background: C.red, textAlign: "center" }}>
+        <div style={{ maxWidth: 750, margin: "0 auto", padding: "0 32px" }}>
+          <Reveal>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(34px, 4.6vw, 56px)", color: C.white, lineHeight: 0.95, margin: "0 0 18px" }}>
+              EEN PROJECT BESPREKEN?
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.8)", margin: "0 0 32px", lineHeight: 1.7 }}>
+              Neem contact op om uw tekeningen en planning vrijblijvend te bespreken.
+            </p>
+            <Btn label="NEEM CONTACT OP" onClick={function () { go("contact"); }} />
+          </Reveal>
+        </div>
+      </section>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════
    PRIVACY POLICY PAGE
    ══════════════════════════════════ */
 function Privacy() {
@@ -1914,8 +2040,13 @@ function Over() {
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
                 Of u nu een huiseigenaar bent die zijn eerste woning verbouwt, een gezin dat meer comfort zoekt, of een investeerder die efficiëntie verwacht — wij zorgen voor een zorgeloze aanpak van A tot Z.
               </p>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
                 Wat ons onderscheidt? We doen het goed vanaf de eerste keer. Geen fouten, geen herstellingen, geen verrassingen.
+              </p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>
+                Bent u architect of interieurarchitect? Bekijk hoe wij als{" "}
+                <Link to={PAGE_PATHS.architecten} style={{ color: "inherit", textDecoration: "underline" }}>uitvoeringspartner voor architecten en interieurarchitecten</Link>{" "}
+                samenwerken op basis van uw tekeningen en planning.
               </p>
               <Btn label="NEEM CONTACT OP" onClick={function () { go("contact"); }} />
             </Reveal>
@@ -2837,6 +2968,7 @@ function Foot() {
     { l: "Projecten", to: PAGE_PATHS.projecten },
     { l: "Blog", to: PAGE_PATHS.blog },
     { l: "Contact", to: PAGE_PATHS.contact },
+    { l: "Voor Architecten", to: PAGE_PATHS.architecten },
   ];
   var serviceLinks = ["Totaalrenovatie", "Badkamerrenovatie", "Binnenafwerking", "Schilderwerken", "Vloeren & tegels"];
 
@@ -3209,6 +3341,7 @@ export default function App() {
         <Route path={PAGE_PATHS.blog} element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path={PAGE_PATHS.privacy} element={<Privacy />} />
+        <Route path={PAGE_PATHS.architecten} element={<ArchitectenPartner />} />
         <Route path="/over" element={<Navigate to={PAGE_PATHS.over} replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
