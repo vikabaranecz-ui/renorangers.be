@@ -13,12 +13,11 @@ function stripUnverifiedSearchAction(html) {
   return html.replace(/\s*<!-- JSON-LD: WebSite \+ SearchAction -->[\s\S]*?<script type="application\/ld\+json">[\s\S]*?"potentialAction"[\s\S]*?<\/script>/i, '');
 }
 
+// The registered business address (Sint-Pieters-Leeuw) differs from the
+// marketed Antwerpen service area, so address/geo are stripped rather than
+// published as if the business were physically located in Antwerpen.
 function stripUnverifiedBusinessFacts(html) {
-  let out = html;
-  out = out.replace(/\s*"address"\s*:\s*\{[\s\S]*?\}\s*,\s*"geo"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
-  out = out.replace(/\s*"aggregateRating"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
-  out = out.replace(/\s*"priceRange"\s*:\s*"[^"]*"\s*,/i, '');
-  return out;
+  return html.replace(/\s*"address"\s*:\s*\{[\s\S]*?\}\s*,\s*"geo"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
 }
 
 // The FAQPage JSON-LD only matches the visible FAQ accordion on the bathroom-cost
@@ -88,7 +87,7 @@ const routes = [
     title: 'Totaalrenovatie & Renovatiediensten Antwerpen | Reno Rangers',
     description: 'Totaalrenovatie Antwerpen voor woning, appartement of investeringspand: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.',
     h1: 'Renovatiediensten van Reno Rangers',
-    bodyText: 'Reno Rangers biedt een breed aanbod aan renovatiediensten in Antwerpen en omgeving, voor zowel een woning als een appartement. Onze hoofddiensten zijn badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking. Ook voor een investeringspand of een woning die u wilt verhuren, nemen wij de volledige renovatie uit handen. Bij elke opdracht werken wij met een vaste prijs, één aanspreekpunt en een transparante planning. Wij nemen de volledige coördinatie op ons, van ontwerp tot oplevering. Neem contact op voor een gratis offerte.',
+    bodyText: 'Reno Rangers biedt een breed aanbod aan renovatiediensten in Antwerpen en omgeving, voor zowel een woning als een appartement. Onze hoofddiensten zijn badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking. Ook voor een appartement dat u wilt verhuren of een investeringspand dat u wilt doorverkopen, nemen wij de volledige renovatie uit handen — met dezelfde vaste prijs, één aanspreekpunt en transparante planning als bij elke andere opdracht. Wij nemen de volledige coördinatie op ons, van ontwerp tot oplevering. Neem contact op voor een gratis offerte.',
     links: [...mainLinks, ...projectLinks.slice(0, 3),
       { href: '/', text: 'Renovatiebedrijf Antwerpen' },
       { href: '/badkamerrenovatie-antwerpen', text: 'Badkamerrenovatie Antwerpen' },
