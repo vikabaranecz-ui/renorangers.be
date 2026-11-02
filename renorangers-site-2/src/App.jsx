@@ -1679,6 +1679,7 @@ function Diensten() {
           <Link to="/projecten/keukenrenovatie-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk onze keukenrenovatie in Antwerpen</Link>.
         </>
       ),
+      seo2: "Renoveert u uw eigen woning in Antwerpen, een appartement dat u wilt verhuren, of een investeringspand dat u wilt doorverkopen? Voor elk projecttype werken wij op dezelfde manier: één duidelijke offerte, een vaste prijs en één aanspreekpunt dat de volledige planning bewaakt. Voor een renovatie voor verhuur kiezen wij samen met u voor duurzame, onderhoudsvriendelijke materialen en een praktische indeling die aantrekkelijk blijft voor toekomstige bewoners. Bij een totaalrenovatie van een appartement in Antwerpen houden wij rekening met de praktische kant van een meergezinswoning, zoals toegang tot het gebouw en de timing van leveringen.",
     },
     {
       t: "BINNENAFWERKING",
@@ -1733,6 +1734,7 @@ function Diensten() {
                     })}
                   </div>
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>{s.seo}</p>
+                  {s.seo2 && <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.75, color: C.gray, margin: "-8px 0 28px" }}>{s.seo2}</p>}
                   <Btn label="GRATIS OFFERTE" onClick={function () { go("contact"); }} />
                 </Reveal>
                 <Reveal delay={0.12} style={{ order: idx % 2 === 0 ? 1 : 0 }}>
