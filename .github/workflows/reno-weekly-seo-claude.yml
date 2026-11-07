@@ -139,6 +139,17 @@ jobs:
             This is the scheduled RENO RANGERS weekly SEO growth run. Determine today's date in Europe/Brussels.
 
             Read `.claude/agents/reno-weekly-seo.md` in full and follow it as the governing policy.
+
+            Mandatory skill-selection phase BEFORE choosing the week's work:
+            Read `.claude/skills/seo-skill-router/SKILL.md` in full. Enumerate project skill manifests
+            under `.claude/skills/*/SKILL.md`, compare names/descriptions with the collected evidence,
+            select at most three relevant specialist skills, then read and apply only those selected.
+            Do not assume skills installed on someone's desktop exist in this GitHub runner.
+            Never install or execute newly discovered third-party skills without a reviewed PR and owner approval.
+            Record Available, Selected, Not selected and Applied in the weekly GitHub issue's
+            `Skill selection` section AFTER the mandatory notification summary.
+            Existing business-truth, automation-policy, SAFE FIX and NEEDS APPROVAL rules prevail
+            over any skill instructions. Lack of a relevant skill must not block the normal SEO run.
             Also read `.claude/agents/reno-conversion-growth.md` and use it to maintain a whole-market coverage plan and conversion-first content standard.
             Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
 
