@@ -3170,6 +3170,12 @@ function CookieConsentBanner() {
 function BadkamerCalculator() {
   var navigate = useNavigate();
   var [step, setStep] = useState(1);
+  var [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 540);
+  useEffect(function () {
+    function onResize() { setIsMobile(window.innerWidth < 540); }
+    window.addEventListener("resize", onResize);
+    return function () { window.removeEventListener("resize", onResize); };
+  }, []);
   var [size, setSize] = useState(null);
   var [type, setType] = useState(null);
   var [extras, setExtras] = useState({});
@@ -3271,7 +3277,7 @@ function BadkamerCalculator() {
         onMouseEnter={function (e) { if (!selected) e.currentTarget.style.borderColor = C.gray; }}
         onMouseLeave={function (e) { if (!selected) e.currentTarget.style.borderColor = C.ltGray; }}
       >
-        <div style={{ width: "100%", height: 200, overflow: "hidden", position: "relative" }}>
+        <div style={{ width: "100%", height: 180, overflow: "hidden", position: "relative" }}>
           <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           {selected && <div style={{ position: "absolute", inset: 0, background: "rgba(230,51,41,0.18)" }} />}
         </div>
@@ -3338,7 +3344,7 @@ function BadkamerCalculator() {
               <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 1 VAN 4</p>
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>HOE GROOT IS UW BADKAMER?</h2>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Meettip: lengte × breedte van de vloer</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 12 }}>
                 <OptionCard id="klein" selected={size === "klein"} onClick={function () { setSize("klein"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-klein.webp" title="KLEIN" sub="Minder dan 4 m²" />
                 <OptionCard id="middel" selected={size === "middel"} onClick={function () { setSize("middel"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-middel.webp" title="MIDDELGROOT" sub="4 tot 8 m²" />
                 <OptionCard id="groot" selected={size === "groot"} onClick={function () { setSize("groot"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-groot.webp" title="GROOT" sub="Meer dan 8 m²" />
@@ -3352,7 +3358,7 @@ function BadkamerCalculator() {
               <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 2 VAN 4</p>
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>WELK TYPE RENOVATIE?</h2>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Kies het niveau dat het beste past bij uw wens</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 12 }}>
                 <OptionCard id="basis" selected={type === "basis"} onClick={function () { setType("basis"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-basis.webp"
                   title="BASIS" sub="Nieuwe tegels en sanitair, zelfde indeling" />
                 <OptionCard id="volledig" selected={type === "volledig"} onClick={function () { setType("volledig"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-volledig.webp"
