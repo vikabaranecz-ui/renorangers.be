@@ -1420,7 +1420,7 @@ function Home() {
 
               <Reveal delay={0.18}>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.55)", maxWidth: 460, margin: "0 0 36px" }}>
-                  {"Reno Rangers is uw renovatiebedrijf en aannemer in Antwerpen: \u00e9\u00e9n aanspreekpunt voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs. Duidelijke planning. Correcte oplevering."}
+                  {"Reno Rangers is renovatiebedrijf Antwerpen en aannemer renovatie Antwerpen in \u00e9\u00e9n: uw aanspreekpunt voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs. Duidelijke planning. Correcte oplevering."}
                 </p>
               </Reveal>
 
@@ -1511,7 +1511,7 @@ function Home() {
           <STitle label="WAAROM RENO RANGERS" title="RENOVEREN ZONDER STRESS" light />
           <div className="wg" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {[
-              { n: "01", t: "EEN AANSPREEKPUNT", d: "Als vast aannemer en renovatiebedrijf regelen wij alles. Eén contactpersoon voor al uw werken." },
+              { n: "01", t: "EEN AANSPREEKPUNT", d: "Als vaste aannemer en renovatiebedrijf in Antwerpen regelen wij alles. Eén contactpersoon voor al uw werken." },
               { n: "02", t: "VASTE PRIJS", d: "Wat we afspreken, betaalt u. Geen verborgen kosten of verrassingen." },
               { n: "03", t: "DUIDELIJKE PLANNING", d: "Transparante communicatie en heldere tijdslijn van begin tot eind." },
               { n: "04", t: "VAKMANSCHAP", d: "Ervaren vakmensen die het goed doen vanaf de eerste keer." },
