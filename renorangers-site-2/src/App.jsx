@@ -3234,7 +3234,7 @@ function BadkamerCalculator() {
     fd.append("naam", form.naam);
     fd.append("telefoon", form.telefoon);
     fd.append("email", form.email);
-    fd.append("bericht", form.bericht);
+    fd.append("postcode", form.bericht);
     fd.append("_subject", "Calculator lead — " + (size || "") + " " + (type || ""));
     fd.append("calculator_grootte", size || "");
     fd.append("calculator_type", type || "");
@@ -3393,23 +3393,17 @@ function BadkamerCalculator() {
                 Vul uw gegevens in en ontvang direct uw <strong style={{ color: C.black }}>persoonlijke kostenraming</strong> plus een gratis offerte op maat.
               </p>
               <form onSubmit={handleSubmit}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
-                  <div>
-                    <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>NAAM *</label>
-                    <input required value={form.naam} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { naam: e.target.value }); }); }} style={inputStyle} placeholder="Uw naam" />
-                  </div>
-                  <div>
-                    <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>TELEFOON *</label>
-                    <input required type="tel" value={form.telefoon} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { telefoon: e.target.value }); }); }} style={inputStyle} placeholder="+32 4xx xx xx xx" />
-                  </div>
+                <div style={{ marginBottom: 12 }}>
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>NAAM *</label>
+                  <input required value={form.naam} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { naam: e.target.value }); }); }} style={inputStyle} placeholder="Uw naam" />
                 </div>
                 <div style={{ marginBottom: 12 }}>
-                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>E-MAIL</label>
-                  <input type="email" value={form.email} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { email: e.target.value }); }); }} style={inputStyle} placeholder="uw@email.be" />
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>TELEFOON *</label>
+                  <input required type="tel" value={form.telefoon} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { telefoon: e.target.value }); }); }} style={inputStyle} placeholder="+32 4xx xx xx xx" />
                 </div>
                 <div style={{ marginBottom: 24 }}>
-                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>OPMERKINGEN</label>
-                  <textarea value={form.bericht} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { bericht: e.target.value }); }); }} style={Object.assign({}, inputStyle, { resize: "vertical", minHeight: 80 })} placeholder="Optioneel: extra info over uw project" />
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>POSTCODE *</label>
+                  <input required value={form.bericht} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { bericht: e.target.value }); }); }} style={inputStyle} placeholder="bv. 2000" maxLength={10} />
                 </div>
                 {status === "error" && (
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.red, marginBottom: 12 }}>Er is iets misgegaan. Probeer opnieuw of bel ons op {PHONE_NUMBER}.</p>
