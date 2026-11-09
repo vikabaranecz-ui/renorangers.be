@@ -134,6 +134,14 @@ const routes = [
     ],
   },
   {
+    route: '/badkamercalculator',
+    title: 'Badkamer Renovatie Calculator | Reno Rangers',
+    description: 'Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen en omgeving. Ontvang een nauwkeurige schatting op maat via onze online calculator.',
+    h1: 'Badkamer Renovatie Calculator',
+    bodyText: 'Gebruik onze gratis badkamer renovatie calculator om een realistische kostenraming te krijgen voor uw badkamerrenovatie in Antwerpen, Merksem, Bornem en omgeving. Selecteer de grootte van uw badkamer, het gewenste renovatietype en eventuele extra opties zoals mortex afwerking, inloopdouche of vloerverwarming. Binnen 2 minuten ontvangt u een indicatieve prijsraming. Reno Rangers — één aanspreekpunt voor uw volledige badkamerrenovatie. Vaste prijs op papier, geen meerwerken zonder akkoord.',
+    links: [{ href: '/', text: 'Home' }, { href: '/diensten', text: 'Diensten' }, { href: '/contact', text: 'Gratis offerte' }, { href: '/projecten', text: 'Onze projecten' }],
+  },
+  {
     route: '/privacybeleid',
     title: 'Privacybeleid | Reno Rangers',
     description: 'Lees het privacybeleid van Reno Rangers. Wij verwerken uw persoonsgegevens veilig en conform de Belgische en Europese privacywetgeving (AVG/GDPR).',

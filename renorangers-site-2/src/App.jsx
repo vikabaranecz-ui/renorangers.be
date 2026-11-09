@@ -50,6 +50,7 @@ const PAGE_PATHS = Object.freeze({
   blog: "/blog",
   contact: "/contact",
   privacy: "/privacybeleid",
+  calculator: "/badkamercalculator",
 });
 const BLOG_POSTS = [
   {
@@ -3155,6 +3156,324 @@ function CookieConsentBanner() {
   );
 }
 
+/* ══════════════════════════════════
+   BADKAMER CALCULATOR
+   ══════════════════════════════════ */
+function BadkamerCalculator() {
+  var navigate = useNavigate();
+  var [step, setStep] = useState(1);
+  var [size, setSize] = useState(null);
+  var [type, setType] = useState(null);
+  var [extras, setExtras] = useState({});
+  var [form, setForm] = useState({ naam: "", telefoon: "", email: "", bericht: "" });
+  var [status, setStatus] = useState("idle");
+
+  var BASE_PRICES = {
+    klein:  { basis: [3500, 7000],  volledig: [7000, 12000],  luxe: [12000, 20000] },
+    middel: { basis: [6500, 12000], volledig: [12000, 20000], luxe: [20000, 35000] },
+    groot:  { basis: [10000, 18000], volledig: [18000, 30000], luxe: [30000, 50000] },
+  };
+  var EXTRA_PRICES = {
+    mortex:         [2500, 5000],
+    inloopdouche:   [800,  2000],
+    ligbad:         [1500, 3000],
+    vloerverwarming:[800,  1800],
+    maatwerk:       [1500, 3500],
+    verlichting:    [400,  1200],
+  };
+  var EXTRA_LABELS = {
+    mortex:         "Mortex afwerking (i.p.v. tegels)",
+    inloopdouche:   "Inloopdouche",
+    ligbad:         "Vrijstaand ligbad",
+    vloerverwarming:"Vloerverwarming",
+    maatwerk:       "Maatwerk badkamermeubel",
+    verlichting:    "Inbouwverlichting & spots",
+  };
+
+  function calcPrice() {
+    if (!size || !type) return null;
+    var lo = BASE_PRICES[size][type][0];
+    var hi = BASE_PRICES[size][type][1];
+    Object.keys(extras).forEach(function (k) {
+      if (extras[k] && EXTRA_PRICES[k]) {
+        if (k === "inloopdouche" && type === "luxe") return;
+        lo += EXTRA_PRICES[k][0];
+        hi += EXTRA_PRICES[k][1];
+      }
+    });
+    return { lo: lo, hi: hi };
+  }
+
+  function fmt(n) {
+    return "€" + n.toLocaleString("nl-BE");
+  }
+
+  var price = calcPrice();
+  var TOTAL_STEPS = 4;
+
+  function toggleExtra(k) {
+    setExtras(function (prev) {
+      var next = Object.assign({}, prev);
+      next[k] = !prev[k];
+      return next;
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("sending");
+    var fd = new FormData();
+    fd.append("naam", form.naam);
+    fd.append("telefoon", form.telefoon);
+    fd.append("email", form.email);
+    fd.append("bericht", form.bericht);
+    fd.append("_subject", "Calculator lead — " + (size || "") + " " + (type || ""));
+    fd.append("calculator_grootte", size || "");
+    fd.append("calculator_type", type || "");
+    fd.append("calculator_extras", Object.keys(extras).filter(function (k) { return extras[k]; }).join(", "));
+    fd.append("calculator_schatting", price ? fmt(price.lo) + " – " + fmt(price.hi) : "");
+    try {
+      var res = await fetch("https://formspree.io/f/xgopeqeb", { method: "POST", body: fd, headers: { Accept: "application/json" } });
+      if (res.ok) {
+        setStatus("done");
+        pushDataLayerEvent("generate_lead", { form_name: "calculator", lead_source: "formspree" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  }
+
+  var cardBase = {
+    border: "2px solid " + C.ltGray,
+    borderRadius: 0,
+    padding: "24px 20px",
+    cursor: "pointer",
+    transition: "border-color .2s, background .2s",
+    textAlign: "center",
+    flex: 1,
+    minWidth: 0,
+  };
+  var cardSelected = { borderColor: C.red, background: "#FFF5F5" };
+
+  function OptionCard({ id, selected, onClick, icon, title, sub }) {
+    return (
+      <div
+        onClick={onClick}
+        style={Object.assign({}, cardBase, selected ? cardSelected : {})}
+        onMouseEnter={function (e) { if (!selected) e.currentTarget.style.borderColor = C.gray; }}
+        onMouseLeave={function (e) { if (!selected) e.currentTarget.style.borderColor = C.ltGray; }}
+      >
+        <div style={{ fontSize: 32, marginBottom: 10 }}>{icon}</div>
+        <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, letterSpacing: 2, color: selected ? C.red : C.black, marginBottom: 6 }}>{title}</div>
+        {sub && <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.5 }}>{sub}</div>}
+        {selected && <div style={{ width: 24, height: 3, background: C.red, margin: "12px auto 0" }} />}
+      </div>
+    );
+  }
+
+  function CheckBox({ id, label, checked, onChange }) {
+    return (
+      <label style={{ display: "flex", alignItems: "flex-start", gap: 12, cursor: "pointer", padding: "12px 16px", border: "1px solid " + (checked ? C.red : C.ltGray), background: checked ? "#FFF5F5" : C.white, transition: "border-color .2s" }}>
+        <div style={{ width: 20, height: 20, minWidth: 20, border: "2px solid " + (checked ? C.red : C.ltGray), background: checked ? C.red : "transparent", display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1, transition: "all .15s" }}>
+          {checked && <span style={{ color: C.white, fontSize: 12, lineHeight: 1 }}>✓</span>}
+        </div>
+        <div>
+          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: C.black }}>{label}</div>
+          {EXTRA_PRICES[id] && <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, marginTop: 2 }}>+ {fmt(EXTRA_PRICES[id][0])} – {fmt(EXTRA_PRICES[id][1])}</div>}
+        </div>
+        <input type="checkbox" checked={checked} onChange={onChange} style={{ display: "none" }} />
+      </label>
+    );
+  }
+
+  var inputStyle = {
+    width: "100%", padding: "13px 14px", border: "1px solid " + C.ltGray,
+    fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.black,
+    outline: "none", boxSizing: "border-box", background: C.white,
+  };
+
+  return (
+    <div style={{ background: C.off, minHeight: "100vh", paddingTop: 72 }}>
+      {/* Hero */}
+      <div style={{ background: C.black, padding: "56px 24px 48px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, display: "block", marginBottom: 10 }}>GRATIS TOOL</span>
+          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(36px,6vw,72px)", color: C.white, lineHeight: 0.92, margin: "0 0 16px" }}>
+            BADKAMER<br /><span style={{ color: C.red }}>RENOVATIE</span> CALCULATOR
+          </h1>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.65)", margin: 0, maxWidth: 500, lineHeight: 1.6 }}>
+            Bereken in 2 minuten een realistische kostenraming voor uw badkamerrenovatie in Antwerpen en omgeving.
+          </p>
+        </div>
+      </div>
+
+      {/* Card */}
+      <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 16px 80px" }}>
+        <div style={{ background: C.white, borderTop: "4px solid " + C.red, padding: "clamp(24px, 5vw, 48px)" }}>
+
+          {/* Progress */}
+          <div style={{ display: "flex", gap: 6, marginBottom: 36 }}>
+            {[1, 2, 3, 4].map(function (s) {
+              return (
+                <div key={s} style={{ flex: 1, height: 4, background: s <= step ? C.red : C.ltGray, transition: "background .3s" }} />
+              );
+            })}
+          </div>
+
+          {/* STEP 1 — SIZE */}
+          {step === 1 && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 1 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>HOE GROOT IS UW BADKAMER?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Meettip: lengte × breedte van de vloer</p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <OptionCard id="klein" selected={size === "klein"} onClick={function () { setSize("klein"); }} icon="🚿" title="KLEIN" sub="Minder dan 4 m²" />
+                <OptionCard id="middel" selected={size === "middel"} onClick={function () { setSize("middel"); }} icon="🛁" title="MIDDELGROOT" sub="4 tot 8 m²" />
+                <OptionCard id="groot" selected={size === "groot"} onClick={function () { setSize("groot"); }} icon="🏠" title="GROOT" sub="Meer dan 8 m²" />
+              </div>
+            </div>
+          )}
+
+          {/* STEP 2 — TYPE */}
+          {step === 2 && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 2 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>WELK TYPE RENOVATIE?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Kies het niveau dat het beste past bij uw wens</p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <OptionCard id="basis" selected={type === "basis"} onClick={function () { setType("basis"); }} icon="🔧"
+                  title="BASIS" sub="Nieuwe tegels en sanitair, zelfde indeling" />
+                <OptionCard id="volledig" selected={type === "volledig"} onClick={function () { setType("volledig"); }} icon="🏗️"
+                  title="VOLLEDIG" sub="Complete renovatie, nieuwe indeling mogelijk" />
+                <OptionCard id="luxe" selected={type === "luxe"} onClick={function () { setType("luxe"); }} icon="✨"
+                  title="LUXE" sub="Premium afwerking, mortex of exclusieve tegels" />
+              </div>
+            </div>
+          )}
+
+          {/* STEP 3 — EXTRAS */}
+          {step === 3 && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 3 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>WELKE EXTRA'S WENST U?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 24px" }}>Optioneel — selecteer wat op u van toepassing is</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
+                {Object.keys(EXTRA_LABELS).map(function (k) {
+                  return (
+                    <CheckBox key={k} id={k} label={EXTRA_LABELS[k]} checked={!!extras[k]} onChange={function () { toggleExtra(k); }} />
+                  );
+                })}
+              </div>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, marginTop: 16, lineHeight: 1.5 }}>
+                * Prijzen zijn richtprijzen inclusief arbeid en standaard materialen. Exacte prijs na gratis bezoek ter plaatse.
+              </p>
+            </div>
+          )}
+
+          {/* STEP 4 — RESULT + FORM */}
+          {step === 4 && status !== "done" && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>UW SCHATTING</p>
+              {price && (
+                <div style={{ background: C.black, padding: "28px 24px", marginBottom: 28 }}>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: 1, marginBottom: 6 }}>GERAAMDE KOSTPRIJS</div>
+                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px,6vw,56px)", color: C.white, lineHeight: 1 }}>
+                    {fmt(price.lo)} <span style={{ color: C.gray, fontSize: "0.6em" }}>–</span> {fmt(price.hi)}
+                  </div>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 10, lineHeight: 1.5 }}>
+                    Gebaseerd op: {size === "klein" ? "kleine badkamer" : size === "middel" ? "middelgrote badkamer" : "grote badkamer"} · {type === "basis" ? "basisrenovatie" : type === "volledig" ? "volledige renovatie" : "luxerenovatie"}
+                    {Object.keys(extras).filter(function (k) { return extras[k]; }).length > 0 && " · " + Object.keys(extras).filter(function (k) { return extras[k]; }).map(function (k) { return EXTRA_LABELS[k]; }).join(", ")}
+                  </div>
+                </div>
+              )}
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 24px", lineHeight: 1.6 }}>
+                Dit is een vrijblijvende schatting. Vul uw gegevens in voor een <strong style={{ color: C.black }}>gratis nauwkeurige offerte</strong> op maat van uw badkamer.
+              </p>
+              <form onSubmit={handleSubmit}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+                  <div>
+                    <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>NAAM *</label>
+                    <input required value={form.naam} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { naam: e.target.value }); }); }} style={inputStyle} placeholder="Uw naam" />
+                  </div>
+                  <div>
+                    <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>TELEFOON *</label>
+                    <input required type="tel" value={form.telefoon} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { telefoon: e.target.value }); }); }} style={inputStyle} placeholder="+32 4xx xx xx xx" />
+                  </div>
+                </div>
+                <div style={{ marginBottom: 12 }}>
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>E-MAIL</label>
+                  <input type="email" value={form.email} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { email: e.target.value }); }); }} style={inputStyle} placeholder="uw@email.be" />
+                </div>
+                <div style={{ marginBottom: 24 }}>
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>OPMERKINGEN</label>
+                  <textarea value={form.bericht} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { bericht: e.target.value }); }); }} style={Object.assign({}, inputStyle, { resize: "vertical", minHeight: 80 })} placeholder="Optioneel: extra info over uw project" />
+                </div>
+                {status === "error" && (
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.red, marginBottom: 12 }}>Er is iets misgegaan. Probeer opnieuw of bel ons op {PHONE_NUMBER}.</p>
+                )}
+                <button type="submit" disabled={status === "sending"} style={{ width: "100%", background: C.red, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, letterSpacing: 3, padding: "18px 24px", opacity: status === "sending" ? 0.7 : 1 }}>
+                  {status === "sending" ? "VERZENDEN…" : "ONTVANG GRATIS OFFERTE"}
+                </button>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: C.gray, marginTop: 10, textAlign: "center" }}>
+                  Geen verplichtingen. Wij contacteren u binnen 24 uur.
+                </p>
+              </form>
+            </div>
+          )}
+
+          {/* SUCCESS */}
+          {step === 4 && status === "done" && (
+            <div style={{ textAlign: "center", padding: "24px 0" }}>
+              <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px,4vw,42px)", color: C.black, margin: "0 0 12px" }}>AANVRAAG ONTVANGEN!</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.gray, lineHeight: 1.7, margin: "0 0 28px" }}>
+                Bedankt, {form.naam || "u"}! Wij contacteren u zo snel mogelijk voor een gratis bezoek ter plaatse en een nauwkeurige offerte.
+              </p>
+              {price && (
+                <div style={{ background: C.off, padding: "16px 20px", marginBottom: 24, borderLeft: "3px solid " + C.red }}>
+                  <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray }}>Uw schatting: </span>
+                  <strong style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, color: C.black }}>{fmt(price.lo)} – {fmt(price.hi)}</strong>
+                </div>
+              )}
+              <button onClick={function () { navigate(PAGE_PATHS.contact); }} style={{ background: C.black, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 3, padding: "15px 32px" }}>
+                BEKIJK ONZE PROJECTEN
+              </button>
+            </div>
+          )}
+
+          {/* NAV BUTTONS */}
+          {status !== "done" && (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 36, paddingTop: 24, borderTop: "1px solid " + C.ltGray }}>
+              {step > 1
+                ? <button onClick={function () { setStep(step - 1); }} style={{ background: "transparent", color: C.black, border: "1px solid " + C.ltGray, cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 3, padding: "13px 28px" }}>← VORIGE</button>
+                : <div />
+              }
+              {step < TOTAL_STEPS && (
+                <button
+                  onClick={function () { setStep(step + 1); }}
+                  disabled={(step === 1 && !size) || (step === 2 && !type)}
+                  style={{ background: C.red, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 3, padding: "13px 28px", opacity: ((step === 1 && !size) || (step === 2 && !type)) ? 0.4 : 1 }}
+                >
+                  VOLGENDE →
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Trust badges */}
+        <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center", padding: "24px 0", borderTop: "1px solid " + C.ltGray, marginTop: 2 }}>
+          {["✓ Vaste prijs", "✓ Gratis adviesgesprek", "✓ Geen verborgen kosten", "✓ Erkend renovatiebedrijf"].map(function (t) {
+            return <span key={t} style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray }}>{t}</span>;
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function NotFound() {
   var navigate = useNavigate();
 
@@ -3209,6 +3528,7 @@ export default function App() {
         <Route path={PAGE_PATHS.blog} element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path={PAGE_PATHS.privacy} element={<Privacy />} />
+        <Route path={PAGE_PATHS.calculator} element={<BadkamerCalculator />} />
         <Route path="/over" element={<Navigate to={PAGE_PATHS.over} replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
