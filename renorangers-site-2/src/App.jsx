@@ -834,7 +834,7 @@ const globalCSS = `
   @keyframes mL { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes mR { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   @media (max-width: 900px) {
-    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg, .sv2 { grid-template-columns: 1fr !important; }
+    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg, .sv2, .calc-cta-grid { grid-template-columns: 1fr !important; }
     .stg { grid-template-columns: 1fr 1fr !important; }
     .hi { display: none !important; }
     .dn { display: none !important; }
@@ -1264,6 +1264,7 @@ function Nav() {
     { to: PAGE_PATHS.over, l: "OVER ONS" },
     { to: PAGE_PATHS.projecten, l: "PROJECTEN" },
     { to: PAGE_PATHS.blog, l: "BLOG" },
+    { to: PAGE_PATHS.calculator, l: "CALCULATOR" },
     { to: PAGE_PATHS.contact, l: "CONTACT" },
   ];
 
@@ -1554,6 +1555,46 @@ function Home() {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* CALCULATOR CTA */}
+      <section style={{ padding: "90px 0", background: C.off }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", flexWrap: "wrap" }} className="calc-cta-grid">
+            <div>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, display: "block", marginBottom: 12 }}>GRATIS TOOL</span>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px,5vw,60px)", color: C.black, lineHeight: 0.92, margin: "0 0 16px" }}>
+                WAT KOST UW<br /><span style={{ color: C.red }}>BADKAMERRENOVATIE?</span>
+              </h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: C.gray, maxWidth: 480, lineHeight: 1.7, margin: "0 0 28px" }}>
+                Bereken in 2 minuten een realistische prijsschatting op maat — zonder verplichtingen. Van kleine badkamer tot luxe renovatie met mortex.
+              </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <Link to={PAGE_PATHS.calculator} style={{ background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 3, padding: "15px 32px", textDecoration: "none", display: "inline-block" }}>
+                  BEREKEN MIJN PRIJS →
+                </Link>
+                <Link to={PAGE_PATHS.contact} style={{ background: "transparent", color: C.black, fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 3, padding: "15px 32px", textDecoration: "none", display: "inline-block", border: "1px solid " + C.ltGray }}>
+                  GRATIS OFFERTE
+                </Link>
+              </div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, minWidth: 220 }}>
+              {[
+                ["Klein", "€4.500 – €15.000"],
+                ["Middel", "€7.500 – €27.000"],
+                ["Groot", "€11.000 – €42.000"],
+                ["Mortex +", "€2.800 – €3.800"],
+              ].map(function (r) {
+                return (
+                  <div key={r[0]} style={{ background: C.white, padding: "14px 16px", borderLeft: "3px solid " + C.red }}>
+                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2, color: C.gray, marginBottom: 4 }}>{r[0]}</div>
+                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: C.black }}>{r[1]}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
