@@ -3409,7 +3409,7 @@ function BadkamerCalculator() {
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.red, marginBottom: 12 }}>Er is iets misgegaan. Probeer opnieuw of bel ons op {PHONE_NUMBER}.</p>
                 )}
                 <button type="submit" disabled={status === "sending"} style={{ width: "100%", background: C.red, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, letterSpacing: 3, padding: "18px 24px", opacity: status === "sending" ? 0.7 : 1 }}>
-                  {status === "sending" ? "VERZENDEN…" : "ONTVANG GRATIS OFFERTE"}
+                  {status === "sending" ? "BEREKENEN…" : "BEKIJK MIJN PRIJS →"}
                 </button>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: C.gray, marginTop: 10, textAlign: "center" }}>
                   Geen verplichtingen. Wij contacteren u binnen 24 uur.
