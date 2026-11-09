@@ -51,6 +51,7 @@ const PAGE_PATHS = Object.freeze({
   contact: "/contact",
   privacy: "/privacybeleid",
   architecten: "/aannemer-voor-architecten",
+  calculator: "/badkamercalculator",
 });
 const BLOG_POSTS = [
   {
@@ -481,7 +482,7 @@ const BLOG_POSTS = [
 const ROUTE_SEO = Object.freeze({
   [PAGE_PATHS.home]: {
     title: "Renovatiebedrijf & Aannemer Antwerpen | Reno Rangers",
-    description: "Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
+    description: "Renovatiebedrijf Antwerpen voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
     ogTitle: "Renovatiebedrijf Antwerpen — Aannemer voor Renovatie | Reno Rangers",
     ogDescription: "Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, geen verrassingen.",
   },
@@ -499,7 +500,7 @@ const ROUTE_SEO = Object.freeze({
   },
   [PAGE_PATHS.diensten]: {
     title: "Totaalrenovatie & Renovatiediensten Antwerpen | Reno Rangers",
-    description: "Totaalrenovatie Antwerpen voor woning, appartement of investeringspand: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.",
+    description: "Totaalrenovatie Antwerpen voor woning of appartement: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.",
     ogTitle: "Totaalrenovatie & Renovatiediensten Antwerpen — Reno Rangers",
     ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking voor woning, appartement of investeringspand in Antwerpen.",
   },
@@ -532,6 +533,12 @@ const ROUTE_SEO = Object.freeze({
     description: "Reno Rangers is uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen: uitvoering volgens tekeningen, één aanspreekpunt en duidelijke coördinatie.",
     ogTitle: "Aannemer voor Architecten & Interieurarchitecten — Reno Rangers",
     ogDescription: "Uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen en omgeving.",
+  },
+  [PAGE_PATHS.calculator]: {
+    title: "Badkamerrenovatie Kostprijs Calculator 2026 | Reno Rangers",
+    description: "Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen. Van €4.500 tot €42.000 — uw persoonlijke schatting op maat in 2 minuten.",
+    ogTitle: "Wat Kost Een Badkamerrenovatie? Bereken Het Gratis — Reno Rangers",
+    ogDescription: "Gebruik onze gratis badkamercalculator en ontdek wat uw renovatie kost. Van €4.500 tot €42.000 — uw persoonlijke schatting in 2 minuten.",
   },
 });
 
@@ -725,6 +732,70 @@ const PROJECT_PAGES = [
     },
   },
   {
+    slug: "mortex-badkamer-bornem",
+    title: "MORTEX BADKAMER",
+    location: "Bornem",
+    category: "MORTEX AFWERKING",
+    heroAfter: "/projects/project-mortex-bornem-after-2.webp",
+    heroBefore: "/projects/project-mortex-bornem-before-2.webp",
+    situatie: "In Bornem renoveerden we een gedateerde dachbadkamer met oude witte tegels, een bad en blauwe vloertegels. De klant droomde van een volledig andere sfeer: warme, tijdloze beige mortex afwerking, een eiken maatwerk meubel en een moderne inloopdouche. Een volledige transformatie van de zolderbadkamer.",
+    werkzaamheden: [
+      "Volledige sloop van de bestaande badkamer inclusief bad, tegels, sanitair en plafond",
+      "Mortex aangebracht op alle wanden in warme beige tint — ook in de douchezone",
+      "Eiken maatwerk badkamermeubel geplaatst met geïntegreerde wastafel",
+      "Organische ovale spiegel op maat geïnstalleerd",
+      "Inloopdouche met glazen wand, ronde regen douchekop en hand douchegarnituur",
+      "Wand-WC en vloerverwarming aangelegd",
+      "Elektrische handdoekradiator met slim bedieningspaneel geplaatst",
+      "Donkere keramische vloertegels gelegd over de volledige ruimte",
+      "Sfeerverlichting en inbouwspots geïnstalleerd",
+    ],
+    resultaat: "Een adembenemende transformatie van een verouderde zolderbadkamer naar een warme, luxueuze mortex badkamer. De combinatie van beige mortex, eikenhouten meubel en de organische spiegel geeft de ruimte een uniek hotelgevoel. De dakverdieping met velux zorgt voor veel natuurlijk licht. De klant in Bornem is bijzonder trots op dit eindresultaat.",
+    gallery: [
+      "/projects/project-mortex-bornem-before-2.webp",
+      "/projects/project-mortex-bornem-after-2.webp",
+      "/projects/project-mortex-bornem-before-1.webp",
+      "/projects/project-mortex-bornem-after-1.webp",
+      "/projects/project-mortex-bornem-vanity-detail.webp",
+      "/projects/project-mortex-bornem-shower-detail.webp",
+      "/projects/project-mortex-bornem-shower-close.webp",
+    ],
+    seo: {
+      title: "Mortex Badkamer Bornem | Reno Rangers Project",
+      description: "Volledige renovatie van een zolderbadkamer in Bornem naar een warme beige mortex badkamer met eiken meubel en inloopdouche door Reno Rangers.",
+      ogTitle: "Mortex Badkamer Bornem — Reno Rangers",
+      ogDescription: "Van verouderde zolderbadkamer naar luxueuze mortex badkamer in Bornem. Bekijk voor en na.",
+    },
+  },
+  {
+    slug: "mortex-toilet-bornem",
+    title: "MORTEX TOILET",
+    location: "Bornem",
+    category: "MORTEX AFWERKING",
+    heroAfter: "/projects/project-mortex-toilet-bornem-after-1.webp",
+    heroBefore: "/projects/project-mortex-toilet-bornem-before-1.webp",
+    situatie: "In Bornem renoveerden we een verouderd toilet met witte metro tegels naar een strakke, luxueuze ruimte in beige mortex. De klant wou dezelfde warme sfeer als de bijhorende badkamer: mortex wanden, eiken meubel en mat zwart sanitair.",
+    werkzaamheden: [
+      "Volledige sloop van de bestaande betegeling en sanitair",
+      "Mortex aangebracht op alle wanden in warme beige tint",
+      "Wand-WC in mat zwart geplaatst met ingebouwde stortbak en zwarte bedieningsplaat",
+      "Compact eiken meubel met ronde zwarte opzetwastafel en zwarte kraan geïnstalleerd",
+      "Ronde LED spiegel gemonteerd",
+      "Inbouwspots in het plafond aangebracht",
+    ],
+    resultaat: "Een compacte maar bijzonder sfeervolle toiletruimte in beige mortex met mat zwart sanitair en eiken accenten. De ruimte vormt een perfect geheel met de bijhorende badkamer en straalt warmte en luxe uit.",
+    gallery: [
+      "/projects/project-mortex-toilet-bornem-before-1.webp",
+      "/projects/project-mortex-toilet-bornem-after-1.webp",
+    ],
+    seo: {
+      title: "Mortex Toilet Bornem | Reno Rangers Project",
+      description: "Toiletruimte gerenoveerd in Bornem naar beige mortex met mat zwart sanitair en eiken meubel door Reno Rangers. Bekijk voor en na.",
+      ogTitle: "Mortex Toilet Bornem — Reno Rangers",
+      ogDescription: "Van verouderd betegeld toilet naar luxueuze mortex toiletruimte in Bornem. Bekijk het resultaat.",
+    },
+  },
+  {
     slug: "badkamerrenovatie-londerzeel",
     title: "BADKAMERRENOVATIE",
     location: "Londerzeel",
@@ -770,7 +841,7 @@ const globalCSS = `
   @keyframes mL { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes mR { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   @media (max-width: 900px) {
-    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg, .sv2 { grid-template-columns: 1fr !important; }
+    .hg, .svg2, .sg, .wg, .rg, .pg, .fg, .bg, .vg, .sv2, .calc-cta-grid { grid-template-columns: 1fr !important; }
     .stg { grid-template-columns: 1fr 1fr !important; }
     .hi { display: none !important; }
     .dn { display: none !important; }
@@ -1200,6 +1271,7 @@ function Nav() {
     { to: PAGE_PATHS.over, l: "OVER ONS" },
     { to: PAGE_PATHS.projecten, l: "PROJECTEN" },
     { to: PAGE_PATHS.blog, l: "BLOG" },
+    { to: PAGE_PATHS.calculator, l: "CALCULATOR" },
     { to: PAGE_PATHS.contact, l: "CONTACT" },
   ];
 
@@ -1494,6 +1566,48 @@ function Home() {
         </div>
       </section>
 
+      {/* CALCULATOR CTA */}
+      <section style={{ padding: "90px 0", background: C.off }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }} className="calc-cta-grid">
+            <div>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, display: "block", marginBottom: 12 }}>GRATIS TOOL</span>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px,5vw,60px)", color: C.black, lineHeight: 0.92, margin: "0 0 16px" }}>
+                WAT KOST UW<br /><span style={{ color: C.red }}>BADKAMERRENOVATIE?</span>
+              </h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: C.gray, lineHeight: 1.7, margin: "0 0 28px" }}>
+                Beantwoord 3 vragen over uw badkamer en ontvang meteen een realistische prijsschatting op maat — volledig gratis en zonder verplichtingen.
+              </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <Link to={PAGE_PATHS.calculator} style={{ background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 3, padding: "15px 32px", textDecoration: "none", display: "inline-block" }}>
+                  BEREKEN MIJN PRIJS →
+                </Link>
+                <Link to={PAGE_PATHS.contact} style={{ background: "transparent", color: C.black, fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 3, padding: "15px 32px", textDecoration: "none", display: "inline-block", border: "1px solid " + C.ltGray }}>
+                  GRATIS OFFERTE
+                </Link>
+              </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {[
+                { n: "01", title: "KIES UW BADKAMER", text: "Grootte en type afwerking — basis, volledig of luxe" },
+                { n: "02", title: "SELECTEER UW EXTRAS", text: "Inloopdouche, mortex, vloerverwarming of maatwerk" },
+                { n: "03", title: "ONTVANG UW SCHATTING", text: "Uw persoonlijke prijs na het invullen van uw gegevens" },
+              ].map(function (s) {
+                return (
+                  <div key={s.n} style={{ background: C.white, padding: "16px 20px", display: "flex", alignItems: "flex-start", gap: 16, borderLeft: "3px solid " + C.red }}>
+                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, color: C.red, lineHeight: 1, flexShrink: 0 }}>{s.n}</span>
+                    <div>
+                      <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 2, color: C.black, marginBottom: 3 }}>{s.title}</div>
+                      <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.5 }}>{s.text}</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* VIDEO */}
       <section style={{ padding: "110px 0", background: C.black }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
@@ -1618,9 +1732,11 @@ function Diensten() {
           Als renovatie aannemer in Antwerpen begrijpen wij dat een totaalrenovatie een grote stap is — voor uw eigen woning, een appartement, of een pand dat u wilt verhuren of verkopen. Daarom bieden wij een zorgeloos traject met een vast aanspreekpunt, een gedetailleerde offerte zonder verborgen kosten, en een duidelijke planning. Twijfelt u nog over de juiste aanpak?{" "}
           <Link to="/blog/hoe-juiste-renovatie-aannemer-kiezen" style={{ color: "inherit", textDecoration: "underline" }}>Lees hoe u de juiste aannemer kiest</Link>{" "}
           of bekijk ons{" "}
-          <Link to="/blog/totaalrenovatie-alles-wat-u-moet-weten" style={{ color: "inherit", textDecoration: "underline" }}>stappenplan voor een totaalrenovatie</Link>.
+          <Link to="/blog/totaalrenovatie-alles-wat-u-moet-weten" style={{ color: "inherit", textDecoration: "underline" }}>stappenplan voor een totaalrenovatie</Link>. Benieuwd hoe dat er in de praktijk uitziet?{" "}
+          <Link to="/projecten/keukenrenovatie-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk onze keukenrenovatie in Antwerpen</Link>.
         </>
       ),
+      seo2: "Renoveert u uw eigen woning in Antwerpen, een appartement dat u wilt verhuren, of een investeringspand dat u wilt doorverkopen? Voor elk projecttype werken wij op dezelfde manier: één duidelijke offerte, een vaste prijs en één aanspreekpunt dat de volledige planning bewaakt. Voor een renovatie voor verhuur kiezen wij samen met u voor duurzame, onderhoudsvriendelijke materialen en een praktische indeling die aantrekkelijk blijft voor toekomstige bewoners. Bij een totaalrenovatie van een appartement in Antwerpen houden wij rekening met de praktische kant van een meergezinswoning, zoals toegang tot het gebouw en de timing van leveringen.",
     },
     {
       t: "BINNENAFWERKING",
@@ -1628,7 +1744,12 @@ function Diensten() {
       img2: IMG.livingroom,
       intro: "De binnenafwerking bepaalt hoe uw woning aanvoelt. Reno Rangers verzorgt hoogwaardige binnenafwerking in Antwerpen.",
       items: ["Schilderwerken interieur", "Pleisterwerken en gyproc", "Vloeren en tegelwerk", "Plafondafwerking", "Decoratieve technieken", "Houtwerk en schrijnwerkerij"],
-      seo: "Wilt u uw interieur strak, modern en professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren en geschilderde plafonds tot perfect gelegde vloeren en tegels.",
+      seo: (
+        <>
+          Wilt u uw interieur strak, modern en professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren en geschilderde plafonds tot perfect gelegde vloeren en tegels.{" "}
+          <Link to="/projecten/living-binnenafwerking-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk een voorbeeld van onze binnenafwerking in Antwerpen</Link>.
+        </>
+      ),
     },
   ];
 
@@ -1670,6 +1791,7 @@ function Diensten() {
                     })}
                   </div>
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.75, color: C.gray, margin: "0 0 28px" }}>{s.seo}</p>
+                  {s.seo2 && <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.75, color: C.gray, margin: "-8px 0 28px" }}>{s.seo2}</p>}
                   <Btn label="GRATIS OFFERTE" onClick={function () { go("contact"); }} />
                 </Reveal>
                 <Reveal delay={0.12} style={{ order: idx % 2 === 0 ? 1 : 0 }}>
@@ -2041,6 +2163,22 @@ function Projecten() {
       d: "Totaalrenovatie met nieuwe douchezone, tegelwerk en maatwerk.",
     },
     {
+      t: "MORTEX BADKAMER",
+      loc: "Bornem",
+      slug: "mortex-badkamer-bornem",
+      before: "/projects/project-mortex-bornem-before-2.webp",
+      after: "/projects/project-mortex-bornem-after-2.webp",
+      d: "Volledige transformatie van een zolderbadkamer naar een warme beige mortex badkamer met eiken meubel en inloopdouche.",
+    },
+    {
+      t: "MORTEX TOILET",
+      loc: "Bornem",
+      slug: "mortex-toilet-bornem",
+      before: "/projects/project-mortex-toilet-bornem-before-1.webp",
+      after: "/projects/project-mortex-toilet-bornem-after-1.webp",
+      d: "Verouderde betegelde toiletruimte getransformeerd naar beige mortex met mat zwart sanitair en eiken meubel.",
+    },
+    {
       t: "BADKAMERRENOVATIE",
       loc: "Londerzeel",
       slug: "badkamerrenovatie-londerzeel",
@@ -2096,6 +2234,29 @@ function Projecten() {
         "/projects/project-kitchen-3.webp",
         "/projects/project-kitchen-1.webp",
         "/projects/project-kitchen-2.webp",
+      ],
+    },
+    {
+      t: "MORTEX BADKAMER",
+      loc: "Bornem",
+      slug: "mortex-badkamer-bornem",
+      c: "Mortex renovatie",
+      photos: [
+        "/projects/project-mortex-bornem-after-1.webp",
+        "/projects/project-mortex-bornem-after-2.webp",
+        "/projects/project-mortex-bornem-vanity-detail.webp",
+        "/projects/project-mortex-bornem-shower-detail.webp",
+        "/projects/project-mortex-bornem-shower-close.webp",
+      ],
+    },
+    {
+      t: "MORTEX TOILET",
+      loc: "Bornem",
+      slug: "mortex-toilet-bornem",
+      c: "Mortex renovatie",
+      photos: [
+        "/projects/project-mortex-toilet-bornem-after-1.webp",
+        "/projects/project-mortex-toilet-bornem-before-1.webp",
       ],
     },
     {
@@ -2311,11 +2472,11 @@ function ProjectDetail() {
           <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0" }}>
             <div className="stg" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
               <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", background: C.black }}>
-                <img src={project.heroBefore} alt={project.title + " voor"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={project.heroBefore} alt={project.title + " voor"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
                 <span style={{ position: "absolute", top: 14, left: 14, background: "rgba(10,10,10,0.85)", color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, padding: "6px 14px" }}>VOOR</span>
               </div>
               <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", background: C.black }}>
-                <img src={project.heroAfter} alt={project.title + " na"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={project.heroAfter} alt={project.title + " na"} loading="eager" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
                 <span style={{ position: "absolute", top: 14, right: 14, background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, padding: "6px 14px" }}>NA</span>
               </div>
             </div>
@@ -2855,9 +3016,11 @@ function Foot() {
   var pageLinks = [
     { l: "Home", to: PAGE_PATHS.home },
     { l: "Diensten", to: PAGE_PATHS.diensten },
+    { l: "Badkamerrenovatie", to: PAGE_PATHS.landing },
     { l: "Over ons", to: PAGE_PATHS.over },
     { l: "Projecten", to: PAGE_PATHS.projecten },
     { l: "Blog", to: PAGE_PATHS.blog },
+    { l: "Calculator", to: PAGE_PATHS.calculator },
     { l: "Contact", to: PAGE_PATHS.contact },
     { l: "Voor Architecten", to: PAGE_PATHS.architecten },
   ];
@@ -3178,6 +3341,344 @@ function CookieConsentBanner() {
   );
 }
 
+/* ══════════════════════════════════
+   BADKAMER CALCULATOR
+   ══════════════════════════════════ */
+function BadkamerCalculator() {
+  var navigate = useNavigate();
+  var [step, setStep] = useState(1);
+  var [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 540);
+  useEffect(function () {
+    function onResize() { setIsMobile(window.innerWidth < 540); }
+    window.addEventListener("resize", onResize);
+    return function () { window.removeEventListener("resize", onResize); };
+  }, []);
+  var [size, setSize] = useState(null);
+  var [type, setType] = useState(null);
+  var [extras, setExtras] = useState({});
+  var [form, setForm] = useState({ naam: "", telefoon: "", email: "", bericht: "" });
+  var [status, setStatus] = useState("idle");
+
+  var BASE_PRICES = {
+    klein:  { basis: [4500, 5800],  volledig: [7500, 9500],  luxe: [12000, 15000] },
+    middel: { basis: [7500, 9500],  volledig: [13000, 16000], luxe: [21000, 27000] },
+    groot:  { basis: [11000, 14000], volledig: [19000, 24000], luxe: [32000, 42000] },
+  };
+  var EXTRA_PRICES = {
+    mortex:         [2800, 3800],
+    inloopdouche:   [900,  1500],
+    ligbad:         [1600, 2400],
+    vloerverwarming:[900,  1400],
+    maatwerk:       [1800, 2800],
+    verlichting:    [500,  900],
+  };
+  var EXTRA_LABELS = {
+    mortex:         "Mortex afwerking (i.p.v. tegels)",
+    inloopdouche:   "Inloopdouche",
+    ligbad:         "Vrijstaand ligbad",
+    vloerverwarming:"Vloerverwarming",
+    maatwerk:       "Maatwerk badkamermeubel",
+    verlichting:    "Inbouwverlichting & spots",
+  };
+
+  function calcPrice() {
+    if (!size || !type) return null;
+    var lo = BASE_PRICES[size][type][0];
+    var hi = BASE_PRICES[size][type][1];
+    Object.keys(extras).forEach(function (k) {
+      if (extras[k] && EXTRA_PRICES[k]) {
+        if (k === "inloopdouche" && type === "luxe") return;
+        lo += EXTRA_PRICES[k][0];
+        hi += EXTRA_PRICES[k][1];
+      }
+    });
+    return { lo: lo, hi: hi };
+  }
+
+  function fmt(n) {
+    return "€" + n.toLocaleString("nl-BE");
+  }
+
+  var price = calcPrice();
+  var TOTAL_STEPS = 4;
+
+  function toggleExtra(k) {
+    setExtras(function (prev) {
+      var next = Object.assign({}, prev);
+      next[k] = !prev[k];
+      return next;
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("sending");
+    var fd = new FormData();
+    fd.append("naam", form.naam);
+    fd.append("telefoon", form.telefoon);
+    fd.append("email", form.email);
+    fd.append("postcode", form.bericht);
+    fd.append("_subject", "Calculator lead — " + (size || "") + " " + (type || ""));
+    fd.append("calculator_grootte", size || "");
+    fd.append("calculator_type", type || "");
+    fd.append("calculator_extras", Object.keys(extras).filter(function (k) { return extras[k]; }).join(", "));
+    fd.append("calculator_schatting", price ? fmt(price.lo) + " – " + fmt(price.hi) : "");
+    try {
+      var res = await fetch("https://formspree.io/f/xgopeqeb", { method: "POST", body: fd, headers: { Accept: "application/json" } });
+      if (res.ok) {
+        setStatus("done");
+        pushDataLayerEvent("generate_lead", { form_name: "calculator", lead_source: "formspree" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  }
+
+  var cardBase = {
+    border: "2px solid " + C.ltGray,
+    borderRadius: 0,
+    padding: "24px 20px",
+    cursor: "pointer",
+    transition: "border-color .2s, background .2s",
+    textAlign: "center",
+  };
+  var cardSelected = { borderColor: C.red, background: "#FFF5F5" };
+
+  function OptionCard({ id, selected, onClick, img, title, sub }) {
+    return (
+      <div
+        onClick={onClick}
+        style={Object.assign({}, cardBase, selected ? cardSelected : {}, { padding: 0, textAlign: "left" })}
+        onMouseEnter={function (e) { if (!selected) e.currentTarget.style.borderColor = C.gray; }}
+        onMouseLeave={function (e) { if (!selected) e.currentTarget.style.borderColor = C.ltGray; }}
+      >
+        <div style={{ width: "100%", height: 180, overflow: "hidden", position: "relative" }}>
+          <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          {selected && <div style={{ position: "absolute", inset: 0, background: "rgba(230,51,41,0.18)" }} />}
+        </div>
+        <div style={{ padding: "12px 14px 14px" }}>
+          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 2, color: selected ? C.red : C.black, marginBottom: 4 }}>{title}</div>
+          {sub && <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, lineHeight: 1.5 }}>{sub}</div>}
+          {selected && <div style={{ width: 20, height: 3, background: C.red, marginTop: 8 }} />}
+        </div>
+      </div>
+    );
+  }
+
+  function CheckBox({ id, label, checked, onChange }) {
+    return (
+      <label style={{ display: "flex", alignItems: "flex-start", gap: 12, cursor: "pointer", padding: "12px 16px", border: "1px solid " + (checked ? C.red : C.ltGray), background: checked ? "#FFF5F5" : C.white, transition: "border-color .2s" }}>
+        <div style={{ width: 20, height: 20, minWidth: 20, border: "2px solid " + (checked ? C.red : C.ltGray), background: checked ? C.red : "transparent", display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1, transition: "all .15s" }}>
+          {checked && <span style={{ color: C.white, fontSize: 12, lineHeight: 1 }}>✓</span>}
+        </div>
+        <div>
+          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: C.black }}>{label}</div>
+        </div>
+        <input type="checkbox" checked={checked} onChange={onChange} style={{ display: "none" }} />
+      </label>
+    );
+  }
+
+  var inputStyle = {
+    width: "100%", padding: "13px 14px", border: "1px solid " + C.ltGray,
+    fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.black,
+    outline: "none", boxSizing: "border-box", background: C.white,
+  };
+
+  return (
+    <div style={{ background: C.off, minHeight: "100vh", paddingTop: 72 }}>
+      {/* Hero */}
+      <div style={{ background: C.black, padding: "56px 24px 48px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, display: "block", marginBottom: 10 }}>GRATIS TOOL</span>
+          <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(36px,6vw,72px)", color: C.white, lineHeight: 0.92, margin: "0 0 16px" }}>
+            BADKAMER<br /><span style={{ color: C.red }}>RENOVATIE</span> CALCULATOR
+          </h1>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.65)", margin: 0, maxWidth: 500, lineHeight: 1.6 }}>
+            Bereken in 2 minuten een realistische kostenraming voor uw badkamerrenovatie in Antwerpen en omgeving.
+          </p>
+        </div>
+      </div>
+
+      {/* Card */}
+      <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 16px 80px" }}>
+        <div style={{ background: C.white, borderTop: "4px solid " + C.red, padding: "clamp(24px, 5vw, 48px)" }}>
+
+          {/* Progress */}
+          <div style={{ display: "flex", gap: 6, marginBottom: 36 }}>
+            {[1, 2, 3, 4].map(function (s) {
+              return (
+                <div key={s} style={{ flex: 1, height: 4, background: s <= step ? C.red : C.ltGray, transition: "background .3s" }} />
+              );
+            })}
+          </div>
+
+          {/* STEP 1 — SIZE */}
+          {step === 1 && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 1 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>HOE GROOT IS UW BADKAMER?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Meettip: lengte × breedte van de vloer</p>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 12 }}>
+                <OptionCard id="klein" selected={size === "klein"} onClick={function () { setSize("klein"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-klein.webp" title="KLEIN" sub="Minder dan 4 m²" />
+                <OptionCard id="middel" selected={size === "middel"} onClick={function () { setSize("middel"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-middel.webp" title="MIDDELGROOT" sub="4 tot 8 m²" />
+                <OptionCard id="groot" selected={size === "groot"} onClick={function () { setSize("groot"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-groot.webp" title="GROOT" sub="Meer dan 8 m²" />
+              </div>
+            </div>
+          )}
+
+          {/* STEP 2 — TYPE */}
+          {step === 2 && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 2 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>WELK TYPE RENOVATIE?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Kies het niveau dat het beste past bij uw wens</p>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 12 }}>
+                <OptionCard id="basis" selected={type === "basis"} onClick={function () { setType("basis"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-basis.webp"
+                  title="BASIS" sub="Nieuwe tegels en sanitair, zelfde indeling" />
+                <OptionCard id="volledig" selected={type === "volledig"} onClick={function () { setType("volledig"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-volledig.webp"
+                  title="VOLLEDIG" sub="Complete renovatie, nieuwe indeling mogelijk" />
+                <OptionCard id="luxe" selected={type === "luxe"} onClick={function () { setType("luxe"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-luxe.webp"
+                  title="LUXE" sub="Premium afwerking, mortex of exclusieve tegels" />
+              </div>
+            </div>
+          )}
+
+          {/* STEP 3 — EXTRAS */}
+          {step === 3 && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 3 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>WELKE EXTRA'S WENST U?</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 24px" }}>Optioneel — selecteer wat op u van toepassing is</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
+                {Object.keys(EXTRA_LABELS).map(function (k) {
+                  return (
+                    <CheckBox key={k} id={k} label={EXTRA_LABELS[k]} checked={!!extras[k]} onChange={function () { toggleExtra(k); }} />
+                  );
+                })}
+              </div>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, marginTop: 16, lineHeight: 1.5 }}>
+                * Prijzen zijn richtprijzen inclusief arbeid en standaard materialen. Exacte prijs na gratis bezoek ter plaatse.
+              </p>
+            </div>
+          )}
+
+          {/* STEP 4 — FORM → price revealed after submit */}
+          {step === 4 && status !== "done" && (
+            <div>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>STAP 4 VAN 4</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>UW GEGEVENS</h2>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 24px", lineHeight: 1.6 }}>
+                Vul uw gegevens in en ontvang direct uw <strong style={{ color: C.black }}>persoonlijke kostenraming</strong> plus een gratis offerte op maat.
+              </p>
+              <form onSubmit={handleSubmit}>
+                <div style={{ marginBottom: 12 }}>
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>NAAM *</label>
+                  <input required value={form.naam} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { naam: e.target.value }); }); }} style={inputStyle} placeholder="Uw naam" />
+                </div>
+                <div style={{ marginBottom: 12 }}>
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>TELEFOON *</label>
+                  <input required type="tel" value={form.telefoon} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { telefoon: e.target.value }); }); }} style={inputStyle} placeholder="+32 4xx xx xx xx" />
+                </div>
+                <div style={{ marginBottom: 24 }}>
+                  <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>POSTCODE *</label>
+                  <input required value={form.bericht} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { bericht: e.target.value }); }); }} style={inputStyle} placeholder="bv. 2000" maxLength={10} />
+                </div>
+                {status === "error" && (
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.red, marginBottom: 12 }}>Er is iets misgegaan. Probeer opnieuw of bel ons op {PHONE_NUMBER}.</p>
+                )}
+                <button type="submit" disabled={status === "sending"} style={{ width: "100%", background: C.red, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, letterSpacing: 3, padding: "18px 24px", opacity: status === "sending" ? 0.7 : 1 }}>
+                  {status === "sending" ? "BEREKENEN…" : "BEKIJK MIJN PRIJS →"}
+                </button>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: C.gray, marginTop: 10, textAlign: "center" }}>
+                  Geen verplichtingen. Wij contacteren u binnen 24 uur.
+                </p>
+              </form>
+            </div>
+          )}
+
+          {/* SUCCESS — price revealed here */}
+          {step === 4 && status === "done" && (
+            <div style={{ padding: "8px 0" }}>
+              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 3, color: C.red, marginBottom: 8 }}>UW PERSOONLIJKE SCHATTING</p>
+              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px,4vw,42px)", color: C.black, margin: "0 0 20px", lineHeight: 1 }}>AANVRAAG ONTVANGEN!</h2>
+              {price && (
+                <div style={{ background: C.black, padding: "28px 24px", marginBottom: 24 }}>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: 1, marginBottom: 6 }}>INDICATIEVE KOSTPRIJS</div>
+                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px,5vw,48px)", color: C.white, lineHeight: 1 }}>
+                    {fmt(price.lo)} <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.55em" }}>tot</span> {fmt(price.hi)}
+                  </div>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 10, lineHeight: 1.5 }}>
+                    Gebaseerd op: {size === "klein" ? "kleine badkamer" : size === "middel" ? "middelgrote badkamer" : "grote badkamer"} · {type === "basis" ? "basisrenovatie" : type === "volledig" ? "volledige renovatie" : "luxerenovatie"}
+                    {Object.keys(extras).filter(function (k) { return extras[k]; }).length > 0 && " · " + Object.keys(extras).filter(function (k) { return extras[k]; }).map(function (k) { return EXTRA_LABELS[k]; }).join(", ")}
+                  </div>
+                </div>
+              )}
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.gray, lineHeight: 1.7, margin: "0 0 24px" }}>
+                Bedankt, {form.naam || "u"}! Wij contacteren u zo snel mogelijk voor een gratis bezoek ter plaatse en een exacte offerte op maat.
+              </p>
+              <button onClick={function () { navigate(PAGE_PATHS.projecten); }} style={{ background: C.black, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 3, padding: "15px 32px" }}>
+                BEKIJK ONZE PROJECTEN →
+              </button>
+            </div>
+          )}
+
+          {/* NAV BUTTONS */}
+          {status !== "done" && (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 36, paddingTop: 24, borderTop: "1px solid " + C.ltGray }}>
+              {step > 1
+                ? <button onClick={function () { setStep(step - 1); }} style={{ background: "transparent", color: C.black, border: "1px solid " + C.ltGray, cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 3, padding: "13px 28px" }}>← VORIGE</button>
+                : <div />
+              }
+              {step < TOTAL_STEPS && (
+                <button
+                  onClick={function () { setStep(step + 1); }}
+                  disabled={(step === 1 && !size) || (step === 2 && !type)}
+                  style={{ background: C.red, color: C.white, border: "none", cursor: "pointer", fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 3, padding: "13px 28px", opacity: ((step === 1 && !size) || (step === 2 && !type)) ? 0.4 : 1 }}
+                >
+                  VOLGENDE →
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Trust badges */}
+        <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center", padding: "24px 0", borderTop: "1px solid " + C.ltGray, marginTop: 2 }}>
+          {["✓ Vaste prijs", "✓ Gratis adviesgesprek", "✓ Geen verborgen kosten", "✓ Erkend renovatiebedrijf"].map(function (t) {
+            return <span key={t} style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray }}>{t}</span>;
+          })}
+        </div>
+      </div>
+
+      {/* SEO content — invisible except JSON-LD */}
+      <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 16px 0" }}>
+
+      </div>
+
+      {/* JSON-LD FAQ schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Wat kost een kleine badkamerrenovatie?", "acceptedAnswer": { "@type": "Answer", "text": "Een kleine badkamer (minder dan 4 m²) renoveren kost tussen €4.500 en €15.000, afhankelijk van het type renovatie. Een basisrenovatie start vanaf €4.500. Voor een luxe afwerking met mortex rekent u op €12.000 tot €15.000." } },
+          { "@type": "Question", "name": "Wat kost een mortex badkamer?", "acceptedAnswer": { "@type": "Answer", "text": "Een mortex afwerking kost €2.800 tot €3.800 extra. Voor een volledige mortex badkamer rekent u op €13.000 tot €27.000 afhankelijk van de grootte." } },
+          { "@type": "Question", "name": "Hoe lang duurt een badkamerrenovatie?", "acceptedAnswer": { "@type": "Answer", "text": "Een volledige badkamerrenovatie duurt gemiddeld 1 tot 3 weken. Reno Rangers werkt met een vaste planning die vooraf op papier wordt vastgelegd." } },
+          { "@type": "Question", "name": "Werkt Reno Rangers in heel Antwerpen en omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wij renoveren badkamers in Antwerpen, Merksem, Bornem, Londerzeel, Mechelen, Schoten, Kapellen, Brasschaat, Sint-Niklaas, Lier, Duffel en omliggende gemeenten." } },
+          { "@type": "Question", "name": "Hoe vraag ik een gratis offerte aan?", "acceptedAnswer": { "@type": "Answer", "text": "Gebruik de gratis badkamercalculator, vul naam en telefoonnummer in en klik op Bekijk mijn prijs. Wij contacteren u binnen 24 uur." } },
+          { "@type": "Question", "name": "Hoeveel kost een badkamerrenovatie in Antwerpen?", "acceptedAnswer": { "@type": "Answer", "text": "In Antwerpen kost een badkamerrenovatie gemiddeld €7.500 tot €27.000, afhankelijk van grootte en afwerking. Kleine badkamer renoveren in Antwerpen start vanaf €4.500. Reno Rangers werkt in alle Antwerpse districten." } },
+          { "@type": "Question", "name": "Hoeveel kost een badkamerrenovatie in Mechelen en omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "Een badkamerrenovatie in Mechelen, Willebroek of Bonheiden kost tussen €4.500 en €42.000. Reno Rangers hanteert vaste tarieven in de regio Mechelen, identiek aan die in Antwerpen." } },
+          { "@type": "Question", "name": "Wat kost een badkamerrenovatie per m²?", "acceptedAnswer": { "@type": "Answer", "text": "Een badkamerrenovatie kost gemiddeld €750 tot €2.500 per m². Basisrenovatie: €750–€1.200/m². Volledige renovatie: €1.200–€1.800/m². Luxe afwerking met mortex: €1.800–€2.500/m²." } },
+          { "@type": "Question", "name": "Wat is inbegrepen in een totale badkamerrenovatie bij Reno Rangers?", "acceptedAnswer": { "@type": "Answer", "text": "Een totale badkamerrenovatie bij Reno Rangers omvat sloop, loodgieterswerk, elektriciteit, tegelwerk, plaatsing sanitair en meubels, schilderwerk en afwerking — alles uit één hand met vaste prijsafspraak." } },
+          { "@type": "Question", "name": "Hoeveel kost een badkamerrenovatie in Bornem, Londerzeel of omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "In Bornem, Londerzeel, Putte en Duffel rekent Reno Rangers dezelfde tarieven. Een volledige renovatie van een middelgrote badkamer kost €13.000–€16.000." } },
+        ],
+      }) }} />
+    </div>
+  );
+}
+
 function NotFound() {
   var navigate = useNavigate();
 
@@ -3233,6 +3734,7 @@ export default function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path={PAGE_PATHS.privacy} element={<Privacy />} />
         <Route path={PAGE_PATHS.architecten} element={<ArchitectenPartner />} />
+        <Route path={PAGE_PATHS.calculator} element={<BadkamerCalculator />} />
         <Route path="/over" element={<Navigate to={PAGE_PATHS.over} replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

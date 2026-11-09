@@ -13,12 +13,20 @@ function stripUnverifiedSearchAction(html) {
   return html.replace(/\s*<!-- JSON-LD: WebSite \+ SearchAction -->[\s\S]*?<script type="application\/ld\+json">[\s\S]*?"potentialAction"[\s\S]*?<\/script>/i, '');
 }
 
+// The registered business address (Sint-Pieters-Leeuw) differs from the
+// marketed Antwerpen service area, so address/geo are stripped rather than
+// published as if the business were physically located in Antwerpen.
 function stripUnverifiedBusinessFacts(html) {
-  let out = html;
-  out = out.replace(/\s*"address"\s*:\s*\{[\s\S]*?\}\s*,\s*"geo"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
-  out = out.replace(/\s*"aggregateRating"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
-  out = out.replace(/\s*"priceRange"\s*:\s*"[^"]*"\s*,/i, '');
-  return out;
+  return html.replace(/\s*"address"\s*:\s*\{[\s\S]*?\}\s*,\s*"geo"\s*:\s*\{[\s\S]*?\}\s*,/i, '');
+}
+
+// The FAQPage JSON-LD only matches the visible FAQ accordion on the bathroom-cost
+// blog post. Strip it from every other route so structured data never claims
+// content that isn't actually visible on that page.
+const FAQ_PAGE_ROUTE = '/blog/wat-kost-badkamerrenovatie-antwerpen-2026';
+function stripFaqPageExceptRoute(html, route) {
+  if (route === FAQ_PAGE_ROUTE) return html;
+  return html.replace(/\s*<!-- JSON-LD: FAQPage[\s\S]*?-->[\s\S]*?<script type="application\/ld\+json">[\s\S]*?"@type":\s*"FAQPage"[\s\S]*?<\/script>/i, '');
 }
 
 // Shared link sets
@@ -35,6 +43,8 @@ const projectLinks = [
   { href: '/projecten/badkamerrenovatie-antwerpen', text: 'Badkamerrenovatie Antwerpen' },
   { href: '/projecten/mortex-badkamer-merksem', text: 'Mortex Badkamer Merksem' },
   { href: '/projecten/mortex-badkamer-antwerpen', text: 'Mortex Badkamer Antwerpen' },
+  { href: '/projecten/mortex-badkamer-bornem', text: 'Mortex Badkamer Bornem' },
+  { href: '/projecten/mortex-toilet-bornem', text: 'Mortex Toilet Bornem' },
   { href: '/projecten/volledige-badkamer-antwerpen', text: 'Volledige Badkamerrenovatie Antwerpen' },
   { href: '/projecten/badkamer-paars-meubel-merksem', text: 'Badkamer Paars Meubel Merksem' },
   { href: '/projecten/keukenrenovatie-antwerpen', text: 'Keukenrenovatie Antwerpen' },
@@ -53,7 +63,7 @@ const routes = [
   {
     route: '/',
     title: 'Renovatiebedrijf & Aannemer Antwerpen | Reno Rangers',
-    description: 'Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.',
+    description: 'Renovatiebedrijf Antwerpen voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.',
     h1: 'Renovatiebedrijf Antwerpen — Aannemer voor Renovatie',
     bodyText: 'Reno Rangers is uw renovatiebedrijf Antwerpen en aannemer voor renovatie in Antwerpen en omgeving. Wij zijn gespecialiseerd in badkamerrenovatie, totaalrenovatie en kwalitatieve binnenafwerking. Met één aanspreekpunt, een vaste prijs en een duidelijke planning bezorgen wij u een zorgeloze renovatie-ervaring. Onze vakmensen werken nauwkeurig en respecteren altijd de afgesproken deadline. Of u nu een badkamer wilt vernieuwen, een volledige woning wilt aanpakken of enkel de binnenafwerking wilt verbeteren — Reno Rangers staat voor u klaar als aannemer renovatie Antwerpen. Vraag vandaag nog gratis een offerte aan.',
     links: [...mainLinks, ...projectLinks.slice(0, 3), ...blogLinks.slice(0, 2),
@@ -64,7 +74,7 @@ const routes = [
   {
     route: '/badkamerrenovatie-antwerpen',
     title: 'Badkamerrenovatie Antwerpen | Reno Rangers',
-    description: 'Badkamerrenovatie in Antwerpen door Reno Rangers. Eén aanspreekpunt, vaste prijs en duidelijke planning. Vraag vandaag een gratis offerte aan voor uw nieuwe badkamer.',
+    description: 'Badkamerrenovatie in Antwerpen door Reno Rangers. Eén aanspreekpunt, vaste prijs en duidelijke planning. Vraag gratis een offerte aan voor uw badkamer.',
     h1: 'Badkamerrenovatie in Antwerpen',
     bodyText: 'Reno Rangers verzorgt volledige badkamerrenovaties in Antwerpen en omgeving. Van de sloop van uw oude badkamer tot de oplevering van een nieuwe, strakke ruimte — wij regelen alles. U heeft één aanspreekpunt, betaalt een vaste prijs en weet vooraf precies wat de planning is. Wij plaatsen nieuwe tegels, sanitair, douches, wastafels en meubels. Onze aanpak is efficiënt, netjes en kwalitatief. Vraag gratis een offerte aan voor uw badkamerrenovatie.',
     links: [...mainLinks, ...projectLinks.slice(0, 4),
@@ -75,14 +85,16 @@ const routes = [
   {
     route: '/diensten',
     title: 'Totaalrenovatie & Renovatiediensten Antwerpen | Reno Rangers',
-    description: 'Totaalrenovatie Antwerpen voor woning, appartement of investeringspand: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.',
+    description: 'Totaalrenovatie Antwerpen voor woning of appartement: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.',
     h1: 'Renovatiediensten van Reno Rangers',
-    bodyText: 'Reno Rangers biedt een breed aanbod aan renovatiediensten in Antwerpen en omgeving, voor zowel een woning als een appartement. Onze hoofddiensten zijn badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking. Ook voor een investeringspand of een woning die u wilt verhuren, nemen wij de volledige renovatie uit handen. Bij elke opdracht werken wij met een vaste prijs, één aanspreekpunt en een transparante planning. Wij nemen de volledige coördinatie op ons, van ontwerp tot oplevering. Neem contact op voor een gratis offerte.',
+    bodyText: 'Reno Rangers biedt een breed aanbod aan renovatiediensten in Antwerpen en omgeving, voor zowel een woning als een appartement. Onze hoofddiensten zijn badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking. Ook voor een appartement dat u wilt verhuren of een investeringspand dat u wilt doorverkopen, nemen wij de volledige renovatie uit handen — met dezelfde vaste prijs, één aanspreekpunt en transparante planning als bij elke andere opdracht. Wij nemen de volledige coördinatie op ons, van ontwerp tot oplevering. Neem contact op voor een gratis offerte.',
     links: [...mainLinks, ...projectLinks.slice(0, 3),
       { href: '/', text: 'Renovatiebedrijf Antwerpen' },
       { href: '/badkamerrenovatie-antwerpen', text: 'Badkamerrenovatie Antwerpen' },
       { href: '/blog/hoe-juiste-renovatie-aannemer-kiezen', text: 'Hoe kiest u de juiste renovatie-aannemer?' },
       { href: '/blog/totaalrenovatie-alles-wat-u-moet-weten', text: 'Totaalrenovatie: alles wat u moet weten' },
+      { href: '/projecten/keukenrenovatie-antwerpen', text: 'Keukenrenovatie Antwerpen' },
+      { href: '/projecten/living-binnenafwerking-antwerpen', text: 'Living & Binnenafwerking Antwerpen' },
       { href: 'https://energiesparen.be', text: 'Energiebesparende renovatie' },
       { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie' },
     ],
@@ -90,7 +102,7 @@ const routes = [
   {
     route: '/projecten',
     title: 'Projecten | Reno Rangers Antwerpen',
-    description: 'Bekijk gerealiseerde renovatieprojecten van Reno Rangers in Antwerpen en omgeving: badkamerrenovaties, keukenrenovaties, mortex afwerkingen en totaalrenovaties.',
+    description: 'Bekijk gerealiseerde projecten van Reno Rangers in Antwerpen: badkamerrenovaties, keukenrenovaties, mortex afwerkingen en totaalrenovaties.',
     h1: 'Gerealiseerde Renovatieprojecten van Reno Rangers',
     bodyText: 'Reno Rangers heeft in Antwerpen en omgeving talrijke renovatieprojecten succesvol afgerond. Bekijk onze portfolio van badkamerrenovaties, keukenrenovaties, mortex afwerkingen en binnenafwerking. Elk project toont ons vakmanschap en onze nette uitvoering. Van kleine badkamerverbouwingen in Merksem tot volledige appartementsrenovaties in Antwerpen. Laat u inspireren door onze voor-en-na foto\'s en neem contact op voor uw eigen renovatieproject.',
     links: [...mainLinks, ...projectLinks,
@@ -112,10 +124,11 @@ const routes = [
   {
     route: '/over-ons',
     title: 'Over Ons | Reno Rangers Renovatiebedrijf Antwerpen',
-    description: 'Leer Reno Rangers kennen: ervaren renovatieaannemer in Antwerpen met focus op vakmanschap, eerlijkheid en klanttevredenheid. Eén aanspreekpunt voor uw hele renovatie.',
+    description: 'Leer Reno Rangers kennen: renovatieaannemer in Antwerpen met focus op vakmanschap en klanttevredenheid. Eén aanspreekpunt voor uw renovatie.',
     h1: 'Over Reno Rangers — Uw Renovatieaannemer in Antwerpen',
     bodyText: 'Reno Rangers is een gedreven renovatiebedrijf gevestigd in Antwerpen. Ons team bestaat uit ervaren vakmensen met passie voor kwaliteit en afwerking. Wij geloven in eerlijke communicatie, een vaste prijs en een efficiënte aanpak. Bij elke renovatie is er één aanspreekpunt dat verantwoordelijkheid neemt van begin tot einde. Onze klanten waarderen onze proactieve communicatie, netheid op de werf en de kwaliteit van het eindresultaat. Wij werken ook als uitvoeringspartner samen met architecten en interieurarchitecten op basis van hun tekeningen en planning. Vertrouw op Reno Rangers voor uw volgende renovatieproject.',
     links: [...mainLinks, ...projectLinks.slice(0, 3),
+      { href: '/', text: 'Renovatiebedrijf Antwerpen' },
       { href: '/aannemer-voor-architecten', text: 'Aannemer voor Architecten & Interieurarchitecten' },
       { href: 'https://kbopub.economie.fgov.be', text: 'KBO Bedrijfsinformatie' },
     ],
@@ -123,7 +136,7 @@ const routes = [
   {
     route: '/blog',
     title: 'Blog | Reno Rangers Renovatietips',
-    description: 'Lees praktische renovatietips van Reno Rangers over badkamerrenovatie, totaalrenovatie, binnenafwerking en het kiezen van de juiste aannemer in Antwerpen en omgeving.',
+    description: 'Lees renovatietips van Reno Rangers over badkamerrenovatie, totaalrenovatie en binnenafwerking. Praktisch advies voor uw renovatie in Antwerpen.',
     h1: 'Renovatietips en Informatie van Reno Rangers',
     bodyText: 'De blog van Reno Rangers staat vol met nuttige informatie voor iedereen die een renovatie plant. Lees over de kostprijs van een badkamerrenovatie in Antwerpen, ontdek de nieuwste trends in binnenafwerking en leer hoe u de juiste renovatie-aannemer kiest. Wij delen onze expertise om u te helpen de juiste keuzes te maken voor uw renovatieproject. Bekijk onze artikelen en neem contact op als u vragen heeft.',
     links: [...mainLinks, ...blogLinks,
@@ -142,6 +155,21 @@ const routes = [
     ],
   },
   {
+    route: '/badkamercalculator',
+    title: 'Badkamerrenovatie Kostprijs Berekenen | Gratis Calculator 2026 | Reno Rangers',
+    description: 'Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen. Van €4.500 tot €42.000 — uw persoonlijke schatting op maat in 2 minuten.',
+    h1: 'Badkamerrenovatie Kostprijs Berekenen — Gratis Calculator 2026',
+    bodyText: 'Wat kost een badkamerrenovatie in België? Gebruik onze gratis badkamercalculator en ontdek de kostprijs van uw renovatie. Reno Rangers werkt in Antwerpen, Merksem, Hoboken, Wilrijk, Berchem, Deurne, Ekeren, Schoten, Kapellen, Brasschaat, Mechelen, Willebroek, Bornem, Londerzeel, Putte, Duffel, Rumst, Lier, Sint-Niklaas en omliggende gemeenten. Hoeveel kost een badkamerrenovatie in Antwerpen? Een kleine badkamerrenovatie start in Antwerpen vanaf €4.500 voor een basisrenovatie. Een volledige badkamerrenovatie van een middelgrote badkamer kost gemiddeld €13.000 tot €16.000. Hoeveel kost een badkamerrenovatie in Mechelen? Dezelfde tarieven als in Antwerpen: €4.500 tot €42.000. Hoeveel kost badkamerrenovatie in Bornem? Een volledige renovatie kost €13.000–€16.000. Badkamerrenovatie kostprijs per m² ligt tussen €750 en €2.500 afhankelijk van het type afwerking. Badkamer verbouwen budget: basisrenovatie €750–€1.200/m², volledige renovatie €1.200–€1.800/m², luxe mortex afwerking €1.800–€2.500/m². Wat kost een mortex badkamer? Wat kost een inloopdouche plaatsen? Wat kost vloerverwarming in de badkamer? Wat kost een douche plaatsen? Complete badkamerrenovatie offerte aanvragen — gratis bezoek ter plaatse binnen 24 uur. Sanitair plaatsen prijs Antwerpen, tegels leggen badkamer prijs, badkamer verbouwen kleine badkamer kosten 2026.',
+    links: [
+      { href: '/', text: 'Home' },
+      { href: '/diensten', text: 'Badkamerrenovatie diensten' },
+      { href: '/contact', text: 'Gratis offerte aanvragen' },
+      { href: '/projecten', text: 'Gerealiseerde projecten' },
+      { href: '/blog/wat-kost-badkamerrenovatie-antwerpen-2026', text: 'Wat kost badkamerrenovatie 2026' },
+      { href: '/projecten/mortex-badkamer-bornem', text: 'Mortex badkamer Bornem' },
+    ],
+  },
+  {
     route: '/privacybeleid',
     title: 'Privacybeleid | Reno Rangers',
     description: 'Lees het privacybeleid van Reno Rangers. Wij verwerken uw persoonsgegevens veilig en conform de Belgische en Europese privacywetgeving (AVG/GDPR).',
@@ -153,7 +181,7 @@ const routes = [
   {
     route: '/projecten/badkamerrenovatie-antwerpen',
     title: 'Badkamerrenovatie Antwerpen | Reno Rangers Project',
-    description: 'Bekijk dit badkamerrenovatieproject in Antwerpen door Reno Rangers: van verouderde badkamer naar een moderne, strakke ruimte met nieuw sanitair en tijdloze tegels.',
+    description: 'Badkamerrenovatie Antwerpen: van verouderde ruimte naar strakke moderne badkamer met nieuw sanitair en tijdloze tegels. Project door Reno Rangers.',
     h1: 'Badkamerrenovatie in Antwerpen — Project door Reno Rangers',
     bodyText: 'Bij dit project in Antwerpen renoveerde Reno Rangers een verouderde badkamer volledig. De bestaande tegels, sanitair en leidingwerk werden vervangen door nieuwe, kwalitatieve materialen. De klant kreeg een strakke, lichte badkamer met modern sanitair, een nieuwe douche en verbeterde ventilatie. Reno Rangers verzorgde de volledige uitvoering van sloop tot sleuteloverdracht. Bekijk de voor-en-na foto\'s en vraag een offerte aan voor uw eigen badkamerrenovatie.',
     links: [
@@ -166,7 +194,7 @@ const routes = [
   {
     route: '/projecten/mortex-badkamer-merksem',
     title: 'Mortex Badkamer Merksem | Reno Rangers Project',
-    description: 'Donkere mortex badkamer in Merksem door Reno Rangers: van verouderde witte badkamer naar luxueuze designbadkamer met zwarte accenten en inloopdouche. Bekijk voor en na.',
+    description: 'Mortex badkamer Merksem door Reno Rangers: van witte badkamer naar luxueuze designbadkamer met zwarte accenten en inloopdouche. Bekijk voor en na.',
     h1: 'Mortex Badkamer in Merksem — Project door Reno Rangers',
     bodyText: 'In Merksem transformeerde Reno Rangers een gewone witte badkamer naar een sfeervolle mortex designbadkamer. De klant koos voor donkergrijs mortex op wanden en vloer, gecombineerd met een inloopdouche, zwart sanitair en een ronde LED spiegel. Ook de aparte toiletruimte werd volledig afgewerkt in mortex met zwarte accenten. Een complete transformatie naar een luxueuze, hotelachtige badkamer. Vraag een offerte aan voor uw mortex badkamer.',
     links: [
@@ -179,7 +207,7 @@ const routes = [
   {
     route: '/projecten/mortex-badkamer-antwerpen',
     title: 'Mortex Badkamer Antwerpen | Reno Rangers Project',
-    description: 'Lichte mortex badkamer in Antwerpen met vrijstaand bad en organische LED spiegel. Reno Rangers realiseerde een tijdloze badkamer in warme beige tint met zwarte mat accenten.',
+    description: 'Mortex badkamer Antwerpen met vrijstaand bad en organische LED spiegel. Tijdloze afwerking in warme beige tint met zwarte accenten. Project door Reno Rangers.',
     h1: 'Mortex Badkamer in Antwerpen — Project door Reno Rangers',
     bodyText: 'Voor een klant in Antwerpen realiseerde Reno Rangers een tijdloze mortex badkamer in warme beige tinten. Wanden en vloer zijn volledig bekleed met mortex, gecombineerd met een vrijstaand bad en mat zwart sanitair. Een organisch gevormde LED spiegel en ingebouwde verlichtingsniche maken de afwerking af. Een badkamer die rust, warmte en luxe uitstraalt. Neem contact op voor uw eigen mortex renovatie in Antwerpen.',
     links: [
@@ -192,7 +220,7 @@ const routes = [
   {
     route: '/projecten/volledige-badkamer-antwerpen',
     title: 'Volledige Badkamerrenovatie Antwerpen | Reno Rangers',
-    description: 'Totaalrenovatie van een badkamer in Antwerpen met donkere tegels in visgraatpatroon en maatwerk meubilair. Reno Rangers leverde een luxueuze, tijdloze afwerking.',
+    description: 'Volledige badkamerrenovatie Antwerpen met donkere tegels en maatwerk. Reno Rangers leverde een luxueuze, tijdloze afwerking. Bekijk voor en na.',
     h1: 'Volledige Badkamerrenovatie in Antwerpen — Project door Reno Rangers',
     bodyText: 'Reno Rangers realiseerde een volledige badkamerrenovatie in Antwerpen met donkere wandtegels en vloertegels in visgraatpatroon. Maatwerk meubilair, een ruime inloopdouche met regensproeier en op maat gemaakte spiegels completeren de luxueuze afwerking. De verouderde badkamer werd volledig gesloopt en heropgebouwd. Het resultaat is een tijdloze, elegante badkamer die het dagelijkse comfort aanzienlijk verhoogt.',
     links: [
@@ -205,7 +233,7 @@ const routes = [
   {
     route: '/projecten/badkamer-paars-meubel-merksem',
     title: 'Badkamer met Paars Meubel Merksem | Reno Rangers',
-    description: 'Badkamerrenovatie in Merksem met een uniek paars meubel als blikvanger. Reno Rangers realiseerde een persoonlijke, karaktervolle badkamer volledig op maat van de klant.',
+    description: 'Badkamerrenovatie Merksem met uniek paars meubel als blikvanger. Reno Rangers realiseerde een karaktervolle badkamer volledig op maat van de klant.',
     h1: 'Badkamer met Paars Meubel in Merksem — Project door Reno Rangers',
     bodyText: 'Voor een klant in Merksem renoveerde Reno Rangers een badkamer met een uniek en persoonlijk karakter. Het paarse badkamermeubel is de absolute blikvanger en geeft de ruimte een eigen identiteit. Bijpassende wandtegels, vloer en verlichting werden zorgvuldig afgestemd op de gekozen stijl. Reno Rangers toont dat een badkamer niet standaard hoeft te zijn — karakter en kwaliteit gaan perfect samen. Bekijk ons project en vraag uw eigen offerte aan.',
     links: [
@@ -218,7 +246,7 @@ const routes = [
   {
     route: '/projecten/keukenrenovatie-antwerpen',
     title: 'Keukenrenovatie Antwerpen | Reno Rangers Project',
-    description: 'Volledige keukenrenovatie in Antwerpen door Reno Rangers: maatwerk kasten, nieuwe indeling en moderne afwerking. Van gedateerde keuken naar functionele kookruimte.',
+    description: 'Keukenrenovatie Antwerpen door Reno Rangers: maatwerk kasten, nieuwe indeling en moderne afwerking. Van gedateerde keuken naar functionele kookruimte.',
     h1: 'Keukenrenovatie in Antwerpen — Project door Reno Rangers',
     bodyText: 'Reno Rangers renoveerde een volledige keuken in Antwerpen voor een klant die meer functionaliteit en een frisse uitstraling wou. De bestaande keuken werd volledig gesloopt en heropgebouwd met maatwerk kasten, een nieuw werkblad, moderne inbouwapparatuur en vernieuwd tegelwerk. De nieuwe indeling biedt meer werkruimte en betere opberging. Het resultaat is een moderne, praktische keuken die perfect aansluit bij de levensstijl van de klant.',
     links: [
@@ -231,7 +259,7 @@ const routes = [
   {
     route: '/projecten/living-binnenafwerking-antwerpen',
     title: 'Living & Binnenafwerking Antwerpen | Reno Rangers',
-    description: 'Living en binnenafwerking gerenoveerd in Antwerpen door Reno Rangers: gladde muren, nieuwe vloer, plinten en frisse afwerking. Strakke woonruimte van hoge kwaliteit.',
+    description: 'Living en binnenafwerking gerenoveerd Antwerpen: gladde muren, nieuwe vloer en frisse afwerking door Reno Rangers. Strakke woonruimte van hoge kwaliteit.',
     h1: 'Living & Binnenafwerking in Antwerpen — Project door Reno Rangers',
     bodyText: 'Bij een volledig appartement in Antwerpen verzorgde Reno Rangers ook de renovatie van de living en binnenafwerking. Muren werden gladgepleisterd en geschilderd, een nieuwe vloer werd gelegd over de volledige woonruimte en plinten, deuromlijstingen en binnendeuren werden vernieuwd. Plafondafwerking en ingebouwde verlichting zorgen voor een afgewerkt geheel. Het resultaat is een frisse, strakke woonruimte die rust en kwaliteit uitstraalt.',
     links: [
@@ -242,9 +270,22 @@ const routes = [
     ],
   },
   {
+    route: '/projecten/mortex-toilet-bornem',
+    title: 'Mortex Toilet Bornem | Reno Rangers Project',
+    description: 'Mortex toilet Bornem door Reno Rangers: beige mortex met mat zwart wand-WC, ronde opzetwastafel en eiken meubel. Bekijk voor en na.',
+    h1: 'Mortex Toilet in Bornem — Project door Reno Rangers',
+    bodyText: 'In Bornem renoveerde Reno Rangers een verouderde toiletruimte met witte metro tegels naar een strakke beige mortex ruimte. Een mat zwart wand-WC met ingebouwde stortbak en zwarte bedieningsplaat, een compact eiken meubel met ronde zwarte opzetwastafel en een ronde LED spiegel maken het geheel af. Inbouwspots in het plafond zorgen voor sfeervolle verlichting. De toiletruimte sluit perfect aan bij de bijhorende mortex badkamer in Bornem.',
+    links: [
+      ...mainLinks,
+      ...projectLinks.filter(l => l.href !== '/projecten/mortex-toilet-bornem'),
+      { href: '/contact', text: 'Offerte aanvragen' },
+      { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie aanvragen' },
+    ],
+  },
+  {
     route: '/projecten/badkamerrenovatie-londerzeel',
     title: 'Badkamerrenovatie Londerzeel | Reno Rangers Project',
-    description: 'Badkamerrenovatie in Londerzeel door Reno Rangers: van verouderde donkere badkamer naar lichte, moderne ruimte met nieuw sanitair en kwaliteitsvolle tijdloze afwerking.',
+    description: 'Badkamerrenovatie Londerzeel door Reno Rangers: van verouderde badkamer naar lichte, moderne ruimte met nieuw sanitair. Bekijk voor en na.',
     h1: 'Badkamerrenovatie in Londerzeel — Project door Reno Rangers',
     bodyText: 'In Londerzeel renoveerde Reno Rangers een badkamer die toe was aan een volledige make-over. De verouderde indeling werd volledig aangepakt met nieuwe leidingen, lichte wandtegels en vloertegels en modern sanitair. Een nieuwe douche, wasmeubel en toilet werden geplaatst met aandacht voor waterdichtheid en duurzaamheid. Het resultaat is een heldere, ruimtevoelende badkamer die de klant dagelijks met plezier gebruikt en nog jaren meegaat.',
     links: [
@@ -254,11 +295,24 @@ const routes = [
       { href: 'https://energiesparen.be', text: 'Energiepremies' },
     ],
   },
+  {
+    route: '/projecten/mortex-badkamer-bornem',
+    title: 'Mortex Badkamer Bornem | Reno Rangers Project',
+    description: 'Mortex badkamer Bornem door Reno Rangers: zolderbadkamer omgebouwd naar beige mortex met eiken meubel en inloopdouche. Bekijk voor en na.',
+    h1: 'Mortex Badkamer in Bornem — Project door Reno Rangers',
+    bodyText: 'In Bornem transformeerde Reno Rangers een verouderde zolderbadkamer volledig. De oude witte tegels, het bad en de blauwe vloertegels maakten plaats voor warme beige mortex op alle wanden — ook in de douchezone. Een eiken maatwerk meubel met geïntegreerde wastafel en een organische ovale spiegel geven de ruimte een luxueuze uitstraling. De inloopdouche met glazen wand en ronde regen douchekop maakt het plaatje compleet. Vraag een offerte aan voor uw eigen mortex badkamer.',
+    links: [
+      ...mainLinks,
+      ...projectLinks.filter(l => l.href !== '/projecten/mortex-badkamer-bornem'),
+      { href: '/contact', text: 'Offerte aanvragen' },
+      { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie aanvragen' },
+    ],
+  },
   // ── BLOG POSTS ──
   {
     route: '/blog/wat-kost-badkamerrenovatie-antwerpen-2026',
     title: 'Wat kost een badkamerrenovatie in Antwerpen in 2026? | Reno Rangers',
-    description: 'Ontdek de kostprijs van een badkamerrenovatie in Antwerpen in 2026: welke factoren bepalen de prijs, wat zijn gemiddelde kosten en hoe vraagt u een offerte aan bij Reno Rangers.',
+    description: 'Wat kost een badkamerrenovatie in Antwerpen in 2026? Ontdek de kostprijs, welke factoren de prijs bepalen en vraag gratis een offerte aan.',
     h1: 'Wat kost een badkamerrenovatie in Antwerpen in 2026?',
     bodyText: 'De kostprijs van een badkamerrenovatie in Antwerpen hangt af van meerdere factoren: de grootte van de badkamer, de kwaliteit van de materialen, de complexiteit van de leidingen en de gewenste afwerking. Reno Rangers biedt transparante, vaste prijzen zonder verrassingen achteraf. In dit artikel leest u alles over de gemiddelde prijzen voor badkamerrenovaties in Antwerpen in 2026 en vraagt u vrijblijvend een offerte aan.',
     links: [
@@ -271,7 +325,7 @@ const routes = [
   {
     route: '/blog/totaalrenovatie-alles-wat-u-moet-weten',
     title: 'Totaalrenovatie: alles wat u moet weten | Reno Rangers Antwerpen',
-    description: 'Alles over planning en aanpak van een totaalrenovatie: van budget en vergunningen tot de volgorde van werken. De complete gids van Reno Rangers voor een geslaagde renovatie.',
+    description: 'Alles over een totaalrenovatie: van budget en vergunningen tot de volgorde van werken. De complete gids van Reno Rangers voor uw renovatie.',
     h1: 'Totaalrenovatie: alles wat u moet weten',
     bodyText: 'Een totaalrenovatie is een grote investering die vraagt om een goede planning. Reno Rangers helpt u van begin tot einde: van het bepalen van het budget en het aanvragen van vergunningen tot de coördinatie van alle aannemers en de uiteindelijke oplevering. In dit artikel leest u alles over het aanpakken van een totaalrenovatie in België, inclusief tips over de volgorde van werken en het vermijden van veelgemaakte fouten.',
     links: [
@@ -284,7 +338,7 @@ const routes = [
   {
     route: '/blog/trends-binnenafwerking-belgische-woningen-2026',
     title: 'Trends in binnenafwerking voor Belgische woningen 2026 | Reno Rangers',
-    description: 'Ontdek de populairste trends in binnenafwerking voor Belgische woningen in 2026: mortex, microcement, warme natuurtinten en duurzame materialen. Inspiratie van Reno Rangers.',
+    description: 'Ontdek trends in binnenafwerking voor Belgische woningen in 2026: mortex, microcement en warme aardetinten. Inspiratie en advies van Reno Rangers.',
     h1: 'Trends in binnenafwerking voor Belgische woningen 2026',
     bodyText: 'De wereld van binnenafwerking evolueert snel. In 2026 zijn mortex, microcement en warme natuurtinten bijzonder populair in Belgische woningen. Reno Rangers volgt alle trends op de voet en past ze toe in onze projecten. Van minimalistische badkamers met mortex afwerking tot warme livings met houten accenten — wij realiseren het. Lees in dit artikel welke trends dit jaar domineren en hoe u ze kunt toepassen in uw eigen woning.',
     links: [
@@ -297,7 +351,7 @@ const routes = [
   {
     route: '/blog/hoe-juiste-renovatie-aannemer-kiezen',
     title: 'Hoe kiest u de juiste renovatie-aannemer? | Reno Rangers',
-    description: 'Leer waar u op moet letten bij het kiezen van een renovatie-aannemer in Antwerpen: vaste prijzen, referenties, communicatie en kwaliteit. Eerlijke tips van Reno Rangers.',
+    description: 'Waar u op moet letten bij het kiezen van een renovatie-aannemer in Antwerpen: vaste prijzen, referenties en kwaliteit. Praktische tips van Reno Rangers.',
     h1: 'Hoe kiest u de juiste renovatie-aannemer?',
     bodyText: 'Het kiezen van de juiste renovatie-aannemer is een van de belangrijkste beslissingen bij uw renovatie. Reno Rangers geeft eerlijk advies: let op vaste prijzen zonder verborgen kosten, vraag referenties op en bekijk afgewerkte projecten. Een goede aannemer communiceert proactief, respecteert de planning en garandeert de kwaliteit van de afwerking. In dit artikel vindt u alle tips om de beste keuze te maken voor uw renovatieproject in Antwerpen en omgeving.',
     links: [
@@ -320,7 +374,7 @@ function buildLinksHtml(links) {
 function buildHtml(routeData) {
   const { route, title, description, h1, bodyText, links } = routeData;
   const canonical = route === '/' ? `${origin}/` : `${origin}${route}`;
-  let html = stripUnverifiedBusinessFacts(stripUnverifiedSearchAction(baseHtml));
+  let html = stripFaqPageExceptRoute(stripUnverifiedBusinessFacts(stripUnverifiedSearchAction(baseHtml)), route);
 
   // Update meta tags
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
@@ -332,6 +386,8 @@ function buildHtml(routeData) {
   html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?\s*>/i, `<meta name="twitter:title" content="${esc(title)}" />`);
   html = html.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?\s*>/i, `<meta name="twitter:description" content="${esc(description)}" />`);
   html = html.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?\s*>/i, '<meta name="robots" content="index, follow" />');
+  html = html.replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?\s*>/i, '<meta property="og:type" content="website" />');
+  html = html.replace(/<meta\s+name="twitter:card"\s+content="[^"]*"\s*\/?\s*>/i, '<meta name="twitter:card" content="summary_large_image" />');
 
   // Inject SEO prerender block: H1, descriptive text, and internal/external links.
   // Uses sr-only positioning so it doesn't affect visual layout once React hydrates.
