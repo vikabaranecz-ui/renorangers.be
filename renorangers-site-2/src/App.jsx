@@ -527,6 +527,12 @@ const ROUTE_SEO = Object.freeze({
     ogTitle: "Privacybeleid — Reno Rangers",
     ogDescription: "Informatie over privacy, gegevensverwerking en uw rechten.",
   },
+  [PAGE_PATHS.calculator]: {
+    title: "Badkamer Renovatie Calculator | Reno Rangers",
+    description: "Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen. Ontvang een persoonlijke schatting op maat via onze online calculator.",
+    ogTitle: "Badkamer Renovatie Calculator — Reno Rangers",
+    ogDescription: "Bereken in 2 minuten de kostprijs van uw badkamerrenovatie. Gratis en vrijblijvend.",
+  },
 });
 
 /* ── PROJECT DETAIL PAGES ── */
