@@ -1562,14 +1562,14 @@ function Home() {
       {/* CALCULATOR CTA */}
       <section style={{ padding: "90px 0", background: C.off }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", flexWrap: "wrap" }} className="calc-cta-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }} className="calc-cta-grid">
             <div>
               <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 12, letterSpacing: 4, color: C.red, display: "block", marginBottom: 12 }}>GRATIS TOOL</span>
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px,5vw,60px)", color: C.black, lineHeight: 0.92, margin: "0 0 16px" }}>
                 WAT KOST UW<br /><span style={{ color: C.red }}>BADKAMERRENOVATIE?</span>
               </h2>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: C.gray, maxWidth: 480, lineHeight: 1.7, margin: "0 0 28px" }}>
-                Bereken in 2 minuten een realistische prijsschatting op maat — zonder verplichtingen. Van kleine badkamer tot luxe renovatie met mortex.
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: C.gray, lineHeight: 1.7, margin: "0 0 28px" }}>
+                Beantwoord 3 vragen over uw badkamer en ontvang meteen een realistische prijsschatting op maat — volledig gratis en zonder verplichtingen.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <Link to={PAGE_PATHS.calculator} style={{ background: C.red, color: C.white, fontFamily: "'Bebas Neue', sans-serif", fontSize: 15, letterSpacing: 3, padding: "15px 32px", textDecoration: "none", display: "inline-block" }}>
@@ -1580,17 +1580,19 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, minWidth: 220 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                ["Klein", "€4.500 – €15.000"],
-                ["Middel", "€7.500 – €27.000"],
-                ["Groot", "€11.000 – €42.000"],
-                ["Mortex +", "€2.800 – €3.800"],
-              ].map(function (r) {
+                { n: "01", title: "KIES UW BADKAMER", text: "Grootte en type afwerking — basis, volledig of luxe" },
+                { n: "02", title: "SELECTEER UW EXTRAS", text: "Inloopdouche, mortex, vloerverwarming of maatwerk" },
+                { n: "03", title: "ONTVANG UW SCHATTING", text: "Uw persoonlijke prijs na het invullen van uw gegevens" },
+              ].map(function (s) {
                 return (
-                  <div key={r[0]} style={{ background: C.white, padding: "14px 16px", borderLeft: "3px solid " + C.red }}>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 2, color: C.gray, marginBottom: 4 }}>{r[0]}</div>
-                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 16, color: C.black }}>{r[1]}</div>
+                  <div key={s.n} style={{ background: C.white, padding: "16px 20px", display: "flex", alignItems: "flex-start", gap: 16, borderLeft: "3px solid " + C.red }}>
+                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, color: C.red, lineHeight: 1, flexShrink: 0 }}>{s.n}</span>
+                    <div>
+                      <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 14, letterSpacing: 2, color: C.black, marginBottom: 3 }}>{s.title}</div>
+                      <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.5 }}>{s.text}</div>
+                    </div>
                   </div>
                 );
               })}
@@ -2886,6 +2888,7 @@ function Foot() {
     { l: "Over ons", to: PAGE_PATHS.over },
     { l: "Projecten", to: PAGE_PATHS.projecten },
     { l: "Blog", to: PAGE_PATHS.blog },
+    { l: "Calculator", to: PAGE_PATHS.calculator },
     { l: "Contact", to: PAGE_PATHS.contact },
   ];
   var serviceLinks = ["Totaalrenovatie", "Badkamerrenovatie", "Binnenafwerking", "Schilderwerken", "Vloeren & tegels"];
