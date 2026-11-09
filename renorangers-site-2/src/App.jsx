@@ -3254,8 +3254,8 @@ function BadkamerCalculator() {
     cursor: "pointer",
     transition: "border-color .2s, background .2s",
     textAlign: "center",
-    flex: 1,
-    minWidth: 0,
+    flex: "1 1 160px",
+    minWidth: 160,
   };
   var cardSelected = { borderColor: C.red, background: "#FFF5F5" };
 
@@ -3267,7 +3267,7 @@ function BadkamerCalculator() {
         onMouseEnter={function (e) { if (!selected) e.currentTarget.style.borderColor = C.gray; }}
         onMouseLeave={function (e) { if (!selected) e.currentTarget.style.borderColor = C.ltGray; }}
       >
-        <div style={{ width: "100%", height: 110, overflow: "hidden", position: "relative" }}>
+        <div style={{ width: "100%", height: 150, overflow: "hidden", position: "relative" }}>
           <img src={img} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           {selected && <div style={{ position: "absolute", inset: 0, background: "rgba(230,51,41,0.18)" }} />}
         </div>
