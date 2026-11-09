@@ -481,7 +481,7 @@ const BLOG_POSTS = [
 const ROUTE_SEO = Object.freeze({
   [PAGE_PATHS.home]: {
     title: "Renovatiebedrijf & Aannemer Antwerpen | Reno Rangers",
-    description: "Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
+    description: "Renovatiebedrijf Antwerpen voor renovatie: totaalrenovatie, badkamerrenovatie & binnenafwerking. Vaste prijs, één aanspreekpunt. Gratis offerte.",
     ogTitle: "Renovatiebedrijf Antwerpen — Aannemer voor Renovatie | Reno Rangers",
     ogDescription: "Renovatiebedrijf Antwerpen en aannemer voor renovatie: totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, geen verrassingen.",
   },
@@ -499,7 +499,7 @@ const ROUTE_SEO = Object.freeze({
   },
   [PAGE_PATHS.diensten]: {
     title: "Totaalrenovatie & Renovatiediensten Antwerpen | Reno Rangers",
-    description: "Totaalrenovatie Antwerpen voor woning, appartement of investeringspand: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.",
+    description: "Totaalrenovatie Antwerpen voor woning of appartement: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.",
     ogTitle: "Totaalrenovatie & Renovatiediensten Antwerpen — Reno Rangers",
     ogDescription: "Totaalrenovatie, badkamerrenovatie en binnenafwerking voor woning, appartement of investeringspand in Antwerpen.",
   },
@@ -528,8 +528,8 @@ const ROUTE_SEO = Object.freeze({
     ogDescription: "Informatie over privacy, gegevensverwerking en uw rechten.",
   },
   [PAGE_PATHS.calculator]: {
-    title: "Badkamerrenovatie Kostprijs Berekenen | Gratis Calculator 2026 | Reno Rangers",
-    description: "Bereken gratis wat een badkamerrenovatie kost in Antwerpen, Mechelen, Bornem, Schoten en omgeving. Kleine badkamer of luxe renovatie — ontvang in 2 minuten een realistische prijsschatting op maat. Vaste prijs, geen verborgen kosten.",
+    title: "Badkamerrenovatie Kostprijs Calculator 2026 | Reno Rangers",
+    description: "Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen. Van €4.500 tot €42.000 — uw persoonlijke schatting op maat in 2 minuten.",
     ogTitle: "Wat Kost Een Badkamerrenovatie? Bereken Het Gratis — Reno Rangers",
     ogDescription: "Gebruik onze gratis badkamercalculator en ontdek wat uw renovatie kost. Van €4.500 tot €42.000 — uw persoonlijke schatting in 2 minuten.",
   },
@@ -2885,6 +2885,7 @@ function Foot() {
   var pageLinks = [
     { l: "Home", to: PAGE_PATHS.home },
     { l: "Diensten", to: PAGE_PATHS.diensten },
+    { l: "Badkamerrenovatie", to: PAGE_PATHS.landing },
     { l: "Over ons", to: PAGE_PATHS.over },
     { l: "Projecten", to: PAGE_PATHS.projecten },
     { l: "Blog", to: PAGE_PATHS.blog },

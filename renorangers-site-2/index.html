@@ -113,15 +113,23 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HomeAndConstructionBusiness",
+      "@type": ["HomeAndConstructionBusiness", "Organization"],
       "@id": "https://www.renorangers.be/#business",
       "name": "Reno Rangers",
+      "legalName": "Reno Rangers BV",
       "description": "Renovatiebedrijf in Antwerpen voor totaalrenovatie, badkamerrenovatie en binnenafwerking. Vaste prijs, één aanspreekpunt.",
       "url": "https://www.renorangers.be",
-      "logo": "https://www.renorangers.be/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.renorangers.be/favicon.svg",
+        "contentUrl": "https://www.renorangers.be/favicon.svg"
+      },
       "image": "https://www.renorangers.be/badkamer-hero-desktop.webp",
       "telephone": "+32465883919",
       "email": "info@renorangers.be",
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Bankoverschrijving, Bankkaart",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Antwerpen",
