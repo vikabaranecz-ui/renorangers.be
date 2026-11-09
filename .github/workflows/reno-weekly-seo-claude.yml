@@ -174,10 +174,11 @@ jobs:
             Result: <merged / awaiting approval / analysis only>
             Next: <single highest-value next move>
             Use normal line breaks, no markdown table, no percent-encoded characters, no invented numbers.
+            Skills: `.claude/skills/` holds reviewed searchfit-seo skills (see `.claude/skills/README.md`; project rules outrank them). Use a skill only when it fits a diagnosed problem, and list in the report which skills were discovered, loaded, executed and whether their result was verified.
           claude_args: |
             --model claude-sonnet-5
             --effort high
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(python:*),Bash(python3:*),Bash(cat:*),Bash(pwd),Bash(ls:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(python:*),Bash(python3:*),Bash(cat:*),Bash(pwd),Bash(ls:*),Skill"
 
       - name: Send optional Telegram summary
         if: always() && steps.duplicate.outputs.skip != 'true'
