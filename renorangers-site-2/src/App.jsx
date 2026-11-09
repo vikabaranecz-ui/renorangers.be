@@ -3341,9 +3341,9 @@ function BadkamerCalculator() {
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>HOE GROOT IS UW BADKAMER?</h2>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Meettip: lengte × breedte van de vloer</p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <OptionCard id="klein" selected={size === "klein"} onClick={function () { setSize("klein"); }} img="/projects/calc-size-klein.webp" title="KLEIN" sub="Minder dan 4 m²" />
-                <OptionCard id="middel" selected={size === "middel"} onClick={function () { setSize("middel"); }} img="/projects/calc-size-middel.webp" title="MIDDELGROOT" sub="4 tot 8 m²" />
-                <OptionCard id="groot" selected={size === "groot"} onClick={function () { setSize("groot"); }} img="/projects/calc-size-groot.webp" title="GROOT" sub="Meer dan 8 m²" />
+                <OptionCard id="klein" selected={size === "klein"} onClick={function () { setSize("klein"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-klein.webp" title="KLEIN" sub="Minder dan 4 m²" />
+                <OptionCard id="middel" selected={size === "middel"} onClick={function () { setSize("middel"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-middel.webp" title="MIDDELGROOT" sub="4 tot 8 m²" />
+                <OptionCard id="groot" selected={size === "groot"} onClick={function () { setSize("groot"); setTimeout(function () { setStep(2); }, 250); }} img="/projects/calc-size-groot.webp" title="GROOT" sub="Meer dan 8 m²" />
               </div>
             </div>
           )}
@@ -3355,11 +3355,11 @@ function BadkamerCalculator() {
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 6px", lineHeight: 1 }}>WELK TYPE RENOVATIE?</h2>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 28px" }}>Kies het niveau dat het beste past bij uw wens</p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <OptionCard id="basis" selected={type === "basis"} onClick={function () { setType("basis"); }} img="/projects/calc-type-basis.webp"
+                <OptionCard id="basis" selected={type === "basis"} onClick={function () { setType("basis"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-basis.webp"
                   title="BASIS" sub="Nieuwe tegels en sanitair, zelfde indeling" />
-                <OptionCard id="volledig" selected={type === "volledig"} onClick={function () { setType("volledig"); }} img="/projects/calc-type-volledig.webp"
+                <OptionCard id="volledig" selected={type === "volledig"} onClick={function () { setType("volledig"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-volledig.webp"
                   title="VOLLEDIG" sub="Complete renovatie, nieuwe indeling mogelijk" />
-                <OptionCard id="luxe" selected={type === "luxe"} onClick={function () { setType("luxe"); }} img="/projects/calc-type-luxe.webp"
+                <OptionCard id="luxe" selected={type === "luxe"} onClick={function () { setType("luxe"); setTimeout(function () { setStep(3); }, 250); }} img="/projects/calc-type-luxe.webp"
                   title="LUXE" sub="Premium afwerking, mortex of exclusieve tegels" />
               </div>
             </div>
