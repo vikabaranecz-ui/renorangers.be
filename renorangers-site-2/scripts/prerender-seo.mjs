@@ -144,11 +144,18 @@ const routes = [
   },
   {
     route: '/badkamercalculator',
-    title: 'Badkamer Renovatie Calculator | Reno Rangers',
-    description: 'Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen en omgeving. Ontvang een nauwkeurige schatting op maat via onze online calculator.',
-    h1: 'Badkamer Renovatie Calculator',
-    bodyText: 'Gebruik onze gratis badkamer renovatie calculator om een realistische kostenraming te krijgen voor uw badkamerrenovatie in Antwerpen, Merksem, Bornem en omgeving. Selecteer de grootte van uw badkamer, het gewenste renovatietype en eventuele extra opties zoals mortex afwerking, inloopdouche of vloerverwarming. Binnen 2 minuten ontvangt u een indicatieve prijsraming. Reno Rangers — één aanspreekpunt voor uw volledige badkamerrenovatie. Vaste prijs op papier, geen meerwerken zonder akkoord.',
-    links: [{ href: '/', text: 'Home' }, { href: '/diensten', text: 'Diensten' }, { href: '/contact', text: 'Gratis offerte' }, { href: '/projecten', text: 'Onze projecten' }],
+    title: 'Badkamerrenovatie Kostprijs Berekenen | Gratis Calculator 2026 | Reno Rangers',
+    description: 'Bereken gratis wat een badkamerrenovatie kost in Antwerpen en omgeving. Kleine badkamer of luxe renovatie — ontvang in 2 minuten een realistische prijsschatting op maat. Vaste prijs, geen verborgen kosten.',
+    h1: 'Badkamerrenovatie Kostprijs Berekenen — Gratis Calculator 2026',
+    bodyText: 'Wat kost een badkamerrenovatie in België? Gebruik onze gratis badkamercalculator en ontdek de kostprijs van uw renovatie in Antwerpen, Merksem, Bornem, Londerzeel of omgeving. Een kleine badkamerrenovatie start vanaf €4.500 voor een basisrenovatie. Een volledige badkamerrenovatie van een middelgrote badkamer kost gemiddeld €13.000 tot €16.000. Voor een luxe badkamer met mortex afwerking, inloopdouche en maatwerk meubel rekent u op €21.000 tot €42.000 afhankelijk van de grootte. Reno Rangers biedt vaste prijzen zonder verborgen kosten — één aanspreekpunt van afbraak tot afwerking. Badkamer renoveren prijs 2026: bereken uw persoonlijke schatting met onze gratis tool en ontvang binnen 24 uur een offerte op maat. Wat kost een mortex badkamer? Wat kost een inloopdouche? Wat kost vloerverwarming in de badkamer? Onze calculator geeft u direct een antwoord op maat van uw project.',
+    links: [
+      { href: '/', text: 'Home' },
+      { href: '/diensten', text: 'Badkamerrenovatie diensten' },
+      { href: '/contact', text: 'Gratis offerte aanvragen' },
+      { href: '/projecten', text: 'Gerealiseerde projecten' },
+      { href: '/blog/wat-kost-badkamerrenovatie-antwerpen-2026', text: 'Wat kost badkamerrenovatie 2026' },
+      { href: '/projecten/mortex-badkamer-bornem', text: 'Mortex badkamer Bornem' },
+    ],
   },
   {
     route: '/privacybeleid',

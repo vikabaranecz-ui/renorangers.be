@@ -528,10 +528,10 @@ const ROUTE_SEO = Object.freeze({
     ogDescription: "Informatie over privacy, gegevensverwerking en uw rechten.",
   },
   [PAGE_PATHS.calculator]: {
-    title: "Badkamer Renovatie Calculator | Reno Rangers",
-    description: "Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen. Ontvang een persoonlijke schatting op maat via onze online calculator.",
-    ogTitle: "Badkamer Renovatie Calculator — Reno Rangers",
-    ogDescription: "Bereken in 2 minuten de kostprijs van uw badkamerrenovatie. Gratis en vrijblijvend.",
+    title: "Badkamerrenovatie Kostprijs Berekenen | Gratis Calculator 2026 | Reno Rangers",
+    description: "Bereken gratis wat een badkamerrenovatie kost in Antwerpen en omgeving. Kleine badkamer of luxe renovatie — ontvang in 2 minuten een realistische prijsschatting op maat. Vaste prijs, geen verborgen kosten.",
+    ogTitle: "Wat Kost Een Badkamerrenovatie? Bereken Het Gratis — Reno Rangers",
+    ogDescription: "Gebruik onze gratis badkamercalculator en ontdek wat uw renovatie kost. Van €4.500 tot €42.000 — uw persoonlijke schatting in 2 minuten.",
   },
 });
 
@@ -3475,6 +3475,101 @@ function BadkamerCalculator() {
           })}
         </div>
       </div>
+
+      {/* SEO content — FAQ + keyword text */}
+      <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 16px 80px" }}>
+
+        {/* Intro text block */}
+        <div style={{ borderTop: "3px solid " + C.red, paddingTop: 40, marginBottom: 56 }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px,4vw,38px)", color: C.black, margin: "0 0 16px", lineHeight: 1 }}>WAT KOST EEN BADKAMERRENOVATIE IN 2026?</h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.gray, lineHeight: 1.8, margin: "0 0 16px" }}>
+            De <strong style={{ color: C.black }}>kostprijs van een badkamerrenovatie</strong> in België hangt af van drie factoren: de oppervlakte van uw badkamer, het type renovatie en de gewenste afwerking. Met onze gratis calculator berekent u in 2 minuten een realistische schatting voor uw situatie — of u nu een kleine badkamer wilt renoveren in Antwerpen of een grote luxe badkamer in Bornem of Londerzeel.
+          </p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.gray, lineHeight: 1.8, margin: 0 }}>
+            Bij Reno Rangers werken wij altijd met een <strong style={{ color: C.black }}>vaste prijs op papier</strong>. Geen verrassingen achteraf, geen meerwerken zonder uw akkoord. Van afbraak tot afwerking — wij regelen alles.
+          </p>
+        </div>
+
+        {/* Price table */}
+        <div style={{ marginBottom: 56 }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(22px,3vw,32px)", color: C.black, margin: "0 0 20px", lineHeight: 1 }}>RICHTPRIJZEN BADKAMERRENOVATIE 2026</h2>
+          <div style={{ overflowX: "auto" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Inter', sans-serif", fontSize: 14 }}>
+              <thead>
+                <tr style={{ background: C.black, color: C.white }}>
+                  {["", "Basisrenovatie", "Volledige renovatie", "Luxerenovatie"].map(function (h) {
+                    return <th key={h} style={{ padding: "12px 14px", textAlign: "left", fontWeight: 600, letterSpacing: 0.5 }}>{h}</th>;
+                  })}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Klein (< 4 m²)", "€4.500 – €5.800", "€7.500 – €9.500", "€12.000 – €15.000"],
+                  ["Middelgroot (4–8 m²)", "€7.500 – €9.500", "€13.000 – €16.000", "€21.000 – €27.000"],
+                  ["Groot (> 8 m²)", "€11.000 – €14.000", "€19.000 – €24.000", "€32.000 – €42.000"],
+                ].map(function (row, i) {
+                  return (
+                    <tr key={i} style={{ background: i % 2 === 0 ? C.off : C.white, borderBottom: "1px solid " + C.ltGray }}>
+                      {row.map(function (cell, j) {
+                        return <td key={j} style={{ padding: "12px 14px", fontWeight: j === 0 ? 600 : 400, color: j === 0 ? C.black : C.gray }}>{cell}</td>;
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.gray, marginTop: 10 }}>* Indicatieve prijzen inclusief arbeid en standaardmaterialen. Exacte prijs na gratis bezoek ter plaatse.</p>
+        </div>
+
+        {/* FAQ */}
+        <div style={{ marginBottom: 56 }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(22px,3vw,32px)", color: C.black, margin: "0 0 24px", lineHeight: 1 }}>VEELGESTELDE VRAGEN OVER BADKAMERRENOVATIE</h2>
+          {[
+            {
+              q: "Wat kost een kleine badkamerrenovatie?",
+              a: "Een kleine badkamer (minder dan 4 m²) renoveren kost tussen €4.500 en €15.000, afhankelijk van het type renovatie. Een basisrenovatie met nieuwe tegels en sanitair start vanaf €4.500. Voor een luxe afwerking met mortex rekent u op €12.000 tot €15.000.",
+            },
+            {
+              q: "Wat kost een mortex badkamer?",
+              a: "Een mortex afwerking kost €2.800 tot €3.800 extra bovenop de basisprijs. Voor een volledige mortex badkamer in Antwerpen of omgeving rekent u op een totaalprijs van €13.000 tot €27.000, afhankelijk van de grootte.",
+            },
+            {
+              q: "Hoe lang duurt een badkamerrenovatie?",
+              a: "Een volledige badkamerrenovatie duurt gemiddeld 1 tot 3 weken. Reno Rangers werkt met een vaste planning die vooraf op papier wordt vastgelegd, zodat u precies weet wanneer uw badkamer klaar is.",
+            },
+            {
+              q: "Werkt Reno Rangers in heel Antwerpen en omgeving?",
+              a: "Ja, wij renoveren badkamers in Antwerpen, Merksem, Bornem, Londerzeel en omliggende gemeenten. Vraag een gratis offerte aan voor uw specifieke locatie.",
+            },
+            {
+              q: "Hoe vraag ik een gratis offerte aan?",
+              a: "Gebruik onze badkamercalculator hierboven, vul uw naam en telefoonnummer in en klik op 'Bekijk mijn prijs'. U ontvangt direct een indicatieve schatting en wij contacteren u binnen 24 uur voor een gratis bezoek ter plaatse.",
+            },
+          ].map(function (item, i) {
+            return (
+              <div key={i} style={{ borderBottom: "1px solid " + C.ltGray, paddingBottom: 20, marginBottom: 20 }}>
+                <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 1, color: C.black, margin: "0 0 8px" }}>{item.q}</h3>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, lineHeight: 1.75, margin: 0 }}>{item.a}</p>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+
+      {/* JSON-LD FAQ schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Wat kost een kleine badkamerrenovatie?", "acceptedAnswer": { "@type": "Answer", "text": "Een kleine badkamer (minder dan 4 m²) renoveren kost tussen €4.500 en €15.000, afhankelijk van het type renovatie. Een basisrenovatie start vanaf €4.500. Voor een luxe afwerking met mortex rekent u op €12.000 tot €15.000." } },
+          { "@type": "Question", "name": "Wat kost een mortex badkamer?", "acceptedAnswer": { "@type": "Answer", "text": "Een mortex afwerking kost €2.800 tot €3.800 extra. Voor een volledige mortex badkamer rekent u op €13.000 tot €27.000 afhankelijk van de grootte." } },
+          { "@type": "Question", "name": "Hoe lang duurt een badkamerrenovatie?", "acceptedAnswer": { "@type": "Answer", "text": "Een volledige badkamerrenovatie duurt gemiddeld 1 tot 3 weken. Reno Rangers werkt met een vaste planning die vooraf op papier wordt vastgelegd." } },
+          { "@type": "Question", "name": "Werkt Reno Rangers in heel Antwerpen en omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wij renoveren badkamers in Antwerpen, Merksem, Bornem, Londerzeel en omliggende gemeenten." } },
+          { "@type": "Question", "name": "Hoe vraag ik een gratis offerte aan?", "acceptedAnswer": { "@type": "Answer", "text": "Gebruik de gratis badkamercalculator, vul naam en telefoonnummer in en klik op Bekijk mijn prijs. Wij contacteren u binnen 24 uur." } },
+        ],
+      }) }} />
     </div>
   );
 }
