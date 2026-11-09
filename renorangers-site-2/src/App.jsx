@@ -529,7 +529,7 @@ const ROUTE_SEO = Object.freeze({
   },
   [PAGE_PATHS.calculator]: {
     title: "Badkamerrenovatie Kostprijs Berekenen | Gratis Calculator 2026 | Reno Rangers",
-    description: "Bereken gratis wat een badkamerrenovatie kost in Antwerpen en omgeving. Kleine badkamer of luxe renovatie — ontvang in 2 minuten een realistische prijsschatting op maat. Vaste prijs, geen verborgen kosten.",
+    description: "Bereken gratis wat een badkamerrenovatie kost in Antwerpen, Mechelen, Bornem, Schoten en omgeving. Kleine badkamer of luxe renovatie — ontvang in 2 minuten een realistische prijsschatting op maat. Vaste prijs, geen verborgen kosten.",
     ogTitle: "Wat Kost Een Badkamerrenovatie? Bereken Het Gratis — Reno Rangers",
     ogDescription: "Gebruik onze gratis badkamercalculator en ontdek wat uw renovatie kost. Van €4.500 tot €42.000 — uw persoonlijke schatting in 2 minuten.",
   },
@@ -3587,6 +3587,26 @@ function BadkamerCalculator() {
               q: "Hoe vraag ik een gratis offerte aan?",
               a: "Gebruik onze badkamercalculator hierboven, vul uw naam en telefoonnummer in en klik op 'Bekijk mijn prijs'. U ontvangt direct een indicatieve schatting en wij contacteren u binnen 24 uur voor een gratis bezoek ter plaatse.",
             },
+            {
+              q: "Hoeveel kost een badkamerrenovatie in Antwerpen?",
+              a: "In Antwerpen kost een badkamerrenovatie gemiddeld tussen €7.500 en €27.000, afhankelijk van de grootte en afwerking. Voor een kleine badkamer met basisafwerking begint de prijs bij €4.500. Reno Rangers werkt door heel Antwerpen en de districten Merksem, Hoboken, Deurne, Berchem en Wilrijk.",
+            },
+            {
+              q: "Hoeveel kost een badkamerrenovatie in Mechelen en omgeving?",
+              a: "Voor een badkamerrenovatie in Mechelen, Willebroek, Bonheiden of omliggende gemeenten rekent u op dezelfde tarieven als in Antwerpen: €4.500 tot €42.000 afhankelijk van grootte en type. Reno Rangers rijdt naar heel de regio Mechelen. Vraag een gratis offerte aan voor uw gemeente.",
+            },
+            {
+              q: "Wat kost een badkamerrenovatie per m²?",
+              a: "Een badkamerrenovatie kost gemiddeld €750 tot €2.500 per m², afhankelijk van het type afwerking. Basisrenovatie: €750–€1.200/m². Volledige renovatie: €1.200–€1.800/m². Luxe afwerking met mortex: €1.800–€2.500/m². Kleine badkamers hebben vaak een hogere prijs per m² door vaste kosten voor loodgieterswerk en elektriciteit.",
+            },
+            {
+              q: "Wat is inbegrepen in een totale badkamerrenovatie bij Reno Rangers?",
+              a: "Bij Reno Rangers omvat een totale badkamerrenovatie: sloop en afvoer, loodgieterswerk, elektriciteitswerken, tegelwerk en vloeren, plaatsing van douche of ligbad, lavabo, toilet en meubels, schilderwerk en afwerking. Alles uit één hand, met vaste prijsafspraak voor aanvang van de werken — geen verrassingen achteraf.",
+            },
+            {
+              q: "Hoeveel kost een badkamerrenovatie in Bornem, Londerzeel of omgeving?",
+              a: "Voor badkamerrenovaties in Bornem, Londerzeel, Putte, Duffel of Rumst werkt Reno Rangers aan dezelfde tarieven. Een volledige renovatie van een middelgrote badkamer kost hier €13.000 tot €16.000. Gebruik de calculator voor een schatting op maat en vraag een gratis bezoek ter plaatse aan.",
+            },
           ].map(function (item, i) {
             return (
               <div key={i} style={{ borderBottom: "1px solid " + C.ltGray, paddingBottom: 20, marginBottom: 20 }}>
@@ -3595,6 +3615,33 @@ function BadkamerCalculator() {
               </div>
             );
           })}
+        </div>
+
+        {/* Cities/regions section */}
+        <div style={{ marginBottom: 56 }}>
+          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(22px,3vw,32px)", color: C.black, margin: "0 0 12px", lineHeight: 1 }}>BADKAMERRENOVATIE IN UW GEMEENTE</h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: C.gray, lineHeight: 1.75, margin: "0 0 24px" }}>
+            Reno Rangers voert badkamerrenovaties uit door heel Antwerpen en de ruimere regio. Hieronder vindt u een overzicht van de prijzen per gemeente — zodat u weet wat u kunt verwachten nog voor u contact opneemt.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="calc-cta-grid">
+            {[
+              { city: "Antwerpen", text: "Een badkamerrenovatie in Antwerpen kost gemiddeld €7.500–€27.000. Reno Rangers werkt in alle districten: Hoboken, Wilrijk, Berchem, Deurne, Merksem en Ekeren. Kleine badkamer renoveren in Antwerpen vanaf €4.500." },
+              { city: "Merksem", text: "In Merksem renoveren wij badkamers vanaf €4.500 voor een basisrenovatie. Een mortex badkamer in Merksem kost tussen €13.000 en €27.000. Bekijk onze gerealiseerde projecten in Merksem voor inspiratie." },
+              { city: "Mechelen", text: "Wat kost een badkamerrenovatie in Mechelen? Dezelfde tarieven als in Antwerpen: €4.500 tot €42.000 afhankelijk van grootte en afwerking. Reno Rangers rijdt naar Mechelen, Willebroek en omliggende gemeenten." },
+              { city: "Bornem & Willebroek", text: "In Bornem en Willebroek renoveren wij badkamers inclusief mortex afwerking, inloopdouche en vloerverwarming. Prijs voor een volledige renovatie in Bornem: €13.000–€16.000 voor een middelgrote badkamer." },
+              { city: "Londerzeel & Putte", text: "Een badkamerrenovatie in Londerzeel of Putte kost tussen €7.500 en €24.000. Reno Rangers werkt met vaste prijzen in heel de regio ten noorden van Brussel. Gratis bezoek ter plaatse voor een nauwkeurige offerte." },
+              { city: "Schoten, Kapellen & Brasschaat", text: "In Schoten, Kapellen en Brasschaat verzorgt Reno Rangers complete badkamerrenovaties. Prijzen starten bij €4.500 voor een kleine badkamer met basisafwerking, oplopend tot €42.000 voor een grote luxe renovatie." },
+              { city: "Sint-Niklaas & Lokeren", text: "Wat kost een badkamerrenovatie in Sint-Niklaas? Dezelfde tarieven als elders in de regio: €4.500–€42.000 afhankelijk van het project. Vraag een gratis offerte aan voor uw adres in het Waasland." },
+              { city: "Lier & Duffel", text: "In Lier, Duffel, Rumst en Niel voert Reno Rangers badkamerrenovaties uit aan vaste prijzen. Een volledige renovatie in Lier kost gemiddeld €13.000–€16.000 voor een badkamer van 5–8 m²." },
+            ].map(function (item, i) {
+              return (
+                <div key={i} style={{ background: C.off, padding: "20px 22px", borderLeft: "3px solid " + C.red }}>
+                  <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 17, letterSpacing: 1, color: C.black, margin: "0 0 8px" }}>{item.city}</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray, lineHeight: 1.7, margin: 0 }}>{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>
@@ -3607,8 +3654,13 @@ function BadkamerCalculator() {
           { "@type": "Question", "name": "Wat kost een kleine badkamerrenovatie?", "acceptedAnswer": { "@type": "Answer", "text": "Een kleine badkamer (minder dan 4 m²) renoveren kost tussen €4.500 en €15.000, afhankelijk van het type renovatie. Een basisrenovatie start vanaf €4.500. Voor een luxe afwerking met mortex rekent u op €12.000 tot €15.000." } },
           { "@type": "Question", "name": "Wat kost een mortex badkamer?", "acceptedAnswer": { "@type": "Answer", "text": "Een mortex afwerking kost €2.800 tot €3.800 extra. Voor een volledige mortex badkamer rekent u op €13.000 tot €27.000 afhankelijk van de grootte." } },
           { "@type": "Question", "name": "Hoe lang duurt een badkamerrenovatie?", "acceptedAnswer": { "@type": "Answer", "text": "Een volledige badkamerrenovatie duurt gemiddeld 1 tot 3 weken. Reno Rangers werkt met een vaste planning die vooraf op papier wordt vastgelegd." } },
-          { "@type": "Question", "name": "Werkt Reno Rangers in heel Antwerpen en omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wij renoveren badkamers in Antwerpen, Merksem, Bornem, Londerzeel en omliggende gemeenten." } },
+          { "@type": "Question", "name": "Werkt Reno Rangers in heel Antwerpen en omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wij renoveren badkamers in Antwerpen, Merksem, Bornem, Londerzeel, Mechelen, Schoten, Kapellen, Brasschaat, Sint-Niklaas, Lier, Duffel en omliggende gemeenten." } },
           { "@type": "Question", "name": "Hoe vraag ik een gratis offerte aan?", "acceptedAnswer": { "@type": "Answer", "text": "Gebruik de gratis badkamercalculator, vul naam en telefoonnummer in en klik op Bekijk mijn prijs. Wij contacteren u binnen 24 uur." } },
+          { "@type": "Question", "name": "Hoeveel kost een badkamerrenovatie in Antwerpen?", "acceptedAnswer": { "@type": "Answer", "text": "In Antwerpen kost een badkamerrenovatie gemiddeld €7.500 tot €27.000, afhankelijk van grootte en afwerking. Kleine badkamer renoveren in Antwerpen start vanaf €4.500. Reno Rangers werkt in alle Antwerpse districten." } },
+          { "@type": "Question", "name": "Hoeveel kost een badkamerrenovatie in Mechelen en omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "Een badkamerrenovatie in Mechelen, Willebroek of Bonheiden kost tussen €4.500 en €42.000. Reno Rangers hanteert vaste tarieven in de regio Mechelen, identiek aan die in Antwerpen." } },
+          { "@type": "Question", "name": "Wat kost een badkamerrenovatie per m²?", "acceptedAnswer": { "@type": "Answer", "text": "Een badkamerrenovatie kost gemiddeld €750 tot €2.500 per m². Basisrenovatie: €750–€1.200/m². Volledige renovatie: €1.200–€1.800/m². Luxe afwerking met mortex: €1.800–€2.500/m²." } },
+          { "@type": "Question", "name": "Wat is inbegrepen in een totale badkamerrenovatie bij Reno Rangers?", "acceptedAnswer": { "@type": "Answer", "text": "Een totale badkamerrenovatie bij Reno Rangers omvat sloop, loodgieterswerk, elektriciteit, tegelwerk, plaatsing sanitair en meubels, schilderwerk en afwerking — alles uit één hand met vaste prijsafspraak." } },
+          { "@type": "Question", "name": "Hoeveel kost een badkamerrenovatie in Bornem, Londerzeel of omgeving?", "acceptedAnswer": { "@type": "Answer", "text": "In Bornem, Londerzeel, Putte en Duffel rekent Reno Rangers dezelfde tarieven. Een volledige renovatie van een middelgrote badkamer kost €13.000–€16.000." } },
         ],
       }) }} />
     </div>
