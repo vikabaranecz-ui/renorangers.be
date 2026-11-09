@@ -3171,17 +3171,17 @@ function BadkamerCalculator() {
   var [status, setStatus] = useState("idle");
 
   var BASE_PRICES = {
-    klein:  { basis: [3500, 7000],  volledig: [7000, 12000],  luxe: [12000, 20000] },
-    middel: { basis: [6500, 12000], volledig: [12000, 20000], luxe: [20000, 35000] },
-    groot:  { basis: [10000, 18000], volledig: [18000, 30000], luxe: [30000, 50000] },
+    klein:  { basis: [4500, 5800],  volledig: [7500, 9500],  luxe: [12000, 15000] },
+    middel: { basis: [7500, 9500],  volledig: [13000, 16000], luxe: [21000, 27000] },
+    groot:  { basis: [11000, 14000], volledig: [19000, 24000], luxe: [32000, 42000] },
   };
   var EXTRA_PRICES = {
-    mortex:         [2500, 5000],
-    inloopdouche:   [800,  2000],
-    ligbad:         [1500, 3000],
-    vloerverwarming:[800,  1800],
-    maatwerk:       [1500, 3500],
-    verlichting:    [400,  1200],
+    mortex:         [2800, 3800],
+    inloopdouche:   [900,  1500],
+    ligbad:         [1600, 2400],
+    vloerverwarming:[900,  1400],
+    maatwerk:       [1800, 2800],
+    verlichting:    [500,  900],
   };
   var EXTRA_LABELS = {
     mortex:         "Mortex afwerking (i.p.v. tegels)",
@@ -3425,9 +3425,9 @@ function BadkamerCalculator() {
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px,4vw,42px)", color: C.black, margin: "0 0 20px", lineHeight: 1 }}>AANVRAAG ONTVANGEN!</h2>
               {price && (
                 <div style={{ background: C.black, padding: "28px 24px", marginBottom: 24 }}>
-                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: 1, marginBottom: 6 }}>GERAAMDE KOSTPRIJS</div>
-                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(32px,6vw,56px)", color: C.white, lineHeight: 1 }}>
-                    {fmt(price.lo)} <span style={{ color: C.gray, fontSize: "0.6em" }}>–</span> {fmt(price.hi)}
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: 1, marginBottom: 6 }}>INDICATIEVE KOSTPRIJS</div>
+                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px,5vw,48px)", color: C.white, lineHeight: 1 }}>
+                    {fmt(price.lo)} <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.55em" }}>tot</span> {fmt(price.hi)}
                   </div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 10, lineHeight: 1.5 }}>
                     Gebaseerd op: {size === "klein" ? "kleine badkamer" : size === "middel" ? "middelgrote badkamer" : "grote badkamer"} · {type === "basis" ? "basisrenovatie" : type === "volledig" ? "volledige renovatie" : "luxerenovatie"}
