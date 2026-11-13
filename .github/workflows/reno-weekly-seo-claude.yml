@@ -75,6 +75,15 @@ jobs:
         if: steps.duplicate.outputs.skip != 'true'
         run: python renorangers-site-2/scripts/seo_weekly_collect_service.py
 
+      - name: Inspect Google-indexed versions of canonical pages (read-only)
+        if: steps.duplicate.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          SEO_BASE_URL: https://www.renorangers.be
+          GSC_SITE_URL: sc-domain:renorangers.be
+          GOOGLE_ADC_JSON: ${{ secrets.GOOGLE_ADC_JSON }}
+        run: python renorangers-site-2/scripts/seo_indexing_audit.py
+
       - name: Validate evidence
         if: steps.duplicate.outputs.skip != 'true'
         id: evidence
@@ -112,7 +121,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: reno-seo-weekly-context-${{ github.run_id }}
-          path: seo-weekly-context.json
+          path: |
+            seo-weekly-context.json
+            seo-indexing-audit.json
           if-no-files-found: warn
           retention-days: 30
 
@@ -140,6 +151,7 @@ jobs:
 
             Read `.claude/agents/reno-weekly-seo.md` in full and follow it as the governing policy.
             Also read `.claude/agents/reno-conversion-growth.md` and use it to maintain a whole-market coverage plan and conversion-first content standard.
+            Read `seo-indexing-audit.json` if present. Diagnose Google's actual excluded/not-indexed canonical URLs before ranking-only copy changes. Never assume a missing GSC impression equals noindex. Major robots, canonicals, redirects and sitemap/indexability changes need owner approval, not automatic SAFE FIX merge.
             Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
 
             Execute ONE comprehensive weekly MASTER SEO + CONVERSION RUN spanning 2-4 evidence-backed clusters when enough actionable opportunities exist, not a narrow two-keyword edit. The year-end KPI is 25 commercially relevant primary queries in Google Top 5 by 2026-12-31; never describe it as guaranteed.
