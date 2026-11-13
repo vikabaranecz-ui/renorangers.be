@@ -1,0 +1,37 @@
+name: RENO GSC Indexing Evidence — read only
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SEO_BASE_URL: https://www.renorangers.be
+      GSC_SITE_URL: sc-domain:renorangers.be
+      GOOGLE_ADC_JSON: ${{ secrets.GOOGLE_ADC_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate audit source
+        run: python -m py_compile renorangers-site-2/scripts/seo_indexing_audit.py
+      - name: Install existing collector dependencies
+        run: python -m pip install --disable-pip-version-check requests google-auth
+      - name: Inspect actual Search Console indexed-version URLs
+        run: python renorangers-site-2/scripts/seo_indexing_audit.py
+      - name: Upload indexing findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reno-gsc-indexing-evidence
+          path: seo-indexing-audit.json
+          retention-days: 30
+          if-no-files-found: warn
