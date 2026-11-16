@@ -3426,7 +3426,7 @@ function BadkamerCalculator() {
     var hi = BASE_PRICES[size][type][1];
     Object.keys(extras).forEach(function (k) {
       if (extras[k] && EXTRA_PRICES[k]) {
-        if (k === "inloopdouche" && type === "luxe") return;
+        if (type === "luxe" && (k === "inloopdouche" || k === "mortex" || k === "maatwerk")) return;
         lo += EXTRA_PRICES[k][0];
         hi += EXTRA_PRICES[k][1];
       }
@@ -3597,6 +3597,19 @@ function BadkamerCalculator() {
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: C.gray, margin: "0 0 24px" }}>Optioneel — selecteer wat op u van toepassing is</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
                 {Object.keys(EXTRA_LABELS).map(function (k) {
+                  var luxeIncluded = type === "luxe" && (k === "inloopdouche" || k === "mortex" || k === "maatwerk");
+                  if (luxeIncluded) {
+                    return (
+                      <div key={k} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "rgba(10,10,10,0.04)", borderLeft: "3px solid " + C.red, opacity: 0.6 }}>
+                        <span style={{ width: 18, height: 18, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="white"><path d="M1 5l3 3 5-6" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </span>
+                        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.black }}>
+                          {EXTRA_LABELS[k]} <span style={{ fontSize: 11, color: C.red, fontWeight: 600 }}>INBEGREPEN</span>
+                        </span>
+                      </div>
+                    );
+                  }
                   return (
                     <CheckBox key={k} id={k} label={EXTRA_LABELS[k]} checked={!!extras[k]} onChange={function () { toggleExtra(k); }} />
                   );
