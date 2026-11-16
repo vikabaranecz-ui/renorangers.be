@@ -2857,7 +2857,16 @@ function Contact() {
   const [f, sF] = useState({ name: "", email: "", phone: "", service: "", msg: "" });
   const [sent, sSent] = useState(false);
   const [status, sStatus] = useState("idle");
+  const [phoneErr, setPhoneErr] = useState(false);
   const formStartedRef = useRef(false);
+
+  function isValidContactPhone(val) {
+    var d = (val || "").replace(/\D/g, "");
+    if (d.startsWith("0032")) d = d.slice(4);
+    else if (d.startsWith("32")) d = d.slice(2);
+    else if (d.startsWith("0")) d = d.slice(1);
+    return d.length >= 8 && d.length <= 9;
+  }
 
   const handleFormStart = () => {
     if (formStartedRef.current) return;
@@ -2872,11 +2881,19 @@ function Contact() {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    if (f.phone && !isValidContactPhone(f.phone)) { setPhoneErr(true); return; }
+    setPhoneErr(false);
     sStatus("sending");
     try {
+      var fd = new FormData(e.target);
+      if (f.phone) {
+        var tel = f.phone.trim();
+        var fullTel = /^(\+32|0032|32)/.test(tel.replace(/\s/g, "")) ? tel : "+32 " + tel;
+        fd.set("phone", fullTel);
+      }
       const res = await fetch("https://formspree.io/f/xgopeqeb", {
         method: "POST",
-        body: new FormData(e.target),
+        body: fd,
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
@@ -2962,7 +2979,20 @@ function Contact() {
                       <input name="name" style={inp} placeholder="Uw naam *" value={f.name} onChange={e => sF({ ...f, name: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} required />
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                         <input name="email" style={inp} placeholder="E-mailadres *" type="email" value={f.email} onChange={e => sF({ ...f, email: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} required />
-                        <input name="phone" style={inp} placeholder="Telefoonnummer" type="tel" value={f.phone} onChange={e => sF({ ...f, phone: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray} />
+                        <div style={{ position: "relative" }}>
+                          <span style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(10,10,10,0.3)", pointerEvents: "none", userSelect: "none", zIndex: 1 }}>+32</span>
+                          <input
+                            name="phone"
+                            type="tel"
+                            value={f.phone}
+                            onChange={e => { setPhoneErr(false); sF({ ...f, phone: e.target.value }); }}
+                            onFocus={e => e.target.style.borderColor = C.red}
+                            onBlur={e => { e.target.style.borderColor = phoneErr ? C.red : C.ltGray; }}
+                            style={{ ...inp, paddingLeft: 50, borderColor: phoneErr ? C.red : inp.borderColor, width: "100%", boxSizing: "border-box" }}
+                            placeholder="4XX XX XX XX"
+                          />
+                          {phoneErr && <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: C.red, margin: "3px 0 0" }}>Voer een geldig Belgisch nummer in</p>}
+                        </div>
                       </div>
                       <select name="service" style={{ ...inp, color: f.service ? C.black : C.gray, appearance: "none" }} value={f.service} onChange={e => sF({ ...f, service: e.target.value })} onFocus={e => e.target.style.borderColor = C.red} onBlur={e => e.target.style.borderColor = C.ltGray}>
                         <option value="">Selecteer dienst</option>
@@ -3358,6 +3388,15 @@ function BadkamerCalculator() {
   var [extras, setExtras] = useState({});
   var [form, setForm] = useState({ naam: "", telefoon: "", email: "", bericht: "" });
   var [status, setStatus] = useState("idle");
+  var [phoneError, setPhoneError] = useState(false);
+
+  function isValidPhone(val) {
+    var d = (val || "").replace(/\D/g, "");
+    if (d.startsWith("0032")) d = d.slice(4);
+    else if (d.startsWith("32")) d = d.slice(2);
+    else if (d.startsWith("0")) d = d.slice(1);
+    return d.length >= 8 && d.length <= 9;
+  }
 
   var BASE_PRICES = {
     klein:  { basis: [4500, 5800],  volledig: [7500, 9500],  luxe: [12000, 15000] },
@@ -3412,10 +3451,14 @@ function BadkamerCalculator() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!isValidPhone(form.telefoon)) { setPhoneError(true); return; }
+    setPhoneError(false);
     setStatus("sending");
+    var tel = form.telefoon.trim();
+    var fullTel = /^(\+32|0032|32)/.test(tel.replace(/\s/g, "")) ? tel : "+32 " + tel;
     var fd = new FormData();
     fd.append("naam", form.naam);
-    fd.append("telefoon", form.telefoon);
+    fd.append("telefoon", fullTel);
     fd.append("email", form.email);
     fd.append("postcode", form.bericht);
     fd.append("_subject", "Calculator lead — " + (size || "") + " " + (type || ""));
@@ -3580,7 +3623,18 @@ function BadkamerCalculator() {
                 </div>
                 <div style={{ marginBottom: 12 }}>
                   <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>TELEFOON *</label>
-                  <input required type="tel" value={form.telefoon} onChange={function (e) { setForm(function (p) { return Object.assign({}, p, { telefoon: e.target.value }); }); }} style={inputStyle} placeholder="+32 4xx xx xx xx" />
+                  <div style={{ position: "relative" }}>
+                    <span style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(10,10,10,0.3)", pointerEvents: "none", userSelect: "none", zIndex: 1 }}>+32</span>
+                    <input
+                      required
+                      type="tel"
+                      value={form.telefoon}
+                      onChange={function (e) { setPhoneError(false); setForm(function (p) { return Object.assign({}, p, { telefoon: e.target.value }); }); }}
+                      style={Object.assign({}, inputStyle, { paddingLeft: 50, borderColor: phoneError ? C.red : inputStyle.borderColor })}
+                      placeholder="4XX XX XX XX"
+                    />
+                  </div>
+                  {phoneError && <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: C.red, margin: "4px 0 0" }}>Voer een geldig Belgisch nummer in (bv. 465 88 39 19)</p>}
                 </div>
                 <div style={{ marginBottom: 24 }}>
                   <label style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 11, letterSpacing: 3, color: C.gray, display: "block", marginBottom: 6 }}>POSTCODE *</label>
