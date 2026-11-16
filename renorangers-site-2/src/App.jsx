@@ -3420,17 +3420,28 @@ function BadkamerCalculator() {
     verlichting:    "Inbouwverlichting & spots",
   };
 
+  function extraRestriction(k) {
+    if (k === "mortex" && type === "basis") return "Enkel bij volledige of luxe renovatie";
+    if (k === "ligbad" && size === "klein") return "Niet beschikbaar voor < 4 m²";
+    return null;
+  }
+
   function calcPrice() {
     if (!size || !type) return null;
     var lo = BASE_PRICES[size][type][0];
     var hi = BASE_PRICES[size][type][1];
     Object.keys(extras).forEach(function (k) {
-      if (extras[k] && EXTRA_PRICES[k]) {
-        if (type === "luxe" && (k === "inloopdouche" || k === "mortex" || k === "maatwerk")) return;
-        lo += EXTRA_PRICES[k][0];
-        hi += EXTRA_PRICES[k][1];
-      }
+      if (!extras[k] || !EXTRA_PRICES[k]) return;
+      if (type === "luxe" && (k === "inloopdouche" || k === "mortex" || k === "maatwerk")) return;
+      if (extraRestriction(k)) return;
+      lo += EXTRA_PRICES[k][0];
+      hi += EXTRA_PRICES[k][1];
     });
+    // cap: extras on a lower tier can never exceed the luxe price for this size
+    if (type !== "luxe") {
+      hi = Math.min(hi, BASE_PRICES[size].luxe[1]);
+      lo = Math.min(lo, hi);
+    }
     return { lo: lo, hi: hi };
   }
 
@@ -3598,6 +3609,8 @@ function BadkamerCalculator() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
                 {Object.keys(EXTRA_LABELS).map(function (k) {
                   var luxeIncluded = type === "luxe" && (k === "inloopdouche" || k === "mortex" || k === "maatwerk");
+                  var restriction  = extraRestriction(k);
+
                   if (luxeIncluded) {
                     return (
                       <div key={k} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "rgba(10,10,10,0.04)", borderLeft: "3px solid " + C.red, opacity: 0.6 }}>
@@ -3610,6 +3623,19 @@ function BadkamerCalculator() {
                       </div>
                     );
                   }
+
+                  if (restriction) {
+                    return (
+                      <div key={k} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 14px", background: "rgba(10,10,10,0.03)", opacity: 0.45, cursor: "not-allowed" }}>
+                        <span style={{ width: 18, height: 18, border: "1.5px solid " + C.ltGray, background: C.white, flexShrink: 0, marginTop: 1 }} />
+                        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: C.gray }}>
+                          {EXTRA_LABELS[k]}
+                          <span style={{ display: "block", fontSize: 11, color: C.gray, marginTop: 2 }}>{restriction}</span>
+                        </span>
+                      </div>
+                    );
+                  }
+
                   return (
                     <CheckBox key={k} id={k} label={EXTRA_LABELS[k]} checked={!!extras[k]} onChange={function () { toggleExtra(k); }} />
                   );
