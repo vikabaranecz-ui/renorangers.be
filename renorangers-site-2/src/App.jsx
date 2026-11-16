@@ -1747,7 +1747,9 @@ function Diensten() {
       seo: (
         <>
           Wilt u uw interieur strak, modern en professioneel afgewerkt hebben? Onze binnenafwerking dienst in Antwerpen omvat alles: van gladde muren en geschilderde plafonds tot perfect gelegde vloeren en tegels.{" "}
-          <Link to="/projecten/living-binnenafwerking-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk een voorbeeld van onze binnenafwerking in Antwerpen</Link>.
+          <Link to="/projecten/living-binnenafwerking-antwerpen" style={{ color: "inherit", textDecoration: "underline" }}>Bekijk een voorbeeld van onze binnenafwerking in Antwerpen</Link>.{" "}
+          Bent u architect of interieurarchitect en op zoek naar een partner die de afwerking nauwkeurig volgens tekening uitvoert? Ontdek hoe wij samenwerken als{" "}
+          <Link to={PAGE_PATHS.architecten} style={{ color: "inherit", textDecoration: "underline" }}>uitvoeringspartner voor architecten en interieurarchitecten</Link>.
         </>
       ),
     },
@@ -2058,7 +2060,7 @@ function Privacy() {
    ══════════════════════════════════ */
 function Over() {
   var go = useGoToPage();
-  var areas = ["Antwerpen (alle districten)", "Mortsel", "Hove", "Edegem", "Borsbeek", "Boechout", "Kontich", "Lint", "Aartselaar", "Wommelgem", "Wijnegem", "Schoten", "Deurne", "Wilrijk", "Hoboken", "Kapellen", "Brasschaat", "Ekeren"];
+  var areas = ["Antwerpen (alle districten)", "Borgerhout", "Mortsel", "Hove", "Edegem", "Borsbeek", "Boechout", "Kontich", "Lint", "Aartselaar", "Wommelgem", "Wijnegem", "Schoten", "Deurne", "Wilrijk", "Hoboken", "Kapellen", "Brasschaat", "Ekeren"];
 
   return (
     <section style={{ paddingTop: 72 }}>
@@ -2929,7 +2931,13 @@ function Contact() {
     <section style={{ paddingTop: 72 }}>
       <div style={{ background: C.black, padding: "76px 0 56px" }}>
         <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px" }}>
-          <Reveal><span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>CONTACT</span><h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0" }}>NEEM <span style={{ color: C.red }}>CONTACT</span> OP</h1></Reveal>
+          <Reveal>
+            <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>CONTACT</span>
+            <h1 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(46px,6vw,84px)", color: C.white, lineHeight: .9, margin: "10px 0" }}>NEEM <span style={{ color: C.red }}>CONTACT</span> OP</h1>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 520, lineHeight: 1.7 }}>
+              Vraag een vrijblijvende offerte aan bij Reno Rangers, uw <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link>. We contacteren u binnen 24 uur.
+            </p>
+          </Reveal>
         </div>
       </div>
 
