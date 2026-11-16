@@ -529,9 +529,9 @@ const ROUTE_SEO = Object.freeze({
     ogDescription: "Informatie over privacy, gegevensverwerking en uw rechten.",
   },
   [PAGE_PATHS.architecten]: {
-    title: "Aannemer voor Architecten & Interieurarchitecten Antwerpen | Reno Rangers",
-    description: "Reno Rangers is uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen: uitvoering volgens tekeningen, één aanspreekpunt en duidelijke coördinatie.",
-    ogTitle: "Aannemer voor Architecten & Interieurarchitecten — Reno Rangers",
+    title: "Uitvoeringspartner voor Architecten Antwerpen | Reno Rangers",
+    description: "Reno Rangers — uitvoeringspartner voor architecten in Antwerpen. Uitvoering per tekening, één aanspreekpunt en duidelijke coördinatie.",
+    ogTitle: "Uitvoeringspartner voor Architecten & Interieurarchitecten — Reno Rangers",
     ogDescription: "Uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen en omgeving.",
   },
   [PAGE_PATHS.calculator]: {

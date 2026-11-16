@@ -145,8 +145,8 @@ const routes = [
   },
   {
     route: '/aannemer-voor-architecten',
-    title: 'Aannemer voor Architecten & Interieurarchitecten Antwerpen | Reno Rangers',
-    description: 'Reno Rangers is uitvoeringspartner voor architecten en interieurarchitecten in Antwerpen: uitvoering volgens tekeningen, één aanspreekpunt en duidelijke coördinatie.',
+    title: 'Uitvoeringspartner voor Architecten Antwerpen | Reno Rangers',
+    description: 'Reno Rangers — uitvoeringspartner voor architecten in Antwerpen. Uitvoering per tekening, één aanspreekpunt en duidelijke coördinatie.',
     h1: 'Uitvoeringspartner voor Architecten en Interieurarchitecten in Antwerpen',
     bodyText: 'Reno Rangers werkt als uitvoerende aannemer samen met architecten en interieurarchitecten in Antwerpen en omgeving (ongeveer 25 km), op basis van de tekeningen en specificaties die zij aanleveren. Wij coördineren de uitvoering op de werf via één vast aanspreekpunt, stemmen de planning af op de projecttijdlijn en leveren op volgens de afgesproken specificaties. Dit geldt voor totaalrenovaties, badkamerrenovaties en binnenafwerking van woningen en appartementen, in opdracht van de klant van de architect of interieurarchitect. Neem contact op om een project te bespreken.',
     links: [...mainLinks, ...projectLinks.slice(0, 3),
@@ -156,7 +156,7 @@ const routes = [
   },
   {
     route: '/badkamercalculator',
-    title: 'Badkamerrenovatie Kostprijs Berekenen | Gratis Calculator 2026 | Reno Rangers',
+    title: 'Badkamerrenovatie Kostprijs Calculator 2026 | Reno Rangers',
     description: 'Bereken gratis de kostprijs van uw badkamerrenovatie in Antwerpen. Van €4.500 tot €42.000 — uw persoonlijke schatting op maat in 2 minuten.',
     h1: 'Badkamerrenovatie Kostprijs Berekenen — Gratis Calculator 2026',
     bodyText: 'Wat kost een badkamerrenovatie in België? Gebruik onze gratis badkamercalculator en ontdek de kostprijs van uw renovatie. Reno Rangers werkt in Antwerpen, Merksem, Hoboken, Wilrijk, Berchem, Deurne, Ekeren, Schoten, Kapellen, Brasschaat, Mechelen, Willebroek, Bornem, Londerzeel, Putte, Duffel, Rumst, Lier, Sint-Niklaas en omliggende gemeenten. Hoeveel kost een badkamerrenovatie in Antwerpen? Een kleine badkamerrenovatie start in Antwerpen vanaf €4.500 voor een basisrenovatie. Een volledige badkamerrenovatie van een middelgrote badkamer kost gemiddeld €13.000 tot €16.000. Hoeveel kost een badkamerrenovatie in Mechelen? Dezelfde tarieven als in Antwerpen: €4.500 tot €42.000. Hoeveel kost badkamerrenovatie in Bornem? Een volledige renovatie kost €13.000–€16.000. Badkamerrenovatie kostprijs per m² ligt tussen €750 en €2.500 afhankelijk van het type afwerking. Badkamer verbouwen budget: basisrenovatie €750–€1.200/m², volledige renovatie €1.200–€1.800/m², luxe mortex afwerking €1.800–€2.500/m². Wat kost een mortex badkamer? Wat kost een inloopdouche plaatsen? Wat kost vloerverwarming in de badkamer? Wat kost een douche plaatsen? Complete badkamerrenovatie offerte aanvragen — gratis bezoek ter plaatse binnen 24 uur. Sanitair plaatsen prijs Antwerpen, tegels leggen badkamer prijs, badkamer verbouwen kleine badkamer kosten 2026.',
@@ -207,7 +207,7 @@ const routes = [
   {
     route: '/projecten/mortex-badkamer-antwerpen',
     title: 'Mortex Badkamer Antwerpen | Reno Rangers Project',
-    description: 'Mortex badkamer Antwerpen met vrijstaand bad en organische LED spiegel. Tijdloze afwerking in warme beige tint met zwarte accenten. Project door Reno Rangers.',
+    description: 'Mortex badkamer Antwerpen: vrijstaand bad, LED spiegel en beige afwerking met zwarte accenten. Project Reno Rangers.',
     h1: 'Mortex Badkamer in Antwerpen — Project door Reno Rangers',
     bodyText: 'Voor een klant in Antwerpen realiseerde Reno Rangers een tijdloze mortex badkamer in warme beige tinten. Wanden en vloer zijn volledig bekleed met mortex, gecombineerd met een vrijstaand bad en mat zwart sanitair. Een organisch gevormde LED spiegel en ingebouwde verlichtingsniche maken de afwerking af. Een badkamer die rust, warmte en luxe uitstraalt. Neem contact op voor uw eigen mortex renovatie in Antwerpen.',
     links: [
@@ -311,7 +311,7 @@ const routes = [
   // ── BLOG POSTS ──
   {
     route: '/blog/wat-kost-badkamerrenovatie-antwerpen-2026',
-    title: 'Wat kost een badkamerrenovatie in Antwerpen in 2026? | Reno Rangers',
+    title: 'Badkamerrenovatie Kosten Antwerpen 2026 | Reno Rangers',
     description: 'Wat kost een badkamerrenovatie in Antwerpen in 2026? Ontdek de kostprijs, welke factoren de prijs bepalen en vraag gratis een offerte aan.',
     h1: 'Wat kost een badkamerrenovatie in Antwerpen in 2026?',
     bodyText: 'De kostprijs van een badkamerrenovatie in Antwerpen hangt af van meerdere factoren: de grootte van de badkamer, de kwaliteit van de materialen, de complexiteit van de leidingen en de gewenste afwerking. Reno Rangers biedt transparante, vaste prijzen zonder verrassingen achteraf. In dit artikel leest u alles over de gemiddelde prijzen voor badkamerrenovaties in Antwerpen in 2026 en vraagt u vrijblijvend een offerte aan.',
@@ -324,7 +324,7 @@ const routes = [
   },
   {
     route: '/blog/totaalrenovatie-alles-wat-u-moet-weten',
-    title: 'Totaalrenovatie: alles wat u moet weten | Reno Rangers Antwerpen',
+    title: 'Totaalrenovatie: alles wat u moet weten | Reno Rangers',
     description: 'Alles over een totaalrenovatie: van budget en vergunningen tot de volgorde van werken. De complete gids van Reno Rangers voor uw renovatie.',
     h1: 'Totaalrenovatie: alles wat u moet weten',
     bodyText: 'Een totaalrenovatie is een grote investering die vraagt om een goede planning. Reno Rangers helpt u van begin tot einde: van het bepalen van het budget en het aanvragen van vergunningen tot de coördinatie van alle aannemers en de uiteindelijke oplevering. In dit artikel leest u alles over het aanpakken van een totaalrenovatie in België, inclusief tips over de volgorde van werken en het vermijden van veelgemaakte fouten.',
@@ -337,7 +337,7 @@ const routes = [
   },
   {
     route: '/blog/trends-binnenafwerking-belgische-woningen-2026',
-    title: 'Trends in binnenafwerking voor Belgische woningen 2026 | Reno Rangers',
+    title: 'Trends Binnenafwerking 2026 | Reno Rangers Antwerpen',
     description: 'Ontdek trends in binnenafwerking voor Belgische woningen in 2026: mortex, microcement en warme aardetinten. Inspiratie en advies van Reno Rangers.',
     h1: 'Trends in binnenafwerking voor Belgische woningen 2026',
     bodyText: 'De wereld van binnenafwerking evolueert snel. In 2026 zijn mortex, microcement en warme natuurtinten bijzonder populair in Belgische woningen. Reno Rangers volgt alle trends op de voet en past ze toe in onze projecten. Van minimalistische badkamers met mortex afwerking tot warme livings met houten accenten — wij realiseren het. Lees in dit artikel welke trends dit jaar domineren en hoe u ze kunt toepassen in uw eigen woning.',
