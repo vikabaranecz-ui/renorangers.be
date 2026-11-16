@@ -546,26 +546,26 @@ const ROUTE_SEO = Object.freeze({
 const PROJECT_PAGES = [
   {
     slug: "badkamerrenovatie-antwerpen",
-    title: "BADKAMERRENOVATIE",
+    title: "WC RENOVATIE",
     location: "Antwerpen",
-    category: "BADKAMERRENOVATIE",
+    category: "WC RENOVATIE",
     heroAfter: "/toiletantwerpen.webp",
     heroBefore: "/toiletantwerpenvoor.webp",
-    situatie: "De klant had een verouderde badkamer met een gedateerde indeling en versleten sanitair. De ruimte voelde donker en klein aan, en de tegels waren na jaren gebruik duidelijk aan vervanging toe. Er was ook geen goede ventilatie aanwezig.",
+    situatie: "De klant had een verouderde toiletruimte met gedateerde tegels en versleten sanitair. De ruimte voelde donker en benauwd aan. Ze vroegen om een frisse, moderne afwerking die optimaal gebruikmaakt van de beperkte ruimte.",
     werkzaamheden: [
-      "Volledige demontage van de bestaande badkamer inclusief tegels, sanitair en leidingwerk",
+      "Volledige demontage van de bestaande toiletruimte inclusief tegels en sanitair",
       "Nieuwe leidingen voor water en afvoer op maat gelegd",
       "Vloer- en wandtegels volledig vernieuwd in lichte, tijdloze kleuren",
-      "Nieuw toilet, wastafel met meubel en douche geplaatst",
-      "Verbeterde ventilatie en waterdichte afwerking",
+      "Nieuw toilet en fonteintje geplaatst",
+      "Waterdichte afwerking en verbeterde ventilatie",
     ],
-    resultaat: "De klant heeft een strakke, moderne badkamer gekregen die optimaal gebruikmaakt van de beschikbare ruimte. De lichte tegels geven de kamer een gevoel van ruimte en helderheid. Alles is waterdicht afgewerkt en klaar voor jaren gebruik.",
+    resultaat: "De klant heeft een strakke, moderne WC-ruimte gekregen die optimaal gebruikmaakt van de beschikbare ruimte. De lichte tegels geven een gevoel van ruimte en helderheid. Alles is waterdicht afgewerkt en klaar voor jaren gebruik.",
     gallery: ["/toiletantwerpenvoor.webp", "/toiletantwerpen.webp"],
     seo: {
-      title: "Badkamerrenovatie Antwerpen | Reno Rangers Project",
-      description: "Bekijk dit badkamerrenovatieproject in Antwerpen door Reno Rangers: van verouderde badkamer naar een moderne, strakke ruimte.",
-      ogTitle: "Badkamerrenovatie Antwerpen — Reno Rangers",
-      ogDescription: "Volledig vernieuwde badkamer in Antwerpen door Reno Rangers. Bekijk voor en na.",
+      title: "WC Renovatie Antwerpen | Reno Rangers Project",
+      description: "WC renovatie in Antwerpen door Reno Rangers: van verouderde toiletruimte naar een moderne, strakke afwerking. Bekijk voor en na.",
+      ogTitle: "WC Renovatie Antwerpen — Reno Rangers",
+      ogDescription: "Volledig vernieuwde toiletruimte in Antwerpen door Reno Rangers. Bekijk voor en na.",
     },
   },
   {
@@ -2131,12 +2131,12 @@ function Over() {
 function Projecten() {
   var beforeAfterProjects = [
     {
-      t: "BADKAMERRENOVATIE",
+      t: "WC RENOVATIE",
       loc: "Antwerpen",
       slug: "badkamerrenovatie-antwerpen",
       before: "/toiletantwerpenvoor.webp",
       after: "/toiletantwerpen.webp",
-      d: "Volledige badkamerrenovatie met nieuwe indeling, sanitair en afwerking.",
+      d: "WC renovatie met nieuwe tegels, toilet, fonteintje en waterdichte afwerking.",
     },
     {
       t: "MORTEX BADKAMER",

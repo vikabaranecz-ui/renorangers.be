@@ -40,7 +40,7 @@ const mainLinks = [
 ];
 
 const projectLinks = [
-  { href: '/projecten/badkamerrenovatie-antwerpen', text: 'Badkamerrenovatie Antwerpen' },
+  { href: '/projecten/badkamerrenovatie-antwerpen', text: 'WC Renovatie Antwerpen' },
   { href: '/projecten/mortex-badkamer-merksem', text: 'Mortex Badkamer Merksem' },
   { href: '/projecten/mortex-badkamer-antwerpen', text: 'Mortex Badkamer Antwerpen' },
   { href: '/projecten/mortex-badkamer-bornem', text: 'Mortex Badkamer Bornem' },
@@ -180,10 +180,10 @@ const routes = [
   // ── PROJECT DETAIL PAGES ──
   {
     route: '/projecten/badkamerrenovatie-antwerpen',
-    title: 'Badkamerrenovatie Antwerpen | Reno Rangers Project',
-    description: 'Badkamerrenovatie Antwerpen: van verouderde ruimte naar strakke moderne badkamer met nieuw sanitair en tijdloze tegels. Project door Reno Rangers.',
-    h1: 'Badkamerrenovatie in Antwerpen — Project door Reno Rangers',
-    bodyText: 'Bij dit project in Antwerpen renoveerde Reno Rangers een verouderde badkamer volledig. De bestaande tegels, sanitair en leidingwerk werden vervangen door nieuwe, kwalitatieve materialen. De klant kreeg een strakke, lichte badkamer met modern sanitair, een nieuwe douche en verbeterde ventilatie. Reno Rangers verzorgde de volledige uitvoering van sloop tot sleuteloverdracht. Bekijk de voor-en-na foto\'s en vraag een offerte aan voor uw eigen badkamerrenovatie.',
+    title: 'WC Renovatie Antwerpen | Reno Rangers Project',
+    description: 'WC renovatie Antwerpen: van verouderde toiletruimte naar strakke moderne afwerking met nieuw sanitair en tijdloze tegels. Project door Reno Rangers.',
+    h1: 'WC Renovatie in Antwerpen — Project door Reno Rangers',
+    bodyText: 'Bij dit project in Antwerpen renoveerde Reno Rangers een verouderde toiletruimte volledig. De bestaande tegels, sanitair en leidingwerk werden vervangen door nieuwe, kwalitatieve materialen. De klant kreeg een strakke, lichte WC-ruimte met modern toilet, fonteintje en waterdichte afwerking. Reno Rangers verzorgde de volledige uitvoering van sloop tot sleuteloverdracht. Bekijk de voor-en-na foto\'s en vraag een offerte aan voor uw eigen WC renovatie.',
     links: [
       ...mainLinks,
       ...projectLinks.filter(l => l.href !== '/projecten/badkamerrenovatie-antwerpen'),
