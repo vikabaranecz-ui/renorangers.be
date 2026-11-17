@@ -36,7 +36,7 @@ def useful(kw):
         "totaalrenov", "renovatiebedrijf", "aannemer renov",
         "aannemer antwerp", "renovatie woning", "woning renov",
         "renovatie appartement", "appartement renov", "renoveren appartement",
-        "badkamer", "binnenafwerking", "interieur", "mortex",
+        "badkamer", "binnenafwerking", "interieur", "architect", "mortex",
         "renovatie antwerp", "renovatie kosten", "kosten renovatie"
     ))
 
