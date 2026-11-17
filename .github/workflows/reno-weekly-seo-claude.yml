@@ -69,7 +69,7 @@ jobs:
 
       - name: Install collector dependencies
         if: steps.duplicate.outputs.skip != 'true'
-        run: python -m pip install --disable-pip-version-check requests google-auth
+        run: python -m pip install --disable-pip-version-check requests google-auth beautifulsoup4
 
       - name: Collect GSC and Keyword Planner evidence
         if: steps.duplicate.outputs.skip != 'true'
