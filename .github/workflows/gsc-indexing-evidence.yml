@@ -24,7 +24,7 @@ jobs:
       - name: Validate audit source
         run: python -m py_compile renorangers-site-2/scripts/seo_indexing_audit.py
       - name: Install existing collector dependencies
-        run: python -m pip install --disable-pip-version-check requests google-auth
+        run: python -m pip install --disable-pip-version-check requests google-auth beautifulsoup4
       - name: Inspect actual Search Console indexed-version URLs
         run: python renorangers-site-2/scripts/seo_indexing_audit.py
       - name: Upload indexing findings
