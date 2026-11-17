@@ -19,12 +19,26 @@ def top(rows, key="impressions", n=50):
     return sorted(rows or [], key=lambda x:numeric(x.get(key)), reverse=True)[:n]
 
 def useful(kw):
+    """Conservative service-intent gate, not just a substring in 'renovatie'."""
     q=str(kw or "").casefold()
-    if not q or any(term in q for term in ("nieuwbouw", "zelf doen", "doe-het-zelf",
-                                           "bouwmateriaal", "reno rangers")):
+    # Reno offers total renovation, bathrooms and interior finishing, not
+    # roofing, facade insulation, products or implausible fixed turnaround.
+    not_offered=(
+        "gevel", "buitenmuur", "dak", "isolatie", "spouw", "nieuwbouw",
+        "1 dag", "één dag", "eendag", "24 uur", "zelf doen",
+        "doe-het-zelf", "bouwmateriaal", "renovatieplaten",
+        "renovatieplaat", "winkel", "groothandel", "sanitair kopen",
+        "tegels kopen", "prijs renovatieplaten", "reno rangers"
+    )
+    if not q or any(term in q for term in not_offered):
         return False
-    return any(term in q for term in ("renov", "aannemer", "badkamer", "binnenafwerking",
-                                      "architect", "interieur", "mortex", "crepi"))
+    return any(term in q for term in (
+        "totaalrenov", "renovatiebedrijf", "aannemer renov",
+        "aannemer antwerp", "renovatie woning", "woning renov",
+        "renovatie appartement", "appartement renov", "renoveren appartement",
+        "badkamer", "binnenafwerking", "interieur", "mortex",
+        "renovatie antwerp", "renovatie kosten", "kosten renovatie"
+    ))
 
 def compact_ads(ads):
     if not isinstance(ads, dict):
@@ -35,7 +49,7 @@ def compact_ads(ads):
     national_rows = belgium if isinstance(belgium,list) else []
     eligible = [r for r in local_rows if useful(r.get("keyword"))]
     rising = [r for r in eligible
-              if numeric(r.get("avg_monthly_searches")) >= 10
+              if numeric(r.get("avg_monthly_searches")) >= 30
               and isinstance(r.get("trend_3m_vs_prior_3m_pct"), (int,float))]
     rising.sort(key=lambda x:(x["trend_3m_vs_prior_3m_pct"],
                               numeric(x.get("avg_monthly_searches"))),reverse=True)
