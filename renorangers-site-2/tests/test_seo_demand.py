@@ -59,6 +59,17 @@ class DemandTests(unittest.TestCase):
         self.assertEqual(out["top5_at_least_10_impressions"],1)
         self.assertEqual(out["scoreboard"][0]["confidence"],"LOW_SAMPLE")
 
+    def test_reject_unoffered_rising_ideas(self):
+        bad=("gevelrenovatie", "oude buitenmuur renoveren",
+             "badkamer renovatie in 1 dag", "renovatieplaten badkamer",
+             "dakrenovatie antwerpen", "nieuwbouw aannemer")
+        for query in bad:
+            self.assertFalse(self.digest.useful(query),query)
+        good=("badkamerrenovatie", "totaalrenovatie Antwerpen",
+              "aannemer voor architecten", "badkamer renovatie prijzen")
+        for query in good:
+            self.assertTrue(self.digest.useful(query),query)
+
     def test_missing_local_planner_not_replaced_with_national(self):
         data={"belgium":[{"keyword":"renovatie","avg_monthly_searches":1000}],
               "antwerp_province":{"error":"API unavailable"}}
