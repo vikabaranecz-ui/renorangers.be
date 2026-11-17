@@ -52,6 +52,72 @@ def _as_int(value):
         return 0
 
 
+BASE_SEEDS = [
+    "renovatiebedrijf antwerpen", "totaalrenovatie antwerpen",
+    "badkamerrenovatie antwerpen", "aannemer renovatie antwerpen",
+    "binnenafwerking antwerpen", "aannemer voor architecten",
+]
+
+def build_weekly_seeds(target_rows, gsc_data, as_of=None, limit=20):
+    """Stable services + the newest observed GSC queries + rotating target keywords."""
+    reference = as_of or date.today()
+    selected = []
+    seen = set()
+    def add(value):
+        value = str(value or "").strip()
+        low = value.casefold()
+        if not low or low in seen or len(selected) >= limit or "reno rangers" in low:
+            return
+        # Broad unqualified DIY, material shopping and new-build demand do not fit Reno.
+        if any(term in low for term in ("nieuwbouw", "zelf doen", "doe het zelf", "bouwmateriaal kopen")):
+            return
+        seen.add(low)
+        selected.append(value)
+    for seed in BASE_SEEDS:
+        add(seed)
+
+    rows = gsc_data.get("current_queries", []) if isinstance(gsc_data, dict) else []
+    relevant = [r for r in rows
+                if (r.get("impressions") or 0) >= 5
+                and any(term in str(r.get("query") or "").lower()
+                        for term in ("renov", "aannemer", "badkamer", "binnenafwerking", "architect"))]
+    relevant.sort(key=lambda r: (4 <= (r.get("position") or 999) <= 20,
+                                  r.get("impressions") or 0), reverse=True)
+    for row in relevant[:8]:
+        add(row.get("query"))
+
+    targets = [r.get("keyword") for r in target_rows if r.get("keyword")]
+    offset = reference.isocalendar().week * 7 % max(1, len(targets))
+    for kw in targets[offset:] + targets[:offset]:
+        add(kw)
+    return selected
+
+
+MONTHS = ("JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST",
+          "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER")
+def keyword_history(metrics):
+    vals = []
+    for row in metrics.get("monthlySearchVolumes", []) or []:
+        try:
+            m = row.get("month")
+            month = int(m) if isinstance(m, int) else MONTHS.index(str(m).upper()) + 1
+            year = int(row["year"])
+            volume = row.get("monthlySearches")
+            if 1 <= month <= 12 and volume is not None:
+                vals.append({"year": year, "month": month, "searches": int(volume)})
+        except (ValueError, TypeError, KeyError):
+            continue
+    vals.sort(key=lambda v:(v["year"],v["month"]))
+    a,b=vals[-3:],vals[-6:-3]
+    recent=sum(x["searches"] for x in a)/3 if len(a)==3 else None
+    previous=sum(x["searches"] for x in b)/3 if len(b)==3 else None
+    return {"recent_3m_avg":round(recent,1) if recent is not None else None,
+            "previous_3m_avg":round(previous,1) if previous is not None else None,
+            "trend_3m_vs_prior_3m_pct":round((recent/previous-1)*100,1) if recent is not None and previous and previous>0 else None,
+            "trend_observation_end":f'{a[-1]["year"]}-{a[-1]["month"]:02d}' if a else None,
+            "monthly_search_volumes":vals[-12:]}
+
+
 def ads(token, geo_id, seeds):
     if not DEV_TOKEN:
         raise RuntimeError("GOOGLE_ADS_DEVELOPER_TOKEN missing")
@@ -76,7 +142,8 @@ def ads(token, geo_id, seeds):
             "keyword": row.get("text"),
             "avg_monthly_searches": _as_int(m.get("avgMonthlySearches")),
             "competition": m.get("competition"),
-            "competition_index": _as_int(m.get("competitionIndex"))
+            "competition_index": _as_int(m.get("competitionIndex")),
+            **keyword_history(m)
         })
     ideas.sort(key=lambda x: x.get("avg_monthly_searches", 0), reverse=True)
     return ideas[:400]
@@ -86,14 +153,6 @@ def main():
     target_data = json.loads(TARGETS.read_text(encoding="utf-8"))
     profile = json.loads(PROFILE.read_text(encoding="utf-8"))
     target_rows = target_data.get("primary_targets") or target_data.get("targets") or []
-    seeds = []
-    for row in target_rows:
-        kw = row.get("keyword")
-        if kw and kw not in seeds:
-            seeds.append(kw)
-        if len(seeds) >= 20:
-            break
-
     token = credentials()
     end = date.today() - timedelta(days=2)
     cur_start = end - timedelta(days=27)
@@ -116,20 +175,27 @@ def main():
             "current_queries": gsc(token, cur_start, end, ["query"], 5000),
             "current_pages": gsc(token, cur_start, end, ["page"], 2000),
             "current_query_pages": gsc(token, cur_start, end, ["query", "page"], 8000),
-            "previous_queries": gsc(token, prev_start, prev_end, ["query"], 5000)
+            "previous_queries": gsc(token, prev_start, prev_end, ["query"], 5000),
+            "previous_pages": gsc(token, prev_start, prev_end, ["page"], 2000),
+            "context_90d_query_pages": gsc(token, end - timedelta(days=89), end, ["query", "page"], 12000)
         }
     except Exception as exc:
         result["gsc"] = {"error": str(exc)}
 
-    try:
-        result["google_ads"] = {
-            "customer_id": CUSTOMER_ID,
-            "seeds": seeds,
-            "belgium": ads(token, "2056", seeds),
-            "antwerp_province": ads(token, "20053", seeds)
-        }
-    except Exception as exc:
-        result["google_ads"] = {"error": str(exc)}
+    # Each market is independent; never silently replace missing Antwerp demand
+    # with Belgium numbers. Each call uses the current week's evidence-led seeds.
+    seeds = build_weekly_seeds(target_rows, result.get("gsc"))
+    ads_result = {"customer_id": CUSTOMER_ID, "seeds": seeds,
+                  "seed_provenance": "Six verified service topics + latest relevant GSC + rotating KPI terms",
+                  "demand_note": "Google Ads monthly estimates (not real-time searches); paid competition is NOT organic keyword difficulty."}
+    for key, geo in (("antwerp_province", "20053"), ("belgium", "2056")):
+        try:
+            ads_result[key] = ads(token, geo, seeds)
+        except Exception as exc:
+            ads_result[key] = {"error": str(exc)}
+    if isinstance(ads_result.get("antwerp_province"), dict):
+        ads_result["error"] = "Antwerp Keyword Planner unavailable: " + ads_result["antwerp_province"]["error"]
+    result["google_ads"] = ads_result
 
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {OUTPUT}")
