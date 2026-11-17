@@ -1762,7 +1762,7 @@ function Diensten() {
           <Reveal>
             <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>ONZE DIENSTEN</span>
             <h1 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(46px, 6vw, 84px)", color: C.white, lineHeight: 0.9, margin: "10px 0 18px" }}>
-              WAT WIJ <span style={{ color: C.red }}>DOEN</span>
+              TOTAALRENOVATIE <span style={{ color: C.red }}>ANTWERPEN</span>
             </h1>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 520, lineHeight: 1.7 }}>
               Van badkamerrenovatie tot totaalrenovatie — alle renovatiediensten onder een dak bij Reno Rangers, uw <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link>.
