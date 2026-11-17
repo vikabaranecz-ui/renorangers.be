@@ -36,6 +36,21 @@ Read `renorangers-site-2/seo/keyword_targets.json` and treat the 25 `primary_tar
 
 A broader discovery universe may be used to find opportunities, but weekly reporting must keep the 25 KPI terms separate from secondary terms. Replace a primary term only when live evidence plus business fit materially justify it, and document the replacement in the weekly issue.
 
+## Evidence quality and defensible opportunity ranking
+- Preserve the existing 25-keyword target and its historical raw Top-5 count, but report **confidence-qualified** Top-5 wins separately. A query with fewer than 10 impressions in the current 28-day period is LOW SAMPLE; it must never be presented as a reliable success. Show exact impressions and compare another 28-day window / 90-day data before upgrading confidence. Do not erase historical performance just because a sample is small.
+- In the 2026-11-16 report, `aannemer` at position 1 had only **2 impressions**. Treat this as LOW SAMPLE rather than an independently validated Top-5 win.
+- Keyword Planner volumes measure estimated search demand, not guaranteed organic traffic, organic keyword difficulty or expected leads; Google Ads competition is paid competition. Prefer localized commercial conversion intent over generic high-volume terms.
+- Track search queries **by landing URL**; a homepage ranking for `totaalrenovatie Antwerpen` while `/diensten` has no meaningful impressions is a **query-to-page mapping observation**, not proof of harmful cannibalization. Before changing either, check both pages' Google-selected canonicals, actual index status, headings, search intent and 28/90-day query/page evidence. Avoid risky homepage changes that could weaken `renovatiebedrijf Antwerpen` and bathroom terms.
+- Avoid repeated generic homepage copy or trivial links merely to generate a PR. A link from a Contact page to the homepage may already be present in site navigation; never claim material link authority was gained without evidence. When the next commercial opportunity needs a bigger/new URL or architecture change, prepare an owner-approval PR rather than substituting low-impact safe fixes.
+- Always report clicks/impressions for the actual top money pages (homepage, services, B2B partner, bathroom journey) and current vs previous 28 days if available. Report contact/offerte, phone and calculator organic-origin leads **only where attribution is verified**; otherwise say NOT MEASURED, specify the missing event/CRM association, and do not invent zeroes or attribution.
+- Respect the intentional paid-only `/badkamerrenovatie-antwerpen` landing page. Do not treat it as an organic indexing incident or add organic links to it without owner approval.
+
+## Mandatory indexing checkpoint
+Read `seo-indexing-audit.json` on every SEO run. Seven priority URLs are inspected first (homepage, services, architect collaboration page and four recently excluded/discovered project pages); remaining URLs rotate weekly, rather than always checking the first 30 alphabetically.
+For each priority page distinguish Google URL Inspection indexed-version status from **independent live HTTP/redirect/canonical/noindex** checks. Diagnose confirmed technical blockers, missing sitemap/discovery, Google-selected canonical, and status "Discovered/Unknown" separately; never assert "waiting for crawl" or "backlinks needed" as fact without adequate evidence.
+If either source failed, mark the finding UNVERIFIED and define an exact next diagnostic action. Never assume access to Search Console request-indexing API for general service pages; manual URL Inspection > Test live URL > Request indexing is the owner path once technical readiness is confirmed (no guarantee of indexing).
+Any canonical, redirect, URL or major intent/architecture change requires approval and a reviewed PR.
+
 ## Website health gate
 Before growth changes, check for material technical problems that could block SEO or leads. Protect:
 - crawlability/indexability of important URLs,
@@ -118,12 +133,12 @@ or
 `SEO Weekly — YYYY-MM-DD — ANALYSIS ONLY`
 
 The issue must include:
-- Top-5 progress X/25 based on current GSC evidence,
+- Top-5 progress X/25, separately marking low-sample (<10 impressions) terms and a confidence-qualified count,
 - chosen cluster and why,
-- GSC evidence,
+- GSC evidence including URL-level ranking mapping, indexing verdicts and commercial-page clicks,
 - Keyword Planner evidence (Antwerp first, Belgium second),
 - website-health status/findings,
-- expected lead or partnership value,
+- expected lead or partnership value; verified organic enquiries/conversions or NOT MEASURED,
 - work completed,
 - affected URLs,
 - QA performed,
