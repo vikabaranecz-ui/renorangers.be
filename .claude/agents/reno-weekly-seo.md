@@ -51,6 +51,16 @@ For each priority page distinguish Google URL Inspection indexed-version status 
 If either source failed, mark the finding UNVERIFIED and define an exact next diagnostic action. Never assume access to Search Console request-indexing API for general service pages; manual URL Inspection > Test live URL > Request indexing is the owner path once technical readiness is confirmed (no guarantee of indexing).
 Any canonical, redirect, URL or major intent/architecture change requires approval and a reviewed PR.
 
+## Keyword Planner + Search Console execution requirements
+Every weekly sprint must read `seo-weekly-context-compact.json` produced from this run's actual authenticated Google Ads Keyword Planner and Google Search Console data. The compact report identifies the source period, geographic scope, local monthly estimates, recent historical 3-month trend, GSC query-to-page mapping and URL-level performance. Request raw evidence only if compact evidence is missing critical detail.
+- Planner's monthly searches are historical estimates and cannot prove what people searched **today**. Report the latest available observation month and annotate shared close-variant volumes; paid competition is not SEO difficulty.
+- Base topics on actual Antwerp-provincial demand + GSC current 28-day impressions/clicks/position and previous/90-day data, local buyer intent, verified Reno services, existing page readiness and probable lead value. Reject DIY, new-build, overly broad informational terms unless business-fit verified.
+- If local Planner fails, label LOCAL DEMAND UNVERIFIED and do not disguise national metrics as Antwerp metrics. If GSC fails, do not claim actual rank or indexing results.
+- Before claiming cannibalization, inspect both URLs' current/90-day query-page data, canonical targets, page purpose and indexing verdict. A homepage receiving impressions for `totaalrenovatie Antwerpen` does not by itself prove that `/diensten` is being cannibalized.
+- Each weekly sprint must deliver at least one measurable fix **when evidence supports one**, and prepare a complete approval PR for a *new distinct useful buyer-intent page* if current verified demand or GSC gaps justify it. Include meta, title/H1, original non-duplicate text, relevant verified projects, internal links, CTA, and Vite/prerender/SEO QA. Do not silently merge new public URLs; follow NEEDS APPROVAL.
+- For every action report source+date, keyword, local demand, observed organic page, target page, page index status, exact changed files/PR and next GSC checkpoint. For forms, calls, and calculator leads only report verified organic attribution, else NOT MEASURED.
+- Never spend a week making low-impact homepage links just to report progress when evidence calls for an owner-approved page/architecture change.
+
 ## Website health gate
 Before growth changes, check for material technical problems that could block SEO or leads. Protect:
 - crawlability/indexability of important URLs,
