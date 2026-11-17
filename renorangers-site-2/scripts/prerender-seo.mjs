@@ -86,7 +86,7 @@ const routes = [
     route: '/diensten',
     title: 'Totaalrenovatie & Renovatiediensten Antwerpen | Reno Rangers',
     description: 'Totaalrenovatie Antwerpen voor woning of appartement: badkamerrenovatie en binnenafwerking door Reno Rangers. Vaste prijs, één aanspreekpunt.',
-    h1: 'Renovatiediensten van Reno Rangers',
+    h1: 'Totaalrenovatie Antwerpen',
     bodyText: 'Reno Rangers biedt een breed aanbod aan renovatiediensten in Antwerpen en omgeving, voor zowel een woning als een appartement. Onze hoofddiensten zijn badkamerrenovatie, totaalrenovatie en hoogwaardige binnenafwerking. Ook voor een appartement dat u wilt verhuren of een investeringspand dat u wilt doorverkopen, nemen wij de volledige renovatie uit handen — met dezelfde vaste prijs, één aanspreekpunt en transparante planning als bij elke andere opdracht. Wij nemen de volledige coördinatie op ons, van ontwerp tot oplevering. Neem contact op voor een gratis offerte.',
     links: [...mainLinks, ...projectLinks.slice(0, 3),
       { href: '/', text: 'Renovatiebedrijf Antwerpen' },
