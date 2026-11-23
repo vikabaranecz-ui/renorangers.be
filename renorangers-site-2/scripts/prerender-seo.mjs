@@ -183,10 +183,11 @@ const routes = [
     title: 'WC Renovatie Antwerpen | Reno Rangers Project',
     description: 'WC renovatie Antwerpen: van verouderde toiletruimte naar strakke moderne afwerking met nieuw sanitair en tijdloze tegels. Project door Reno Rangers.',
     h1: 'WC Renovatie in Antwerpen — Project door Reno Rangers',
-    bodyText: 'Bij dit project in Antwerpen renoveerde Reno Rangers een verouderde toiletruimte volledig. De bestaande tegels, sanitair en leidingwerk werden vervangen door nieuwe, kwalitatieve materialen. De klant kreeg een strakke, lichte WC-ruimte met modern toilet, fonteintje en waterdichte afwerking. Reno Rangers verzorgde de volledige uitvoering van sloop tot sleuteloverdracht. Bekijk de voor-en-na foto\'s en vraag een offerte aan voor uw eigen WC renovatie.',
+    bodyText: 'Bij dit project in Antwerpen renoveerde Reno Rangers een verouderde toiletruimte volledig. De bestaande tegels, sanitair en leidingwerk werden vervangen door nieuwe, kwalitatieve materialen. De klant kreeg een strakke, lichte WC-ruimte met modern toilet, fonteintje en waterdichte afwerking. Reno Rangers verzorgde de volledige uitvoering van sloop tot sleuteloverdracht. Bekijk de voor-en-na foto\'s en vraag een offerte aan voor uw eigen WC renovatie. Op zoek naar een volledige badkamerrenovatie in Antwerpen in plaats van een WC-renovatie? Bekijk onze badkamerrenovatiediensten.',
     links: [
       ...mainLinks,
       ...projectLinks.filter(l => l.href !== '/projecten/badkamerrenovatie-antwerpen'),
+      { href: '/diensten', text: 'Badkamerrenovatiediensten Antwerpen' },
       { href: '/contact', text: 'Offerte aanvragen' },
       { href: 'https://www.mijnverbouwpremie.be', text: 'Verbouwpremie' },
     ],
