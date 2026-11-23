@@ -128,7 +128,7 @@ const BLOG_POSTS = [
           "Behoud de bestaande sanitairposities: Verplaatsen van een douche of bad verdubbelt de loodgieterijkosten.",
           "Kies keramische tegels in de middenklasse: Kwaliteitsvolle tegels rond 30 à 50 euro per m² bieden uitstekende duurzaamheid zonder de prijs van luxemodellen.",
           "Vergelijk minstens drie offertes: De prijsverschillen tussen aannemers kunnen oplopen tot 30%.",
-          "Plan buiten het hoogseizoen: Aannemers zijn soms bereid tot korting als u het werk in januarion of februarion inplant.",
+          "Plan buiten het hoogseizoen: Aannemers zijn soms bereid tot korting als u het werk in januari of februari inplant.",
           "Gebruik vaste prijs-contracten: Zo vermijdt u kostenoverschrijdingen achteraf.",
         ],
       },
@@ -561,6 +561,14 @@ const PROJECT_PAGES = [
     ],
     resultaat: "De klant heeft een strakke, moderne WC-ruimte gekregen die optimaal gebruikmaakt van de beschikbare ruimte. De lichte tegels geven een gevoel van ruimte en helderheid. Alles is waterdicht afgewerkt en klaar voor jaren gebruik.",
     gallery: ["/toiletantwerpenvoor.webp", "/toiletantwerpen.webp"],
+    crossSell: {
+      text: "Op zoek naar een volledige badkamerrenovatie in Antwerpen in plaats van een WC-renovatie?",
+      links: [
+        { to: "/diensten", label: "Bekijk onze badkamerrenovatiediensten" },
+        { to: "/projecten/mortex-badkamer-merksem", label: "voorbeeldproject in Merksem" },
+        { to: "/projecten/mortex-badkamer-antwerpen", label: "voorbeeldproject in Antwerpen" },
+      ],
+    },
     seo: {
       title: "WC Renovatie Antwerpen | Reno Rangers Project",
       description: "WC renovatie in Antwerpen door Reno Rangers: van verouderde toiletruimte naar een moderne, strakke afwerking. Bekijk voor en na.",
@@ -2089,7 +2097,7 @@ function Over() {
               </h2>
               <div style={{ width: 44, height: 3, background: C.red, marginBottom: 20 }} />
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
-                We begrijpen hoe stressvol een renovatie kan zijn: van het kiezen van de juiste aannemer tot beslissingen over materialen, planning en budget. Als <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link> nemen wij alles uit handen.
+                We begrijpen hoe stressvol een renovatie kan zijn: van het kiezen van de juiste aannemer tot beslissingen over materialen, planning en budget. Als <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf</Link> in Antwerpen nemen wij alles uit handen.
               </p>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: C.gray, margin: "0 0 16px" }}>
                 Of u nu een huiseigenaar bent die zijn eerste woning verbouwt, een gezin dat meer comfort zoekt, of een investeerder die efficiëntie verwacht — wij zorgen voor een zorgeloze aanpak van A tot Z.
@@ -2283,7 +2291,7 @@ function Projecten() {
               ONZE <span style={{ color: C.red }}>PROJECTEN</span>
             </h1>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 520, lineHeight: 1.7 }}>
-              Bekijk hieronder recente renovatieprojecten van Reno Rangers, uw <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>renovatiebedrijf en aannemer in Antwerpen</Link>.
+              Bekijk hieronder recente renovatieprojecten van Reno Rangers, uw <Link to="/" style={{ color: "inherit", textDecoration: "underline" }}>aannemer renovatie</Link> in Antwerpen.
             </p>
           </Reveal>
         </div>
@@ -2496,6 +2504,23 @@ function ProjectDetail() {
       {/* Story section */}
       <div style={{ padding: "72px 0", background: C.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px" }}>
+          {project.crossSell && (
+            <Reveal>
+              <div style={{ background: C.off, padding: "18px 22px", marginBottom: 40, borderLeft: "4px solid " + C.red }}>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: "#444", margin: 0 }}>
+                  {project.crossSell.text}{" "}
+                  {project.crossSell.links.map(function (l, i) {
+                    return (
+                      <span key={l.to}>
+                        <Link to={l.to} style={{ color: C.red, fontWeight: 600, textDecoration: "underline" }}>{l.label}</Link>
+                        {i < project.crossSell.links.length - 1 ? " · " : ""}
+                      </span>
+                    );
+                  })}
+                </p>
+              </div>
+            </Reveal>
+          )}
           <Reveal>
             <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 13, letterSpacing: 4, color: C.red }}>DE SITUATIE</span>
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(26px, 3.5vw, 40px)", color: C.black, margin: "8px 0 18px", lineHeight: 1.05 }}>WAT WAS DE UITGANGSSITUATIE?</h2>
