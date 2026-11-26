@@ -53,6 +53,10 @@ const projectLinks = [
 ];
 
 const blogLinks = [
+  { href: '/blog/mortex-vs-tegels-wat-kiezen', text: 'Mortex of tegels: wat kiest u voor uw badkamer?' },
+  { href: '/blog/subsidies-renovatie-antwerpen-2026', text: 'Subsidies voor renovatie in Antwerpen in 2026' },
+  { href: '/blog/hoe-lang-duurt-badkamerrenovatie', text: 'Hoe lang duurt een badkamerrenovatie?' },
+  { href: '/blog/badkamerrenovatie-kostprijs-per-m2', text: 'Badkamerrenovatie kostprijs per m²' },
   { href: '/blog/wat-kost-badkamerrenovatie-antwerpen-2026', text: 'Wat kost een badkamerrenovatie in Antwerpen?' },
   { href: '/blog/totaalrenovatie-alles-wat-u-moet-weten', text: 'Totaalrenovatie: alles wat u moet weten' },
   { href: '/blog/trends-binnenafwerking-belgische-woningen-2026', text: 'Trends in binnenafwerking 2026' },
@@ -359,6 +363,59 @@ const routes = [
       ...blogLinks.filter(l => l.href !== '/blog/hoe-juiste-renovatie-aannemer-kiezen'),
       { href: '/contact', text: 'Reno Rangers contacteren' },
       { href: 'https://kbopub.economie.fgov.be', text: 'Aannemer controleren via KBO' },
+    ],
+  },
+  {
+    route: '/blog/mortex-vs-tegels-wat-kiezen',
+    title: 'Mortex of Tegels in de Badkamer? | Reno Rangers',
+    description: 'Mortex of tegels voor uw badkamer? Ontdek de voor- en nadelen, kosten en welk materiaal het beste past bij uw renovatie in Antwerpen.',
+    h1: 'Mortex of tegels: wat kiest u voor uw badkamer?',
+    bodyText: 'Mortex en tegels zijn de twee meest gevraagde afwerkingsmaterialen voor de badkamer in Antwerpen. Mortex geeft een naadloze, minimalistische uitstraling zonder voeglijnen, maar vereist periodieke impregnering. Tegels zijn duurzamer en onderhoudsarmer, maar voegen doorbreken de visuele rust. Reno Rangers plaatst beide materialen en adviseert u op basis van uw budget, smaak en de specifieke staat van uw badkamer. Lees hier wanneer mortex wint, wanneer tegels de betere keuze zijn en hoe de twee te combineren.',
+    links: [
+      ...mainLinks,
+      ...blogLinks.filter(l => l.href !== '/blog/mortex-vs-tegels-wat-kiezen'),
+      { href: '/diensten', text: 'Onze diensten bekijken' },
+      { href: '/contact', text: 'Offerte aanvragen' },
+    ],
+  },
+  {
+    route: '/blog/subsidies-renovatie-antwerpen-2026',
+    title: 'Subsidies Renovatie Antwerpen 2026 | Reno Rangers',
+    description: 'Welke subsidies en premies krijgt u voor renovatie in Antwerpen in 2026? Mijn VerbouwPremie, 6% btw en gemeentelijke premies op een rij.',
+    h1: 'Subsidies voor renovatie in Antwerpen in 2026',
+    bodyText: 'Wie renoveert in Antwerpen in 2026 heeft recht op een reeks financiële voordelen: de Vlaamse Mijn VerbouwPremie voor energiebesparende maatregelen, het verlaagd btw-tarief van 6% voor woningen ouder dan 10 jaar, renteloze renovatieleningen via het Stadsloket Wonen Antwerpen en stedelijke premies voor gevelrenovatie en dakisolatie. Veel premies zijn combineerbaar en kunnen de nettokostprijs van een renovatie met 20 tot 30% verlagen. Reno Rangers helpt u de juiste premies te identificeren voor uw project.',
+    links: [
+      ...mainLinks,
+      ...blogLinks.filter(l => l.href !== '/blog/subsidies-renovatie-antwerpen-2026'),
+      { href: '/contact', text: 'Offerte aanvragen' },
+      { href: 'https://www.mijnverbouwpremie.be', text: 'Mijn VerbouwPremie aanvragen' },
+      { href: 'https://www.antwerpen.be', text: 'Stedelijke premies Antwerpen' },
+    ],
+  },
+  {
+    route: '/blog/hoe-lang-duurt-badkamerrenovatie',
+    title: 'Hoe Lang Duurt een Badkamerrenovatie? | Reno Rangers',
+    description: 'Hoe lang duurt een badkamerrenovatie? Van 5 tot 15 werkdagen afhankelijk van type en complexiteit. Reno Rangers legt de doorlooptijd uit.',
+    h1: 'Hoe lang duurt een badkamerrenovatie?',
+    bodyText: 'Een badkamerrenovatie duurt gemiddeld 5 tot 15 werkdagen, afhankelijk van het type ingreep. Een eenvoudige basisrenovatie (tegels en sanitair, geen leidingwerk) is klaar in 5 à 7 werkdagen. Een volledige renovatie met sloop, nieuwe leidingen en tegels neemt 8 tot 12 werkdagen in beslag. Een luxerenovatie met mortex, maatwerkmeubilair en inloopdouche vraagt 12 tot 20 werkdagen. Reno Rangers werkt met een strakke planning en één aanspreekpunt zodat uw badkamer zo snel mogelijk weer gebruiksklaar is.',
+    links: [
+      ...mainLinks,
+      ...blogLinks.filter(l => l.href !== '/blog/hoe-lang-duurt-badkamerrenovatie'),
+      { href: '/badkamerrenovatie-calculator', text: 'Prijs berekenen' },
+      { href: '/contact', text: 'Offerte aanvragen' },
+    ],
+  },
+  {
+    route: '/blog/badkamerrenovatie-kostprijs-per-m2',
+    title: 'Badkamerrenovatie Prijs per m² 2026 | Reno Rangers',
+    description: 'Wat kost een badkamerrenovatie per m² in Antwerpen? Duidelijke prijzen per type renovatie en grootte van de badkamer, inclusief arbeidskosten.',
+    h1: 'Badkamerrenovatie kostprijs per m²: wat betaalt u?',
+    bodyText: 'De kostprijs van een badkamerrenovatie per m² in Antwerpen varieert van 750 euro voor een basisrenovatie tot meer dan 2.500 euro per m² voor een luxerenovatie met maatwerkmeubilair en mortex. Een volledige renovatie van een standaard badkamer van 8 m² kost gemiddeld 8.800 tot 14.400 euro. Kleine badkamers kosten meer per m² omdat de vaste kosten (sloop, sanitair, loodgieterij) worden gedeeld over een kleiner oppervlak. Reno Rangers biedt vaste, transparante prijzen op maat.',
+    links: [
+      ...mainLinks,
+      ...blogLinks.filter(l => l.href !== '/blog/badkamerrenovatie-kostprijs-per-m2'),
+      { href: '/badkamerrenovatie-calculator', text: 'Prijs berekenen' },
+      { href: '/contact', text: 'Gratis offerte aanvragen' },
     ],
   },
 ];

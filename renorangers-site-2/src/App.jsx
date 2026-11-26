@@ -55,6 +55,448 @@ const PAGE_PATHS = Object.freeze({
 });
 const BLOG_POSTS = [
   {
+    slug: "mortex-vs-tegels-wat-kiezen",
+    title: "Mortex of tegels: wat kiest u voor uw badkamer?",
+    date: "26 NOV 2026",
+    category: "BINNENAFWERKING",
+    img: "/projects/project-mortex-after-1.webp",
+    excerpt: "Mortex of tegels in uw badkamer? Beide materialen hebben duidelijke voor- en nadelen. Reno Rangers legt uit wanneer mortex wint en wanneer tegels de betere keuze zijn.",
+    seo: {
+      title: "Mortex of Tegels in de Badkamer? | Reno Rangers",
+      description: "Mortex of tegels voor uw badkamer? Ontdek de voor- en nadelen, kosten en welk materiaal het beste past bij uw renovatie in Antwerpen.",
+      ogTitle: "Mortex of Tegels in de Badkamer? — Reno Rangers",
+      ogDescription: "De voor- en nadelen van mortex versus tegels in de badkamer. Welk materiaal past bij uw renovatie?",
+      ogImage: "https://www.renorangers.be/projects/project-mortex-after-1.webp",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "Mortex of tegels — het is een vraag die Reno Rangers dagelijks krijgt. Beide materialen hebben een uitgesproken karakter en unieke eigenschappen. De keuze hangt af van uw smaak, budget, het gebruik van de ruimte en de staat van uw muren en vloer. In dit artikel leggen we de twee materialen naast elkaar zodat u een weloverwogen beslissing kunt nemen.",
+      },
+      {
+        type: "h2",
+        text: "Wat is mortex precies?",
+      },
+      {
+        type: "p",
+        text: "Mortex is een cementgebonden afwerkingsmateriaal dat in een dunne laag (1 à 3 mm) op muren of vloeren wordt aangebracht. Het is naadloos, waterdicht na impregnering en geeft een industrieel-chique uitstraling. Mortex is verkrijgbaar in tientallen kleuren en texturen, maar de typische beige, grijze en witte tinten zijn het meest populair. Mortex werd ooit enkel gebruikt in commerciële ruimtes maar is vandaag een populaire keuze voor badkamers en keukens in moderne woningen.",
+      },
+      {
+        type: "h2",
+        text: "Mortex vs tegels: de vergelijking op 6 criteria",
+      },
+      {
+        type: "table",
+        rows: [
+          ["Criterium", "Mortex", "Tegels"],
+          ["Prijs (plaatsing per m²)", "€ 80 – € 150", "€ 30 – € 90"],
+          ["Onderhoud", "Periodieke impregnering nodig", "Voegen vereisen regelmatig schoonmaak"],
+          ["Uitstraling", "Naadloos, modern, minimalistisch", "Klassiek, veelzijdig in stijl"],
+          ["Duurzaamheid", "Gevoelig voor krassen bij beschadiging", "Zeer slijtvast"],
+          ["Muur + vloer doorlopend", "Naadloos door te trekken", "Patroon kan doorlopend zijn"],
+          ["Montage", "Complexer, vakman vereist", "Standaard tegelwerk"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Wanneer kiest u voor mortex?",
+      },
+      {
+        type: "list",
+        items: [
+          "U wilt een naadloze, rustige uitstraling zonder voeglijnen.",
+          "U heeft een modern of minimalistisch interieur en wilt een strakke, uniforme look.",
+          "U wilt muur en vloer optisch doorlopen in hetzelfde materiaal.",
+          "Uw badkamer is kleiner en mortex geeft visueel meer ruimte door de afwezigheid van voegen.",
+          "U kiest voor een vrijstaand bad als blikvanger — mortex als neutrale achtergrond werkt perfect.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Wanneer kiest u voor tegels?",
+      },
+      {
+        type: "list",
+        items: [
+          "U wilt een grotere keuze aan kleuren, patronen en formaten.",
+          "U wilt een lagere aankoopprijs voor het materiaal.",
+          "U heeft voorkeur voor een klassieke of Scandinavische stijl.",
+          "U geeft de voorkeur aan een onderhoudsarm materiaal zonder periodieke impregnering.",
+          "Uw badkamer heeft onregelmatige of beschadigde muren die herstel vereisen voor mortex.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Kostprijs: mortex vs tegels in Antwerpen",
+      },
+      {
+        type: "p",
+        text: "Voor een badkamer van 6 m² kunt u rekenen op 1.500 tot 3.000 euro voor mortexafwerking (materiaal + plaatsing door een erkende mortexer). Tegels in de middenklasse kosten voor dezelfde oppervlakte 800 tot 1.800 euro, inclusief arbeidskosten. Het prijsverschil is reëel, maar de visuele meerwaarde en het naadloze karakter van mortex rechtvaardigen de hogere investering voor wie van een strakke look houdt.",
+      },
+      {
+        type: "h2",
+        text: "Mortex combineren met tegels?",
+      },
+      {
+        type: "p",
+        text: "Absoluut — en het is een combinatie die Reno Rangers graag toepast. Een populaire aanpak is mortex op de wanden en groot formaat tegels op de vloer, of omgekeerd. Dit combineert het naadloze, warme karakter van mortex met de duurzaamheid van keramische vloertegels. Een mortex nisdouche gecombineerd met witte wandtegels is ook een tijdloos en elegant geheel.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Is mortex waterproof in een douche?",
+            a: "Ja, maar enkel als het correct geïmpregneerd is met een specifiek sealproduct. Dit moet na plaatsing en periodiek herhaald worden (elke 1 à 2 jaar afhankelijk van gebruik). Zonder impregnering kan water indringen en vlekken of schimmel veroorzaken.",
+          },
+          {
+            q: "Kan mortex op bestaande tegels worden aangebracht?",
+            a: "In principe wel, maar dit hangt af van de toestand van de bestaande tegels en of ze vlak en stevig vastzitten. Reno Rangers controleert dit altijd voor aanvang van de werken. Op losse of beschadigde tegels wordt het niet aangeraden.",
+          },
+          {
+            q: "Hoe lang gaat mortex mee?",
+            a: "Een goed aangebrachte en correct onderhouden mortexafwerking gaat tientallen jaren mee. Kleine krassen of beschadigingen kunnen plaatselijk hersteld worden, al zijn lokale reparaties soms zichtbaar in het materiaal.",
+          },
+          {
+            q: "Welk materiaal is beter voor een kleine badkamer?",
+            a: "Mortex heeft visueel de voorkeur in kleine ruimtes: de afwezigheid van voegen en de mogelijkheid om muur en vloer naadloos door te trekken creëren een ruimtelijk effect. Grote tegels (60×120 cm of groter) bereiken een vergelijkbaar effect.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Twijfelt u nog tussen mortex en tegels voor uw badkamer in Antwerpen? Reno Rangers adviseert u vrijblijvend op basis van uw situatie en budget.",
+      },
+    ],
+  },
+  {
+    slug: "subsidies-renovatie-antwerpen-2026",
+    title: "Subsidies voor renovatie in Antwerpen in 2026",
+    date: "19 NOV 2026",
+    category: "TIPS",
+    img: "/projects/project-living-1.webp",
+    excerpt: "In 2026 zijn er meerdere subsidies en premies beschikbaar voor renovatie in Antwerpen. Van Mijn VerbouwPremie tot 6% btw — wij zetten alles op een rij.",
+    seo: {
+      title: "Subsidies Renovatie Antwerpen 2026 | Reno Rangers",
+      description: "Welke subsidies en premies krijgt u voor renovatie in Antwerpen in 2026? Mijn VerbouwPremie, 6% btw en gemeentelijke premies op een rij.",
+      ogTitle: "Subsidies Renovatie Antwerpen 2026 — Reno Rangers",
+      ogDescription: "Overzicht van alle subsidies en premies voor renovatie in Antwerpen en Vlaanderen in 2026.",
+      ogImage: "https://www.renorangers.be/projects/project-living-1.webp",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "Wie renoveert in Antwerpen in 2026 heeft recht op een reeks financiële voordelen: van Vlaamse premies en federale belastingvoordelen tot lokale subsidies van de stad Antwerpen. Het loont de moeite om deze voordelen goed te kennen voor u met uw renovatieproject start. Reno Rangers zet de belangrijkste steunmaatregelen op een rij.",
+      },
+      {
+        type: "h2",
+        text: "1. Mijn VerbouwPremie (Vlaanderen)",
+      },
+      {
+        type: "p",
+        text: "De Mijn VerbouwPremie is de centrale premie voor energiebesparende renovaties in Vlaanderen. U kunt deze premie aanvragen voor dakisolatie, spouwmuurisolatie, vloerisolatie, het plaatsen van superisolerend glas en een verwarmingssysteem op hernieuwbare energie. Het premiebedrag hangt af van uw inkomen: lage inkomens ontvangen hogere premies. In 2026 loopt het Vlaamse premiestelsel via het Energiehuis van uw gemeente — de aanvraag verloopt via het online loket van de Vlaamse overheid.",
+      },
+      {
+        type: "h2",
+        text: "2. 6% BTW op renovatiewerken",
+      },
+      {
+        type: "p",
+        text: "Voor woningen ouder dan 10 jaar geldt een verlaagd btw-tarief van 6% in plaats van 21% op renovatiewerken. Dit geldt voor arbeidskosten én materialen die door de aannemer worden gefactureerd. Op een totaalbudget van 50.000 euro scheelt dit 7.500 euro — een aanzienlijke besparing. De woning moet uw hoofdverblijfplaats zijn of verhuurd worden als hoofdverblijfplaats. Reno Rangers factureert standaard aan 6% btw voor in aanmerking komende woningen.",
+      },
+      {
+        type: "h2",
+        text: "3. Renovatielening aan 0% of lage rente",
+      },
+      {
+        type: "p",
+        text: "Eigenaar-bewoners met een beperkt inkomen kunnen bij hun gemeente of Energiehuis een goedkope renovatielening aanvragen. In Antwerpen biedt het Stadsloket Wonen renteloze of goedkope leningen aan voor bepaalde renovatiewerken. Dit is geen subsidie maar een voordelig krediet dat u terugbetaalt — ideaal voor wie het renovatiebudget wil spreiden zonder hoge bankinterest te betalen.",
+      },
+      {
+        type: "h2",
+        text: "4. Stedelijke premies van de Stad Antwerpen",
+      },
+      {
+        type: "list",
+        items: [
+          "Gevelpremie: Subsidie voor het renoveren of reinigen van gevels in bepaalde zones van Antwerpen.",
+          "Dak- en gevelisolatiepremie: Bovenop de Vlaamse premie biedt Antwerpen een stadssubsidie voor dakisolatie en gevelsanering.",
+          "Ondersteuning woningkwaliteit: Voor woningen met ernstige gebreken kunt u bij de stad terecht voor ondersteuning bij renovatie.",
+          "Premie voor herbestemming leegstand: Panden die leegstaan en gerenoveerd worden tot woning komen soms in aanmerking voor bijkomende steun.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "5. Federale belastingvermindering voor energiebesparing",
+      },
+      {
+        type: "p",
+        text: "Op federaal niveau zijn een aantal belastingverminderingen beschikbaar voor specifieke energiebesparende maatregelen, zoals de plaatsing van een warmtepomp, thuisbatterij of laadpaal voor elektrische wagens. Deze voordelen worden verrekend via de jaarlijkse belastingaangifte. Raadpleeg de website van de FOD Financiën voor de actuele bedragen en voorwaarden.",
+      },
+      {
+        type: "h2",
+        text: "Combineer premies voor maximale besparing",
+      },
+      {
+        type: "p",
+        text: "Veel premies zijn combineerbaar: u kunt de Vlaamse Mijn VerbouwPremie combineren met de stedelijke Antwerpse premies én het voordelig btw-tarief. Dit kan de netto kostprijs van een renovatie met 20 tot 30% verlagen. Plan uw renovatie bij voorkeur voor u start de premieaanvragen in, want sommige premies vereisen dat u de werken nog niet bent begonnen op het moment van de aanvraag.",
+      },
+      {
+        type: "table",
+        rows: [
+          ["Maatregel", "Type", "Mogelijke besparing"],
+          ["Mijn VerbouwPremie", "Vlaamse premie", "€ 1.500 – € 10.000"],
+          ["6% btw (i.p.v. 21%)", "Federaal btw-voordeel", "15% op arbeids- en materiaalkosten"],
+          ["Stadsloket Wonen Antwerpen", "Renteloze lening", "Afhankelijk van bedrag en looptijd"],
+          ["Stedelijke gevelpremie", "Gemeentelijk", "Variabel per zone en situatie"],
+          ["Belastingvermindering warmtepomp", "Federaal", "15–30% van de investering"],
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Kan ik premies aanvragen voor een badkamerrenovatie?",
+            a: "Een gewone badkamerrenovatie (nieuwe tegels, sanitair) valt niet onder de energiepremies, maar u geniet wel altijd van het 6% btw-tarief als de woning ouder is dan 10 jaar. Enkel ingrepen als vloerverwarming gekoppeld aan een warmtepomp of superisolerend glas komen in aanmerking voor energiepremies.",
+          },
+          {
+            q: "Moet ik de premies voor of na de werken aanvragen?",
+            a: "Voor de meeste Vlaamse premies moet u de aanvraag indienen voor de start van de werken. Sommige premies kunnen achteraf worden aangevraagd binnen een bepaalde termijn. Controleer dit altijd per premie op het loket van de Vlaamse overheid of uw gemeente.",
+          },
+          {
+            q: "Heeft de aannemer invloed op welke premies ik krijg?",
+            a: "Ja. Voor bepaalde premies is een erkende aannemer verplicht. Reno Rangers is correct geregistreerd en kan een attest aanleveren voor de premieaanvraag. Vraag dit altijd na bij uw aannemer.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Wilt u weten voor welke premies uw renovatieproject in aanmerking komt? Reno Rangers helpt u bij het in kaart brengen van de beschikbare financiële voordelen.",
+      },
+    ],
+  },
+  {
+    slug: "hoe-lang-duurt-badkamerrenovatie",
+    title: "Hoe lang duurt een badkamerrenovatie?",
+    date: "12 NOV 2026",
+    category: "BADKAMER",
+    img: "/badkamer-hero-desktop.webp",
+    excerpt: "Een badkamerrenovatie duurt gemiddeld 5 tot 15 werkdagen. Maar wat bepaalt de doorlooptijd? Reno Rangers legt het stap voor stap uit.",
+    seo: {
+      title: "Hoe Lang Duurt een Badkamerrenovatie? | Reno Rangers",
+      description: "Hoe lang duurt een badkamerrenovatie? Van 5 tot 15 werkdagen afhankelijk van type en complexiteit. Reno Rangers legt de doorlooptijd uit.",
+      ogTitle: "Hoe Lang Duurt een Badkamerrenovatie? — Reno Rangers",
+      ogDescription: "Realistische doorlooptijden voor een badkamerrenovatie: van een snelle opfrisbeurt tot een volledige renovatie.",
+      ogImage: "https://www.renorangers.be/badkamer-hero-desktop.webp",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "\"Hoe lang zullen we zonder badkamer zitten?\" — het is de vraag die Reno Rangers het vaakst krijgt bij een eerste gesprek. Het antwoord hangt af van de omvang van de werken, de grootte van de badkamer en de materialen die u kiest. In dit artikel geven we realistische tijdsschema's voor elk type badkamerrenovatie.",
+      },
+      {
+        type: "h2",
+        text: "Overzicht: doorlooptijden per type renovatie",
+      },
+      {
+        type: "table",
+        rows: [
+          ["Type renovatie", "Doorlooptijd", "Wat houdt het in?"],
+          ["Snelle opfrisbeurt", "2 – 3 werkdagen", "Sanitair vervangen, schilderen, lichte aanpassingen"],
+          ["Basisrenovatie", "5 – 7 werkdagen", "Tegels + sanitair, geen leidingenwerk"],
+          ["Volledige renovatie", "8 – 12 werkdagen", "Volledige sloop, nieuwe leidingen, tegels en sanitair"],
+          ["Luxerenovatie met maatwerk", "12 – 20 werkdagen", "Mortex, inloopdouche, maatwerkmeubilair, domotica"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Fase 1: voorbereiding en sloop (dag 1 – 2)",
+      },
+      {
+        type: "p",
+        text: "De eerste stap is altijd de demontage van de bestaande badkamer: sanitair loskoppelen, tegels verwijderen, eventuele muren slopen. Dit is de meest stofproducerende fase en duurt bij een standaard badkamer 1 à 2 dagen. Bij een volledige renovatie komen hier nog de loodgieterswerken bij: leidingen verleggen of vernieuwen. Dit heeft ook invloed op de totale doorlooptijd.",
+      },
+      {
+        type: "h2",
+        text: "Fase 2: leidingwerk en ruwbouw (dag 2 – 4)",
+      },
+      {
+        type: "p",
+        text: "Als de leidingen verplaatst of vernieuwd moeten worden, werkt de loodgieter in deze fase. Ook het plaatsen van de drager voor een hangtoilet of een ingebouwde douche-inbouwdeel valt in deze fase. Dit is een kritisch moment: eventuele fouten in de leidingenposities moeten nu gecorrigeerd worden, want later is dat bijna onmogelijk.",
+      },
+      {
+        type: "h2",
+        text: "Fase 3: tegelwerk of mortex (dag 3 – 8)",
+      },
+      {
+        type: "p",
+        text: "Het tegelwerk is meestal de langste fase. Vloer- en wandtegels leggen — inclusief de nodige droogtijd — neemt bij een standaard badkamer 2 tot 4 dagen in beslag. Voor mortex is de timing anders: de eerste laag moet volledig drogen voor de tweede laag kan worden aangebracht. Een mortexafwerking van muren en vloer duurt doorgaans 3 tot 5 dagen, exclusief de finale impregnering.",
+      },
+      {
+        type: "h2",
+        text: "Fase 4: installatie sanitair en afwerking (dag 8 – 12)",
+      },
+      {
+        type: "p",
+        text: "In de laatste fase wordt het sanitair geplaatst en aangesloten: douche of bad, wastafels, toilet, radiator en verlichting. Vervolgens worden de siliconen aangebracht, het voegwerk bijgewerkt en de ruimte grondig gereinigd. De badkamer wordt pas definitief opgeleverd als alles functioneert en er geen schoonmaakwerk meer te doen is.",
+      },
+      {
+        type: "h2",
+        text: "Wat vertraagt een badkamerrenovatie?",
+      },
+      {
+        type: "list",
+        items: [
+          "Asbest aangetroffen achter de bestaande tegels: dit vereist een gecertificeerde verwijdering en verlengt het project met 1 tot 3 dagen.",
+          "Verborgen vochtproblemen: schimmel of vochtschade aan de muren vraagt extra behandeling.",
+          "Leveringsvertragingen van materialen: tegels of sanitair die niet op voorraad zijn kunnen de planning verstoren.",
+          "Aanpassingen tijdens de werken: wijzigingen in het plan na de start van de werken kosten altijd extra tijd.",
+          "Droogtijd: cement en mortex moeten correct drogen. Bij koud of vochtig weer duurt dit langer.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Tips om de doorlooptijd te verkorten",
+      },
+      {
+        type: "list",
+        items: [
+          "Bestel alle materialen (tegels, sanitair, meubels) ruim op voorhand — voor de start van de werken.",
+          "Vermijd aanpassingen in het plan na de start van de werken.",
+          "Kies voor een aannemer die alle gespecialiseerde vaklieden zelf coördineert, zodat er geen wachttijden zijn tussen loodgieter en tegelzetter.",
+          "Plan uw renovatie in het voor- of naseizoen (buiten de zomervakantie) wanneer aannemers minder bezet zijn.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Kunnen we nog douchen tijdens de renovatie?",
+            a: "Nee, tijdens een volledige badkamerrenovatie is de badkamer volledig buiten gebruik. Plan tijdelijk een sportclub, buren of een hotelverblijf als u meer dan een week zonder badkamer zit. Reno Rangers streeft altijd naar de kortst mogelijke doorlooptijd.",
+          },
+          {
+            q: "Wat als de aannemer de planning niet haalt?",
+            a: "Laat in het contract een duidelijke planning en een boeteclausule bij vertraging opnemen. Zo bent u beschermd als de werken langer duren dan afgesproken. Reno Rangers hanteert altijd vaste planningen en communiceert proactief bij eventuele vertragingen.",
+          },
+          {
+            q: "Is een renovatie van 2 weken normaal?",
+            a: "Voor een volledige badkamerrenovatie van 6 à 10 m² is 8 tot 12 werkdagen (2 à 2,5 weken) absoluut normaal. Wie sneller klaar belooft te zijn, werkt mogelijk met minder vaklieden of kortere droogtijden — dat kan de kwaliteit beïnvloeden.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Wilt u weten hoelang uw specifieke badkamerrenovatie duurt? Reno Rangers maakt een gedetailleerde planning op maat na het eerste bezoek.",
+      },
+    ],
+  },
+  {
+    slug: "badkamerrenovatie-kostprijs-per-m2",
+    title: "Badkamerrenovatie kostprijs per m²: wat betaalt u?",
+    date: "5 NOV 2026",
+    category: "BADKAMER",
+    img: "/projects/project-bathroom-purple-1.webp",
+    excerpt: "Wat kost een badkamerrenovatie per m² in Antwerpen? Van €750 tot €2.500 per m² afhankelijk van het type renovatie. Alles uitgelegd per categorie.",
+    seo: {
+      title: "Badkamerrenovatie Prijs per m² 2026 | Reno Rangers",
+      description: "Wat kost een badkamerrenovatie per m² in Antwerpen? Duidelijke prijzen per type renovatie en grootte van de badkamer, inclusief arbeidskosten.",
+      ogTitle: "Badkamerrenovatie Prijs per m² 2026 — Reno Rangers",
+      ogDescription: "Kostprijs badkamerrenovatie per m² in Antwerpen: van basisrenovatie tot luxe uitvoering.",
+      ogImage: "https://www.renorangers.be/projects/project-bathroom-purple-1.webp",
+    },
+    content: [
+      {
+        type: "intro",
+        text: "Het vergelijken van renovatieprijzen is makkelijker als u de kostprijs per m² kent. Zo kunt u verschillende offertes naast elkaar leggen en snel zien of een prijs realistisch is. In dit artikel geeft Reno Rangers een transparant overzicht van de gemiddelde kostprijs per m² voor een badkamerrenovatie in Antwerpen in 2026.",
+      },
+      {
+        type: "h2",
+        text: "Kostprijs per m² per type renovatie",
+      },
+      {
+        type: "table",
+        rows: [
+          ["Type renovatie", "Kostprijs per m²", "Totaal (badkamer 8 m²)"],
+          ["Basisrenovatie", "€ 750 – € 1.100", "€ 6.000 – € 8.800"],
+          ["Volledige renovatie", "€ 1.100 – € 1.800", "€ 8.800 – € 14.400"],
+          ["Luxerenovatie", "€ 1.800 – € 2.500", "€ 14.400 – € 20.000"],
+          ["Ultra-luxe met maatwerk", "€ 2.500 – € 4.000", "€ 20.000 – € 32.000"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Wat zit er in de prijs per m²?",
+      },
+      {
+        type: "p",
+        text: "De kostprijs per m² omvat altijd zowel arbeids- als materiaalkosten. Bij een basisrenovatie gaat het om standaard keramische tegels (20–50 euro/m²), eenvoudig sanitair en standaard loodgieterij. Bij een luxerenovatie stijgen de materiaalkosten sterk: Italiaanse marmerlook tegels (80–150 euro/m²), een vrijstaand bad (2.000–5.000 euro), mortexafwerking (80–150 euro/m²) en maatwerkmeubilair voegen elk honderden of duizenden euro's toe aan de rekening.",
+      },
+      {
+        type: "h2",
+        text: "Waarom kost een kleine badkamer meer per m²?",
+      },
+      {
+        type: "p",
+        text: "Een badkamer van 4 m² kost doorgaans meer per m² dan een badkamer van 10 m². De reden is eenvoudig: de vaste kosten (sloop, loodgieterij, elektriciteit, sanitair) zijn nagenoeg gelijk voor elke badkamer, maar worden verdeeld over een kleinere oppervlakte. Een toilet plaatsen of een douche installeren kost een bepaald bedrag per unit, niet per m². Daardoor is de prijs per m² voor een kleine badkamer hoger.",
+      },
+      {
+        type: "h2",
+        text: "Verhouding arbeidskosten vs. materiaalkosten",
+      },
+      {
+        type: "table",
+        rows: [
+          ["Type", "Arbeidskosten", "Materiaalkosten"],
+          ["Basisrenovatie", "50 – 55%", "45 – 50%"],
+          ["Volledige renovatie", "40 – 45%", "55 – 60%"],
+          ["Luxerenovatie", "30 – 35%", "65 – 70%"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Wat verhoogt de prijs per m² het meest?",
+      },
+      {
+        type: "list",
+        items: [
+          "Verplaatsen van leidingen: elke meter verplaatste leiding kost 100 à 300 euro extra.",
+          "Vloerverwarming: voegt 80 à 150 euro/m² toe aan de kostprijs.",
+          "Mortex afwerking (i.p.v. tegels): 30 à 60 euro/m² duurder aan plaatsingskosten.",
+          "Maatwerkmeubilair: badkamermeubels op maat kosten 2 à 5 keer meer dan standaard modellen.",
+          "Vrijstaand bad: een luxeartikel dat 2.000 à 8.000 euro kost, bovenop het basistarief.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Is de prijs per m² een betrouwbare vergelijkingsbasis?",
+      },
+      {
+        type: "p",
+        text: "De prijs per m² is nuttig als richtlijn, maar biedt geen volledige vergelijking. Twee badkamers van 8 m² kunnen sterk verschillen in prijs afhankelijk van de staat van de bestaande installatie, de keuze van materialen en de complexiteit van de leidingen. Vergelijk offertes altijd op detail: wat is exact inbegrepen, welke materialen worden gebruikt en welke werken vallen buiten de offerte?",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            q: "Is 1.200 euro per m² een goede prijs voor een badkamerrenovatie?",
+            a: "Voor een volledige renovatie met kwalitatieve tegels en standaard sanitair is 1.100 à 1.400 euro/m² een realistisch en marktconform tarief in Antwerpen. Goedkoper duidt mogelijk op goedkopere materialen of werken die niet in de prijs zijn opgenomen. Duurder is verantwoord bij premium materialen of complexere ingrepen.",
+          },
+          {
+            q: "Hoe vraag ik een correcte offerte aan?",
+            a: "Vraag minstens drie gedetailleerde offertes aan bij erkende aannemers. Zorg dat elke offerte dezelfde werken omvat: sloop, leidingwerk, tegelwerk, sanitair, elektriciteit en afvoer van puin. Vergelijk op identieke basis, niet enkel op het totaalbedrag.",
+          },
+          {
+            q: "Kan ik de kostprijs per m² verlagen door zelf te helpen?",
+            a: "In theorie ja, maar in de praktijk is dit zelden zinvol. Tegelwerk, loodgieterij en mortex vereisen specialistische kennis. Eigen sloop kan kosten besparen (500 à 1.000 euro), maar verkeerd uitgevoerde sloop of beschadigde leidingen kosten meer dan u bespaart.",
+          },
+        ],
+      },
+      {
+        type: "cta",
+        text: "Vraag een vrijblijvende offerte aan bij Reno Rangers en ontvang een transparante prijsopgave per onderdeel voor uw badkamerrenovatie in Antwerpen.",
+      },
+    ],
+  },
+  {
     slug: "wat-kost-badkamerrenovatie-antwerpen-2026",
     title: "Wat kost een badkamerrenovatie in Antwerpen in 2026?",
     date: "15 MAART 2026",
