@@ -1,0 +1,35 @@
+name: SEO Evidence Code Tests
+
+on:
+  pull_request:
+    paths:
+      - 'renorangers-site-2/scripts/**'
+      - 'renorangers-site-2/tests/**'
+      - '.github/workflows/seo-evidence-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'renorangers-site-2/scripts/**'
+      - 'renorangers-site-2/tests/**'
+      - '.github/workflows/seo-evidence-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies (no Google credentials)
+        run: python -m pip install --disable-pip-version-check requests google-auth beautifulsoup4
+      - name: Compile SEO Python scripts
+        run: python -m compileall -q renorangers-site-2/scripts
+      - name: Run offline Google evidence contract tests
+        run: python -m unittest discover -s renorangers-site-2/tests -p 'test_seo_*.py' -v

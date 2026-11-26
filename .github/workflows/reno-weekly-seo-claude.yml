@@ -69,11 +69,15 @@ jobs:
 
       - name: Install collector dependencies
         if: steps.duplicate.outputs.skip != 'true'
-        run: python -m pip install --disable-pip-version-check requests google-auth
+        run: python -m pip install --disable-pip-version-check requests google-auth beautifulsoup4
 
       - name: Collect GSC and Keyword Planner evidence
         if: steps.duplicate.outputs.skip != 'true'
         run: python renorangers-site-2/scripts/seo_weekly_collect_service.py
+
+      - name: Compact GSC and Keyword Planner into verified SEO decisions
+        if: steps.duplicate.outputs.skip != 'true'
+        run: python renorangers-site-2/scripts/seo_evidence_digest.py
 
       - name: Inspect Google-indexed versions of canonical pages (read-only)
         if: steps.duplicate.outputs.skip != 'true'
@@ -123,6 +127,7 @@ jobs:
           name: reno-seo-weekly-context-${{ github.run_id }}
           path: |
             seo-weekly-context.json
+            seo-weekly-context-compact.json
             seo-indexing-audit.json
           if-no-files-found: warn
           retention-days: 30
@@ -151,8 +156,8 @@ jobs:
 
             Read `.claude/agents/reno-weekly-seo.md` in full and follow it as the governing policy.
             Also read `.claude/agents/reno-conversion-growth.md` and use it to maintain a whole-market coverage plan and conversion-first content standard.
-            Read `seo-indexing-audit.json` if present. Diagnose Google's actual excluded/not-indexed canonical URLs before ranking-only copy changes. Never assume a missing GSC impression equals noindex. Major robots, canonicals, redirects and sitemap/indexability changes need owner approval, not automatic SAFE FIX merge.
-            Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`, and `seo-weekly-context.json`.
+            Read `seo-indexing-audit.json` if present, then read `seo-weekly-context-compact.json` as your MAIN decision source before raw data. Diagnose Google's actual excluded/not-indexed canonical URLs before ranking-only copy changes. Never assume a missing GSC impression equals noindex. Major robots, canonicals, redirects and sitemap/indexability changes need owner approval, not automatic SAFE FIX merge.
+            Read `renorangers-site-2/seo/business_profile.json`, `renorangers-site-2/seo/automation_policy.json`, `renorangers-site-2/seo/growth_strategy.json`, `renorangers-site-2/seo/keyword_targets.json`; open raw `seo-weekly-context.json` only when compact evidence is insufficient or broken.
 
             Execute ONE comprehensive weekly MASTER SEO + CONVERSION RUN spanning 2-4 evidence-backed clusters when enough actionable opportunities exist, not a narrow two-keyword edit. The year-end KPI is 25 commercially relevant primary queries in Google Top 5 by 2026-12-31; never describe it as guaranteed.
 
@@ -168,6 +173,9 @@ jobs:
             Optimize for qualified renovation leads, not traffic alone.
             Maintain a strategic B2B track to attract architects, interior architects and designers looking for a dependable execution/work partner.
             Antwerp + approximately 25 km is the verified market. Do not broaden to all Vlaanderen.
+            You MUST use this week's actual Google Ads Keyword Planner ideas and historical monthly series, plus latest GSC query-by-page evidence, NOT generic or stale keyword lists. "What users search now" means recent available 28d GSC signals and Google's latest available monthly Planner estimates; report exact data end dates. Rank the strongest opportunities using local relevance, purchase intent, monthly local searches, 3-month demand movement, GSC impressions/positions and existing page suitability. If Keyword Planner fails or Antwerp results are unavailable, say UNVERIFIED, do not present Belgium estimates as Antwerp numbers, and DO NOT invent demand.
+            For each chosen keyword, map the expected canonical URL, observed Google-ranking URL (if any), relevant existing page, and whether a distinct content gap exists. If verified distinct buyer intent + meaningful Antwerp monthly demand or GSC opportunity justify a useful new page, CREATE the fully implemented page on a branch, run build + SEO QA, and open NEEDS APPROVAL PR (do not auto-merge new URLs). Prefer project-backed service/product decisions, real FAQ information and useful buyer paths; avoid near-duplicate city/keyword doorway pages or stuffing.
+            If no new URL is justified, execute the highest-impact verified existing-page/indexing fix instead. Never substitute an insignificant internal link merely to achieve an auto-merge.
             Use Antwerp Keyword Planner evidence before Belgium-wide volume when choosing local priorities.
             Do not target new-build merely because Search Console shows impressions.
 
